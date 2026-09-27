@@ -6835,6 +6835,1850 @@
    ],
    "fbx": "exports/fbx/Weapons/RainbowRapier.fbx",
    "preview": "previews/Weapons/RainbowRapier.png"
+  },
+  {
+   "name": "WoodGlaive",
+   "category": "Weapons",
+   "group": "Glaive",
+   "tris": 658,
+   "size_studs": [
+    1.42,
+    0.34,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodGlaive.fbx",
+   "preview": "previews/Weapons/WoodGlaive.png"
+  },
+  {
+   "name": "StoneGlaive",
+   "category": "Weapons",
+   "group": "Glaive",
+   "tris": 658,
+   "size_studs": [
+    1.42,
+    0.34,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneGlaive.fbx",
+   "preview": "previews/Weapons/StoneGlaive.png"
+  },
+  {
+   "name": "IronGlaive",
+   "category": "Weapons",
+   "group": "Glaive",
+   "tris": 658,
+   "size_studs": [
+    1.42,
+    0.34,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronGlaive.fbx",
+   "preview": "previews/Weapons/IronGlaive.png"
+  },
+  {
+   "name": "GoldGlaive",
+   "category": "Weapons",
+   "group": "Glaive",
+   "tris": 680,
+   "size_studs": [
+    1.42,
+    0.46,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldGlaive.fbx",
+   "preview": "previews/Weapons/GoldGlaive.png"
+  },
+  {
+   "name": "DiamondGlaive",
+   "category": "Weapons",
+   "group": "Glaive",
+   "tris": 680,
+   "size_studs": [
+    1.42,
+    0.46,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondGlaive.fbx",
+   "preview": "previews/Weapons/DiamondGlaive.png"
+  },
+  {
+   "name": "EmeraldGlaive",
+   "category": "Weapons",
+   "group": "Glaive",
+   "tris": 680,
+   "size_studs": [
+    1.42,
+    0.46,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldGlaive.fbx",
+   "preview": "previews/Weapons/EmeraldGlaive.png"
+  },
+  {
+   "name": "RubyGlaive",
+   "category": "Weapons",
+   "group": "Glaive",
+   "tris": 680,
+   "size_studs": [
+    1.42,
+    0.46,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyGlaive.fbx",
+   "preview": "previews/Weapons/RubyGlaive.png"
+  },
+  {
+   "name": "RainbowGlaive",
+   "category": "Weapons",
+   "group": "Glaive",
+   "tris": 736,
+   "size_studs": [
+    1.42,
+    0.46,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowGlaive.fbx",
+   "preview": "previews/Weapons/RainbowGlaive.png"
+  },
+  {
+   "name": "WoodLance",
+   "category": "Weapons",
+   "group": "Lance",
+   "tris": 668,
+   "size_studs": [
+    1.9,
+    1.9,
+    7.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodLance.fbx",
+   "preview": "previews/Weapons/WoodLance.png"
+  },
+  {
+   "name": "StoneLance",
+   "category": "Weapons",
+   "group": "Lance",
+   "tris": 668,
+   "size_studs": [
+    1.9,
+    1.9,
+    7.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneLance.fbx",
+   "preview": "previews/Weapons/StoneLance.png"
+  },
+  {
+   "name": "IronLance",
+   "category": "Weapons",
+   "group": "Lance",
+   "tris": 668,
+   "size_studs": [
+    1.9,
+    1.9,
+    7.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronLance.fbx",
+   "preview": "previews/Weapons/IronLance.png"
+  },
+  {
+   "name": "GoldLance",
+   "category": "Weapons",
+   "group": "Lance",
+   "tris": 690,
+   "size_studs": [
+    1.9,
+    1.97,
+    7.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldLance.fbx",
+   "preview": "previews/Weapons/GoldLance.png"
+  },
+  {
+   "name": "DiamondLance",
+   "category": "Weapons",
+   "group": "Lance",
+   "tris": 690,
+   "size_studs": [
+    1.9,
+    1.97,
+    7.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondLance.fbx",
+   "preview": "previews/Weapons/DiamondLance.png"
+  },
+  {
+   "name": "EmeraldLance",
+   "category": "Weapons",
+   "group": "Lance",
+   "tris": 690,
+   "size_studs": [
+    1.9,
+    1.97,
+    7.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldLance.fbx",
+   "preview": "previews/Weapons/EmeraldLance.png"
+  },
+  {
+   "name": "RubyLance",
+   "category": "Weapons",
+   "group": "Lance",
+   "tris": 690,
+   "size_studs": [
+    1.9,
+    1.97,
+    7.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyLance.fbx",
+   "preview": "previews/Weapons/RubyLance.png"
+  },
+  {
+   "name": "RainbowLance",
+   "category": "Weapons",
+   "group": "Lance",
+   "tris": 774,
+   "size_studs": [
+    1.9,
+    1.97,
+    7.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowLance.fbx",
+   "preview": "previews/Weapons/RainbowLance.png"
+  },
+  {
+   "name": "WoodCutlass",
+   "category": "Weapons",
+   "group": "Cutlass",
+   "tris": 600,
+   "size_studs": [
+    1.09,
+    0.31,
+    4.49
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodCutlass.fbx",
+   "preview": "previews/Weapons/WoodCutlass.png"
+  },
+  {
+   "name": "StoneCutlass",
+   "category": "Weapons",
+   "group": "Cutlass",
+   "tris": 600,
+   "size_studs": [
+    1.09,
+    0.31,
+    4.49
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneCutlass.fbx",
+   "preview": "previews/Weapons/StoneCutlass.png"
+  },
+  {
+   "name": "IronCutlass",
+   "category": "Weapons",
+   "group": "Cutlass",
+   "tris": 600,
+   "size_studs": [
+    1.09,
+    0.31,
+    4.49
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronCutlass.fbx",
+   "preview": "previews/Weapons/IronCutlass.png"
+  },
+  {
+   "name": "GoldCutlass",
+   "category": "Weapons",
+   "group": "Cutlass",
+   "tris": 622,
+   "size_studs": [
+    1.09,
+    0.41,
+    4.49
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldCutlass.fbx",
+   "preview": "previews/Weapons/GoldCutlass.png"
+  },
+  {
+   "name": "DiamondCutlass",
+   "category": "Weapons",
+   "group": "Cutlass",
+   "tris": 622,
+   "size_studs": [
+    1.09,
+    0.41,
+    4.49
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondCutlass.fbx",
+   "preview": "previews/Weapons/DiamondCutlass.png"
+  },
+  {
+   "name": "EmeraldCutlass",
+   "category": "Weapons",
+   "group": "Cutlass",
+   "tris": 622,
+   "size_studs": [
+    1.09,
+    0.41,
+    4.49
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldCutlass.fbx",
+   "preview": "previews/Weapons/EmeraldCutlass.png"
+  },
+  {
+   "name": "RubyCutlass",
+   "category": "Weapons",
+   "group": "Cutlass",
+   "tris": 622,
+   "size_studs": [
+    1.09,
+    0.41,
+    4.49
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyCutlass.fbx",
+   "preview": "previews/Weapons/RubyCutlass.png"
+  },
+  {
+   "name": "RainbowCutlass",
+   "category": "Weapons",
+   "group": "Cutlass",
+   "tris": 622,
+   "size_studs": [
+    1.09,
+    0.41,
+    4.49
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowCutlass.fbx",
+   "preview": "previews/Weapons/RainbowCutlass.png"
+  },
+  {
+   "name": "WoodGauntlet",
+   "category": "Weapons",
+   "group": "Gauntlet",
+   "tris": 420,
+   "size_studs": [
+    1.26,
+    1.65,
+    2.08
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodGauntlet.fbx",
+   "preview": "previews/Weapons/WoodGauntlet.png"
+  },
+  {
+   "name": "StoneGauntlet",
+   "category": "Weapons",
+   "group": "Gauntlet",
+   "tris": 420,
+   "size_studs": [
+    1.26,
+    1.65,
+    2.08
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneGauntlet.fbx",
+   "preview": "previews/Weapons/StoneGauntlet.png"
+  },
+  {
+   "name": "IronGauntlet",
+   "category": "Weapons",
+   "group": "Gauntlet",
+   "tris": 420,
+   "size_studs": [
+    1.26,
+    1.65,
+    2.08
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronGauntlet.fbx",
+   "preview": "previews/Weapons/IronGauntlet.png"
+  },
+  {
+   "name": "GoldGauntlet",
+   "category": "Weapons",
+   "group": "Gauntlet",
+   "tris": 442,
+   "size_studs": [
+    1.26,
+    1.65,
+    2.21
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldGauntlet.fbx",
+   "preview": "previews/Weapons/GoldGauntlet.png"
+  },
+  {
+   "name": "DiamondGauntlet",
+   "category": "Weapons",
+   "group": "Gauntlet",
+   "tris": 442,
+   "size_studs": [
+    1.26,
+    1.65,
+    2.21
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondGauntlet.fbx",
+   "preview": "previews/Weapons/DiamondGauntlet.png"
+  },
+  {
+   "name": "EmeraldGauntlet",
+   "category": "Weapons",
+   "group": "Gauntlet",
+   "tris": 442,
+   "size_studs": [
+    1.26,
+    1.65,
+    2.21
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldGauntlet.fbx",
+   "preview": "previews/Weapons/EmeraldGauntlet.png"
+  },
+  {
+   "name": "RubyGauntlet",
+   "category": "Weapons",
+   "group": "Gauntlet",
+   "tris": 442,
+   "size_studs": [
+    1.26,
+    1.65,
+    2.21
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyGauntlet.fbx",
+   "preview": "previews/Weapons/RubyGauntlet.png"
+  },
+  {
+   "name": "RainbowGauntlet",
+   "category": "Weapons",
+   "group": "Gauntlet",
+   "tris": 554,
+   "size_studs": [
+    1.26,
+    1.65,
+    2.21
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowGauntlet.fbx",
+   "preview": "previews/Weapons/RainbowGauntlet.png"
+  },
+  {
+   "name": "WoodChakram",
+   "category": "Weapons",
+   "group": "Chakram",
+   "tris": 220,
+   "size_studs": [
+    2.9,
+    0.91,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodChakram.fbx",
+   "preview": "previews/Weapons/WoodChakram.png"
+  },
+  {
+   "name": "StoneChakram",
+   "category": "Weapons",
+   "group": "Chakram",
+   "tris": 220,
+   "size_studs": [
+    2.9,
+    0.91,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneChakram.fbx",
+   "preview": "previews/Weapons/StoneChakram.png"
+  },
+  {
+   "name": "IronChakram",
+   "category": "Weapons",
+   "group": "Chakram",
+   "tris": 220,
+   "size_studs": [
+    2.9,
+    0.91,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronChakram.fbx",
+   "preview": "previews/Weapons/IronChakram.png"
+  },
+  {
+   "name": "GoldChakram",
+   "category": "Weapons",
+   "group": "Chakram",
+   "tris": 264,
+   "size_studs": [
+    2.9,
+    0.91,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldChakram.fbx",
+   "preview": "previews/Weapons/GoldChakram.png"
+  },
+  {
+   "name": "DiamondChakram",
+   "category": "Weapons",
+   "group": "Chakram",
+   "tris": 264,
+   "size_studs": [
+    2.9,
+    0.91,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondChakram.fbx",
+   "preview": "previews/Weapons/DiamondChakram.png"
+  },
+  {
+   "name": "EmeraldChakram",
+   "category": "Weapons",
+   "group": "Chakram",
+   "tris": 264,
+   "size_studs": [
+    2.9,
+    0.91,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldChakram.fbx",
+   "preview": "previews/Weapons/EmeraldChakram.png"
+  },
+  {
+   "name": "RubyChakram",
+   "category": "Weapons",
+   "group": "Chakram",
+   "tris": 264,
+   "size_studs": [
+    2.9,
+    0.91,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyChakram.fbx",
+   "preview": "previews/Weapons/RubyChakram.png"
+  },
+  {
+   "name": "RainbowChakram",
+   "category": "Weapons",
+   "group": "Chakram",
+   "tris": 368,
+   "size_studs": [
+    2.9,
+    0.91,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowChakram.fbx",
+   "preview": "previews/Weapons/RainbowChakram.png"
+  },
+  {
+   "name": "WoodTomahawk",
+   "category": "Weapons",
+   "group": "Tomahawk",
+   "tris": 534,
+   "size_studs": [
+    1.84,
+    0.35,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodTomahawk.fbx",
+   "preview": "previews/Weapons/WoodTomahawk.png"
+  },
+  {
+   "name": "StoneTomahawk",
+   "category": "Weapons",
+   "group": "Tomahawk",
+   "tris": 534,
+   "size_studs": [
+    1.84,
+    0.35,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneTomahawk.fbx",
+   "preview": "previews/Weapons/StoneTomahawk.png"
+  },
+  {
+   "name": "IronTomahawk",
+   "category": "Weapons",
+   "group": "Tomahawk",
+   "tris": 534,
+   "size_studs": [
+    1.84,
+    0.35,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronTomahawk.fbx",
+   "preview": "previews/Weapons/IronTomahawk.png"
+  },
+  {
+   "name": "GoldTomahawk",
+   "category": "Weapons",
+   "group": "Tomahawk",
+   "tris": 534,
+   "size_studs": [
+    1.84,
+    0.35,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldTomahawk.fbx",
+   "preview": "previews/Weapons/GoldTomahawk.png"
+  },
+  {
+   "name": "DiamondTomahawk",
+   "category": "Weapons",
+   "group": "Tomahawk",
+   "tris": 534,
+   "size_studs": [
+    1.84,
+    0.35,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondTomahawk.fbx",
+   "preview": "previews/Weapons/DiamondTomahawk.png"
+  },
+  {
+   "name": "EmeraldTomahawk",
+   "category": "Weapons",
+   "group": "Tomahawk",
+   "tris": 534,
+   "size_studs": [
+    1.84,
+    0.35,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldTomahawk.fbx",
+   "preview": "previews/Weapons/EmeraldTomahawk.png"
+  },
+  {
+   "name": "RubyTomahawk",
+   "category": "Weapons",
+   "group": "Tomahawk",
+   "tris": 534,
+   "size_studs": [
+    1.84,
+    0.35,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyTomahawk.fbx",
+   "preview": "previews/Weapons/RubyTomahawk.png"
+  },
+  {
+   "name": "RainbowTomahawk",
+   "category": "Weapons",
+   "group": "Tomahawk",
+   "tris": 590,
+   "size_studs": [
+    1.84,
+    0.35,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowTomahawk.fbx",
+   "preview": "previews/Weapons/RainbowTomahawk.png"
+  },
+  {
+   "name": "WoodLaserBlaster",
+   "category": "Weapons",
+   "group": "LaserBlaster",
+   "tris": 424,
+   "size_studs": [
+    0.78,
+    3.42,
+    2.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodLaserBlaster.fbx",
+   "preview": "previews/Weapons/WoodLaserBlaster.png"
+  },
+  {
+   "name": "StoneLaserBlaster",
+   "category": "Weapons",
+   "group": "LaserBlaster",
+   "tris": 424,
+   "size_studs": [
+    0.78,
+    3.42,
+    2.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneLaserBlaster.fbx",
+   "preview": "previews/Weapons/StoneLaserBlaster.png"
+  },
+  {
+   "name": "IronLaserBlaster",
+   "category": "Weapons",
+   "group": "LaserBlaster",
+   "tris": 424,
+   "size_studs": [
+    0.78,
+    3.42,
+    2.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronLaserBlaster.fbx",
+   "preview": "previews/Weapons/IronLaserBlaster.png"
+  },
+  {
+   "name": "GoldLaserBlaster",
+   "category": "Weapons",
+   "group": "LaserBlaster",
+   "tris": 424,
+   "size_studs": [
+    0.78,
+    3.42,
+    2.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldLaserBlaster.fbx",
+   "preview": "previews/Weapons/GoldLaserBlaster.png"
+  },
+  {
+   "name": "DiamondLaserBlaster",
+   "category": "Weapons",
+   "group": "LaserBlaster",
+   "tris": 424,
+   "size_studs": [
+    0.78,
+    3.42,
+    2.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondLaserBlaster.fbx",
+   "preview": "previews/Weapons/DiamondLaserBlaster.png"
+  },
+  {
+   "name": "EmeraldLaserBlaster",
+   "category": "Weapons",
+   "group": "LaserBlaster",
+   "tris": 424,
+   "size_studs": [
+    0.78,
+    3.42,
+    2.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldLaserBlaster.fbx",
+   "preview": "previews/Weapons/EmeraldLaserBlaster.png"
+  },
+  {
+   "name": "RubyLaserBlaster",
+   "category": "Weapons",
+   "group": "LaserBlaster",
+   "tris": 424,
+   "size_studs": [
+    0.78,
+    3.42,
+    2.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyLaserBlaster.fbx",
+   "preview": "previews/Weapons/RubyLaserBlaster.png"
+  },
+  {
+   "name": "RainbowLaserBlaster",
+   "category": "Weapons",
+   "group": "LaserBlaster",
+   "tris": 536,
+   "size_studs": [
+    0.78,
+    3.42,
+    2.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowLaserBlaster.fbx",
+   "preview": "previews/Weapons/RainbowLaserBlaster.png"
+  },
+  {
+   "name": "FlameAxe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 640,
+   "size_studs": [
+    3.0,
+    0.58,
+    4.22
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "flame"
+   ],
+   "fbx": "exports/fbx/Weapons/FlameAxe.fbx",
+   "preview": "previews/Weapons/FlameAxe.png"
+  },
+  {
+   "name": "FlameScythe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 738,
+   "size_studs": [
+    2.05,
+    0.55,
+    6.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "flame"
+   ],
+   "fbx": "exports/fbx/Weapons/FlameScythe.fbx",
+   "preview": "previews/Weapons/FlameScythe.png"
+  },
+  {
+   "name": "FlameHammer",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 836,
+   "size_studs": [
+    2.54,
+    1.52,
+    5.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "flame"
+   ],
+   "fbx": "exports/fbx/Weapons/FlameHammer.fbx",
+   "preview": "previews/Weapons/FlameHammer.png"
+  },
+  {
+   "name": "FlameBow",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 222,
+   "size_studs": [
+    0.43,
+    1.1,
+    5.32
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "flame"
+   ],
+   "fbx": "exports/fbx/Weapons/FlameBow.fbx",
+   "preview": "previews/Weapons/FlameBow.png"
+  },
+  {
+   "name": "FrostAxe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 724,
+   "size_studs": [
+    3.0,
+    0.58,
+    3.97
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "frost"
+   ],
+   "fbx": "exports/fbx/Weapons/FrostAxe.fbx",
+   "preview": "previews/Weapons/FrostAxe.png"
+  },
+  {
+   "name": "FrostScythe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 822,
+   "size_studs": [
+    1.93,
+    0.55,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "frost"
+   ],
+   "fbx": "exports/fbx/Weapons/FrostScythe.fbx",
+   "preview": "previews/Weapons/FrostScythe.png"
+  },
+  {
+   "name": "FrostHammer",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 920,
+   "size_studs": [
+    2.54,
+    1.52,
+    4.82
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "frost"
+   ],
+   "fbx": "exports/fbx/Weapons/FrostHammer.fbx",
+   "preview": "previews/Weapons/FrostHammer.png"
+  },
+  {
+   "name": "FrostBow",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 390,
+   "size_studs": [
+    0.28,
+    1.07,
+    5.17
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "frost"
+   ],
+   "fbx": "exports/fbx/Weapons/FrostBow.fbx",
+   "preview": "previews/Weapons/FrostBow.png"
+  },
+  {
+   "name": "ThunderAxe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 646,
+   "size_studs": [
+    3.0,
+    0.58,
+    3.87
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "thunder"
+   ],
+   "fbx": "exports/fbx/Weapons/ThunderAxe.fbx",
+   "preview": "previews/Weapons/ThunderAxe.png"
+  },
+  {
+   "name": "ThunderScythe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 744,
+   "size_studs": [
+    1.91,
+    0.55,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "thunder"
+   ],
+   "fbx": "exports/fbx/Weapons/ThunderScythe.fbx",
+   "preview": "previews/Weapons/ThunderScythe.png"
+  },
+  {
+   "name": "ThunderHammer",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 842,
+   "size_studs": [
+    2.54,
+    1.52,
+    4.64
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "thunder"
+   ],
+   "fbx": "exports/fbx/Weapons/ThunderHammer.fbx",
+   "preview": "previews/Weapons/ThunderHammer.png"
+  },
+  {
+   "name": "ThunderBow",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 234,
+   "size_studs": [
+    0.26,
+    1.06,
+    5.29
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "thunder"
+   ],
+   "fbx": "exports/fbx/Weapons/ThunderBow.fbx",
+   "preview": "previews/Weapons/ThunderBow.png"
+  },
+  {
+   "name": "ShadowAxe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 640,
+   "size_studs": [
+    3.0,
+    0.58,
+    4.02
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "shadow"
+   ],
+   "fbx": "exports/fbx/Weapons/ShadowAxe.fbx",
+   "preview": "previews/Weapons/ShadowAxe.png"
+  },
+  {
+   "name": "ShadowScythe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 738,
+   "size_studs": [
+    2.1,
+    0.55,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "shadow"
+   ],
+   "fbx": "exports/fbx/Weapons/ShadowScythe.fbx",
+   "preview": "previews/Weapons/ShadowScythe.png"
+  },
+  {
+   "name": "ShadowHammer",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 836,
+   "size_studs": [
+    2.54,
+    1.52,
+    4.88
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "shadow"
+   ],
+   "fbx": "exports/fbx/Weapons/ShadowHammer.fbx",
+   "preview": "previews/Weapons/ShadowHammer.png"
+  },
+  {
+   "name": "ShadowBow",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 222,
+   "size_studs": [
+    0.49,
+    1.07,
+    5.22
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "shadow"
+   ],
+   "fbx": "exports/fbx/Weapons/ShadowBow.fbx",
+   "preview": "previews/Weapons/ShadowBow.png"
+  },
+  {
+   "name": "NatureAxe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 710,
+   "size_studs": [
+    3.0,
+    0.58,
+    4.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "nature"
+   ],
+   "fbx": "exports/fbx/Weapons/NatureAxe.fbx",
+   "preview": "previews/Weapons/NatureAxe.png"
+  },
+  {
+   "name": "NatureScythe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 808,
+   "size_studs": [
+    1.91,
+    0.55,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "nature"
+   ],
+   "fbx": "exports/fbx/Weapons/NatureScythe.fbx",
+   "preview": "previews/Weapons/NatureScythe.png"
+  },
+  {
+   "name": "NatureHammer",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 906,
+   "size_studs": [
+    2.54,
+    1.52,
+    4.94
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "nature"
+   ],
+   "fbx": "exports/fbx/Weapons/NatureHammer.fbx",
+   "preview": "previews/Weapons/NatureHammer.png"
+  },
+  {
+   "name": "NatureBow",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 362,
+   "size_studs": [
+    0.24,
+    1.12,
+    5.22
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "nature"
+   ],
+   "fbx": "exports/fbx/Weapons/NatureBow.fbx",
+   "preview": "previews/Weapons/NatureBow.png"
+  },
+  {
+   "name": "CrystalAxe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 724,
+   "size_studs": [
+    3.0,
+    0.58,
+    4.02
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "crystal"
+   ],
+   "fbx": "exports/fbx/Weapons/CrystalAxe.fbx",
+   "preview": "previews/Weapons/CrystalAxe.png"
+  },
+  {
+   "name": "CrystalScythe",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 822,
+   "size_studs": [
+    1.95,
+    0.55,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "crystal"
+   ],
+   "fbx": "exports/fbx/Weapons/CrystalScythe.fbx",
+   "preview": "previews/Weapons/CrystalScythe.png"
+  },
+  {
+   "name": "CrystalHammer",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 920,
+   "size_studs": [
+    2.54,
+    1.52,
+    4.88
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "crystal"
+   ],
+   "fbx": "exports/fbx/Weapons/CrystalHammer.fbx",
+   "preview": "previews/Weapons/CrystalHammer.png"
+  },
+  {
+   "name": "CrystalBow",
+   "category": "Weapons",
+   "group": "Legendary",
+   "tris": 390,
+   "size_studs": [
+    0.3,
+    1.07,
+    5.21
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "legendary",
+    "crystal"
+   ],
+   "fbx": "exports/fbx/Weapons/CrystalBow.fbx",
+   "preview": "previews/Weapons/CrystalBow.png"
+  },
+  {
+   "name": "Excalibur",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 578,
+   "size_studs": [
+    2.2,
+    0.44,
+    5.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/Excalibur.fbx",
+   "preview": "previews/Weapons/Excalibur.png"
+  },
+  {
+   "name": "SwordInStone",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 598,
+   "size_studs": [
+    4.72,
+    3.74,
+    7.74
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/SwordInStone.fbx",
+   "preview": "previews/Weapons/SwordInStone.png"
+  },
+  {
+   "name": "DragonSword",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 674,
+   "size_studs": [
+    2.6,
+    0.53,
+    5.82
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/DragonSword.fbx",
+   "preview": "previews/Weapons/DragonSword.png"
+  },
+  {
+   "name": "BlueEnergySword",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 208,
+   "size_studs": [
+    0.5,
+    0.4,
+    5.65
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/BlueEnergySword.fbx",
+   "preview": "previews/Weapons/BlueEnergySword.png"
+  },
+  {
+   "name": "RedEnergySword",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 208,
+   "size_studs": [
+    0.5,
+    0.4,
+    5.65
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/RedEnergySword.fbx",
+   "preview": "previews/Weapons/RedEnergySword.png"
+  },
+  {
+   "name": "GreenEnergySword",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 208,
+   "size_studs": [
+    0.5,
+    0.4,
+    5.65
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/GreenEnergySword.fbx",
+   "preview": "previews/Weapons/GreenEnergySword.png"
+  },
+  {
+   "name": "PurpleEnergySword",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 208,
+   "size_studs": [
+    0.5,
+    0.4,
+    5.65
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/PurpleEnergySword.fbx",
+   "preview": "previews/Weapons/PurpleEnergySword.png"
+  },
+  {
+   "name": "BaseballBat",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 138,
+   "size_studs": [
+    0.56,
+    0.56,
+    3.75
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/BaseballBat.fbx",
+   "preview": "previews/Weapons/BaseballBat.png"
+  },
+  {
+   "name": "SpikedBat",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 258,
+   "size_studs": [
+    0.86,
+    0.89,
+    3.75
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/SpikedBat.fbx",
+   "preview": "previews/Weapons/SpikedBat.png"
+  },
+  {
+   "name": "FryingPan",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 112,
+   "size_studs": [
+    2.5,
+    3.3,
+    2.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/FryingPan.fbx",
+   "preview": "previews/Weapons/FryingPan.png"
+  },
+  {
+   "name": "CandyCaneSword",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 658,
+   "size_studs": [
+    1.0,
+    0.31,
+    5.42
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/CandyCaneSword.fbx",
+   "preview": "previews/Weapons/CandyCaneSword.png"
+  },
+  {
+   "name": "Banhammer",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 1264,
+   "size_studs": [
+    3.3,
+    1.84,
+    4.99
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/Banhammer.fbx",
+   "preview": "previews/Weapons/Banhammer.png"
+  },
+  {
+   "name": "Kunai",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 96,
+   "size_studs": [
+    0.46,
+    0.16,
+    2.78
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/Kunai.fbx",
+   "preview": "previews/Weapons/Kunai.png"
+  },
+  {
+   "name": "Sai",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 430,
+   "size_studs": [
+    1.2,
+    0.26,
+    3.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/Sai.fbx",
+   "preview": "previews/Weapons/Sai.png"
+  },
+  {
+   "name": "Nunchucks",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 148,
+   "size_studs": [
+    1.3,
+    0.3,
+    2.13
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/Nunchucks.fbx",
+   "preview": "previews/Weapons/Nunchucks.png"
+  },
+  {
+   "name": "Katar",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 92,
+   "size_studs": [
+    0.9,
+    0.35,
+    3.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/Katar.fbx",
+   "preview": "previews/Weapons/Katar.png"
+  },
+  {
+   "name": "LollipopMace",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 868,
+   "size_studs": [
+    2.2,
+    0.5,
+    5.02
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/LollipopMace.fbx",
+   "preview": "previews/Weapons/LollipopMace.png"
+  },
+  {
+   "name": "FishSword",
+   "category": "Weapons",
+   "group": "Special",
+   "tris": 476,
+   "size_studs": [
+    1.2,
+    0.46,
+    4.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "special"
+   ],
+   "fbx": "exports/fbx/Weapons/FishSword.fbx",
+   "preview": "previews/Weapons/FishSword.png"
   }
  ],
  "Furniture": [
@@ -18990,6 +20834,1208 @@
    ],
    "fbx": "exports/fbx/Vehicles/Blimp.fbx",
    "preview": "previews/Vehicles/Blimp.png"
+  },
+  {
+   "name": "RedSupercar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1336,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "RedSupercar_WheelFL",
+    "RedSupercar_WheelFR",
+    "RedSupercar_WheelBL",
+    "RedSupercar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RedSupercar.fbx",
+   "preview": "previews/Vehicles/RedSupercar.png"
+  },
+  {
+   "name": "YellowSupercar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1336,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "YellowSupercar_WheelFL",
+    "YellowSupercar_WheelFR",
+    "YellowSupercar_WheelBL",
+    "YellowSupercar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/YellowSupercar.fbx",
+   "preview": "previews/Vehicles/YellowSupercar.png"
+  },
+  {
+   "name": "OrangeSupercar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1336,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "OrangeSupercar_WheelFL",
+    "OrangeSupercar_WheelFR",
+    "OrangeSupercar_WheelBL",
+    "OrangeSupercar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/OrangeSupercar.fbx",
+   "preview": "previews/Vehicles/OrangeSupercar.png"
+  },
+  {
+   "name": "BlackSupercar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1336,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "BlackSupercar_WheelFL",
+    "BlackSupercar_WheelFR",
+    "BlackSupercar_WheelBL",
+    "BlackSupercar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlackSupercar.fbx",
+   "preview": "previews/Vehicles/BlackSupercar.png"
+  },
+  {
+   "name": "WhiteSupercar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1336,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "WhiteSupercar_WheelFL",
+    "WhiteSupercar_WheelFR",
+    "WhiteSupercar_WheelBL",
+    "WhiteSupercar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhiteSupercar.fbx",
+   "preview": "previews/Vehicles/WhiteSupercar.png"
+  },
+  {
+   "name": "GreenSupercar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1336,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenSupercar_WheelFL",
+    "GreenSupercar_WheelFR",
+    "GreenSupercar_WheelBL",
+    "GreenSupercar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenSupercar.fbx",
+   "preview": "previews/Vehicles/GreenSupercar.png"
+  },
+  {
+   "name": "BlueSupercar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1336,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueSupercar_WheelFL",
+    "BlueSupercar_WheelFR",
+    "BlueSupercar_WheelBL",
+    "BlueSupercar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueSupercar.fbx",
+   "preview": "previews/Vehicles/BlueSupercar.png"
+  },
+  {
+   "name": "PurpleSupercar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1336,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "PurpleSupercar_WheelFL",
+    "PurpleSupercar_WheelFR",
+    "PurpleSupercar_WheelBL",
+    "PurpleSupercar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/PurpleSupercar.fbx",
+   "preview": "previews/Vehicles/PurpleSupercar.png"
+  },
+  {
+   "name": "RedMuscleCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1796,
+   "size_studs": [
+    5.15,
+    11.35,
+    3.28
+   ],
+   "rigged": false,
+   "parts": [
+    "RedMuscleCar_WheelFL",
+    "RedMuscleCar_WheelFR",
+    "RedMuscleCar_WheelBL",
+    "RedMuscleCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RedMuscleCar.fbx",
+   "preview": "previews/Vehicles/RedMuscleCar.png"
+  },
+  {
+   "name": "BlueMuscleCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1796,
+   "size_studs": [
+    5.15,
+    11.35,
+    3.28
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueMuscleCar_WheelFL",
+    "BlueMuscleCar_WheelFR",
+    "BlueMuscleCar_WheelBL",
+    "BlueMuscleCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueMuscleCar.fbx",
+   "preview": "previews/Vehicles/BlueMuscleCar.png"
+  },
+  {
+   "name": "BlackMuscleCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1796,
+   "size_studs": [
+    5.15,
+    11.35,
+    3.28
+   ],
+   "rigged": false,
+   "parts": [
+    "BlackMuscleCar_WheelFL",
+    "BlackMuscleCar_WheelFR",
+    "BlackMuscleCar_WheelBL",
+    "BlackMuscleCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlackMuscleCar.fbx",
+   "preview": "previews/Vehicles/BlackMuscleCar.png"
+  },
+  {
+   "name": "OrangeMuscleCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1796,
+   "size_studs": [
+    5.15,
+    11.35,
+    3.28
+   ],
+   "rigged": false,
+   "parts": [
+    "OrangeMuscleCar_WheelFL",
+    "OrangeMuscleCar_WheelFR",
+    "OrangeMuscleCar_WheelBL",
+    "OrangeMuscleCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/OrangeMuscleCar.fbx",
+   "preview": "previews/Vehicles/OrangeMuscleCar.png"
+  },
+  {
+   "name": "GreenMuscleCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1796,
+   "size_studs": [
+    5.15,
+    11.35,
+    3.28
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenMuscleCar_WheelFL",
+    "GreenMuscleCar_WheelFR",
+    "GreenMuscleCar_WheelBL",
+    "GreenMuscleCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenMuscleCar.fbx",
+   "preview": "previews/Vehicles/GreenMuscleCar.png"
+  },
+  {
+   "name": "WhiteMuscleCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1796,
+   "size_studs": [
+    5.15,
+    11.35,
+    3.28
+   ],
+   "rigged": false,
+   "parts": [
+    "WhiteMuscleCar_WheelFL",
+    "WhiteMuscleCar_WheelFR",
+    "WhiteMuscleCar_WheelBL",
+    "WhiteMuscleCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhiteMuscleCar.fbx",
+   "preview": "previews/Vehicles/WhiteMuscleCar.png"
+  },
+  {
+   "name": "BlackSUV",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1640,
+   "size_studs": [
+    5.35,
+    11.5,
+    5.15
+   ],
+   "rigged": false,
+   "parts": [
+    "BlackSUV_WheelFL",
+    "BlackSUV_WheelFR",
+    "BlackSUV_WheelBL",
+    "BlackSUV_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlackSUV.fbx",
+   "preview": "previews/Vehicles/BlackSUV.png"
+  },
+  {
+   "name": "WhiteSUV",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1640,
+   "size_studs": [
+    5.35,
+    11.5,
+    5.15
+   ],
+   "rigged": false,
+   "parts": [
+    "WhiteSUV_WheelFL",
+    "WhiteSUV_WheelFR",
+    "WhiteSUV_WheelBL",
+    "WhiteSUV_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhiteSUV.fbx",
+   "preview": "previews/Vehicles/WhiteSUV.png"
+  },
+  {
+   "name": "RedSUV",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1640,
+   "size_studs": [
+    5.35,
+    11.5,
+    5.15
+   ],
+   "rigged": false,
+   "parts": [
+    "RedSUV_WheelFL",
+    "RedSUV_WheelFR",
+    "RedSUV_WheelBL",
+    "RedSUV_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RedSUV.fbx",
+   "preview": "previews/Vehicles/RedSUV.png"
+  },
+  {
+   "name": "BlueSUV",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1640,
+   "size_studs": [
+    5.35,
+    11.5,
+    5.15
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueSUV_WheelFL",
+    "BlueSUV_WheelFR",
+    "BlueSUV_WheelBL",
+    "BlueSUV_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueSUV.fbx",
+   "preview": "previews/Vehicles/BlueSUV.png"
+  },
+  {
+   "name": "GreenSUV",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1640,
+   "size_studs": [
+    5.35,
+    11.5,
+    5.15
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenSUV_WheelFL",
+    "GreenSUV_WheelFR",
+    "GreenSUV_WheelBL",
+    "GreenSUV_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenSUV.fbx",
+   "preview": "previews/Vehicles/GreenSUV.png"
+  },
+  {
+   "name": "TanSUV",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1640,
+   "size_studs": [
+    5.35,
+    11.5,
+    5.15
+   ],
+   "rigged": false,
+   "parts": [
+    "TanSUV_WheelFL",
+    "TanSUV_WheelFR",
+    "TanSUV_WheelBL",
+    "TanSUV_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/TanSUV.fbx",
+   "preview": "previews/Vehicles/TanSUV.png"
+  },
+  {
+   "name": "WhiteMinivan",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    11.0,
+    4.52
+   ],
+   "rigged": false,
+   "parts": [
+    "WhiteMinivan_WheelFL",
+    "WhiteMinivan_WheelFR",
+    "WhiteMinivan_WheelBL",
+    "WhiteMinivan_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhiteMinivan.fbx",
+   "preview": "previews/Vehicles/WhiteMinivan.png"
+  },
+  {
+   "name": "BlueMinivan",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    11.0,
+    4.52
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueMinivan_WheelFL",
+    "BlueMinivan_WheelFR",
+    "BlueMinivan_WheelBL",
+    "BlueMinivan_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueMinivan.fbx",
+   "preview": "previews/Vehicles/BlueMinivan.png"
+  },
+  {
+   "name": "RedMinivan",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    11.0,
+    4.52
+   ],
+   "rigged": false,
+   "parts": [
+    "RedMinivan_WheelFL",
+    "RedMinivan_WheelFR",
+    "RedMinivan_WheelBL",
+    "RedMinivan_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RedMinivan.fbx",
+   "preview": "previews/Vehicles/RedMinivan.png"
+  },
+  {
+   "name": "GreenMinivan",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    11.0,
+    4.52
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenMinivan_WheelFL",
+    "GreenMinivan_WheelFR",
+    "GreenMinivan_WheelBL",
+    "GreenMinivan_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenMinivan.fbx",
+   "preview": "previews/Vehicles/GreenMinivan.png"
+  },
+  {
+   "name": "YellowCompactCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1504,
+   "size_studs": [
+    4.55,
+    8.0,
+    3.82
+   ],
+   "rigged": false,
+   "parts": [
+    "YellowCompactCar_WheelFL",
+    "YellowCompactCar_WheelFR",
+    "YellowCompactCar_WheelBL",
+    "YellowCompactCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/YellowCompactCar.fbx",
+   "preview": "previews/Vehicles/YellowCompactCar.png"
+  },
+  {
+   "name": "PinkCompactCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1504,
+   "size_studs": [
+    4.55,
+    8.0,
+    3.82
+   ],
+   "rigged": false,
+   "parts": [
+    "PinkCompactCar_WheelFL",
+    "PinkCompactCar_WheelFR",
+    "PinkCompactCar_WheelBL",
+    "PinkCompactCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/PinkCompactCar.fbx",
+   "preview": "previews/Vehicles/PinkCompactCar.png"
+  },
+  {
+   "name": "BlueCompactCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1504,
+   "size_studs": [
+    4.55,
+    8.0,
+    3.82
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueCompactCar_WheelFL",
+    "BlueCompactCar_WheelFR",
+    "BlueCompactCar_WheelBL",
+    "BlueCompactCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueCompactCar.fbx",
+   "preview": "previews/Vehicles/BlueCompactCar.png"
+  },
+  {
+   "name": "GreenCompactCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1504,
+   "size_studs": [
+    4.55,
+    8.0,
+    3.82
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenCompactCar_WheelFL",
+    "GreenCompactCar_WheelFR",
+    "GreenCompactCar_WheelBL",
+    "GreenCompactCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenCompactCar.fbx",
+   "preview": "previews/Vehicles/GreenCompactCar.png"
+  },
+  {
+   "name": "OrangeCompactCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1504,
+   "size_studs": [
+    4.55,
+    8.0,
+    3.82
+   ],
+   "rigged": false,
+   "parts": [
+    "OrangeCompactCar_WheelFL",
+    "OrangeCompactCar_WheelFR",
+    "OrangeCompactCar_WheelBL",
+    "OrangeCompactCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/OrangeCompactCar.fbx",
+   "preview": "previews/Vehicles/OrangeCompactCar.png"
+  },
+  {
+   "name": "PurpleCompactCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1504,
+   "size_studs": [
+    4.55,
+    8.0,
+    3.82
+   ],
+   "rigged": false,
+   "parts": [
+    "PurpleCompactCar_WheelFL",
+    "PurpleCompactCar_WheelFR",
+    "PurpleCompactCar_WheelBL",
+    "PurpleCompactCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/PurpleCompactCar.fbx",
+   "preview": "previews/Vehicles/PurpleCompactCar.png"
+  },
+  {
+   "name": "RedClassicCar",
+   "category": "Vehicles",
+   "group": "Classics",
+   "tris": 1628,
+   "size_studs": [
+    4.92,
+    10.08,
+    4.4
+   ],
+   "rigged": false,
+   "parts": [
+    "RedClassicCar_WheelFL",
+    "RedClassicCar_WheelFR",
+    "RedClassicCar_WheelBL",
+    "RedClassicCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RedClassicCar.fbx",
+   "preview": "previews/Vehicles/RedClassicCar.png"
+  },
+  {
+   "name": "BlackClassicCar",
+   "category": "Vehicles",
+   "group": "Classics",
+   "tris": 1628,
+   "size_studs": [
+    4.92,
+    10.08,
+    4.4
+   ],
+   "rigged": false,
+   "parts": [
+    "BlackClassicCar_WheelFL",
+    "BlackClassicCar_WheelFR",
+    "BlackClassicCar_WheelBL",
+    "BlackClassicCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlackClassicCar.fbx",
+   "preview": "previews/Vehicles/BlackClassicCar.png"
+  },
+  {
+   "name": "BlueClassicCar",
+   "category": "Vehicles",
+   "group": "Classics",
+   "tris": 1628,
+   "size_studs": [
+    4.92,
+    10.08,
+    4.4
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueClassicCar_WheelFL",
+    "BlueClassicCar_WheelFR",
+    "BlueClassicCar_WheelBL",
+    "BlueClassicCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueClassicCar.fbx",
+   "preview": "previews/Vehicles/BlueClassicCar.png"
+  },
+  {
+   "name": "WhiteClassicCar",
+   "category": "Vehicles",
+   "group": "Classics",
+   "tris": 1628,
+   "size_studs": [
+    4.92,
+    10.08,
+    4.4
+   ],
+   "rigged": false,
+   "parts": [
+    "WhiteClassicCar_WheelFL",
+    "WhiteClassicCar_WheelFR",
+    "WhiteClassicCar_WheelBL",
+    "WhiteClassicCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhiteClassicCar.fbx",
+   "preview": "previews/Vehicles/WhiteClassicCar.png"
+  },
+  {
+   "name": "TanClassicCar",
+   "category": "Vehicles",
+   "group": "Classics",
+   "tris": 1628,
+   "size_studs": [
+    4.92,
+    10.08,
+    4.4
+   ],
+   "rigged": false,
+   "parts": [
+    "TanClassicCar_WheelFL",
+    "TanClassicCar_WheelFR",
+    "TanClassicCar_WheelBL",
+    "TanClassicCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/TanClassicCar.fbx",
+   "preview": "previews/Vehicles/TanClassicCar.png"
+  },
+  {
+   "name": "PoliceSUV",
+   "category": "Vehicles",
+   "group": "Service",
+   "tris": 2588,
+   "size_studs": [
+    5.35,
+    11.5,
+    5.32
+   ],
+   "rigged": false,
+   "parts": [
+    "PoliceSUV_WheelFL",
+    "PoliceSUV_WheelFR",
+    "PoliceSUV_WheelBL",
+    "PoliceSUV_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/PoliceSUV.fbx",
+   "preview": "previews/Vehicles/PoliceSUV.png"
+  },
+  {
+   "name": "PoliceInterceptor",
+   "category": "Vehicles",
+   "group": "Service",
+   "tris": 2372,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "PoliceInterceptor_WheelFL",
+    "PoliceInterceptor_WheelFR",
+    "PoliceInterceptor_WheelBL",
+    "PoliceInterceptor_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/PoliceInterceptor.fbx",
+   "preview": "previews/Vehicles/PoliceInterceptor.png"
+  },
+  {
+   "name": "StripedSupercar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1424,
+   "size_studs": [
+    5.22,
+    10.78,
+    2.94
+   ],
+   "rigged": false,
+   "parts": [
+    "StripedSupercar_WheelFL",
+    "StripedSupercar_WheelFR",
+    "StripedSupercar_WheelBL",
+    "StripedSupercar_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/StripedSupercar.fbx",
+   "preview": "previews/Vehicles/StripedSupercar.png"
+  },
+  {
+   "name": "RallyCar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1928,
+   "size_studs": [
+    4.95,
+    9.2,
+    4.25
+   ],
+   "rigged": false,
+   "parts": [
+    "RallyCar_WheelFL",
+    "RallyCar_WheelFR",
+    "RallyCar_WheelBL",
+    "RallyCar_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RallyCar.fbx",
+   "preview": "previews/Vehicles/RallyCar.png"
+  },
+  {
+   "name": "DriftCar",
+   "category": "Vehicles",
+   "group": "Supercars",
+   "tris": 1756,
+   "size_studs": [
+    5.4,
+    10.2,
+    2.63
+   ],
+   "rigged": false,
+   "parts": [
+    "DriftCar_WheelFL",
+    "DriftCar_WheelFR",
+    "DriftCar_WheelBL",
+    "DriftCar_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/DriftCar.fbx",
+   "preview": "previews/Vehicles/DriftCar.png"
+  },
+  {
+   "name": "DuneBuggy",
+   "category": "Vehicles",
+   "group": "Offroad",
+   "tris": 1152,
+   "size_studs": [
+    6.12,
+    8.1,
+    4.72
+   ],
+   "rigged": false,
+   "parts": [
+    "DuneBuggy_WheelFL",
+    "DuneBuggy_WheelFR",
+    "DuneBuggy_WheelBL",
+    "DuneBuggy_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/DuneBuggy.fbx",
+   "preview": "previews/Vehicles/DuneBuggy.png"
+  },
+  {
+   "name": "Lowrider",
+   "category": "Vehicles",
+   "group": "Classics",
+   "tris": 1536,
+   "size_studs": [
+    5.15,
+    12.6,
+    2.71
+   ],
+   "rigged": false,
+   "parts": [
+    "Lowrider_WheelFL",
+    "Lowrider_WheelFR",
+    "Lowrider_WheelBL",
+    "Lowrider_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Lowrider.fbx",
+   "preview": "previews/Vehicles/Lowrider.png"
+  },
+  {
+   "name": "HotRod",
+   "category": "Vehicles",
+   "group": "Classics",
+   "tris": 1260,
+   "size_studs": [
+    5.82,
+    8.6,
+    4.1
+   ],
+   "rigged": false,
+   "parts": [
+    "HotRod_WheelFL",
+    "HotRod_WheelFR",
+    "HotRod_WheelBL",
+    "HotRod_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/HotRod.fbx",
+   "preview": "previews/Vehicles/HotRod.png"
+  },
+  {
+   "name": "OffroadTruck",
+   "category": "Vehicles",
+   "group": "Offroad",
+   "tris": 1932,
+   "size_studs": [
+    5.55,
+    12.0,
+    6.07
+   ],
+   "rigged": false,
+   "parts": [
+    "OffroadTruck_WheelFL",
+    "OffroadTruck_WheelFR",
+    "OffroadTruck_WheelBL",
+    "OffroadTruck_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/OffroadTruck.fbx",
+   "preview": "previews/Vehicles/OffroadTruck.png"
+  },
+  {
+   "name": "ArmoredTruck",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 2948,
+   "size_studs": [
+    5.22,
+    13.49,
+    6.4
+   ],
+   "rigged": false,
+   "parts": [
+    "ArmoredTruck_WheelFL",
+    "ArmoredTruck_WheelFR",
+    "ArmoredTruck_WheelBL",
+    "ArmoredTruck_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/ArmoredTruck.fbx",
+   "preview": "previews/Vehicles/ArmoredTruck.png"
+  },
+  {
+   "name": "FoodTruck",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 1948,
+   "size_studs": [
+    5.97,
+    13.1,
+    7.43
+   ],
+   "rigged": false,
+   "parts": [
+    "FoodTruck_WheelFL",
+    "FoodTruck_WheelFR",
+    "FoodTruck_WheelBL",
+    "FoodTruck_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/FoodTruck.fbx",
+   "preview": "previews/Vehicles/FoodTruck.png"
+  },
+  {
+   "name": "CamperRV",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 2000,
+   "size_studs": [
+    5.26,
+    18.1,
+    6.55
+   ],
+   "rigged": false,
+   "parts": [
+    "CamperRV_WheelFL",
+    "CamperRV_WheelFR",
+    "CamperRV_WheelBL",
+    "CamperRV_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/CamperRV.fbx",
+   "preview": "previews/Vehicles/CamperRV.png"
+  },
+  {
+   "name": "MailTruck",
+   "category": "Vehicles",
+   "group": "Service",
+   "tris": 1968,
+   "size_studs": [
+    5.02,
+    10.1,
+    5.11
+   ],
+   "rigged": false,
+   "parts": [
+    "MailTruck_WheelFL",
+    "MailTruck_WheelFR",
+    "MailTruck_WheelBL",
+    "MailTruck_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/MailTruck.fbx",
+   "preview": "previews/Vehicles/MailTruck.png"
+  },
+  {
+   "name": "TukTuk",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 900,
+   "size_studs": [
+    4.52,
+    6.65,
+    5.35
+   ],
+   "rigged": false,
+   "parts": [
+    "TukTuk_WheelF",
+    "TukTuk_WheelBL",
+    "TukTuk_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/TukTuk.fbx",
+   "preview": "previews/Vehicles/TukTuk.png"
+  },
+  {
+   "name": "HoverCar",
+   "category": "Vehicles",
+   "group": "SciFi",
+   "tris": 652,
+   "size_studs": [
+    4.74,
+    9.68,
+    2.65
+   ],
+   "rigged": false,
+   "parts": [
+    "HoverCar_Hover"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/HoverCar.fbx",
+   "preview": "previews/Vehicles/HoverCar.png"
+  },
+  {
+   "name": "DeliveryScooter",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 656,
+   "size_studs": [
+    2.28,
+    3.7,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [
+    "DeliveryScooter_WheelF",
+    "DeliveryScooter_WheelB"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/DeliveryScooter.fbx",
+   "preview": "previews/Vehicles/DeliveryScooter.png"
   }
  ],
  "Buildings": [
