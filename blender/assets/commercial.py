@@ -1525,11 +1525,12 @@ def _grand_bank(m):
         blk(m, (W - 4.0 - k * 2.0, 1.4, 0.5), (0, Y0 - 7.8 + k * 1.2, 0.25 + k * 0.5), "marble", bev=0.05)
     for x in (-19.0, -12.0, -5.2, 5.2, 12.0, 19.0):
         column(m, x, Y0 - 4.0, 0.5, zt + 1.0)
-    blk(m, (W + 2.0, 8.0, 2.2), (0, Y0 - 3.6, zt + 2.1), "marble", bev=0.1)
-    text(m, "BANK", 0, Y0 - 7.62, zt + 2.1, px=0.36, depth=0.25, col="brass")
-    m.prism([(-(W / 2 + 1.0), 0), (W / 2 + 1.0, 0), (0, 5.0)], depth=8.0, color="marble", rot=(90, 0, 0),
-            loc=(0, Y0 - 3.6, zt + 3.2), smooth=False)
-    m.prism([(-5.0, 0), (5.0, 0), (0, 2.6)], depth=0.3, color="brass", rot=(90, 0, 0), loc=(0, Y0 - 7.7, zt + 3.6))
+    with m.group("Roof"):   # the portico roof lifts off with the main roof for the inside view
+        blk(m, (W + 2.0, 8.0, 2.2), (0, Y0 - 3.6, zt + 2.1), "marble", bev=0.1)
+        text(m, "BANK", 0, Y0 - 7.62, zt + 2.1, px=0.36, depth=0.25, col="brass")
+        m.prism([(-(W / 2 + 1.0), 0), (W / 2 + 1.0, 0), (0, 5.0)], depth=8.0, color="marble", rot=(90, 0, 0),
+                loc=(0, Y0 - 3.6, zt + 3.2), smooth=False)
+        m.prism([(-5.0, 0), (5.0, 0), (0, 2.6)], depth=0.3, color="brass", rot=(90, 0, 0), loc=(0, Y0 - 7.7, zt + 3.6))
     # vault partition with a staff door; the vault door itself stands in front of the opening
     wall(m, "x", 10.5, -W / 2 + T, W / 2 - T, FL, zt, -1, [(FL + 3.0, "marble_green"), (None, "wall_cream")],
          "vault", "marble", holes=[(-4.2, 4.2, FL, FL + 8.8), (15.0, 18.5, FL, FL + 8.0)], t=0.8, zcuts=(FL + 3.0,))

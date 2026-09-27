@@ -44,16 +44,19 @@ def conveyor(m, L=12.0, w=4.0, h=2.4, belt="rubber", frame="stainless", arrows="
 
 
 def conveyor_corner(m, w=4.0, h=2.4):
-    """Quarter turn: in from -Y, out towards +X."""
-    R = w / 2 + 2.0
+    """Square corner piece: items come in from -Y and leave towards +X (belt is its own part)."""
     with m.group("Belt"):
-        m.torus(R=R, r=w / 2, seg=6, rseg=4, arc=90, color="rubber", loc=(-R + w / 2 + 2.0, 0, h),
-                scale=(1, 1, 0.06), rot=(0, 0, -90))
-    for k in range(7):
-        a = math.radians(-90 + k * 15)
-        blk(m, (0.4, 0.8, 1.2), (-R + w / 2 + 2.0 + (R + w / 2 + 0.2) * math.cos(a), (R + w / 2 + 0.2) * math.sin(a),
-                                 h - 0.2), "stainless", rot=(0, 0, math.degrees(a)))
-    blk(m, (0.5, 0.5, h - 0.8), (-R + w / 2 + 2.0 + R * 0.7, -R * 0.7, (h - 0.8) / 2), "charcoal")
+        blk(m, (w, w, 0.25), (0, 0, h), "rubber")
+        m.prism([(-0.8, -1.0), (0.4, -1.0), (0.4, 0.2), (1.0, 0.2), (0.0, 1.1), (-1.0, 0.2), (-0.4, 0.2),
+                 (-0.4, -0.4), (-0.8, -0.4)], depth=0.05, color="neon_yellow", loc=(0, 0, h + 0.15), rot=(0, 0, -45))
+    blk(m, (0.4, w + 0.4, 1.2), (-(w / 2 + 0.2), 0.2, h - 0.2), "stainless", bev=0.05)
+    blk(m, (w + 0.8, 0.4, 1.2), (0.2, w / 2 + 0.2, h - 0.2), "stainless", bev=0.05)
+    blk(m, (0.3, w + 0.4, 0.6), (-(w / 2 + 0.25), 0.2, h + 0.7), "plastic_yellow")
+    blk(m, (w + 0.8, 0.3, 0.6), (0.2, w / 2 + 0.25, h + 0.7), "plastic_yellow")
+    blk(m, (w, w, 0.5), (0, 0, h - 0.4), "stainless")
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            blk(m, (0.4, 0.4, h - 0.8), (sx * (w / 2 - 0.4), sy * (w / 2 - 0.4), (h - 0.8) / 2), "charcoal")
 
 
 def dropper(m, T, tier, h=10.0):
@@ -476,8 +479,8 @@ def _daily_chest(m):
         for x in (-1.4, 0, 1.4):
             blk(m, (0.3, 2.7, 2.1), (x, 0, 1.0), "gold")
         blk(m, (0.8, 0.3, 0.9), (0, -1.4, 1.9), "gold_light")
-    sign(m, "DAILY", 0, -3.0, 9.0, board="plastic_red", letters="white", px=0.4)
-    blk(m, (0.4, 0.4, 3.4), (0, -2.5, 5.9), "charcoal")
+    sign(m, "DAILY", 0, 2.4, 9.4, board="plastic_red", letters="white", px=0.4)
+    blk(m, (0.4, 0.4, 5.0), (0, 2.7, 5.2), "charcoal")
 
 
 def _quest_board(m):
