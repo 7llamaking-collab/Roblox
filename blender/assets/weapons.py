@@ -464,3 +464,374 @@ for _name, _fn, _grip in (("Wand", tier_wand, (0, 0, 0.3)), ("Crossbow", tier_cr
     for _tier in ORDER:
         add(f"{_tier}{_name}", CAT, (lambda m, f=_fn, t=_tier: f(m, TIERS[t], t)), sub=_name,
             origin=_grip, tags=["tiered", _tier.lower()])
+
+
+# =====================================================================================
+# Batch 3: glaives, lances, cutlasses, gauntlets, chakrams, tomahawks, laser blasters
+# (x 8 tiers), elemental axes / scythes / hammers / bows, and special & fun weapons
+# =====================================================================================
+import random  # noqa: E402
+
+from studlib.font import text  # noqa: E402
+
+
+def _edge(T):
+    return solid(T, "light", "white")
+
+
+def tier_glaive(m, T, tier):
+    handle(m, T, 0.0, 5.4, r=0.09, grip=(1.3, 2.5))
+    m.box((0.3, 0.3, 0.4), color=T["accent"], bevel=0.05, loc=(0, 0, 5.45))
+    blade = [(-0.2, 0.0), (0.3, 0.15), (0.55, 1.1), (0.5, 2.1), (0.15, 3.0), (-0.05, 2.3), (-0.15, 1.2)]
+    m.prism(blade, depth=0.12, rot=(90, 0, 0), loc=(0, 0, 5.6), **paint(T, "main", "z", 5.6, 8.6))
+    m.tube([(0.32, 0, 5.8), (0.57, 0, 6.7), (0.52, 0, 7.7), (0.17, 0, 8.55)], [0.05, 0.05, 0.05, 0.02], seg=4,
+           color=_edge(T))
+    m.pyramid(w=0.25, h=0.6, color=T["dark"], loc=(-0.2, 0, 5.9), rot=(0, -90, 0))
+    for k in range(2):
+        m.box((0.14, 0.14, 0.6), color=T["grip2"], loc=(0.25, 0.12 * k, 5.1 - 0.2 * k))
+    if tier in GEM_TIERS:
+        m.gem(r=0.1, h=0.1, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.17, 5.45))
+
+
+def tier_lance(m, T, tier):
+    handle(m, T, -0.3, 1.2, r=0.12, grip=(-0.2, 1.0))
+    m.lathe([(0.9, 0.0), (0.95, 0.15), (0.5, 0.5), (0.16, 0.6), (0, 0.6)], seg=8, color=T["accent"], loc=(0, 0, 1.2))
+    m.lathe([(0.34, 0), (0.26, 2.0), (0.14, 4.4), (0, 5.6)], seg=6, loc=(0, 0, 1.75), smooth=False,
+            **paint(T, "main", "z", 1.75, 7.35))
+    for z in (2.6, 4.2):
+        m.cyl(r=0.3 - (z - 1.75) * 0.03, h=0.12, seg=6, color=T["dark"], loc=(0, 0, z))
+    if tier in GEM_TIERS:
+        m.gem(r=0.12, h=0.12, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.9, 1.35))
+
+
+def tier_cutlass(m, T, tier):
+    handle(m, T, -0.6, 0.45, r=0.1, grip=(-0.5, 0.35))
+    pts_r, pts_l = [], []
+    n = 8
+    for i in range(n + 1):
+        t = i / n
+        xc = 0.55 * t * t
+        w = 0.24 * (1 - 0.35 * t) if i < n else 0.0
+        z = 0.6 + 3.2 * t
+        pts_r.append((xc + w, z))
+        pts_l.append((xc - w * 0.6, z))
+    outline = pts_r + list(reversed(pts_l[:-1]))
+    m.prism(outline, depth=0.08, rot=(90, 0, 0), **paint(T, "main", "z", 0.6, 3.8))
+    m.tube([(x + 0.02, 0, z) for x, z in pts_r[:-1]], [0.035] * n, seg=4, color=_edge(T))
+    m.box((1.0, 0.3, 0.18), color=T["accent"], bevel=0.05, loc=(0.05, 0, 0.52))
+    m.tube([(0.5, 0, 0.5), (0.55, 0, 0.1), (0.4, 0, -0.4), (0.12, 0, -0.65)], [0.05] * 4, seg=4, color=T["accent"])
+    if tier in GEM_TIERS:
+        m.gem(r=0.08, h=0.08, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.17, 0.52))
+
+
+def tier_gauntlet(m, T, tier):
+    """Fist weapon worn on the hand (knuckles face -Y); origin at the palm."""
+    m.box((0.9, 0.9, 1.1), color=T["dark"], bevel=0.12, loc=(0, 0.2, -0.9))                    # cuff
+    m.box((0.95, 0.95, 0.2), color=T["accent"], bevel=0.05, loc=(0, 0.2, -0.3))
+    m.box((1.0, 0.9, 0.8), bevel=0.14, loc=(0, 0.0, 0.2), **paint(T, "main", "z", -0.2, 0.6))  # hand
+    for i in range(4):
+        m.box((0.22, 0.45, 0.35), bevel=0.06, color=T["main"] if T["main"] != "RAINBOW" else "rb_red",
+              loc=(-0.36 + i * 0.24, -0.45, 0.45))
+        m.pyramid(w=0.16, h=0.3, color=_edge(T), loc=(-0.36 + i * 0.24, -0.68, 0.5), rot=(90, 0, 0))
+    m.box((0.25, 0.5, 0.3), bevel=0.06, color=T["dark"], loc=(0.55, -0.2, 0.15), rot=(0, 0, 20))    # thumb
+    m.box((1.05, 0.2, 0.4), color=T["accent"], bevel=0.05, loc=(0, -0.42, 0.2))
+    if tier in GEM_TIERS:
+        m.gem(r=0.14, h=0.14, seg=6, color=solid(T, "gem"), loc=(0, 0.0, 0.62))
+
+
+def tier_chakram(m, T, tier):
+    m.torus(R=0.9, r=0.12, seg=8, rseg=4, rot=(90, 0, 22.5), **paint(T, "main", "x", -1.0, 1.0))
+    for i in range(8):
+        a = math.radians(45 * i)
+        m.pyramid(w=0.22, h=0.45, color=_edge(T), loc=(math.cos(a) * 1.0, 0, math.sin(a) * 1.0),
+                  rot=(0, 90 - 45 * i, 0))
+    m.torus(R=0.62, r=0.05, seg=8, rseg=4, rot=(90, 0, 22.5), color=T["dark"])
+    m.box((0.5, 0.26, 0.26), color=T["grip"], bevel=0.05, loc=(0, 0, -0.75))
+    if tier in GEM_TIERS:
+        for x in (-0.62, 0.62):
+            m.gem(r=0.09, h=0.09, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(x, -0.1, 0))
+
+
+def tier_tomahawk(m, T, tier):
+    handle(m, T, 0.0, 2.8, r=0.09, grip=(0.1, 0.9))
+    blade = [(0.0, -0.25), (0.35, -0.2), (0.9, -0.55), (1.05, 0.0), (0.9, 0.55), (0.35, 0.2), (0.0, 0.25)]
+    m.prism(blade, depth=0.12, rot=(90, 0, 0), loc=(0.1, 0, 2.55), **paint(T, "main", "x", 0.1, 1.2))
+    m.tube([(0.98, 0, 2.05), (1.15, 0, 2.55), (0.98, 0, 3.05)], [0.04, 0.04, 0.04], seg=4, color=_edge(T))
+    m.box((0.35, 0.3, 0.5), color=T["accent"], bevel=0.05, loc=(0, 0, 2.55))
+    m.pyramid(w=0.2, h=0.5, color=T["dark"], loc=(-0.15, 0, 2.55), rot=(0, -90, 0))
+    for k, c in enumerate(("fabric_red", "white", "fabric_red")):
+        m.box((0.08, 0.2, 0.7), color=c, loc=(-0.1 + k * 0.06, 0.1, 1.9 - k * 0.1), rot=(0, 10 - k * 10, 0))
+
+
+def tier_blaster(m, T, tier):
+    """Sci-fi blaster: barrel points -Y, grip down; origin in the grip."""
+    m.box((0.5, 0.45, 1.2), color=T["grip"], bevel=0.08, loc=(0, 0.25, 0.3), rot=(-15, 0, 0))
+    m.box((0.6, 2.2, 0.8), bevel=0.14, loc=(0, -0.4, 1.1), **paint(T, "main", "y", -1.5, 0.7))
+    m.box((0.4, 1.2, 0.3), color=T["dark"], bevel=0.06, loc=(0, -0.4, 1.6))
+    m.cyl(r=0.26, h=1.4, seg=8, color=T["dark"], rot=(90, 0, 0), loc=(0, -1.9, 1.15))
+    m.cyl(r=0.2, h=0.2, seg=8, color=solid(T, "gem", "neon_blue"), rot=(90, 0, 0), loc=(0, -2.62, 1.15))
+    for y in (-2.2, -1.6):
+        m.cyl(r=0.34, h=0.12, seg=8, color=T["accent"], rot=(90, 0, 0), loc=(0, y, 1.15))
+    m.box((0.62, 0.8, 0.3), color=solid(T, "gem", "neon_green"), bevel=0.05, loc=(0, 0.2, 1.05))
+    for s in (-1, 1):
+        m.box((0.1, 0.8, 0.5), color=T["accent"], bevel=0.03, loc=(s * 0.34, 0.2, 1.3), rot=(-20, 0, 0))
+    m.torus(R=0.25, r=0.05, seg=6, color=T["dark"], rot=(0, 90, 0), loc=(0, -0.2, 0.55))
+
+
+for _name, _fn, _grip in (("Glaive", tier_glaive, (0, 0, 1.8)), ("Lance", tier_lance, (0, 0, 0.4)),
+                          ("Cutlass", tier_cutlass, (0, 0, 0)), ("Gauntlet", tier_gauntlet, "center"),
+                          ("Chakram", tier_chakram, "center"), ("Tomahawk", tier_tomahawk, (0, 0, 0.5)),
+                          ("LaserBlaster", tier_blaster, (0, 0.25, 0.3))):
+    for _tier in ORDER:
+        add(f"{_tier}{_name}", CAT, (lambda m, f=_fn, t=_tier: f(m, TIERS[t], t)), sub=_name,
+            origin=_grip, tags=["tiered", _tier.lower()])
+
+
+# --- elemental legendaries: axes, scythes, hammers, bows ------------------------------------------
+def elem_deco(m, name, loc, s=1.0, rot=0.0):
+    """Little element flourish (flames, ice spikes, bolt, shadow spikes, leaves, crystals) at loc."""
+    x, y, z = loc
+    with m.at((x, y, z), rot):
+        if name == "Flame":
+            for k, (dx, h) in enumerate(((-0.2, 0.5), (0.0, 0.75), (0.2, 0.45))):
+                m.pyramid(w=0.22 * s, h=h * s, color="fire" if k % 2 else "fire_light", loc=(dx * s, 0, 0))
+        elif name == "Frost":
+            for k, a in enumerate((-30, 0, 30)):
+                m.crystal(r=0.08 * s, h=(0.5 if k == 1 else 0.35) * s, color="diamond_light" if k == 1 else "ice",
+                          rot=(0, a, 0))
+        elif name == "Thunder":
+            bolt = [(0.2, 1.0), (-0.5, -0.05), (0.0, -0.05), (-0.25, -1.0), (0.55, 0.2), (0.05, 0.2), (0.4, 1.0)]
+            m.prism(bolt, depth=0.08, color="plastic_yellow", rot=(90, 0, 0), scale=0.35 * s)
+        elif name == "Shadow":
+            for a in (-40, 0, 40):
+                m.pyramid(w=0.14 * s, h=0.55 * s, color="amethyst", rot=(0, a, 0))
+        elif name == "Nature":
+            for a in (-50, 50):
+                m.leaf(length=0.6 * s, width=0.3 * s, thick=0.05, color="leaf_light", rot=(90, 0, a))
+        else:
+            for k, a in enumerate((-35, 0, 35)):
+                m.crystal(r=0.08 * s, h=(0.55 if k == 1 else 0.35) * s, color="amethyst" if k != 1 else "diamond_light",
+                          rot=(0, a, 0))
+
+
+def _eT(E):
+    return dict(handle=E["guard"], grip=E["grip"], grip2=E["accent"], accent=E["accent"])
+
+
+def legend_axe(m, name, E):
+    handle(m, _eT(E), 0.0, 3.4, r=0.11, grip=(0.1, 1.2))
+    for s in (-1, 1):
+        blade = [(0.0, -0.35), (0.5, -0.3), (1.2, -0.85), (1.35, 0.0), (1.2, 0.85), (0.5, 0.3), (0.0, 0.35)]
+        m.prism([(s * x, y) for x, y in (blade if s > 0 else list(reversed(blade)))], depth=0.14, rot=(90, 0, 0),
+                loc=(s * 0.1, 0, 3.0), color=E["main"])
+        m.tube([(s * 1.25, 0, 2.2), (s * 1.45, 0, 3.0), (s * 1.25, 0, 3.8)], [0.05] * 3, seg=4, color=E["edge"])
+    m.box((0.45, 0.4, 0.8), color=E["accent"], bevel=0.08, loc=(0, 0, 3.0))
+    m.gem(r=0.14, h=0.14, seg=6, color=E["gem"], rot=(90, 0, 0), loc=(0, -0.24, 3.0))
+    elem_deco(m, name, (0, 0, 3.45), 1.0)
+
+
+def legend_scythe(m, name, E):
+    handle(m, _eT(E), 0.0, 5.2, r=0.1, grip=(0.8, 2.0))
+    pts, rad = [], []
+    for i in range(9):
+        t = i / 8
+        a = math.radians(90 + 110 * t)
+        pts.append((1.6 * math.cos(a) * -1 + 0.0, 0, 5.1 + 0.9 * math.sin(a) - 0.9 * t))
+        f = (1 - t) ** 0.7
+        rad.append((0.28 * f + 0.02, 0.07) if i < 8 else 0)
+    m.tube(pts, rad, seg=4, up=(0, 1, 0), smooth=False, color=E["main"])
+    m.tube([(p[0], 0.0, p[2] - 0.22) for p in pts[:-1]], [0.04] * 8, seg=4, color=E["edge"])
+    m.box((0.4, 0.4, 0.7), color=E["accent"], bevel=0.08, loc=(0, 0, 5.2))
+    m.gem(r=0.13, h=0.13, seg=6, color=E["gem"], rot=(90, 0, 0), loc=(0, -0.22, 5.2))
+    elem_deco(m, name, (0, 0, 5.55), 1.1)
+
+
+def legend_hammer(m, name, E):
+    handle(m, _eT(E), 0.0, 3.2, r=0.12, grip=(0.1, 1.3))
+    m.box((2.2, 1.2, 1.2), color=E["main"], bevel=0.18, loc=(0, 0, 3.6))
+    for s in (-1, 1):
+        m.box((0.3, 1.35, 1.35), color=E["guard"], bevel=0.08, loc=(s * 1.0, 0, 3.6))
+        m.box((0.2, 0.9, 0.9), color=E["edge"], bevel=0.05, loc=(s * 1.17, 0, 3.6))
+    m.box((0.8, 1.25, 0.3), color=E["accent"], bevel=0.05, loc=(0, 0, 3.6))
+    m.gem(r=0.2, h=0.18, seg=6, color=E["gem"], rot=(90, 0, 0), loc=(0, -0.66, 3.6))
+    elem_deco(m, name, (0, 0, 4.2), 1.2)
+
+
+def legend_bow(m, name, E):
+    pts, rad = [], []
+    for i in range(13):
+        t = i / 12
+        z = -2.1 + 4.2 * t
+        y = -0.6 * math.cos(math.pi * (t - 0.5)) + 0.15 * abs(2 * t - 1) ** 5
+        pts.append((0, y, z))
+        rad.append((0.09 - 0.04 * abs(2 * t - 1), 0.11 - 0.05 * abs(2 * t - 1)))
+    m.tube(pts, rad, seg=4, up=(1, 0, 0), color=E["main"])
+    m.tube([(0, pts[-1][1] + 0.02, pts[-1][2] - 0.05), (0, pts[0][1] + 0.02, pts[0][2] + 0.05)], [0.025] * 2, seg=4,
+           color=E["edge"], smooth=False)
+    m.cyl(r=0.14, h=0.8, seg=6, color=E["grip"], loc=(0, pts[6][1], 0), bevel=0.03)
+    m.gem(r=0.12, h=0.12, seg=6, color=E["gem"], rot=(90, 0, 0), loc=(0, pts[6][1] - 0.15, 0))
+    for p in (pts[0], pts[-1]):
+        elem_deco(m, name, (0, p[1], p[2] + (0.1 if p[2] > 0 else -0.5)), 0.7)
+
+
+for _e, _E in ELEMENTS.items():
+    for _kind, _fn, _o in (("Axe", legend_axe, (0, 0, 0.6)), ("Scythe", legend_scythe, (0, 0, 1.4)),
+                           ("Hammer", legend_hammer, (0, 0, 0.6)), ("Bow", legend_bow, (0, 0, 0))):
+        add(f"{_e}{_kind}", CAT, (lambda m, e=_e, E=_E, f=_fn: f(m, e, E)), sub="Legendary", origin=_o,
+            tags=["legendary", _e.lower()])
+
+
+# --- special & fun weapons -----------------------------------------------------------------
+def excalibur(m):
+    T = dict(handle="fabric_navy", grip="fabric_navy", grip2="gold", accent="gold")
+    handle(m, T, -0.8, 0.45, r=0.1, grip=(-0.7, 0.38))
+    m.gem(r=0.18, h=0.2, seg=6, color="sapphire", loc=(0, 0, -1.0))
+    for s in (-1, 1):
+        m.prism([(0, 0), (0.9, 0.35), (1.1, 0.7), (0.6, 0.45), (0.0, 0.3)], depth=0.2, color="gold",
+                rot=(90, 0, 0), loc=(0, 0, 0.45), scale=(s, 1, 1))
+    m.gem(r=0.14, h=0.14, seg=6, color="sapphire", rot=(90, 0, 0), loc=(0, -0.14, 0.62))
+    m.tube([(0, 0, 0.7), (0, 0, 1.2), (0, 0, 3.9), (0, 0, 4.6)], [(0.26, 0.07), (0.27, 0.075), (0.24, 0.07), 0], seg=4,
+           up=(0, 1, 0), smooth=False, color="chrome")
+    m.box((0.07, 0.16, 2.8), color="gold", loc=(0, 0, 2.3), smooth=False)
+
+
+def sword_in_stone(m):
+    m.ico(r=2.2, sub=1, color=lambda c, n: "moss" if n.z > 0.6 else "stone", loc=(0, 0, 1.0), scale=(1.2, 1.0, 0.7),
+          deform=lambda co: co.__class__((co.x, co.y, co.z)), smooth=False)
+    with m.at((0, 0, 2.6)):
+        excalibur(m)
+
+
+def dragon_sword(m):
+    T = dict(handle="obsidian", grip="rug_red", grip2="gold", accent="gold")
+    handle(m, T, -0.75, 0.45, r=0.11, grip=(-0.62, 0.38))
+    m.box((0.4, 0.5, 0.35), color="ruby_dark", bevel=0.08, loc=(0, 0, -0.95))
+    for s in (-1, 1):
+        m.box((0.08, 0.05, 0.08), color="gold_light", loc=(s * 0.12, -0.26, -0.9))
+        m.prism([(0, 0), (1.3, 0.6), (1.1, 0.2), (0.9, 0.35), (0.7, 0.05), (0.4, 0.2)], depth=0.12, color="ruby_dark",
+                rot=(90, 0, 0), loc=(0, 0, 0.45), scale=(s, 1, 1))
+    m.tube([(0, 0, 0.6), (0, 0, 1.2), (0, 0, 3.8), (0, 0, 4.7)], [(0.3, 0.08), (0.32, 0.09), (0.26, 0.08), 0], seg=4,
+           up=(0, 1, 0), smooth=False, color="ruby")
+    for s in (-1, 1):
+        m.tube([(s * 0.31, 0, 1.1), (s * 0.26, 0, 3.8), (s * 0.05, 0, 4.6)], [0.04, 0.04, 0.02], seg=4, color="fire")
+        for k in range(3):
+            m.pyramid(w=0.16, h=0.3, color="ruby_dark", loc=(s * 0.33, 0, 1.5 + k * 0.8), rot=(0, s * 90, 0))
+
+
+def energy_sword(m, col):
+    m.cyl(r=0.14, h=1.3, seg=8, color="chrome", loc=(0, 0, 0))
+    for z in (-0.4, -0.1, 0.2):
+        m.cyl(r=0.16, h=0.12, seg=8, color="charcoal", loc=(0, 0, z))
+    m.box((0.3, 0.14, 0.2), color=col, loc=(0.15, -0.1, 0.3))
+    m.cyl(r=0.2, h=0.2, seg=8, color="charcoal", loc=(0, 0, 0.72))
+    m.box((0.22, 0.22, 4.2), color=col, loc=(0, 0, 2.9), bevel=0.06)
+    m.box((0.1, 0.1, 4.0), color="white", loc=(0, 0, 2.9))
+
+
+def baseball_bat(m, spiked=False):
+    m.lathe([(0.12, -0.6), (0.14, -0.5), (0.1, -0.45), (0.1, 0.8), (0.2, 1.8), (0.28, 2.8), (0.27, 3.1), (0, 3.15)],
+            seg=8, color="wood_pale")
+    m.cyl(r=0.13, h=0.9, seg=8, color="charcoal", loc=(0, 0, -0.05))
+    if spiked:
+        rnd = random.Random(4)
+        for i in range(10):
+            a = rnd.uniform(0, 2 * math.pi)
+            z = rnd.uniform(2.0, 3.0)
+            m.box((0.05, 0.05, 0.35), color="iron", loc=(0.27 * math.cos(a), 0.27 * math.sin(a), z),
+                  rot=(0, 90, math.degrees(a)))
+
+
+def frying_pan(m):
+    m.cyl(r=0.2, r2=0.14, h=2.0, seg=6, color="charcoal", rot=(90, 0, 0), loc=(0, 0.9, 0))
+    m.lathe([(0, 0), (1.1, 0), (1.25, 0.3), (1.15, 0.3), (1.0, 0.1), (0, 0.1)], seg=8, color="iron_dark",
+            rot=(90, 0, 0), loc=(0, -1.1, 0))
+    m.cyl(r=0.95, h=0.05, seg=8, color="steel", rot=(90, 0, 0), loc=(0, -1.22, 0))
+
+
+def candy_cane_sword(m):
+    handle(m, dict(handle="plastic_red", grip="white", grip2="plastic_red", accent="plastic_green"), -0.6, 0.4, r=0.1,
+           grip=(-0.5, 0.35))
+    m.box((1.0, 0.3, 0.25), color="plastic_green", bevel=0.08, loc=(0, 0, 0.5))
+    m.box((0.5, 0.18, 3.6), color=lambda c, n: "plastic_red" if int((c.z + c.x * 0.6) / 0.35) % 2 else "white",
+          loc=(0, 0, 2.4), cuts={"z": 0.35}, bevel=0.06)
+    m.pyramid(w=0.5, h=0.6, color="white", loc=(0, 0, 4.2), scale=(1, 0.36, 1))
+
+
+def banhammer(m):
+    handle(m, dict(handle="wood_dark", grip="leather", grip2="charcoal", accent="iron"), 0.0, 3.6, r=0.14,
+           grip=(0.1, 1.4))
+    m.box((3.2, 1.6, 1.6), color="plastic_red", bevel=0.2, loc=(0, 0, 4.1))
+    for s in (-1, 1):
+        m.box((0.3, 1.75, 1.75), color="iron", bevel=0.08, loc=(s * 1.5, 0, 4.1))
+    text(m, "BAN", 0, -0.82, 4.1, px=0.2, depth=0.1, col="white")
+    with m.at((0, 0, 4.1), 180):
+        text(m, "BAN", 0, -0.82, 0, px=0.2, depth=0.1, col="white")
+
+
+def kunai(m):
+    m.torus(R=0.18, r=0.05, seg=8, color="charcoal", rot=(90, 0, 0), loc=(0, 0, -0.75))
+    m.cyl(r=0.08, h=0.9, seg=6, color="fabric_navy", loc=(0, 0, -0.15))
+    m.prism([(0, 0), (0.22, 0.4), (0, 1.5), (-0.22, 0.4)], depth=0.06, color="gunmetal", rot=(90, 0, 0),
+            loc=(0, 0, 0.3))
+
+
+def sai(m):
+    handle(m, dict(handle="charcoal", grip="fabric_red", grip2="charcoal", accent="silver"), -0.6, 0.2, r=0.08,
+           grip=(-0.5, 0.15))
+    m.box((0.16, 0.16, 2.6), color="silver", loc=(0, 0, 1.5), bevel=0.03)
+    m.pyramid(w=0.16, h=0.3, color="silver", loc=(0, 0, 2.8))
+    for s in (-1, 1):
+        m.tube([(0, 0, 0.3), (s * 0.45, 0, 0.35), (s * 0.55, 0, 0.9)], [0.05] * 3, seg=4, color="silver")
+
+
+def nunchucks(m):
+    for x in (-0.5, 0.5):
+        m.cyl(r=0.13, h=1.6, seg=8, color="wood_dark", loc=(x, 0, 0))
+        m.cyl(r=0.15, h=0.12, seg=8, color="gold", loc=(x, 0, 0.8))
+    m.tube([(-0.5, 0, 0.85), (-0.3, 0, 1.2), (0, 0, 1.3), (0.3, 0, 1.2), (0.5, 0, 0.85)], [0.03] * 5, seg=4,
+           color="iron")
+
+
+def katar(m):
+    for s in (-1, 1):
+        m.box((0.12, 0.3, 1.0), color="gold", loc=(s * 0.35, 0, 0.0))
+    for z in (-0.15, 0.15):
+        m.cyl(r=0.07, h=0.7, seg=6, color="leather", rot=(0, 90, 0), loc=(0, 0, z))
+    m.box((0.9, 0.35, 0.2), color="gold", loc=(0, 0, 0.55))
+    m.prism([(-0.4, 0), (0.4, 0), (0.1, 1.6), (0, 1.9), (-0.1, 1.6)], depth=0.08, color="steel", rot=(90, 0, 0),
+            loc=(0, 0, 0.6))
+
+
+def lollipop_mace(m):
+    handle(m, dict(handle="white", grip="plastic_pink", grip2="white", accent="plastic_pink"), 0.0, 3.0, r=0.1,
+           grip=(0.1, 1.2))
+    m.cyl(r=1.1, h=0.5, seg=8, rot=(90, 0, 0), loc=(0, 0, 3.9), bevel=0.1,
+          color=lambda c, n: ["candy_pink", "white", "candy_blue", "lemon"][int((math.degrees(math.atan2(c.z - 3.9, c.x))
+                                                                              + 360 + math.hypot(c.x, c.z - 3.9) * 90) / 45) % 4])
+
+
+def fish_sword(m):
+    handle(m, dict(handle="wood_mid", grip="rope", grip2="wood_dark", accent="wood_dark"), -0.6, 0.4, r=0.1,
+           grip=(-0.5, 0.35))
+    m.prism([(0, 0), (0.45, 0.35), (0.5, 1.5), (0.35, 2.6), (0, 3.1), (-0.35, 2.6), (-0.5, 1.5), (-0.45, 0.35)],
+            depth=0.35, color=lambda c, n: "fish_orange" if abs(n.y) < 0.5 else ("offwhite" if c.x > 0.1 else "fish_orange"),
+            rot=(90, 0, 0), loc=(0, 0, 1.0))
+    m.prism([(0, 0), (0.6, -0.5), (-0.6, -0.5)], depth=0.1, color="fish_orange", rot=(90, 0, 0), loc=(0, 0, 0.95))
+    for s in (-1, 1):
+        m.box((0.15, 0.1, 0.15), color="eye_black", loc=(0.15, s * 0.18, 3.5))
+    m.box((0.1, 0.4, 0.1), color="black", loc=(0, 0, 3.85))
+
+
+for _n, _f, _o in (("Excalibur", excalibur, (0, 0, 0)), ("SwordInStone", sword_in_stone, "bottom"),
+                   ("DragonSword", dragon_sword, (0, 0, 0)),
+                   ("BlueEnergySword", lambda m: energy_sword(m, "neon_blue"), (0, 0, 0)),
+                   ("RedEnergySword", lambda m: energy_sword(m, "neon_red"), (0, 0, 0)),
+                   ("GreenEnergySword", lambda m: energy_sword(m, "neon_green"), (0, 0, 0)),
+                   ("PurpleEnergySword", lambda m: energy_sword(m, "neon_purple"), (0, 0, 0)),
+                   ("BaseballBat", lambda m: baseball_bat(m), (0, 0, 0)),
+                   ("SpikedBat", lambda m: baseball_bat(m, True), (0, 0, 0)),
+                   ("FryingPan", frying_pan, (0, 1.2, 0)), ("CandyCaneSword", candy_cane_sword, (0, 0, 0)),
+                   ("Banhammer", banhammer, (0, 0, 0.6)), ("Kunai", kunai, (0, 0, -0.15)), ("Sai", sai, (0, 0, -0.2)),
+                   ("Nunchucks", nunchucks, "center"), ("Katar", katar, (0, 0, 0)),
+                   ("LollipopMace", lollipop_mace, (0, 0, 0.6)), ("FishSword", fish_sword, (0, 0, 0))):
+    add(_n, CAT, _f, sub="Special", origin=_o, tags=["special"])

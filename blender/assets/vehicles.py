@@ -936,3 +936,352 @@ def _blimp(m):
 
 
 reg("Blimp", _blimp, sub="Aircraft")
+
+
+# ============================================================================
+# Batch 4: supercars, muscle cars, SUVs, minivans, compacts, classics (in colours)
+# and specials: police SUV, interceptor, rally, drift, buggy, lowrider, hot rod...
+# ============================================================================
+from studlib.font import text  # noqa: E402
+
+
+def side_text(m, s, W, y, z, col="white", px=0.14):
+    """Pixel lettering on both flanks of a vehicle."""
+    for sx, ang in ((1, 90), (-1, -90)):
+        with m.at((sx * (W / 2 + 0.02), y, z), ang):
+            text(m, s, 0, 0, 0, px=px, depth=0.08, col=col)
+
+
+def supercar(m, col, trim="charcoal", police=False, stripe=None):
+    L, W, r = 10.4, 4.8, 0.8
+    z0 = 0.35 + r * 0.2
+    zt = z0 + 1.0
+    cube(m, (W, L, 1.0), (0, 0, z0 + 0.5), col, bev=0.3)
+    m.wedge((W - 0.2, 3.2, 0.6), color=col, loc=(0, -L / 2 + 1.7, zt + 0.3), rot=(0, 0, 180))
+    cube(m, (W * 0.78, 3.2, 0.9), (0, 0.9, zt + 0.45), col, bev=0.35)
+    glass_box(m, W * 0.78, 3.2, 0.9, (0, 0.9, zt + 0.42))
+    m.wedge((W * 0.76, 1.4, 0.88), color="window_blue", loc=(0, -1.4, zt + 0.44), rot=(0, 0, 180))
+    m.wedge((W * 0.8, 2.2, 0.7), color=col, loc=(0, 3.4, zt + 0.35))
+    cube(m, (W + 0.2, 1.1, 0.16), (0, L / 2 - 0.6, zt + 1.35), trim, bev=0.04)
+    for s in (-1, 1):
+        cube(m, (0.2, 0.3, 1.0), (s * 1.5, L / 2 - 0.6, zt + 0.8), trim, bev=0.04)
+        cube(m, (0.12, 1.8, 0.55), (s * (W / 2 + 0.02), 1.9, z0 + 0.6), "black", bev=0.03)
+        cube(m, (0.9, 0.12, 0.2), (s * (W / 2 - 0.7), -L / 2 - 0.02, z0 + 0.75), "glow", bev=0.03)
+        cube(m, (1.2, 0.12, 0.2), (s * (W / 2 - 0.8), L / 2 + 0.02, z0 + 0.75), "neon_red", bev=0.03)
+        m.cyl(r=0.18, h=0.4, seg=6, color="chrome", rot=(90, 0, 0), loc=(s * 0.5, L / 2 + 0.1, z0 + 0.25))
+    cube(m, (W * 0.6, 0.12, 0.3), (0, -L / 2 - 0.02, z0 + 0.3), "black", bev=0.03)
+    if stripe:
+        for s in (-1, 1):
+            cube(m, (0.45, L * 0.55, 0.05), (s * 0.45, 0.4, zt + 0.93), stripe, bev=0.01)
+    if police:
+        cube(m, (1.8, 0.5, 0.3), (0, 0.9, zt + 1.0), "charcoal", bev=0.05)
+        cube(m, (0.8, 0.46, 0.24), (0.45, 0.9, zt + 1.2), "plastic_blue", bev=0.05)
+        cube(m, (0.8, 0.46, 0.24), (-0.45, 0.9, zt + 1.2), "neon_red", bev=0.05)
+        side_text(m, "POLICE", W, 0.4, z0 + 0.55, "white", 0.13)
+    four_wheels(m, W, -L / 2 + 2.2, L / 2 - 2.3, r=r, w=0.8, hub="chrome")
+
+
+def muscle(m, col, stripe="white"):
+    def ex(m, d):
+        for s in (-1, 1):
+            cube(m, (0.5, d["L"] + 0.02, 0.05), (s * 0.45, 0, d["top"] + 0.01), stripe, bev=0.01)
+            cube(m, (0.5, d["cab_l"] * 0.95, 0.05), (s * 0.45, d["cab_y"], d["top"] + d["cab_h"] - 0.03), stripe, bev=0.01)
+            m.cyl(r=0.2, h=0.5, seg=6, color="chrome", rot=(90, 0, 0), loc=(s * 1.4, d["yb"] + 0.2, d["z0"] + 0.25))
+        cube(m, (1.4, 1.6, 0.45), (0, d["yf"] + 2.0, d["top"] + 0.2), "charcoal", bev=0.1)
+        cube(m, (1.2, 0.1, 0.3), (0, d["yf"] + 1.2, d["top"] + 0.25), "black")
+        cube(m, (d["W"] * 0.9, 0.5, 0.14), (0, d["yb"] - 0.3, d["top"] + 0.1), col, bev=0.04)
+        cube(m, (d["W"] * 0.6, 0.1, 0.5), (0, d["yf"] - 0.04, d["bz"]), "chrome", bev=0.03)
+    car(m, L=10.6, W=4.6, body_h=1.35, clear=0.45, col=col, cab_l=3.2, cab_h=1.3, cab_y=1.4, r=0.9, extras=ex,
+        bumper="chrome")
+
+
+def suv(m, col, police=False):
+    def ex(m, d):
+        for s in (-1, 1):
+            cube(m, (0.2, d["cab_l"] * 0.9, 0.2), (s * (d["W"] * 0.38), d["cab_y"], d["top"] + d["cab_h"] + 0.15),
+                 "charcoal", bev=0.04)
+        m.cyl(r=0.85, h=0.5, seg=10, color="rubber", rot=(90, 0, 0), loc=(0, d["yb"] + 0.35, d["bz"] + 0.6), bevel=0.08)
+        cube(m, (d["W"] * 0.55, 0.1, 0.8), (0, d["yf"] - 0.03, d["bz"] + 0.1), "chrome", bev=0.03)
+        if police:
+            _police(m, d)
+            side_text(m, "POLICE", d["W"], 0.4, d["bz"] + 0.05, "white", 0.14)
+    car(m, L=10.6, W=4.8, body_h=2.0, clear=0.9, col=col, cab_l=6.6, cab_h=1.8, cab_y=0.9, r=1.0, extras=ex,
+        roof="charcoal" if not police else None)
+
+
+def minivan(m, col):
+    def ex(m, d):
+        for s in (-1, 1):
+            cube(m, (0.06, 0.1, d["cab_h"] + 1.2), (s * (d["W"] / 2 + 0.01), 0.6, d["top"] + 0.1), "charcoal", bev=0.01)
+            cube(m, (0.1, 0.8, 0.14), (s * (d["W"] / 2 + 0.05), 1.0, d["bz"] + 0.5), "charcoal", bev=0.03)
+    car(m, L=10.4, W=4.6, body_h=1.8, clear=0.6, col=col, cab_l=7.4, cab_h=2.0, cab_y=1.0, r=0.85, extras=ex)
+
+
+def compact(m, col):
+    def ex(m, d):
+        for s in (-1, 1):
+            m.cyl(r=0.32, h=0.12, seg=8, color="glow", rot=(90, 0, 0), loc=(s * 1.3, d["yf"] - 0.05, d["bz"] + 0.2))
+        cube(m, (d["W"] * 0.7, d["cab_l"] * 0.7, 0.1), (0, d["cab_y"], d["top"] + d["cab_h"] + 0.02), "white", bev=0.03)
+    car(m, L=7.4, W=4.0, body_h=1.4, clear=0.5, col=col, cab_l=4.2, cab_h=1.7, cab_y=0.5, r=0.75, extras=ex)
+
+
+def classic(m, col, trim="chrome"):
+    L, W, r = 10.0, 4.0, 0.95
+    z0 = 0.9
+    cube(m, (W - 0.6, L - 1.0, 1.4), (0, 0.2, z0 + 0.7), col, bev=0.25)
+    cube(m, (W * 0.85, 3.8, 1.8), (0, 1.2, z0 + 2.3), col, bev=0.3)
+    glass_box(m, W * 0.85, 3.8, 1.8, (0, 1.2, z0 + 2.3))
+    cube(m, (W * 0.9, 0.2, 0.3), (0, 1.2, z0 + 3.25), "black", bev=0.05)
+    cube(m, (1.8, 0.3, 1.5), (0, -L / 2 + 0.6, z0 + 0.9), trim, bev=0.06)
+    for k in range(5):
+        cube(m, (0.1, 0.34, 1.2), (-0.6 + k * 0.3, -L / 2 + 0.55, z0 + 0.9), "charcoal", bev=0.02)
+    for s in (-1, 1):
+        for y in (-L / 2 + 2.0, L / 2 - 2.2):
+            m.cyl(r=r + 0.3, h=1.0, seg=8, color=col, rot=(0, 90, 0), loc=(s * (W / 2 - 0.1), y, r + 0.2),
+                  deform=lambda co: co.__class__((co.x, co.y, max(co.z, -0.1))))
+        cube(m, (0.8, 4.6, 0.15), (s * (W / 2 - 0.1), 0.0, z0 - 0.1), "charcoal", bev=0.03)
+        m.cyl(r=0.35, h=0.3, seg=8, color="glow", rot=(90, 0, 0), loc=(s * (W / 2 - 0.4), -L / 2 + 1.6, z0 + 1.5))
+        m.cyl(r=0.4, h=0.1, seg=8, color=trim, rot=(90, 0, 0), loc=(s * (W / 2 - 0.4), -L / 2 + 1.5, z0 + 1.5))
+    m.cyl(r=0.9, h=0.4, seg=10, color="rubber", rot=(90, 0, 0), loc=(0, L / 2 - 0.1, z0 + 1.2), bevel=0.08)
+    m.cyl(r=0.5, h=0.45, seg=8, color="white", rot=(90, 0, 0), loc=(0, L / 2 - 0.1, z0 + 1.2))
+    for y in (-L / 2 + 0.2, L / 2 - 0.4):
+        cube(m, (W - 0.2, 0.3, 0.3), (0, y, z0 + 0.1), trim, bev=0.08)
+    four_wheels(m, W + 0.5, -L / 2 + 2.0, L / 2 - 2.2, r=r, w=0.6, hub="white")
+
+
+CAR_VARIANTS = [
+    ("Supercar", lambda c: (lambda m: supercar(m, c)), ["Red", "Yellow", "Orange", "Black", "White", "Green", "Blue",
+                                                         "Purple"], "Supercars"),
+    ("MuscleCar", lambda c: (lambda m: muscle(m, c, "white" if c != "plastic_white" else "plastic_red")),
+     ["Red", "Blue", "Black", "Orange", "Green", "White"], "Cars"),
+    ("SUV", lambda c: (lambda m: suv(m, c)), ["Black", "White", "Red", "Blue", "Green", "Tan"], "Cars"),
+    ("Minivan", lambda c: (lambda m: minivan(m, c)), ["White", "Blue", "Red", "Green"], "Cars"),
+    ("CompactCar", lambda c: (lambda m: compact(m, c)), ["Yellow", "Pink", "Blue", "Green", "Orange", "Purple"], "Cars"),
+    ("ClassicCar", lambda c: (lambda m: classic(m, c)), ["Red", "Black", "Blue", "White", "Tan"], "Classics"),
+]
+for _model, _mk, _cols, _sub in CAR_VARIANTS:
+    for _c in _cols:
+        reg(f"{_c}{_model}", _mk(COLORS[_c]), sub=_sub, tags=["color-variant"])
+
+
+# --- specials ------------------------------------------------------------------------
+reg("PoliceSUV", lambda m: suv(m, "plastic_white", police=True), sub="Service")
+reg("PoliceInterceptor", lambda m: supercar(m, "plastic_black", police=True, stripe="plastic_white"), sub="Service")
+reg("StripedSupercar", lambda m: supercar(m, "plastic_blue", stripe="plastic_white"), sub="Supercars")
+
+
+def _rally(m):
+    def ex(m, d):
+        m.box((d["W"] + 0.04, d["L"] * 0.8, 0.5), color=lambda c, n: "plastic_red" if c.y < 0.5 else "plastic_yellow",
+              loc=(0, 0.3, d["bz"]), cuts={"y": [0.5]}, bevel=0.04)
+        for sx, ang in ((1, 90), (-1, -90)):
+            with m.at((sx * (d["W"] / 2 + 0.03), -0.3, d["bz"] + 0.45), ang):
+                m.cyl(r=0.6, h=0.06, seg=8, color="white", rot=(90, 0, 0))
+                text(m, "7", 0, -0.04, 0, px=0.16, depth=0.06, col="black")
+        cube(m, (1.0, 1.2, 0.35), (0, d["cab_y"] - 0.4, d["top"] + d["cab_h"] + 0.1), "charcoal", bev=0.08)
+        for x in (-1.2, -0.4, 0.4, 1.2):
+            m.cyl(r=0.28, h=0.2, seg=8, color="glow", rot=(90, 0, 0), loc=(x, d["yf"] - 0.2, d["bz"] + 0.6))
+        for s in (-1, 1):
+            cube(m, (0.8, 0.1, 0.7), (s * (d["W"] / 2 - 0.5), d["yb"] - 1.3, d["z0"] + 0.2), "black", bev=0.02)
+        cube(m, (d["W"] * 0.85, 0.7, 0.12), (0, d["yb"] - 0.4, d["top"] + 0.7), "charcoal", bev=0.03)
+    car(m, L=8.6, W=4.4, body_h=1.4, clear=0.8, col="plastic_white", cab_l=4.4, cab_h=1.6, cab_y=0.6, r=0.85, extras=ex)
+
+
+def _drift(m):
+    def ex(m, d):
+        for s in (-1, 1):
+            for y in (d["yf"] + d["L"] * 0.22, d["yb"] - d["L"] * 0.22):
+                cube(m, (0.6, 2.6, 0.9), (s * (d["W"] / 2 + 0.1), y, d["bz"] + 0.1), "plastic_purple", bev=0.2)
+        cube(m, (d["W"] + 0.6, 1.1, 0.14), (0, d["yb"] - 0.5, d["top"] + 1.0), "charcoal", bev=0.04)
+        for s in (-1, 1):
+            cube(m, (0.15, 0.3, 0.9), (s * 1.6, d["yb"] - 0.5, d["top"] + 0.5), "charcoal", bev=0.03)
+        cube(m, (d["W"] - 0.4, d["L"] - 1.0, 0.1), (0, 0, d["z0"] - 0.15), "neon_blue")
+    car(m, L=9.6, W=4.6, body_h=1.1, clear=0.3, col="plastic_purple", col2="plastic_purple", cab_l=3.4, cab_h=1.1,
+        cab_y=0.6, r=0.8, extras=ex)
+
+
+def _dune_buggy(m):
+    W, L, r = 4.6, 8.6, 1.1
+    z0 = 1.4
+    cube(m, (W - 1.2, L - 2.0, 0.4), (0, 0, z0), "charcoal", bev=0.08)
+    for s in (-1, 1):
+        m.tube([(s * 1.6, -2.8, z0 + 0.2), (s * 1.5, -1.0, z0 + 3.2), (s * 1.5, 1.6, z0 + 3.2), (s * 1.7, 3.2, z0 + 0.2)],
+               [0.12] * 4, seg=4, color="plastic_orange")
+        m.tube([(s * 1.6, -2.8, z0 + 0.2), (s * 1.8, -4.0, z0 + 0.6)], [0.1, 0.1], seg=4, color="plastic_orange")
+    for y in (-1.0, 1.6):
+        m.tube([(-1.5, y, z0 + 3.2), (1.5, y, z0 + 3.2)], [0.12, 0.12], seg=4, color="plastic_orange")
+    for x in (-0.7, 0.7):
+        cube(m, (1.1, 1.2, 0.4), (x, 0.6, z0 + 0.4), "charcoal", bev=0.1)
+        cube(m, (1.1, 0.3, 1.4), (x, 1.2, z0 + 1.2), "charcoal", bev=0.1)
+    cube(m, (1.8, 1.6, 1.2), (0, 2.8, z0 + 0.8), "iron_dark", bev=0.1)
+    m.cyl(r=0.1, h=0.8, seg=6, color="charcoal", rot=(-40, 0, 0), loc=(-0.7, -0.6, z0 + 1.2))
+    m.torus(R=0.35, r=0.06, seg=8, color="charcoal", rot=(-40, 0, 0), loc=(-0.7, -0.35, z0 + 1.55))
+    cube(m, (W - 1.0, 1.2, 0.3), (0, -L / 2 + 0.6, z0 + 0.3), "plastic_orange", bev=0.06)
+    wheel(m, "WheelFL", W / 2, -L / 2 + 1.8, 0.95, 0.8)
+    wheel(m, "WheelFR", -W / 2, -L / 2 + 1.8, 0.95, 0.8)
+    wheel(m, "WheelBL", W / 2 + 0.1, L / 2 - 1.6, r, 1.1)
+    wheel(m, "WheelBR", -W / 2 - 0.1, L / 2 - 1.6, r, 1.1)
+
+
+def _lowrider(m):
+    def ex(m, d):
+        for s in (-1, 1):
+            cube(m, (0.06, d["L"] * 0.8, 0.12), (s * (d["W"] / 2 + 0.02), 0, d["bz"] + 0.3), "chrome", bev=0.01)
+        cube(m, (d["W"] * 0.7, 0.1, 0.6), (0, d["yf"] - 0.04, d["bz"]), "chrome", bev=0.03)
+    car(m, L=12.0, W=4.6, body_h=1.1, clear=0.2, col="plastic_purple", cab_l=4.2, cab_h=1.3, cab_y=1.0, r=0.8,
+        extras=ex, bumper="chrome")
+
+
+def _hot_rod(m):
+    L, W = 9.6, 4.0
+    z0 = 1.0
+    cube(m, (W - 1.0, L - 1.5, 0.5), (0, 0.4, z0), "charcoal", bev=0.1)
+    cube(m, (W - 0.6, 3.6, 1.6), (0, 1.8, z0 + 1.0), "plastic_red", bev=0.25)
+    cube(m, (W - 0.8, 2.6, 1.2), (0, 2.0, z0 + 2.3), "plastic_red", bev=0.25)
+    glass_box(m, W - 0.8, 2.6, 1.2, (0, 2.0, z0 + 2.3))
+    cube(m, (2.0, 3.0, 1.2), (0, -1.6, z0 + 0.9), "plastic_red", bev=0.2)
+    cube(m, (1.6, 2.2, 1.0), (0, -2.2, z0 + 1.9), "chrome", bev=0.1)
+    cube(m, (1.2, 1.0, 0.8), (0, -2.2, z0 + 2.7), "iron_dark", bev=0.1)
+    for s in (-1, 1):
+        for k in range(4):
+            m.tube([(s * 0.9, -3.0 + k * 0.5, z0 + 1.6), (s * 1.6, -2.8 + k * 0.5, z0 + 0.9), (s * 1.8, 0.8, z0 + 0.4)],
+                   [0.09] * 3, seg=4, color="chrome")
+        for k, (y, h, c) in enumerate(((1.0, 1.0, "fire"), (1.8, 0.8, "fire_light"), (2.6, 0.6, "fire"))):
+            m.prism([(-0.3, 0), (0.3, 0), (0, h)], depth=0.06, color=c, rot=(90, 0, 90), loc=(s * (W / 2 - 0.28), y - 1.2,
+                                                                                          z0 + 0.6))
+    cube(m, (1.8, 0.2, 1.2), (0, -3.6, z0 + 1.0), "chrome", bev=0.05)
+    wheel(m, "WheelFL", W / 2 - 0.2, -L / 2 + 1.4, 0.75, 0.5, hub="chrome")
+    wheel(m, "WheelFR", -W / 2 + 0.2, -L / 2 + 1.4, 0.75, 0.5, hub="chrome")
+    wheel(m, "WheelBL", W / 2 + 0.2, L / 2 - 1.8, 1.2, 1.2, hub="chrome")
+    wheel(m, "WheelBR", -W / 2 - 0.2, L / 2 - 1.8, 1.2, 1.2, hub="chrome")
+
+
+def _offroad(m):
+    def ex(m, d):
+        _pickup(m, d)
+        cube(m, (d["W"] * 0.8, 0.4, 0.3), (0, d["cab_y"] - d["cab_l"] / 2 + 0.3, d["top"] + d["cab_h"] + 0.2), "charcoal",
+             bev=0.05)
+        for x in (-1.2, -0.4, 0.4, 1.2):
+            cube(m, (0.6, 0.2, 0.25), (x, d["cab_y"] - d["cab_l"] / 2 + 0.1, d["top"] + d["cab_h"] + 0.2), "glow",
+                 bev=0.04)
+        cube(m, (d["W"] * 0.8, 0.4, 1.2), (0, d["yf"] - 0.4, d["bz"]), "charcoal", bev=0.08)
+        for s in (-1, 1):
+            cube(m, (0.2, 0.4, 1.6), (s * 1.3, d["yf"] - 0.5, d["bz"] + 0.2), "charcoal", bev=0.04)
+    car(m, L=11.0, W=5.0, body_h=1.7, clear=2.0, col="plastic_green", cab_l=3.4, cab_h=1.7, cab_y=-1.0, r=1.6,
+        extras=ex)
+
+
+def _armored_truck(m):
+    def ex(m, d):
+        z = d["z0"] + 1.0
+        cube(m, (d["W"], d["box_l"], d["box_h"]), (0, d["box_y"], z + d["box_h"] / 2), "vault", bev=0.2)
+        for s in (-1, 1):
+            for y in (-1.0, 2.0, 5.0):
+                cube(m, (0.1, 0.9, 0.25), (s * (d["W"] / 2 + 0.02), y, z + 3.4), "black", bev=0.02)
+            for k in range(6):
+                cube(m, (0.1, 0.18, 0.18), (s * (d["W"] / 2 + 0.03), -2.4 + k * 1.8, z + d["box_h"] - 0.4), "stainless")
+        side_text(m, "SECURE", d["W"], d["box_y"], z + 1.8, "gold", 0.2)
+        cube(m, (d["W"] * 0.9, 0.2, d["box_h"] - 0.6), (0, d["box_y"] + d["box_l"] / 2 + 0.05, z + d["box_h"] / 2),
+             "steel", bev=0.05)
+        with m.at((0, d["box_y"] + d["box_l"] / 2 + 0.16, z + 2.8), 180):
+            text(m, "$", 0, 0, 0, px=0.3, depth=0.08, col="gold")
+    truck(m, cab="vault", box=None, L=13.0, box_h=4.6, extras=ex, six=False)
+
+
+def _food_truck(m):
+    def ex(m, d):
+        z = d["z0"]
+        cube(m, (0.1, 4.0, 1.6), (d["W"] / 2 + 0.02, 1.4, z + d["H"] * 0.6), "charcoal", bev=0.03)
+        cube(m, (0.6, 4.0, 0.3), (d["W"] / 2 + 0.3, 1.4, z + d["H"] * 0.6 - 0.9), "stainless", bev=0.03)
+        m.box((0.3, 4.6, 1.4), color=lambda c, n: "plastic_yellow" if int((c.y + 10) / 0.6) % 2 else "plastic_red",
+              loc=(d["W"] / 2 + 0.7, 1.4, z + d["H"] * 0.95), rot=(0, -30, 0), cuts={"y": 0.6}, bevel=0.04)
+        with m.at((0, 1.4, z + d["H"] + 1.2)):
+            cube(m, (4.2, 0.5, 1.8), (0, 0, 0), "plastic_yellow", bev=0.1)
+            text(m, "TACOS", 0, -0.26, 0, px=0.2, depth=0.08, col="plastic_red")
+        cube(m, (0.1, 2.0, 1.4), (d["W"] / 2 + 0.03, -1.4, z + d["H"] * 0.6), "menu_black", bev=0.03)
+    van(m, col="plastic_orange", L=11.0, H=4.6, stripe="plastic_yellow", extras=ex)
+
+
+def _camper(m):
+    def ex(m, d):
+        z = d["z0"]
+        for s in (-1, 1):
+            for y in (0.5, 3.0, 5.5):
+                cube(m, (0.08, 1.6, 1.0), (s * (d["W"] / 2 + 0.02), y, z + d["H"] * 0.68), "window_blue", bev=0.03)
+        cube(m, (0.08, 1.2, 3.0), (d["W"] / 2 + 0.02, -1.4, z + 1.9), "wood_mid", bev=0.03)
+        cube(m, (2.2, 1.8, 0.8), (0, 2.5, z + d["H"] + 0.4), "lightgray", bev=0.1)
+        for k in range(6):
+            cube(m, (0.1, 0.1, 0.8), (-d["W"] / 2 + 0.6 + k * 0.1, d["yb"] - 0.1, z + 1.0 + k * 0.5), "chrome")
+        m.box((0.3, 6.0, 0.4), color=lambda c, n: "awning_green" if int((c.y + 20) / 0.8) % 2 else "white",
+              loc=(-d["W"] / 2 - 0.3, 2.5, z + d["H"] * 0.95), cuts={"y": 0.8}, bevel=0.04)
+    van(m, col="plastic_white", L=16.0, H=5.0, stripe="wood_mid", extras=ex, r=1.0)
+
+
+def _mail_truck(m):
+    def ex(m, d):
+        side_text(m, "MAIL", d["W"], 1.2, d["z0"] + d["H"] * 0.55, "plastic_blue", 0.22)
+        cube(m, (d["W"] + 0.04, d["L"] - 1.5, 0.3), (0, 0.9, d["z0"] + d["H"] * 0.28), "plastic_red", bev=0.03)
+    van(m, col="plastic_white", L=8.0, H=4.4, stripe="plastic_blue", extras=ex, r=0.8)
+
+
+def _tuk_tuk(m):
+    z0 = 0.9
+    cube(m, (3.6, 5.2, 1.0), (0, 0.4, z0 + 0.5), "plastic_green", bev=0.2)
+    cube(m, (1.6, 1.4, 1.6), (0, -2.4, z0 + 1.2), "plastic_green", bev=0.25)
+    cube(m, (3.4, 2.2, 0.8), (0, 1.6, z0 + 1.4), "leather", bev=0.15)
+    cube(m, (3.4, 0.5, 1.6), (0, 2.5, z0 + 2.2), "leather", bev=0.15)
+    for x in (-1.6, 1.6):
+        for y in (-1.6, 2.8):
+            cube(m, (0.15, 0.15, 3.2), (x, y, z0 + 2.6), "charcoal", bev=0.03)
+    cube(m, (4.0, 5.4, 0.3), (0, 0.6, z0 + 4.3), "plastic_yellow", bev=0.12)
+    cube(m, (3.0, 0.12, 1.4), (0, -1.65, z0 + 3.1), "window_blue", bev=0.03)
+    cube(m, (2.4, 0.1, 0.12), (0, -2.1, z0 + 2.2), "charcoal")
+    m.cyl(r=0.3, h=0.12, seg=8, color="glow", rot=(90, 0, 0), loc=(0, -3.15, z0 + 1.5))
+    with m.group("WheelF"):
+        m.cyl(r=0.75, h=0.5, seg=10, rot=(0, 90, 0), loc=(0, -2.6, 0.75), color="rubber", bevel=0.08)
+    wheel(m, "WheelBL", 1.9, 2.0, 0.75, 0.5)
+    wheel(m, "WheelBR", -1.9, 2.0, 0.75, 0.5)
+
+
+def _hover_car(m):
+    L, W = 9.6, 4.6
+    z0 = 1.6
+    cube(m, (W, L, 1.0), (0, 0, z0 + 0.5), "plastic_white", bev=0.35)
+    m.wedge((W - 0.4, 2.8, 0.8), color="plastic_white", loc=(0, -L / 2 + 1.5, z0 + 1.4), rot=(0, 0, 180))
+    cube(m, (W * 0.7, 3.4, 1.1), (0, 0.8, z0 + 1.5), "neon_blue", bev=0.45)
+    cube(m, (W * 0.72, 2.4, 0.8), (0, 0.6, z0 + 1.6), "window_blue", bev=0.3)
+    for s in (-1, 1):
+        m.prism([(0, 0), (1.6, 0.4), (1.6, 0.9), (0, 1.2)], depth=0.15, color="plastic_white", rot=(0, 90, 0),
+                loc=(s * 1.2, L / 2 - 1.4, z0 + 1.0), scale=(1, 1, 1))
+        cube(m, (0.1, L - 1.0, 0.2), (s * (W / 2 + 0.02), 0, z0 + 0.6), "neon_blue", bev=0.02)
+    with m.group("Hover"):
+        for sx in (-1, 1):
+            for sy in (-1, 1):
+                m.cyl(r=0.9, h=0.4, seg=8, color="charcoal", loc=(sx * (W / 2 - 0.9), sy * (L / 2 - 1.8), z0 - 0.1))
+                m.cyl(r=0.7, h=0.1, seg=8, color="neon_blue", loc=(sx * (W / 2 - 0.9), sy * (L / 2 - 1.8), z0 - 0.35))
+    for s in (-1, 1):
+        cube(m, (1.0, 0.12, 0.25), (s * 1.3, -L / 2 + 0.2, z0 + 0.8), "glow", bev=0.03)
+        cube(m, (1.2, 0.12, 0.25), (s * 1.3, L / 2 + 0.02, z0 + 0.8), "neon_red", bev=0.03)
+
+
+def _delivery_scooter(m):
+    scooter(m, "plastic_red")
+    cube(m, (1.6, 1.6, 1.4), (0, 1.2, 1.4), "plastic_red", bev=0.12)
+    with m.at((0, 0.38, 1.6)):
+        text(m, "PIZZA", 0, 0, 0, px=0.12, depth=0.05, col="white")
+    cube(m, (0.8, 2.0, 0.5), (0, 0.8, 0.8), "leather_dark", bev=0.1)
+
+
+reg("RallyCar", _rally, sub="Supercars")
+reg("DriftCar", _drift, sub="Supercars")
+reg("DuneBuggy", _dune_buggy, sub="Offroad")
+reg("Lowrider", _lowrider, sub="Classics")
+reg("HotRod", _hot_rod, sub="Classics")
+reg("OffroadTruck", _offroad, sub="Offroad")
+reg("ArmoredTruck", _armored_truck, sub="Trucks")
+reg("FoodTruck", _food_truck, sub="Trucks")
+reg("CamperRV", _camper, sub="Trucks")
+reg("MailTruck", _mail_truck, sub="Service")
+reg("TukTuk", _tuk_tuk, sub="Bikes")
+reg("HoverCar", _hover_car, sub="SciFi")
+reg("DeliveryScooter", _delivery_scooter, sub="Bikes")
