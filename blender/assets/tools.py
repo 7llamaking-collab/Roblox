@@ -419,3 +419,63 @@ def legend_pickaxe(m, name, E):
 for _e, _E in LEGEND_PICKS.items():
     add(f"{_e}Pickaxe", CAT, (lambda m, e=_e, E=_E: legend_pickaxe(m, e, E)), sub="Legendary", origin=(0, 0, 0.6),
         tags=["legendary", _e.lower()])
+
+
+# =====================================================================================
+# Batch 2: more tiered simulator tools (fishing rods, bug nets, coin magnets, chainsaws)
+# =====================================================================================
+def tier_fishing_rod(m, T, tier):
+    m.tube([(0, 0, 0), (0, 0, 2.0), (0.15, 0, 3.4), (0.45, 0, 4.4)], [0.09, 0.065, 0.05, 0.035], seg=6,
+           deform=stoneify(tier), **paint(T, "main", "z", 1.0, 4.4))
+    m.cyl(r=0.12, h=0.9, seg=8, color=T["grip"], loc=(0, 0, 0.5), bevel=0.02)
+    m.cyl(r=0.14, h=0.12, seg=8, color=T["accent"], loc=(0, 0, 0.02), bevel=0.03)
+    m.cyl(r=0.22, h=0.16, seg=8, color=T["dark"], rot=(0, 90, 0), loc=(0.16, 0, 1.15), bevel=0.03)
+    m.box((0.22, 0.06, 0.06), color=T["accent"], loc=(0.3, -0.12, 1.15))
+    for z in (2.0, 3.0, 3.9):
+        m.box((0.12, 0.12, 0.08), color=T["accent"], loc=(0.03 + (z - 2.0) * 0.2, 0, z))
+    m.tube([(0.45, 0, 4.4), (0.5, 0, 3.0)], [0.012, 0.012], seg=3, color="string", smooth=False)
+    m.box((0.2, 0.2, 0.2), color=by_height("plastic_white", 2.95, solid(T, "gem", "plastic_red")),
+          loc=(0.5, 0, 2.95), cuts={"z": [2.95]}, bevel=0.04)
+
+
+def tier_bug_net(m, T, tier):
+    handle(m, T, 0.0, 3.2, r=0.08, grip=(0.2, 0.9))
+    m.torus(R=0.55, r=0.07, seg=8, color=solid(T, "main", "gold"), loc=(0, 0, 3.8), rot=(90, 0, 0))
+    m.box((0.2, 0.2, 0.3), color=T["accent"], bevel=0.04, loc=(0, 0, 3.2))
+    m.lathe([(0.52, 0), (0.46, -0.4), (0.28, -0.8), (0, -0.9)], seg=8, color="fabric_white" if tier != "Rainbow"
+            else "rb_pink", rot=(90, 0, 0), loc=(0, 0, 3.8), caps=False)
+    if tier in ("Gold", "Diamond", "Emerald", "Ruby", "Rainbow"):
+        m.gem(r=0.1, h=0.1, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.1, 3.24))
+
+
+def tier_magnet(m, T, tier):
+    handle(m, T, 0.0, 1.2, r=0.1, grip=(0.1, 1.0))
+    m.box((0.5, 0.4, 0.3), color=T["dark"], bevel=0.05, loc=(0, 0, 1.3))
+    m.torus(R=0.6, r=0.22, seg=8, rseg=4, arc=180, rot=(-90, 0, 0), loc=(0, 0, 2.05),
+            **paint(T, "main", "x", -0.85, 0.85))
+    for s in (-1, 1):
+        m.box((0.46, 0.46, 0.6), color=T["main"] if T["main"] != "RAINBOW" else ("rb_red" if s < 0 else "rb_purple"),
+              bevel=0.05, loc=(s * 0.6, 0, 2.3))
+        m.box((0.48, 0.48, 0.3), color=solid(T, "light", "white"), bevel=0.04, loc=(s * 0.6, 0, 2.72))
+    m.box((0.25, 0.1, 0.25), color=solid(T, "gem", "gold"), bevel=0.03, loc=(0, -0.22, 1.3))
+
+
+def tier_chainsaw(m, T, tier):
+    m.box((0.5, 1.6, 0.9), bevel=0.12, loc=(0, 0.4, 0.8), **paint(T, "main", "y", -0.4, 1.2))
+    m.box((0.52, 0.5, 0.6), color=T["dark"], bevel=0.08, loc=(0, 0.2, 1.4))
+    m.torus(R=0.38, r=0.06, seg=8, arc=180, color=T["grip"], rot=(90, 0, 90), loc=(0, 0.6, 1.3))
+    m.box((0.26, 0.5, 0.2), color=T["grip"], bevel=0.04, loc=(0, 1.3, 0.9))
+    m.box((0.12, 2.4, 0.5), color=solid(T, "light", "silver"), bevel=0.05, loc=(0, -1.6, 0.8))
+    for k in range(10):
+        y = -0.5 - k * 0.24
+        for z in (0.52, 1.08):
+            m.box((0.16, 0.14, 0.1), color="charcoal", loc=(0, y, z))
+    m.box((0.14, 0.2, 0.5), color="charcoal", loc=(0, -2.8, 0.8))
+    m.box((0.1, 0.4, 0.1), color="plastic_red" if tier != "Ruby" else "gold", loc=(0.26, 0.9, 1.1))
+
+
+for _name, _fn, _grip in (("FishingRod", tier_fishing_rod, (0, 0, 0.5)), ("BugNet", tier_bug_net, (0, 0, 0.5)),
+                          ("CoinMagnet", tier_magnet, (0, 0, 0.6)), ("Chainsaw", tier_chainsaw, (0, 1.3, 0.9))):
+    for _tier in ORDER:
+        add(f"{_tier}{_name}", CAT, (lambda m, f=_fn, t=_tier: f(m, TIERS[t], t)), sub=_name,
+            origin=_grip, tags=["tiered", _tier.lower()])

@@ -493,3 +493,446 @@ def _train(m):
 
 
 reg("Train", _train, sub="Trains")
+
+
+# ============================================================================
+# batch 2: colour variants + construction, fun & sci-fi vehicles
+# ============================================================================
+COLORS = {"Red": "plastic_red", "Blue": "plastic_blue", "Green": "plastic_green", "Yellow": "plastic_yellow",
+          "Black": "plastic_black", "White": "plastic_white", "Purple": "plastic_purple", "Orange": "plastic_orange",
+          "Pink": "plastic_pink", "Tan": "sandstone"}
+
+
+def motorcycle(m, col="plastic_red", seat="leather_dark"):
+    r = 0.9
+    cube(m, (0.8, 1.2, 0.9), (0, 0.1, 1.05), "charcoal", bev=0.15)
+    cube(m, (0.5, 3.2, 0.4), (0, 0.0, 1.5), "plastic_black", bev=0.1)
+    cube(m, (1.0, 1.4, 0.8), (0, -0.55, 2.0), col, bev=0.25)
+    cube(m, (0.8, 1.5, 0.3), (0, 0.75, 1.95), seat, bev=0.1)
+    cube(m, (0.9, 1.1, 0.35), (0, 1.75, 2.05), col, bev=0.12)
+    cube(m, (0.5, 0.12, 0.25), (0, 2.3, 1.95), "neon_red", bev=0.04)
+    m.tube([(0, -1.3, 2.4), (0, -1.9, r)], [0.12, 0.1], seg=4, color="chrome")
+    m.tube([(0, -1.25, 2.4), (0, -1.45, 2.8)], [0.1, 0.1], seg=4, color="chrome")
+    cube(m, (1.8, 0.16, 0.16), (0, -1.45, 2.85), "charcoal", bev=0.04)
+    cube(m, (0.9, 0.9, 0.25), (0, -1.9, 1.95), col, bev=0.08)
+    cube(m, (0.5, 0.2, 0.4), (0, -1.6, 2.35), "glow", bev=0.06)
+    m.cyl(r=0.15, h=1.6, seg=6, color="chrome", rot=(90, 0, 0), loc=(0.5, 1.0, 0.8))
+    with m.group("WheelF"):
+        m.cyl(r=r, h=0.4, seg=10, rot=(0, 90, 0), loc=(0, -1.9, r), color="rubber", bevel=0.08)
+        m.cyl(r=0.45, h=0.45, seg=8, rot=(0, 90, 0), loc=(0, -1.9, r), color="iron")
+    with m.group("WheelB"):
+        m.cyl(r=r, h=0.5, seg=10, rot=(0, 90, 0), loc=(0, 1.7, r), color="rubber", bevel=0.08)
+        m.cyl(r=0.45, h=0.55, seg=8, rot=(0, 90, 0), loc=(0, 1.7, r), color="iron")
+
+
+def gokart(m, col="plastic_red"):
+    z = 0.35
+    cube(m, (2.4, 4.0, 0.3), (0, 0, z + 0.15), col, bev=0.1)
+    cube(m, (1.6, 1.4, 0.5), (0, -1.5, z + 0.5), col, bev=0.15)
+    cube(m, (1.2, 1.0, 0.4), (0, 0.6, z + 0.5), "charcoal", bev=0.12)
+    cube(m, (1.2, 0.3, 1.0), (0, 1.1, z + 0.9), "charcoal", bev=0.1)
+    m.cyl(r=0.1, h=0.9, seg=6, color="charcoal", rot=(-40, 0, 0), loc=(0, -0.5, z + 0.9))
+    m.torus(R=0.35, r=0.07, seg=8, color="charcoal", rot=(-40, 0, 0), loc=(0, -0.2, z + 1.25))
+    cube(m, (1.0, 0.8, 0.6), (0, 1.8, z + 0.5), "iron_dark", bev=0.1)
+    cube(m, (2.6, 0.5, 0.15), (0, 2.1, z + 1.1), col, bev=0.05)
+    wheel(m, "WheelFL", 1.35, -1.3, 0.45, 0.5)
+    wheel(m, "WheelFR", -1.35, -1.3, 0.45, 0.5)
+    wheel(m, "WheelBL", 1.4, 1.4, 0.55, 0.7)
+    wheel(m, "WheelBR", -1.4, 1.4, 0.55, 0.7)
+
+
+def scooter(m, col="plastic_pink"):
+    cube(m, (0.8, 2.6, 0.2), (0, 0, 0.55), col, bev=0.06)
+    m.tube([(0, -1.2, 0.6), (0, -1.4, 2.8)], [0.1, 0.1], seg=4, color="silver")
+    cube(m, (1.4, 0.14, 0.14), (0, -1.4, 2.85), "charcoal", bev=0.04)
+    with m.group("WheelF"):
+        m.cyl(r=0.4, h=0.3, seg=10, rot=(0, 90, 0), loc=(0, -1.3, 0.4), color="rubber", bevel=0.05)
+    with m.group("WheelB"):
+        m.cyl(r=0.4, h=0.3, seg=10, rot=(0, 90, 0), loc=(0, 1.2, 0.4), color="rubber", bevel=0.05)
+
+
+def sportscar(m, col):
+    def ex(m, d):
+        cube(m, (d["W"] * 0.9, 0.9, 0.12), (0, d["yb"] - 0.5, d["top"] + 0.5), "charcoal", bev=0.03)
+        for s in (-1, 1):
+            cube(m, (0.15, 0.15, 0.5), (s * 1.4, d["yb"] - 0.5, d["top"] + 0.2), "charcoal", bev=0.03)
+        cube(m, (0.6, 1.8, 0.04), (0, -1.8, d["top"] + 0.01), "charcoal", bev=0.01)
+    car(m, L=9.5, W=4.6, body_h=1.1, clear=0.35, col=col, cab_l=3.2, cab_h=1.1, cab_y=0.6, r=0.8, extras=ex)
+
+
+VARIANTS = [
+    ("Car", lambda col: (lambda m: car(m, col=col)), ["Green", "Yellow", "Black", "White", "Purple", "Orange", "Pink"],
+     "Cars"),
+    ("SportsCar", lambda col: (lambda m: sportscar(m, col)), ["Red", "Blue", "Black", "White", "Green", "Purple"],
+     "Cars"),
+    ("Jeep", lambda col: (lambda m: car(m, W=4.6, body_h=1.6, clear=0.9, col=col, cab_l=4.6, cab_h=1.7, cab_y=0.8,
+                                        roof="charcoal", r=1.05, extras=_jeep)), ["Tan", "Black", "Red", "White"],
+     "Cars"),
+    ("PickupTruck", lambda col: (lambda m: car(m, L=10.0, W=4.6, body_h=1.6, clear=0.8, col=col, cab_l=3.2, cab_h=1.7,
+                                               cab_y=-1.2, r=1.0, extras=_pickup)), ["Red", "Blue", "Black", "White"],
+     "Trucks"),
+    ("Van", lambda col: (lambda m: van(m, col=col)), ["White", "Red", "Green", "Yellow"], "Trucks"),
+    ("Motorcycle", lambda col: (lambda m: motorcycle(m, col)), ["Blue", "Green", "Yellow", "Black"], "Bikes"),
+    ("GoKart", lambda col: (lambda m: gokart(m, col)), ["Blue", "Green", "Yellow", "Purple"], "Cars"),
+    ("Scooter", lambda col: (lambda m: scooter(m, col)), ["Blue", "Green", "Yellow"], "Bikes"),
+]
+for _model, _mk, _cols, _sub in VARIANTS:
+    for _c in _cols:
+        reg(f"{_c}{_model}", _mk(COLORS[_c]), sub=_sub, tags=["color-variant"])
+
+
+def _limo(m):
+    car(m, L=14.0, W=4.6, body_h=1.3, clear=0.5, col="plastic_black", cab_l=9.0, cab_h=1.3, cab_y=0.6, r=0.85)
+    cube(m, (0.12, 0.12, 0.6), (0, -6.9, 1.7), "chrome", bev=0.03)
+
+
+reg("Limousine", _limo)
+
+
+def _racecar(m):
+    z = 0.45
+    cube(m, (2.2, 7.0, 0.7), (0, 0.3, z + 0.35), "plastic_red", bev=0.2)
+    cube(m, (1.2, 2.0, 0.5), (0, -3.6, z + 0.3), "plastic_red", bev=0.15)
+    cube(m, (4.6, 0.9, 0.14), (0, -4.3, z + 0.1), "plastic_black", bev=0.03)
+    for s in (-1, 1):
+        cube(m, (0.12, 1.0, 0.5), (s * 2.3, -4.3, z + 0.3), "plastic_red", bev=0.03)
+    cube(m, (1.2, 1.6, 0.6), (0, 0.4, z + 1.0), "plastic_black", bev=0.15)
+    cube(m, (0.8, 0.8, 0.7), (0, 0.6, z + 1.4), "plastic_yellow", bev=0.3)
+    cube(m, (0.7, 0.12, 0.3), (0, 0.19, z + 1.45), "black", bev=0.03)
+    cube(m, (3.8, 0.8, 0.15), (0, 3.9, z + 1.9), "plastic_red", bev=0.04)
+    for s in (-1, 1):
+        cube(m, (0.12, 0.8, 1.4), (s * 1.8, 3.9, z + 1.2), "plastic_black", bev=0.03)
+        cube(m, (0.9, 2.6, 0.5), (s * 1.3, 1.2, z + 0.5), "plastic_red", bev=0.15)
+    for s in (-1, 1):
+        cube(m, (0.06, 0.6, 0.6), (s * 1.12, -0.6, z + 0.45), "white", bev=0.02)
+    wheel(m, "WheelFL", 1.7, -2.8, 0.6, 0.6)
+    wheel(m, "WheelFR", -1.7, -2.8, 0.6, 0.6)
+    wheel(m, "WheelBL", 1.8, 2.6, 0.75, 0.9)
+    wheel(m, "WheelBR", -1.8, 2.6, 0.75, 0.9)
+
+
+reg("RaceCar", _racecar)
+reg("Hatchback", lambda m: car(m, L=7.6, W=4.2, body_h=1.5, clear=0.55, col="plastic_green", cab_l=4.2, cab_h=1.6,
+                               cab_y=0.8, r=0.8))
+
+
+def _convertible(m):
+    z0 = 0.55 + 0.17
+    L, W = 9.0, 4.4
+    cube(m, (W, L, 1.5), (0, 0, z0 + 0.75), "plastic_blue", bev=0.3)
+    cube(m, (W * 0.84, 0.12, 0.8), (0, -0.9, z0 + 1.85), "window_blue", bev=0.03, rot=(-25, 0, 0))
+    for x in (-0.9, 0.9):
+        cube(m, (1.4, 1.2, 0.4), (x, 0.4, z0 + 1.6), "leather", bev=0.1)
+        cube(m, (1.4, 0.3, 1.0), (x, 1.0, z0 + 2.0), "leather", bev=0.1)
+    cube(m, (3.2, 1.2, 0.3), (0, 2.8, z0 + 1.55), "plastic_blue", bev=0.08)
+    m.torus(R=0.35, r=0.06, seg=8, color="charcoal", rot=(-70, 0, 0), loc=(0.9, -0.3, z0 + 2.0))
+    for y in (-L / 2, L / 2):
+        cube(m, (W + 0.1, 0.4, 0.5), (0, y + (0.1 if y > 0 else -0.1), z0 + 0.2), "charcoal", bev=0.1)
+    lights(m, W, -L / 2, L / 2, z0 + 0.95)
+    four_wheels(m, W, -L / 2 + 2.0, L / 2 - 2.0, r=0.85)
+
+
+reg("Convertible", _convertible)
+
+
+def _garbage(m, d):
+    z = d["z0"] + 1.0
+    cube(m, (d["W"], d["box_l"], 4.6), (0, d["box_y"], z + 2.3), "plastic_green", bev=0.3)
+    cube(m, (d["W"] * 0.9, 1.6, 3.6), (0, d["box_y"] + d["box_l"] / 2 + 0.5, z + 1.8), "charcoal", bev=0.3)
+    for s in (-1, 1):
+        cube(m, (0.06, 5.0, 0.4), (s * (d["W"] / 2 + 0.02), d["box_y"], z + 1.0), "plastic_white", bev=0.02)
+    m.prism([(0, 0.45), (0.4, -0.2), (-0.4, -0.2)], depth=0.06, color="plastic_white", rot=(90, 0, 90),
+            loc=(d["W"] / 2 + 0.03, d["box_y"], z + 3.0))
+
+
+reg("GarbageTruck", lambda m: truck(m, cab="plastic_white", box=None, extras=_garbage), sub="Construction")
+
+
+def _mixer(m, d):
+    z = d["z0"] + 1.0
+    with m.group("Drum"):
+        m.lathe([(0.8, 0), (2.1, 1.4), (2.2, 3.4), (1.2, 5.6), (0.8, 5.8)], seg=8, rot=(-75, 0, 0),
+                loc=(0, d["box_y"] - 2.4, z + 1.8),
+                color=lambda c, n: "plastic_orange" if int((c.y + c.z * 0.3 + 20) / 0.8) % 2 else "plastic_white")
+    cube(m, (1.2, 1.4, 2.0), (0, d["box_y"] + 4.2, z + 1.0), "iron_dark", bev=0.1)
+    m.tube([(0, d["box_y"] + 4.4, z + 1.6), (0, d["box_y"] + 5.4, z + 0.6)], [(0.3, 0.1), (0.3, 0.1)], seg=4,
+           color="iron", up=(1, 0, 0))
+
+
+reg("CementMixer", lambda m: truck(m, cab="plastic_orange", box=None, extras=_mixer), sub="Construction")
+
+
+def _dump(m, d):
+    z = d["z0"] + 1.0
+    with m.group("Bed"):
+        cube(m, (d["W"] + 0.3, d["box_l"], 0.4), (0, d["box_y"], z + 0.3), "plastic_yellow", bev=0.1)
+        for s in (-1, 1):
+            cube(m, (0.3, d["box_l"], 2.4), (s * (d["W"] / 2 + 0.05), d["box_y"], z + 1.5), "plastic_yellow", bev=0.1)
+        cube(m, (d["W"] + 0.3, 0.3, 2.4), (0, d["box_y"] - d["box_l"] / 2 + 0.15, z + 1.5), "plastic_yellow", bev=0.1)
+        cube(m, (d["W"] - 0.3, d["box_l"] - 0.8, 0.8), (0, d["box_y"] + 0.2, z + 1.0), "dirt", bev=0.3)
+
+
+reg("DumpTruck", lambda m: truck(m, cab="plastic_yellow", box=None, extras=_dump, r=1.2), sub="Construction")
+
+
+def _tow(m, d):
+    z = d["z0"] + 1.0
+    cube(m, (d["W"], d["box_l"], 0.5), (0, d["box_y"], z + 0.25), "charcoal", bev=0.08)
+    with m.group("Boom"):
+        m.tube([(0, d["box_y"] - 1.0, z + 0.6), (0, d["box_y"] + 2.6, z + 3.4)], [(0.3, 0.3), (0.25, 0.25)], seg=4,
+               color="plastic_yellow")
+        m.tube([(0, d["box_y"] + 2.6, z + 3.3), (0, d["box_y"] + 2.9, z + 1.0)], [0.03, 0.03], seg=4, color="charcoal")
+        m.torus(R=0.25, r=0.07, seg=8, arc=270, color="iron", rot=(0, 90, 0), loc=(0, d["box_y"] + 2.9, z + 0.8))
+    cube(m, (1.8, 0.5, 0.3), (0, d["yf"] + 1.6, d["z0"] + 3.75), "plastic_orange", bev=0.05)
+
+
+reg("TowTruck", lambda m: truck(m, cab="plastic_red", box=None, extras=_tow, six=False), sub="Construction")
+
+
+def tracks(m, W, L, h=1.2, col="charcoal", wheel_col="gunmetal"):
+    for s in (-1, 1):
+        cube(m, (0.9, L, h), (s * W / 2, 0, h / 2), col, bev=0.3)
+        for k in range(int(L / 1.2)):
+            y = -L / 2 + 0.7 + k * 1.2
+            m.cyl(r=0.4, h=0.96, seg=8, color=wheel_col, rot=(0, 90, 0), loc=(s * W / 2, y, 0.55))
+
+
+def _excavator(m):
+    tracks(m, 3.4, 6.0)
+    cube(m, (2.4, 4.0, 0.6), (0, 0, 1.4), "charcoal", bev=0.1)
+    with m.group("Cab"):
+        cube(m, (3.6, 4.2, 1.6), (0, 0.6, 2.5), "plastic_yellow", bev=0.25)
+        cube(m, (1.6, 1.8, 2.0), (-0.9, -0.6, 4.2), "plastic_yellow", bev=0.2)
+        glass_box(m, 1.6, 1.8, 1.8, (-0.9, -0.6, 4.3))
+        cube(m, (2.4, 1.2, 1.2), (0, 2.8, 2.9), "charcoal", bev=0.15)
+        cube(m, (0.9, 1.2, 1.0), (0.9, -1.3, 3.2), "gunmetal", bev=0.1)
+        m.tube([(0.9, -1.3, 3.4), (0.9, -3.8, 6.4)], [(0.4, 0.5), (0.35, 0.45)], seg=4, color="plastic_yellow",
+               up=(1, 0, 0))
+        m.cyl(r=0.4, h=1.0, seg=8, color="gunmetal", rot=(0, 90, 0), loc=(0.9, -3.8, 6.4))
+        m.tube([(0.9, -3.8, 6.4), (0.9, -5.6, 2.8)], [(0.3, 0.4), (0.25, 0.35)], seg=4, color="plastic_yellow",
+               up=(1, 0, 0))
+        m.cyl(r=0.3, h=0.9, seg=8, color="gunmetal", rot=(0, 90, 0), loc=(0.9, -5.6, 2.8))
+        cube(m, (1.8, 1.4, 1.3), (0.9, -5.9, 2.0), "gunmetal", bev=0.2)
+        cube(m, (1.8, 0.2, 0.8), (0.9, -6.65, 1.7), "gunmetal", bev=0.05, rot=(20, 0, 0))
+        for k in range(4):
+            m.pyramid(w=0.26, h=0.4, color="silver", loc=(0.3 + k * 0.4, -6.8, 1.35), rot=(180, 0, 0))
+
+
+reg("Excavator", _excavator, sub="Construction")
+
+
+def _bulldozer(m):
+    tracks(m, 3.6, 5.6)
+    cube(m, (3.0, 4.6, 1.8), (0, 0.3, 2.1), "plastic_yellow", bev=0.25)
+    cube(m, (2.6, 2.2, 2.2), (0, 1.0, 4.0), "plastic_yellow", bev=0.2)
+    glass_box(m, 2.6, 2.2, 2.0, (0, 1.0, 4.1))
+    m.cyl(r=0.2, h=1.4, seg=6, color="charcoal", loc=(0.9, -1.2, 3.6))
+    for s in (-1, 1):
+        m.tube([(s * 1.5, -0.5, 1.5), (s * 1.6, -3.4, 1.0)], [0.2, 0.2], seg=4, color="charcoal")
+    with m.group("Blade"):
+        m.box((5.2, 0.5, 1.8), color="plastic_yellow", bevel=0.1, loc=(0, -3.8, 1.0),
+              deform=lambda co: co.__class__((co.x, co.y - 0.3 * (co.z / 0.9) ** 2, co.z)))
+        cube(m, (5.2, 0.4, 0.3), (0, -4.1, 0.1), "silver", bev=0.05)
+
+
+reg("Bulldozer", _bulldozer, sub="Construction")
+
+
+def _forklift(m):
+    cube(m, (2.4, 3.0, 1.4), (0, 0.4, 1.3), "plastic_orange", bev=0.25)
+    cube(m, (2.4, 1.0, 1.6), (0, 1.6, 1.8), "charcoal", bev=0.2)
+    for x in (-1.0, 1.0):
+        for y in (-0.8, 1.2):
+            cube(m, (0.12, 0.12, 2.6), (x, y, 3.3), "charcoal", bev=0.03)
+    cube(m, (2.4, 2.4, 0.15), (0, 0.2, 4.6), "charcoal", bev=0.05)
+    cube(m, (1.0, 0.8, 0.9), (0, 0.8, 2.3), "leather_dark", bev=0.12)
+    for x in (-0.7, 0.7):
+        cube(m, (0.12, 0.12, 4.6), (x, -1.3, 2.4), "gunmetal", bev=0.03)
+    with m.group("Forks"):
+        cube(m, (1.8, 0.2, 1.2), (0, -1.5, 1.0), "gunmetal", bev=0.04)
+        for x in (-0.55, 0.55):
+            cube(m, (0.3, 2.2, 0.12), (x, -2.6, 0.5), "silver", bev=0.03)
+    wheel(m, "WheelFL", 1.2, -0.6, 0.6, 0.5)
+    wheel(m, "WheelFR", -1.2, -0.6, 0.6, 0.5)
+    wheel(m, "WheelBL", 1.2, 1.4, 0.5, 0.45)
+    wheel(m, "WheelBR", -1.2, 1.4, 0.5, 0.45)
+
+
+reg("Forklift", _forklift, sub="Construction")
+
+
+def _snowmobile(m):
+    cube(m, (2.0, 4.4, 1.0), (0, 0.2, 1.0), "plastic_blue", bev=0.3)
+    cube(m, (1.8, 1.8, 0.8), (0, -1.6, 1.3), "plastic_blue", bev=0.3, rot=(15, 0, 0))
+    cube(m, (1.6, 0.12, 0.8), (0, -1.0, 2.0), "window_blue", bev=0.03, rot=(-30, 0, 0))
+    cube(m, (1.0, 2.0, 0.4), (0, 1.0, 1.7), "plastic_black", bev=0.12)
+    m.tube([(0, -0.5, 1.8), (0, -0.7, 2.3)], [0.08, 0.08], seg=4, color="charcoal")
+    cube(m, (1.4, 0.12, 0.12), (0, -0.7, 2.3), "charcoal", bev=0.03)
+    cube(m, (1.4, 3.0, 0.6), (0, 1.3, 0.35), "charcoal", bev=0.2)
+    for s in (-1, 1):
+        m.tube([(s * 0.8, -1.4, 0.8), (s * 0.9, -1.8, 0.2)], [0.08, 0.08], seg=4, color="charcoal")
+        m.box((0.3, 2.4, 0.12), color="silver", loc=(s * 0.9, -2.2, 0.08), bevel=0.04,
+              deform=lambda co: co.__class__((co.x, co.y, co.z + max(0.0, -co.y - 0.8) * 0.4)))
+
+
+reg("Snowmobile", _snowmobile, sub="Bikes")
+
+
+def _atv(m):
+    cube(m, (2.2, 3.4, 0.9), (0, 0, 1.4), "plastic_red", bev=0.3)
+    cube(m, (2.6, 1.2, 0.3), (0, -1.6, 1.9), "plastic_black", bev=0.08)
+    cube(m, (2.6, 1.2, 0.3), (0, 1.6, 1.9), "plastic_black", bev=0.08)
+    cube(m, (0.9, 1.4, 0.4), (0, 0.5, 2.0), "leather_dark", bev=0.12)
+    m.tube([(0, -0.9, 1.8), (0, -1.1, 2.5)], [0.08, 0.08], seg=4, color="charcoal")
+    cube(m, (1.6, 0.12, 0.12), (0, -1.1, 2.5), "charcoal", bev=0.03)
+    cube(m, (0.5, 0.12, 0.3), (0, -1.75, 1.5), "glow", bev=0.04)
+    four_wheels(m, 3.0, -1.4, 1.4, r=0.8, w=0.8, inset=0.2)
+
+
+reg("ATV", _atv, sub="Bikes")
+
+
+def _bicycle(m):
+    for nm, y in (("WheelF", -1.5), ("WheelB", 1.5)):
+        with m.group(nm):
+            m.torus(R=0.9, r=0.1, seg=12, rot=(0, 90, 0), loc=(0, y, 1.0), color="rubber")
+            m.cyl(r=0.15, h=0.2, seg=6, rot=(0, 90, 0), loc=(0, y, 1.0), color="silver")
+            for a in (0, 60, 120):
+                cube(m, (0.04, 0.04, 1.7), (0, y, 1.0), "silver", rot=(a, 0, 0), bev=0.01)
+    for a, b in (((0, 1.5, 1.0), (0, 0.2, 2.2)), ((0, 0.2, 2.2), (0, -1.1, 2.2)), ((0, -1.1, 2.2), (0, -1.5, 1.0)),
+                 ((0, 0.2, 2.2), (0, 0.0, 1.0)), ((0, 0.0, 1.0), (0, 1.5, 1.0)), ((0, 0.0, 1.0), (0, -1.1, 2.2))):
+        m.tube([a, b], [0.07, 0.07], seg=4, color="plastic_blue")
+    cube(m, (0.4, 0.8, 0.15), (0, 0.3, 2.5), "black", bev=0.05)
+    m.tube([(0, -1.1, 2.2), (0, -1.2, 2.8)], [0.06, 0.06], seg=4, color="silver")
+    cube(m, (1.4, 0.1, 0.1), (0, -1.2, 2.8), "charcoal", bev=0.03)
+
+
+reg("Bicycle", _bicycle, sub="Bikes")
+
+
+def _skateboard(m):
+    m.box((0.9, 3.0, 0.1), color="wood_light", bevel=0.04, loc=(0, 0, 0.45),
+          deform=lambda co: co.__class__((co.x, co.y, co.z + max(0.0, abs(co.y) - 1.1) * 0.35)))
+    m.box((0.85, 2.2, 0.02), color="plastic_purple", bevel=0.01, loc=(0, 0, 0.51))
+    for y in (-0.95, 0.95):
+        cube(m, (0.6, 0.2, 0.15), (0, y, 0.33), "silver", bev=0.03)
+    for nm, x, y in (("WheelFL", 0.35, -0.95), ("WheelFR", -0.35, -0.95), ("WheelBL", 0.35, 0.95),
+                     ("WheelBR", -0.35, 0.95)):
+        with m.group(nm):
+            m.cyl(r=0.16, h=0.18, seg=8, rot=(0, 90, 0), loc=(x, y, 0.16), color="plastic_yellow")
+
+
+reg("Skateboard", _skateboard, sub="Bikes")
+
+
+def _hoverboard(m):
+    cube(m, (1.2, 3.2, 0.25), (0, 0, 0.9), "plastic_white", bev=0.1)
+    cube(m, (1.0, 2.8, 0.08), (0, 0, 0.75), "neon_blue", bev=0.03)
+    for y in (-1.0, 1.0):
+        m.cyl(r=0.35, h=0.3, seg=8, color="charcoal", loc=(0, y, 0.55))
+        m.cyl(r=0.28, h=0.05, seg=8, color="neon_blue", loc=(0, y, 0.38))
+
+
+reg("Hoverboard", _hoverboard, sub="Bikes", tags=["sci-fi"])
+
+
+def _ufo(m):
+    m.lathe([(0, 1.0), (2.0, 1.1), (3.6, 1.6), (4.0, 1.9), (3.6, 2.2), (2.0, 2.5), (0, 2.6)], seg=8, color="silver")
+    m.lathe([(1.6, 2.5), (1.5, 3.2), (0.9, 3.8), (0, 4.0)], seg=8, color="window_blue")
+    m.sphere(round=True, r=0.35, color="slime", loc=(0, 0, 3.1))
+    with m.group("Ring"):
+        for a in range(0, 360, 45):
+            r = math.radians(a)
+            cube(m, (0.4, 0.4, 0.3), (math.cos(r) * 3.3, math.sin(r) * 3.3, 1.55), "glow", bev=0.08)
+    m.cone(r=1.4, h=1.0, seg=8, color="neon_green", rot=(180, 0, 0), loc=(0, 0, 1.0))
+
+
+reg("UFO", _ufo, sub="Aircraft", tags=["sci-fi"])
+
+
+def _spaceship(m):
+    m.tube([(0, -4.5, 2.0), (0, -3.0, 2.1), (0, 2.0, 2.1), (0, 3.2, 2.0)], [0.2, 1.0, 1.1, 0.9], seg=8,
+           color="plastic_white")
+    cube(m, (1.2, 2.0, 0.9), (0, -1.8, 2.9), "window_blue", bev=0.3)
+    for s in (-1, 1):
+        m.prism([(0, -1.0), (3.6, 1.6), (3.6, 2.6), (0, 2.4)], depth=0.25, color="plastic_blue", loc=(0, 0, 1.8),
+                scale=(s, 1, 1))
+        m.cyl(r=0.5, h=2.2, seg=8, color="gunmetal", rot=(90, 0, 0), loc=(s * 3.4, 2.2, 1.8))
+        m.cyl(r=0.4, h=0.2, seg=8, color="neon_blue", rot=(90, 0, 0), loc=(s * 3.4, 3.35, 1.8))
+        m.pyramid(w=0.2, h=0.6, color="plastic_red", loc=(s * 3.6, 0.6, 1.9), rot=(90, 0, 0))
+    m.cyl(r=0.8, h=0.3, seg=8, color="fire", rot=(90, 0, 0), loc=(0, 3.35, 2.0))
+    m.prism([(0, 0), (1.4, 0.3), (1.4, 1.2), (0, 0.6)], depth=0.2, color="plastic_blue", rot=(0, 90, 0),
+            loc=(0, 1.6, 2.9))
+    for x, y in ((0, -2.8), (1.6, 1.0), (-1.6, 1.0)):
+        m.tube([(x, y, 1.5), (x, y, 0.2)], [0.07, 0.07], seg=4, color="charcoal")
+        cube(m, (0.5, 0.5, 0.12), (x, y, 0.1), "charcoal", bev=0.03)
+
+
+reg("Spaceship", _spaceship, sub="Aircraft", tags=["sci-fi", "space"])
+
+
+def _submarine(m):
+    m.tube([(0, -4.5, 1.8), (0, -3.5, 1.9), (0, 3.0, 1.9), (0, 4.5, 1.8)], [0.4, 1.6, 1.5, 0.5], seg=8,
+           color="plastic_yellow")
+    cube(m, (1.2, 2.4, 1.6), (0, -0.6, 3.8), "plastic_yellow", bev=0.3)
+    m.tube([(0.3, -1.0, 4.5), (0.3, -1.0, 5.6), (0.3, -1.5, 5.6)], [0.1, 0.1, 0.1], seg=4, color="gunmetal")
+    for y in (-2.6, -1.3, 0.0, 1.3):
+        m.cyl(r=0.4, h=0.1, seg=8, color="window_blue", rot=(0, 90, 0), loc=(1.52, y, 2.0))
+        m.torus(R=0.42, r=0.08, seg=8, color="gunmetal", rot=(0, 90, 0), loc=(1.54, y, 2.0))
+    for s in (-1, 1):
+        m.prism([(0, 0), (1.2, 0.4), (1.2, 0.8), (0, 0.8)], depth=0.12, color="plastic_yellow",
+                loc=(s * 0.8, 3.4, 1.8), scale=(s, 1, 1))
+    with m.group("Propeller"):
+        m.cyl(r=0.15, h=0.5, seg=6, color="gunmetal", rot=(90, 0, 0), loc=(0, 4.9, 1.8))
+        for a in (0, 120, 240):
+            cube(m, (0.2, 0.06, 0.8), (0, 5.1, 1.8), "bronze", rot=(0, a, 0), bev=0.02,
+                 deform=lambda co: co.__class__((co.x, co.y, co.z + 0.4)))
+
+
+reg("Submarine", _submarine, sub="Boats")
+
+
+def _sailboat(m):
+    m.box((3.0, 8.0, 1.4), color=lambda c, n: "plastic_white" if c.z > 0.8 else "plastic_red", bevel=0.3,
+          loc=(0, 0, 0.7), cuts={"z": [0.8]},
+          deform=lambda co: co.__class__((co.x * (1.0 - max(0.0, -co.y - 1.0) / 3.0 * 0.95), co.y, co.z)))
+    cube(m, (2.4, 5.0, 0.1), (0, 0.8, 1.42), "wood_light", bev=0.02)
+    m.cyl(r=0.12, h=9.0, seg=6, color="wood", loc=(0, 0.0, 5.9))
+    m.cyl(r=0.08, h=4.0, seg=6, color="wood", rot=(90, 0, 0), loc=(0, 1.9, 2.6))
+    m.panel([(0, 0.1, 10.2), (0, 0.1, 2.8), (0, 3.8, 2.8)], 0.06, "white")
+    m.panel([(0, -0.1, 9.8), (0, -3.6, 1.6), (0, -0.1, 1.6)], 0.06, "fabric_cream")
+    m.box((0.06, 0.8, 0.5), color="plastic_red", loc=(0, 0.3, 10.4), bevel=0.01)
+
+
+reg("Sailboat", _sailboat, sub="Boats")
+
+
+def _jetski(m):
+    m.box((1.6, 4.0, 0.9), color=lambda c, n: "plastic_white" if c.z > 0.5 else "plastic_blue", bevel=0.25,
+          loc=(0, 0, 0.45), cuts={"z": [0.5]},
+          deform=lambda co: co.__class__((co.x * (1.0 - max(0.0, -co.y - 0.8) / 1.4 * 0.7), co.y, co.z)))
+    cube(m, (0.8, 1.6, 0.4), (0, 0.6, 1.1), "plastic_black", bev=0.12)
+    m.tube([(0, -0.6, 0.9), (0, -0.8, 1.5)], [0.08, 0.08], seg=4, color="charcoal")
+    cube(m, (1.2, 0.1, 0.1), (0, -0.8, 1.5), "charcoal", bev=0.03)
+    cube(m, (1.0, 0.6, 0.3), (0, -1.2, 1.0), "plastic_blue", bev=0.1, rot=(-20, 0, 0))
+
+
+reg("JetSki", _jetski, sub="Boats")
+
+
+def _blimp(m):
+    m.lathe([(0, -5.0), (1.6, -4.0), (2.4, -2.0), (2.5, 1.0), (2.0, 3.6), (0.9, 5.2), (0, 5.6)], seg=8,
+            color=lambda c, n: "plastic_white" if abs(c.x) > 0.6 or c.z < 5.6 else "plastic_red", rot=(-90, 0, 0),
+            loc=(0, 0, 6.0))
+    for a in (0, 90, 180, 270):
+        m.prism([(0, 0), (1.6, 0), (1.6, 1.0), (0.2, 2.2)], depth=0.15, color="plastic_red", rot=(90, 0, a),
+                loc=(0, 3.4, 6.0), deform=lambda co: co.__class__((co.x + 1.5, co.y, co.z)), scale=(1, 1, 1))
+    cube(m, (1.4, 2.8, 1.0), (0, -0.4, 3.2), "plastic_red", bev=0.2)
+    cube(m, (1.46, 2.0, 0.5), (0, -0.4, 3.35), "window_blue", bev=0.05)
+    with m.group("Propeller"):
+        for s in (-1, 1):
+            m.cyl(r=0.2, h=0.6, seg=6, color="charcoal", rot=(0, 90, 0), loc=(s * 1.0, 0.6, 3.2))
+            cube(m, (0.06, 0.2, 1.2), (s * 1.35, 0.6, 3.2), "charcoal", bev=0.02)
+
+
+reg("Blimp", _blimp, sub="Aircraft")

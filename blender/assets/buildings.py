@@ -784,3 +784,438 @@ def _command_tent(m):
 
 
 reg("CommandTent", _command_tent, sub="Military")
+
+
+# ============================================================================
+# batch 2: more shops, fun park, landmarks, street props, colour variants
+# ============================================================================
+for _n, _w, _r in (("GreenHouse", "leaf_light", "roof_green"), ("PinkHouse", "frosting_pink", "roof_red"),
+                   ("PurpleHouse", "amethyst", "roof_blue"), ("BrickHouse", "brick", "stone_dark"),
+                   ("WhiteHouse", "plastic_white", "roof_blue"), ("YellowHouse", "plastic_yellow", "roof_red")):
+    reg(_n, (lambda m, w=_w, r=_r: house(m, wall=w, roof=r)), sub="Homes", tags=["color-variant"])
+for _n, _w, _r in (("BlueTwoStoryHouse", "tile_blue", "roof_blue"), ("RedTwoStoryHouse", "brick", "stone_dark")):
+    reg(_n, (lambda m, w=_w, r=_r: house(m, W=14, D=11, H=12, wall=w, roof=r, floors=2)), sub="Homes",
+        tags=["color-variant"])
+reg("WhiteApartment", lambda m: apartment(m, wall="plastic_white", trim="tile_blue"), sub="City")
+reg("TallApartment", lambda m: apartment(m, wall="sandstone", trim="plastic_white", floors=6), sub="City")
+
+
+def _bread_icon(m, D, H):
+    m.box((2.4, 1.2, 1.0), color="bread", bevel=0.35, loc=(0, -D / 2 + 0.8, H + 1.0))
+    for x in (-0.6, 0, 0.6):
+        cube(m, (0.12, 0.8, 0.1), (x, -D / 2 + 0.8, H + 1.52), "bread_crust", bev=0.03, rot=(0, 0, 25))
+
+
+def _candy_icon(m, D, H):
+    m.cyl(r=0.1, h=1.6, seg=6, color="white", loc=(0, -D / 2 + 0.5, H + 1.0))
+    m.cyl(r=1.0, h=0.3, seg=8, color="candy_pink", rot=(90, 0, 0), loc=(0, -D / 2 + 0.5, H + 2.4))
+    m.cyl(r=0.6, h=0.34, seg=8, color="white", rot=(90, 0, 0), loc=(0, -D / 2 + 0.5, H + 2.4))
+    m.cyl(r=0.3, h=0.38, seg=8, color="candy_blue", rot=(90, 0, 0), loc=(0, -D / 2 + 0.5, H + 2.4))
+
+
+def _paw_icon(m, D, H):
+    cube(m, (1.2, 0.3, 1.0), (0, -D / 2 + 0.5, H + 1.2), "fur_brown", bev=0.3)
+    for x, z in ((-0.6, 1.95), (-0.2, 2.2), (0.2, 2.2), (0.6, 1.95)):
+        cube(m, (0.35, 0.3, 0.4), (x, -D / 2 + 0.5, H + z), "fur_brown", bev=0.12)
+
+
+def _burger_icon(m, D, H):
+    for z, c, h in ((0.9, "bread", 0.4), (1.25, "meat", 0.3), (1.45, "lettuce", 0.12), (1.75, "bread", 0.5)):
+        cube(m, (2.2, 1.4, h), (0, -D / 2 + 0.8, H + z), c, bev=min(0.2, h * 0.4))
+
+
+def _game_icon(m, D, H):
+    cube(m, (2.2, 0.4, 1.3), (0, -D / 2 + 0.5, H + 1.3), "plastic_black", bev=0.3)
+    cube(m, (0.2, 0.44, 0.6), (-0.6, -D / 2 + 0.5, H + 1.3), "neon_green", bev=0.04)
+    cube(m, (0.6, 0.44, 0.2), (-0.6, -D / 2 + 0.5, H + 1.3), "neon_green", bev=0.04)
+    for x, z in ((0.5, 1.5), (0.8, 1.2)):
+        cube(m, (0.26, 0.46, 0.26), (x, -D / 2 + 0.5, H + z), "neon_pink", bev=0.06)
+
+
+reg("Bakery", lambda m: shop(m, wall="bread", awn=("awning_red", "cream"), sign=("chocolate", "cream"),
+                              icon=_bread_icon), sub="Shops")
+reg("CandyShop", lambda m: shop(m, wall="frosting_pink", awn=("candy_blue", "awning_white"),
+                                 sign=("plastic_white", "candy_pink"), icon=_candy_icon), sub="Shops")
+reg("PetShop", lambda m: shop(m, wall="tile_blue", awn=("awning_green", "plastic_yellow"),
+                               sign=("plastic_yellow", "fur_brown"), icon=_paw_icon), sub="Shops")
+reg("BurgerJoint", lambda m: shop(m, wall="plastic_red", awn=("plastic_yellow", "awning_red"),
+                                   sign=("plastic_yellow", "plastic_red"), icon=_burger_icon), sub="Shops")
+reg("ArcadeShop", lambda m: shop(m, wall="obsidian", awn=("neon_pink", "neon_blue"), sign=("black", "neon_green"),
+                                  icon=_game_icon), sub="Shops")
+
+
+def _cinema(m):
+    W, D, H = 20.0, 14.0, 12.0
+    cube(m, (W, D, H), (0, 0, H / 2), "ruby_dark", bev=0.2)
+    cube(m, (W + 1.0, 4.0, 1.6), (0, -D / 2 - 1.8, 6.0), "gold", bev=0.2)
+    for i in range(12):
+        cube(m, (0.3, 0.2, 0.3), (-W / 2 + 0.5 + i * 1.8, -D / 2 - 3.85, 6.0), "glow", bev=0.06)
+    cube(m, (12.0, 0.3, 2.4), (0, -D / 2 - 3.9, 8.4), "plastic_white", bev=0.1)
+    for i in range(6):
+        cube(m, (1.0, 0.2, 1.4), (-4.5 + i * 1.8, -D / 2 - 4.08, 8.4), "black", bev=0.05)
+    for x in (-6, 6):
+        cube(m, (3.0, 0.3, 4.0), (x, -D / 2 - 0.1, 2.6), "gold", bev=0.1)
+        cube(m, (2.4, 0.4, 3.4), (x, -D / 2 - 0.18, 2.6), "plastic_yellow", bev=0.06)
+    door(m, 0, -D / 2, 0, w=4.0, h=4.6, col="window_blue", frame="gold")
+    flat_roof(m, W, D, H, parapet="ruby_dark")
+
+
+reg("Cinema", _cinema, sub="City")
+
+
+def _museum(m):
+    W, D, H = 22.0, 14.0, 10.0
+    cube(m, (W, D, H), (0, 0, H / 2 + 1.2), "sandstone", bev=0.15)
+    for k in range(3):
+        cube(m, (W + 2.0 - k * 0.6, D + 3.0 - k * 1.0, 0.4), (0, -0.8 + k * 0.4, 0.2 + k * 0.4), "stone_light", bev=0.06)
+    for i in range(8):
+        x = -W / 2 + 1.2 + i * (W - 2.4) / 7
+        m.cyl(r=0.55, h=H, seg=8, color="marble", loc=(x, -D / 2 - 1.5, H / 2 + 1.2))
+    m.prism([(-(W / 2 + 0.5), 0), (W / 2 + 0.5, 0), (0, 3.6)], depth=4.0, color="marble", rot=(90, 0, 0),
+            loc=(0, -D / 2 - 1.0, H + 1.6))
+    cube(m, (W + 1.0, 4.0, 0.6), (0, -D / 2 - 1.0, H + 1.5), "marble", bev=0.1)
+    door(m, 0, -D / 2, 1.2, w=3.6, h=5.2, col="wood_dark", frame="marble_dark")
+    m.box((2.0, 2.0, 2.4), color="gold", bevel=0.3, loc=(0, -D / 2 - 4.0, 2.2))
+    m.sphere(round=True, r=0.9, color="gold", loc=(0, -D / 2 - 4.0, 4.1))
+
+
+reg("Museum", _museum, sub="City")
+
+
+def _castle_keep(m):
+    W = 14.0
+    cube(m, (W, W, 12.0), (0, 0, 6.0), "stone", bev=0.15, cuts={"z": 1.8})
+    crenel(m, W, W, 12.0, "stone_dark")
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            m.cyl(r=2.4, h=16.0, seg=8, color="stone_dark", loc=(sx * W / 2, sy * W / 2, 8.0))
+            m.cone(r=3.0, h=4.0, seg=8, color="roof_blue", loc=(sx * W / 2, sy * W / 2, 16.0))
+            m.cyl(r=0.08, h=2.0, seg=6, color="wood_dark", loc=(sx * W / 2, sy * W / 2, 20.5))
+            m.box((1.2, 0.06, 0.8), color="fire_red", loc=(sx * W / 2 + 0.6, sy * W / 2, 21.0), bevel=0.02)
+    cube(m, (4.0, 0.6, 5.0), (0, -W / 2 - 0.2, 2.5), "black", bev=0.05)
+    m.cyl(r=2.0, h=0.6, seg=8, color="black", rot=(90, 0, 0), loc=(0, -W / 2 - 0.2, 5.0))
+    for z in (7.0, 10.0):
+        for x in (-4, 4):
+            cube(m, (0.8, 0.4, 1.6), (x, -W / 2 - 0.05, z), "black", bev=0.05)
+
+
+reg("CastleKeep", _castle_keep, sub="Landmarks")
+
+
+def _treehouse(m):
+    m.cyl(r=1.2, r2=0.9, h=14.0, seg=8, color="bark", loc=(0, 0, 7.0))
+    cube(m, (7.0, 7.0, 0.5), (0, 0, 7.0), "wood", bev=0.1)
+    cube(m, (5.0, 5.0, 4.0), (0, 0.6, 9.2), "wood_light", bev=0.12)
+    gable_roof(m, 5.0, 5.0, 11.2, 2.4, col="roof_green", trim="wood")
+    door(m, 0, -1.9, 7.25, w=1.8, h=3.0, col="wood_dark", frame="wood")
+    window(m, 2.5, 0.6, 9.4, face="left", w=1.4, h=1.4, frame="wood", sill=False)
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            cube(m, (0.2, 0.2, 1.2), (sx * 3.3, sy * 3.3, 7.8), "wood_dark", bev=0.03)
+    for i in range(10):
+        cube(m, (1.2, 0.12, 0.12), (0, -1.4, 0.6 + i * 0.65), "wood_light", bev=0.02)
+    for s in (-1, 1):
+        cube(m, (0.12, 0.12, 6.8), (s * 0.55, -1.4, 3.4), "wood_light", bev=0.02)
+    for x, y, z, s in ((0, 0, 15.0, 5.0), (2.5, 1.0, 14.0, 3.4), (-2.5, 0.5, 14.2, 3.6), (0.5, -2.0, 13.8, 3.0)):
+        m.ico(r=s / 2, sub=1, color=lambda c, n: "leaf_light" if n.z > 0.3 else "leaf", loc=(x, y, z))
+
+
+reg("Treehouse", _treehouse, sub="Homes")
+
+
+def _igloo(m):
+    m.lathe([(0, 0), (4.0, 0), (3.8, 1.6), (3.0, 3.0), (1.6, 3.9), (0, 4.1)], seg=8, color="snow",
+            cuts={"z": 0.8})
+    m.box((2.4, 2.6, 2.4), color="snow", bevel=0.4, loc=(0, -4.0, 1.2))
+    m.box((1.6, 0.3, 1.8), color="black", bevel=0.2, loc=(0, -5.2, 0.9))
+
+
+reg("Igloo", _igloo, sub="Homes")
+
+
+def _log_cabin(m):
+    W, D, H = 12.0, 10.0, 6.0
+    for z in range(int(H / 0.6)):
+        for s in (-1, 1):
+            m.cyl(r=0.32, h=W + 1.0, seg=6, color="wood_mid" if z % 2 else "wood", rot=(0, 90, 0),
+                  loc=(0, s * D / 2, 0.32 + z * 0.6))
+            m.cyl(r=0.32, h=D + 1.0, seg=6, color="wood" if z % 2 else "wood_mid", rot=(90, 0, 0),
+                  loc=(s * W / 2, 0, 0.62 + z * 0.6))
+    cube(m, (W - 0.4, D - 0.4, H), (0, 0, H / 2 + 0.3), "wood_dark", bev=0.1)
+    door(m, 0, -D / 2 - 0.2, 0.3, w=2.2, h=4.0, col="wood_deep", frame="wood_dark")
+    for x in (-3.4, 3.4):
+        window(m, x, -D / 2 - 0.3, 3.4, w=1.6, h=1.6, frame="wood_dark", sill=False)
+    gable_roof(m, W, D, H + 0.4, D * 0.5, col="roof_green", trim="wood")
+    cube(m, (1.6, 1.6, 4.0), (W / 2 - 1.5, D / 4, H + 2.6), "stone", bev=0.1)
+
+
+reg("LogCabin", _log_cabin, sub="Homes")
+
+
+def _beach_hut(m):
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            cube(m, (0.4, 0.4, 2.0), (sx * 2.8, sy * 2.8, 1.0), "wood_dark", bev=0.06)
+    cube(m, (7.0, 7.0, 0.4), (0, 0, 2.2), "wood", bev=0.08)
+    cube(m, (5.6, 5.6, 4.0), (0, 0, 4.4), "wood_pale", bev=0.12)
+    m.pyramid(w=8.4, h=3.4, color="corn_husk", loc=(0, 0, 6.3))
+    door(m, 0, -2.8, 2.4, w=1.8, h=3.2, col="plastic_blue", frame="wood")
+    for i in range(5):
+        cube(m, (1.4, 0.3, 0.14), (0, -3.8 - i * 0.45, 2.0 - i * 0.42), "wood", bev=0.03)
+
+
+reg("BeachHut", _beach_hut, sub="Homes")
+
+
+def _pagoda(m):
+    for i, (w, h) in enumerate(((10.0, 4.0), (8.0, 3.4), (6.0, 3.0))):
+        z0 = sum(hh + 1.2 for _, hh in ((10.0, 4.0), (8.0, 3.4), (6.0, 3.0))[:i])
+        cube(m, (w, w, h), (0, 0, z0 + h / 2), "fire_red", bev=0.12)
+        m.pyramid(w=w + 3.0, h=1.4, color="obsidian", loc=(0, 0, z0 + h))
+        for sx in (-1, 1):
+            for sy in (-1, 1):
+                m.pyramid(w=0.4, h=0.8, color="gold", loc=(sx * (w / 2 + 1.3), sy * (w / 2 + 1.3), z0 + h - 0.2),
+                          rot=(sy * -40, sx * 40, 0))
+    m.cyl(r=0.2, h=3.0, seg=6, color="gold", loc=(0, 0, 16.5))
+    door(m, 0, -5.0, 0, w=2.6, h=3.4, col="wood_deep", frame="gold")
+
+
+reg("Pagoda", _pagoda, sub="Landmarks")
+
+
+def _pyramid(m):
+    for i in range(7):
+        w = 20.0 - i * 2.8
+        cube(m, (w, w, 1.6), (0, 0, 0.8 + i * 1.6), "sandstone" if i % 2 else "sand", bev=0.15)
+    cube(m, (1.6, 1.6, 1.4), (0, 0, 11.9), "gold", bev=0.2)
+    cube(m, (2.4, 0.4, 3.0), (0, -10.0, 1.5), "black", bev=0.05)
+
+
+reg("Pyramid", _pyramid, sub="Landmarks")
+
+
+def _temple(m):
+    W, D = 16.0, 10.0
+    for k in range(3):
+        cube(m, (W + 2.0 - k * 0.8, D + 2.0 - k * 0.8, 0.4), (0, 0, 0.2 + k * 0.4), "marble_dark", bev=0.05)
+    for i in range(6):
+        for s in (-1, 1):
+            m.cyl(r=0.55, h=7.0, seg=8, color="marble", loc=(-W / 2 + 1.0 + i * (W - 2.0) / 5, s * (D / 2 - 1.0), 4.7))
+    cube(m, (W, D, 1.0), (0, 0, 8.7), "marble", bev=0.1)
+    m.prism([(-(D / 2), 0), (D / 2, 0), (0, 2.6)], depth=W, color="marble", rot=(90, 0, 90), loc=(0, 0, 9.2))
+
+
+reg("GreekTemple", _temple, sub="Landmarks")
+
+
+def _mine_entrance(m):
+    rock_col = lambda c, n: "stone_light" if n.z > 0.6 else "stone"
+    m.box((14.0, 6.0, 9.0), color=rock_col, bevel=1.4, loc=(0, 1.0, 4.5))
+    cube(m, (6.0, 1.0, 6.0), (0, -2.0, 3.0), "black", bev=0.1)
+    for s in (-1, 1):
+        cube(m, (0.8, 0.8, 6.4), (s * 3.2, -2.4, 3.2), "wood", bev=0.08)
+    cube(m, (7.6, 0.9, 0.9), (0, -2.4, 6.6), "wood", bev=0.08)
+    cube(m, (4.0, 0.3, 1.0), (0, -2.9, 7.6), "wood_light", bev=0.06)
+    for x in (-0.8, 0.8):
+        cube(m, (0.3, 12.0, 0.2), (x, -7.0, 0.1), "iron_dark", bev=0.04)
+    for i in range(12):
+        cube(m, (2.4, 0.4, 0.15), (0, -1.5 - i * 1.0, 0.05), "wood_dark", bev=0.03)
+    m.lathe([(0, 0), (0.25, 0), (0.3, 0.6), (0, 0.6)], seg=6, color="glow", loc=(2.4, -3.0, 5.4))
+    for i, (x, c) in enumerate(((-4.5, "gold"), (4.2, "diamond"), (-5.2, "emerald"))):
+        m.crystal(r=0.3, h=0.9, color=c, loc=(x, -1.9, 2.0 + i * 1.5), rot=(-60, 0, 0))
+
+
+reg("MineEntrance", _mine_entrance, sub="Landmarks", tags=["mining", "simulator"])
+
+
+def _bridge(m):
+    L = 16.0
+    m.box((4.0, L, 0.5), color="wood", bevel=0.08, loc=(0, 0, 2.0), cuts={"y": 1.0},
+          deform=lambda co: co.__class__((co.x, co.y, co.z + 1.2 * (1 - (co.y / (L / 2)) ** 2))))
+    for s in (-1, 1):
+        for i in range(9):
+            y = -L / 2 + i * L / 8
+            z = 2.0 + 1.2 * (1 - (y / (L / 2)) ** 2)
+            cube(m, (0.25, 0.25, 1.4), (s * 1.9, y, z + 0.8), "wood_dark", bev=0.04)
+        pts = [(s * 1.9, -L / 2 + i * L / 8, 2.0 + 1.2 * (1 - ((-L / 2 + i * L / 8) / (L / 2)) ** 2) + 1.4)
+               for i in range(9)]
+        m.tube(pts, [0.12] * 9, seg=4, color="wood_dark")
+    for y in (-L / 2 + 0.6, L / 2 - 0.6):
+        cube(m, (4.6, 1.2, 2.0), (0, y, 1.0), "stone", bev=0.15)
+
+
+reg("Bridge", _bridge, sub="Landmarks")
+
+
+def _water_tower(m):
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            m.tube([(sx * 2.4, sy * 2.4, 0), (sx * 1.8, sy * 1.8, 10.0)], [0.2, 0.18], seg=4, color="gunmetal")
+    for z in (3.5, 7.0):
+        cube(m, (4.6 - z * 0.12, 0.15, 0.15), (0, 2.3 - z * 0.06, z), "gunmetal", bev=0.03)
+        cube(m, (4.6 - z * 0.12, 0.15, 0.15), (0, -2.3 + z * 0.06, z), "gunmetal", bev=0.03)
+    m.cyl(r=3.0, h=4.0, seg=8, color="tile_blue", loc=(0, 0, 12.0))
+    m.cone(r=3.3, h=2.0, seg=8, color="gunmetal", loc=(0, 0, 14.0))
+    m.torus(R=3.1, r=0.12, seg=8, color="gunmetal", loc=(0, 0, 10.2))
+
+
+reg("WaterTower", _water_tower, sub="City")
+
+
+def _power_pole(m):
+    m.cyl(r=0.3, h=14.0, seg=6, color="wood_dark", loc=(0, 0, 7.0))
+    for z in (12.4, 13.4):
+        cube(m, (5.0, 0.3, 0.3), (0, 0, z), "wood_dark", bev=0.05)
+        for x in (-2.2, -0.8, 0.8, 2.2):
+            m.cyl(r=0.12, h=0.4, seg=6, color="plastic_green", loc=(x, 0, z + 0.35))
+    m.cyl(r=0.6, h=1.2, seg=8, color="gunmetal", loc=(0.7, 0, 10.5))
+
+
+reg("PowerPole", _power_pole, sub="City")
+
+
+def _phone_booth(m):
+    cube(m, (2.4, 2.4, 6.0), (0, 0, 3.0), "fire_red", bev=0.12)
+    for face, x, y in (("front", 0, -1.2), ("left", 1.2, 0), ("right", -1.2, 0)):
+        for z in (2.2, 3.4, 4.6):
+            window(m, x, y, z, w=1.5, h=0.9, face=face, frame="fire_red", sill=False)
+    cube(m, (2.6, 2.6, 0.4), (0, 0, 6.2), "fire_red", bev=0.1)
+    cube(m, (1.8, 0.2, 0.4), (0, -1.25, 5.6), "plastic_white", bev=0.04)
+
+
+reg("PhoneBooth", _phone_booth, sub="Signs")
+
+
+def _vending(m, col="plastic_blue"):
+    cube(m, (2.4, 1.6, 4.8), (0, 0, 2.4), col, bev=0.12)
+    cube(m, (1.5, 0.1, 3.2), (-0.3, -0.8, 2.8), "window_blue", bev=0.04)
+    for r in range(4):
+        for c in range(3):
+            cube(m, (0.35, 0.12, 0.5), (-0.8 + c * 0.5, -0.86, 1.6 + r * 0.75),
+                 ["plastic_red", "plastic_yellow", "plastic_green", "plastic_orange"][(r + c) % 4], bev=0.04)
+    cube(m, (0.5, 0.12, 1.0), (0.85, -0.82, 3.2), "charcoal", bev=0.04)
+    cube(m, (1.6, 0.14, 0.5), (-0.3, -0.83, 0.6), "charcoal", bev=0.04)
+
+
+reg("VendingMachine", lambda m: _vending(m), sub="Signs")
+reg("SnackMachine", lambda m: _vending(m, col="plastic_red"), sub="Signs")
+
+
+def _atm(m):
+    cube(m, (2.0, 1.6, 4.4), (0, 0, 2.2), "gunmetal", bev=0.12)
+    cube(m, (1.4, 0.3, 1.0), (0, -0.85, 3.4), "screen_glow", bev=0.05, rot=(-10, 0, 0))
+    cube(m, (1.4, 0.5, 0.6), (0, -0.95, 2.4), "charcoal", bev=0.06, rot=(20, 0, 0))
+    cube(m, (0.8, 0.1, 0.12), (0, -0.82, 1.7), "black", bev=0.02)
+    cube(m, (2.1, 0.6, 0.6), (0, -0.5, 4.5), "sign_green", bev=0.08)
+
+
+reg("ATM", _atm, sub="Signs")
+
+
+def _dumpster(m):
+    cube(m, (5.0, 3.0, 2.6), (0, 0, 1.6), "sign_green", bev=0.15)
+    cube(m, (5.2, 3.2, 0.2), (0, 0, 2.95), "charcoal", bev=0.05, rot=(-4, 0, 0))
+    for x in (-2.0, 2.0):
+        for y in (-1.1, 1.1):
+            m.cyl(r=0.25, h=0.2, seg=6, color="charcoal", rot=(0, 90, 0), loc=(x, y, 0.25))
+    cube(m, (0.3, 3.1, 0.3), (0, 0, 2.0), "charcoal", bev=0.05)
+
+
+reg("Dumpster", _dumpster, sub="Signs")
+
+
+# --- playground & fun park ------------------------------------------------------------------------
+def _slide(m):
+    for sx in (-1, 1):
+        for y in (0.0, 2.0):
+            cube(m, (0.3, 0.3, 5.0), (sx * 1.1, y, 2.5), "plastic_red", bev=0.05)
+    cube(m, (2.6, 2.4, 0.3), (0, 1.0, 4.0), "plastic_yellow", bev=0.06)
+    for i in range(6):
+        cube(m, (1.8, 0.2, 0.14), (0, 2.4 + i * 0.1, 0.6 + i * 0.6), "plastic_blue", bev=0.03)
+    m.box((1.8, 5.6, 0.2), color="plastic_green", bevel=0.05, loc=(0, -2.2, 2.2), rot=(-38, 0, 0))
+    for s in (-1, 1):
+        m.box((0.15, 5.6, 0.5), color="plastic_green", bevel=0.04, loc=(s * 0.95, -2.2, 2.4), rot=(-38, 0, 0))
+    m.pyramid(w=3.0, h=1.6, color="plastic_blue", loc=(0, 1.0, 5.0))
+
+
+reg("PlaygroundSlide", _slide, sub="FunPark")
+
+
+def _swing(m):
+    for s in (-1, 1):
+        for y in (-1.0, 1.0):
+            m.tube([(s * 3.0, y * 1.6, 0), (s * 3.0, 0, 5.0)], [0.15, 0.15], seg=4, color="plastic_blue")
+    m.cyl(r=0.15, h=6.4, seg=6, color="plastic_blue", rot=(0, 90, 0), loc=(0, 0, 5.0))
+    with m.group("SwingL"):
+        for x in (1.0, 2.0):
+            m.tube([(x, 0, 5.0), (x, 0, 1.2)], [0.03, 0.03], seg=4, color="silver")
+        cube(m, (1.2, 0.6, 0.12), (1.5, 0, 1.1), "plastic_red", bev=0.03)
+    with m.group("SwingR"):
+        for x in (-1.0, -2.0):
+            m.tube([(x, 0, 5.0), (x, 0, 1.2)], [0.03, 0.03], seg=4, color="silver")
+        cube(m, (1.2, 0.6, 0.12), (-1.5, 0, 1.1), "plastic_yellow", bev=0.03)
+
+
+reg("SwingSet", _swing, sub="FunPark", split=True)
+
+
+def _ferris_wheel(m):
+    for s in (-1, 1):
+        for y in (-1.0, 1.0):
+            m.tube([(s * 1.2, y * 4.0, 0), (s * 1.2, 0, 10.0)], [0.25, 0.2], seg=4, color="plastic_white")
+    cube(m, (4.0, 10.0, 0.6), (0, 0, 0.3), "concrete", bev=0.1)
+    with m.group("Wheel"):
+        for s in (-1, 1):
+            m.torus(R=8.0, r=0.18, seg=16, color="plastic_white", rot=(0, 90, 0), loc=(s * 0.8, 0, 10.0))
+        m.cyl(r=0.6, h=2.8, seg=8, color="plastic_red", rot=(0, 90, 0), loc=(0, 0, 10.0))
+        cols = ["plastic_red", "plastic_yellow", "plastic_blue", "plastic_green", "plastic_purple", "plastic_orange",
+                "plastic_pink", "neon_blue"]
+        for i in range(8):
+            a = math.radians(i * 45)
+            y, z = math.cos(a) * 8.0, 10.0 + math.sin(a) * 8.0
+            for s in (-1, 1):
+                m.tube([(s * 0.8, 0, 10.0), (s * 0.8, y, z)], [0.08, 0.08], seg=4, color="plastic_white")
+            cube(m, (2.4, 1.6, 1.6), (0, y, z - 1.2), cols[i], bev=0.3)
+            cube(m, (2.44, 1.2, 0.6), (0, y, z - 1.0), "window_blue", bev=0.05)
+
+
+reg("FerrisWheel", _ferris_wheel, sub="FunPark", split=True)
+
+
+def _carousel(m):
+    m.cyl(r=6.0, h=0.8, seg=8, color="plastic_red", loc=(0, 0, 0.4))
+    m.cyl(r=0.6, h=6.0, seg=8, color="gold", loc=(0, 0, 3.5))
+    with m.group("Ride"):
+        m.cyl(r=5.8, h=0.3, seg=8, color="plastic_white", loc=(0, 0, 0.95))
+        for i in range(6):
+            a = math.radians(i * 60 + 30)
+            x, y = math.cos(a) * 4.2, math.sin(a) * 4.2
+            m.cyl(r=0.1, h=5.6, seg=6, color="gold", loc=(x, y, 3.8))
+            cube(m, (0.8, 2.0, 1.0), (x, y, 2.4), ["plastic_white", "fur_tan", "fur_black"][i % 3], bev=0.2,
+                 rot=(0, 0, i * 60 + 30 + 90))
+            cube(m, (0.6, 0.7, 0.9), (x + math.cos(a + 1.57) * 0.9, y + math.sin(a + 1.57) * 0.9, 3.0),
+                 ["plastic_white", "fur_tan", "fur_black"][i % 3], bev=0.15, rot=(0, 0, i * 60 + 30 + 90))
+        m.cone(r=6.6, h=2.6, seg=8, color=lambda c, n: "plastic_red" if int((math.degrees(math.atan2(c.y, c.x)) + 382.5) / 45) % 2
+               else "plastic_yellow", loc=(0, 0, 6.6))
+        m.sphere(round=True, r=0.5, color="gold", loc=(0, 0, 9.4))
+
+
+reg("Carousel", _carousel, sub="FunPark", split=True)
+
+
+def _stage(m):
+    cube(m, (14.0, 8.0, 1.6), (0, 0, 0.8), "wood_dark", bev=0.1)
+    cube(m, (14.0, 0.6, 8.0), (0, 3.7, 5.6), "black", bev=0.1)
+    for s in (-1, 1):
+        cube(m, (0.8, 0.8, 8.0), (s * 6.6, -3.6, 5.6), "gunmetal", bev=0.08)
+        cube(m, (3.0, 0.3, 6.6), (s * 5.2, -3.2, 5.8), "rug_red", bev=0.1)
+        cube(m, (1.4, 1.2, 2.2), (s * 5.4, 2.6, 2.7), "charcoal", bev=0.1)
+        m.cyl(r=0.45, h=0.1, seg=8, color="gunmetal", rot=(90, 0, 0), loc=(s * 5.4, 2.0, 2.9))
+    cube(m, (14.6, 0.8, 0.8), (0, -3.6, 9.6), "gunmetal", bev=0.08)
+    for x in (-4.5, -1.5, 1.5, 4.5):
+        cube(m, (0.6, 0.6, 0.7), (x, -3.6, 9.0), "charcoal", bev=0.08)
+        m.cyl(r=0.25, h=0.1, seg=8, color="glow", loc=(x, -3.6, 8.6))
+    m.cyl(r=0.06, h=3.0, seg=6, color="charcoal", loc=(0, -1.0, 3.1))
+
+
+reg("ConcertStage", _stage, sub="FunPark")

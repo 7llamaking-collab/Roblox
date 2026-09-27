@@ -384,3 +384,83 @@ def legend_sword(m, name, E):
 for _e, _E in ELEMENTS.items():
     add(f"{_e}Sword", CAT, (lambda m, e=_e, E=_E: legend_sword(m, e, E)), sub="Legendary", origin=(0, 0, 0),
         tags=["legendary", _e.lower()])
+
+
+# =====================================================================================
+# Batch 2: more tiered weapons (wands, crossbows, tridents, flails, rapiers)
+# =====================================================================================
+def tier_wand(m, T, tier):
+    m.cyl(r=0.06, r2=0.045, h=1.7, seg=6, color=T["handle"], loc=(0, 0, 0.85))
+    m.cyl(r=0.08, h=0.55, seg=6, color=T["grip"], loc=(0, 0, 0.3), bevel=0.02)
+    m.box((0.16, 0.16, 0.1), color=T["accent"], bevel=0.02, loc=(0, 0, 0.02))
+    m.box((0.18, 0.18, 0.12), color=T["accent"], bevel=0.03, loc=(0, 0, 1.68))
+    m.prism(star_pts(0.34, 0.15, 5), depth=0.14, bevel=0.03, bseg=1, rot=(90, 0, 0), loc=(0, 0, 2.0),
+            **paint(T, "main", "z", 1.66, 2.34))
+    m.box((0.12, 0.18, 0.12), color=solid(T, "gem", "glow"), loc=(0, 0, 2.0), rot=(0, 45, 0))
+
+
+def tier_crossbow(m, T, tier):
+    m.box((0.22, 1.8, 0.22), bevel=0.05, loc=(0, 0, 0.5), **paint(T, "handle", "y", -0.9, 0.9))
+    m.box((0.2, 0.5, 0.55), bevel=0.06, color=T["grip"], loc=(0, 0.7, 0.28), rot=(20, 0, 0))
+    m.box((0.14, 0.3, 0.3), color=T["dark"], bevel=0.03, loc=(0, 0.2, 0.32))
+    pts = [(math.sin(math.radians(a)) * 1.0, -0.75 + (1 - math.cos(math.radians(a))) * 0.45, 0.58)
+           for a in range(-70, 71, 20)]
+    m.tube(pts, [0.07] * len(pts), seg=4, **paint(T, "main", "x", -1.0, 1.0))
+    for p in (pts[0], pts[-1]):
+        m.box((0.14, 0.14, 0.14), color=T["accent"], loc=p)
+    m.tube([pts[0], (0, -0.05, 0.64), pts[-1]], [0.015] * 3, seg=3, color="string", smooth=False)
+    m.cyl(r=0.035, h=1.1, seg=4, color="iron" if tier in ("Wood", "Stone") else solid(T, "light", "white"),
+          rot=(90, 0, 0), loc=(0, -0.45, 0.66))
+    m.pyramid(w=0.12, h=0.2, color=solid(T, "light", "silver"), rot=(90, 0, 0), loc=(0, -1.0, 0.66))
+    if tier in GEM_TIERS:
+        m.gem(r=0.08, h=0.08, seg=6, color=solid(T, "gem"), rot=(0, 90, 0), loc=(0.12, 0.2, 0.32))
+
+
+def tier_trident(m, T, tier):
+    m.cyl(r=0.08, h=4.6, seg=6, color=T["handle"], loc=(0, 0, 2.3))
+    m.cyl(r=0.11, h=1.0, seg=6, color=T["grip"], loc=(0, 0, 1.8), bevel=0.02)
+    m.box((1.1, 0.16, 0.16), bevel=0.04, color=T["accent"], loc=(0, 0, 4.7))
+    for x in (-0.46, 0.0, 0.46):
+        top = 5.7 if x == 0 else 5.35
+        m.tube([(x, 0, 4.7), (x, 0, top - 0.3), (x, 0, top)], [(0.07, 0.05), (0.09, 0.06), 0], seg=4, up=(0, 1, 0),
+               smooth=False, **paint(T, "main", "z", 4.7, 5.7))
+        if x:
+            m.pyramid(w=0.14, h=0.2, color=solid(T, "light", "white"), loc=(x * 1.2, 0, top - 0.45),
+                      rot=(0, 90 if x > 0 else -90, 0))
+    m.box((0.2, 0.2, 0.2), color=solid(T, "gem", "diamond"), loc=(0, 0, 4.7), rot=(45, 0, 45))
+    m.box((0.18, 0.18, 0.14), color=T["accent"], bevel=0.03, loc=(0, 0, 0.05))
+
+
+def tier_flail(m, T, tier):
+    handle(m, T, -0.4, 1.0, r=0.1, grip=(-0.3, 0.7))
+    m.box((0.24, 0.24, 0.16), color=T["accent"], bevel=0.04, loc=(0, 0, 1.08))
+    for k in range(4):
+        m.torus(R=0.1, r=0.03, seg=4, color="iron_dark", loc=(0.12 * k, 0, 1.25 + k * 0.2),
+                rot=(90 * (k % 2), 0, 0))
+    c = (0.55, 0, 1.95)
+    m.box((0.6, 0.6, 0.6), bevel=0.1, loc=c, **paint(T, "main", "z", 1.65, 2.25))
+    for d in ((1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1)):
+        rx = 0 if d[2] else (90 * (-d[1]) if d[1] else 0)
+        ry = 90 * d[0] if d[0] else 0
+        m.pyramid(w=0.2, h=0.25, color=solid(T, "light", "silver"),
+                  loc=(c[0] + d[0] * 0.3, c[1] + d[1] * 0.3, c[2] + d[2] * 0.3), rot=(rx, ry, 0))
+
+
+def tier_rapier(m, T, tier):
+    handle(m, T, -0.6, 0.4, r=0.08, grip=(-0.5, 0.35))
+    m.box((0.18, 0.18, 0.16), color=T["accent"], bevel=0.04, loc=(0, 0, -0.68))
+    m.torus(R=0.32, r=0.05, seg=8, arc=180, color=T["accent"], rot=(90, 0, 0), loc=(0, 0, 0.1), scale=(1, 1, 1.3))
+    m.box((0.8, 0.14, 0.12), color=T["dark"], bevel=0.03, loc=(0, 0, 0.45))
+    m.lathe([(0.3, 0.38), (0.22, 0.6), (0, 0.62)], seg=6, color=T["dark"])
+    m.tube([(0, 0, 0.6), (0, 0, 3.4), (0, 0, 4.1)], [(0.08, 0.04), (0.07, 0.035), 0], seg=4, up=(0, 1, 0),
+           smooth=False, **paint(T, "main", "z", 0.6, 4.1))
+    if tier in GEM_TIERS:
+        m.gem(r=0.08, h=0.08, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.1, 0.45))
+
+
+for _name, _fn, _grip in (("Wand", tier_wand, (0, 0, 0.3)), ("Crossbow", tier_crossbow, (0, 0.7, 0.3)),
+                          ("Trident", tier_trident, (0, 0, 1.8)), ("Flail", tier_flail, (0, 0, 0.2)),
+                          ("Rapier", tier_rapier, (0, 0, 0))):
+    for _tier in ORDER:
+        add(f"{_tier}{_name}", CAT, (lambda m, f=_fn, t=_tier: f(m, TIERS[t], t)), sub=_name,
+            origin=_grip, tags=["tiered", _tier.lower()])

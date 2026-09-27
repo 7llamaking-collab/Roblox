@@ -670,3 +670,394 @@ def treasure_chest(m):
         m.torus(R=1.02, r=0.1, seg=12, rseg=4, arc=180, color="gold", rot=(90, 0, 90), loc=(x, 0, 1.6))
     m.box((0.5, 0.2, 0.6), color="gold", bevel=0.05, loc=(0, -1.05, 1.5))
     m.cyl(r=0.08, h=0.1, seg=6, color="charcoal", rot=(90, 0, 0), loc=(0, -1.16, 1.45))
+
+
+# ============================================================================
+# batch 2: colour variants + appliances, music, pets, holiday & more decor
+# ============================================================================
+from studlib.registry import add  # noqa: E402
+
+FABRICS = {"Red": "fabric_red", "Blue": "fabric_blue", "Green": "fabric_green", "Yellow": "fabric_yellow",
+           "Purple": "fabric_purple", "Pink": "fabric_pink", "Teal": "fabric_teal", "Gray": "fabric_gray",
+           "Orange": "fabric_orange", "Brown": "fabric_brown", "Cream": "fabric_cream"}
+
+
+def cube(m, size, loc, color, bev=None, **kw):
+    b = min(size) * 0.12 if bev is None else bev
+    return m.box(size, color=color, bevel=b, loc=loc, **kw)
+
+
+def armchair_c(m, col):
+    m.box((3.2, 2.9, 1.2), color=col, bevel=0.3, bseg=3, loc=(0, 0, 0.9))
+    cushion(m, (2.2, 2.3, 0.55), (0, -0.2, 1.75), col)
+    m.box((3.2, 0.8, 2.6), color=col, bevel=0.35, bseg=3, loc=(0, 1.05, 2.0))
+    for x in (-1.35, 1.35):
+        m.box((0.6, 2.9, 1.1), color=col, bevel=0.28, bseg=3, loc=(x, 0, 2.0))
+    legs4(m, 3.0, 2.7, 0.35, r=0.12, color="wood_dark", square=False)
+
+
+def beanbag_c(m, col):
+    m.sphere(r=1.3, seg=14, rings=9, color=col, loc=(0, 0, 1.05), scale=(1, 1, 0.8),
+             deform=lambda co: co.__class__((co.x, co.y, co.z * (1 - 0.25 * max(0, -co.y) / 1.3))))
+    m.sphere(r=0.8, seg=12, rings=8, color=col, loc=(0, 0.55, 1.75), scale=(1.2, 0.8, 0.9))
+
+
+def dining_chair_c(m, col):
+    chair(m)
+    cushion(m, (1.7, 1.7, 0.3), (0, -0.05, 1.98), col)
+
+
+def rug_c(m, main, accent):
+    m.box((6.0, 4.0, 0.1), color=main, bevel=0.04, loc=(0, 0, 0.05))
+    m.box((5.0, 3.0, 0.02), color=accent, loc=(0, 0, 0.1))
+    m.box((4.6, 2.6, 0.03), color=main, loc=(0, 0, 0.11))
+    m.prism([(0, 0.8), (1.2, 0), (0, -0.8), (-1.2, 0)], depth=0.04, color=accent, loc=(0, 0, 0.13))
+
+
+for _c, _f in FABRICS.items():
+    if _c not in ("Blue",):
+        add(f"{_c}Sofa", CAT, (lambda m, f=_f: sofa(m, col=f)), sub="Seating", tags=["color-variant"])
+    if _c not in ("Teal",):
+        add(f"{_c}Armchair", CAT, (lambda m, f=_f: armchair_c(m, f)), sub="Seating", tags=["color-variant"])
+    if _c in ("Red", "Green", "Yellow", "Purple", "Pink", "Teal", "Gray"):
+        add(f"{_c}Bed", CAT, (lambda m, f=_f: bed(m, blanket=f)), sub="Bedroom", tags=["color-variant"])
+    if _c in ("Red", "Blue", "Green", "Pink", "Orange", "Teal"):
+        add(f"{_c}Beanbag", CAT, (lambda m, f=_f: beanbag_c(m, f)), sub="Seating", tags=["color-variant"])
+    if _c in ("Blue", "Green", "Yellow", "Purple"):
+        add(f"{_c}DiningChair", CAT, (lambda m, f=_f: dining_chair_c(m, f)), sub="Seating", tags=["color-variant"])
+for _c, (_a, _b) in {"Green": ("fabric_green", "fabric_cream"), "Purple": ("fabric_purple", "fabric_yellow"),
+                     "Blue": ("rug_blue", "fabric_cream"), "Gray": ("fabric_gray", "fabric_white")}.items():
+    add(f"{_c}Rug", CAT, (lambda m, a=_a, b=_b: rug_c(m, a, b)), sub="Living", tags=["color-variant"])
+
+
+# --- appliances ---------------------------------------------------------------------------------
+def _washer(m, dryer=False):
+    cube(m, (2.6, 2.4, 3.2), (0, 0, 1.6), "plastic_white", bev=0.12)
+    m.cyl(r=0.85, h=0.12, seg=8, color="silver", rot=(90, 0, 0), loc=(0, -1.22, 1.5))
+    m.cyl(r=0.65, h=0.16, seg=8, color="window_blue" if not dryer else "charcoal", rot=(90, 0, 0), loc=(0, -1.24, 1.5))
+    cube(m, (2.4, 0.1, 0.5), (0, -1.21, 2.85), "lightgray", bev=0.03)
+    m.cyl(r=0.15, h=0.12, seg=8, color="charcoal", rot=(90, 0, 0), loc=(0.8, -1.28, 2.85))
+    cube(m, (0.5, 0.06, 0.2), (-0.5, -1.27, 2.85), "screen_glow", bev=0.02)
+
+
+@asset("WashingMachine", CAT, sub="Kitchen")
+def washing_machine(m):
+    _washer(m)
+
+
+@asset("Dryer", CAT, sub="Kitchen")
+def dryer(m):
+    _washer(m, dryer=True)
+
+
+@asset("Dishwasher", CAT, sub="Kitchen")
+def dishwasher(m):
+    cube(m, (2.6, 2.4, 3.0), (0, 0, 1.5), "steel", bev=0.1)
+    cube(m, (2.3, 0.1, 2.2), (0, -1.21, 1.3), "iron", bev=0.05)
+    cube(m, (1.8, 0.2, 0.14), (0, -1.3, 2.4), "charcoal", bev=0.04)
+    cube(m, (2.7, 2.5, 0.2), (0, 0, 3.1), "marble", bev=0.05)
+
+
+@asset("CoffeeMachine", CAT, sub="Kitchen")
+def coffee_machine(m):
+    cube(m, (1.2, 1.2, 0.2), (0, 0, 0.1), "charcoal", bev=0.05)
+    cube(m, (1.2, 0.7, 1.8), (0, 0.25, 1.0), "plastic_black", bev=0.1)
+    cube(m, (1.2, 1.2, 0.4), (0, 0, 1.9), "plastic_black", bev=0.1)
+    m.cyl(r=0.1, h=0.2, seg=6, color="silver", loc=(0, -0.3, 1.6))
+    m.cyl(r=0.2, r2=0.24, h=0.4, seg=8, color="plastic_white", loc=(0, -0.3, 0.4))
+    cube(m, (0.3, 0.06, 0.2), (0.3, -0.12, 1.3), "neon_green", bev=0.02)
+
+
+@asset("Blender", CAT, sub="Kitchen")
+def kitchen_blender(m):
+    cube(m, (0.9, 0.9, 0.7), (0, 0, 0.35), "plastic_red", bev=0.12)
+    m.lathe([(0.3, 0.7), (0.45, 1.8), (0.45, 1.85), (0, 1.85)], seg=8,
+            color=lambda c, n: "icecream_straw" if c.z < 1.2 else "glass", cuts={"z": [1.2]})
+    cube(m, (0.9, 0.9, 0.15), (0, 0, 1.92), "plastic_black", bev=0.04)
+    for x in (-0.2, 0.2):
+        m.cyl(r=0.08, h=0.06, seg=6, color="plastic_white", rot=(90, 0, 0), loc=(x, -0.46, 0.35))
+
+
+@asset("Kettle", CAT, sub="Kitchen")
+def kettle(m):
+    m.lathe([(0, 0), (0.5, 0), (0.55, 0.5), (0.4, 0.95), (0.2, 1.05), (0, 1.05)], seg=8, color="chrome")
+    m.tube([(0.45, 0, 0.4), (0.8, 0, 0.8), (0.9, 0, 0.9)], [0.08, 0.06, 0.05], seg=4, color="chrome")
+    m.torus(R=0.3, r=0.06, seg=8, arc=180, color="plastic_black", rot=(90, 0, 0), loc=(0, 0, 1.0))
+
+
+@asset("DinnerPlate", CAT, sub="Kitchen")
+def dinner_plate(m):
+    m.cyl(r=0.9, r2=1.0, h=0.08, seg=8, color="ceramic", loc=(0, 0, 0.04))
+    cube(m, (0.8, 0.5, 0.15), (-0.2, 0.1, 0.15), "meat", bev=0.05)
+    for x, y in ((0.35, -0.2), (0.4, 0.2)):
+        m.sphere(round=True, r=0.12, color="broccoli", loc=(x, y, 0.18))
+    cube(m, (0.08, 1.4, 0.03), (-1.2, 0, 0.02), "silver", bev=0.01)
+    cube(m, (0.1, 1.4, 0.03), (1.2, 0, 0.02), "silver", bev=0.01)
+
+
+# --- decor ------------------------------------------------------------------------------------------
+@asset("Vase", CAT, sub="Decor")
+def vase(m):
+    m.lathe([(0, 0), (0.35, 0), (0.55, 0.4), (0.5, 0.9), (0.25, 1.3), (0.3, 1.5), (0, 1.5)], seg=8,
+            color=lambda c, n: "tile_blue" if int(c.z / 0.3) % 2 else "ceramic", cuts={"z": 0.3})
+    for i in range(3):
+        a = 120 * i
+        m.cyl(r=0.03, h=0.9, seg=4, color="leaf_dark", loc=(math.cos(math.radians(a)) * 0.1,
+                                                              math.sin(math.radians(a)) * 0.1, 1.9), rot=(10, 0, a))
+        m.sphere(round=True, r=0.15, color=["plastic_red", "plastic_yellow", "plastic_pink"][i],
+                 loc=(math.cos(math.radians(a)) * 0.2, math.sin(math.radians(a)) * 0.2, 2.35))
+
+
+@asset("Candles", CAT, sub="Decor")
+def candles(m):
+    for x, h in ((-0.3, 0.9), (0.1, 1.3), (0.45, 0.7)):
+        m.cyl(r=0.18, h=h, seg=8, color="cream", loc=(x, 0, h / 2))
+        m.pyramid(w=0.12, h=0.25, color="fire", loc=(x, 0, h + 0.05))
+
+
+@asset("LavaLamp", CAT, sub="Lighting")
+def lava_lamp(m):
+    m.cyl(r=0.4, r2=0.25, h=0.6, seg=8, color="gunmetal", loc=(0, 0, 0.3))
+    m.lathe([(0.25, 0.6), (0.35, 1.2), (0.25, 1.9), (0, 1.9)], seg=8, color="neon_pink")
+    for z, r in ((0.9, 0.18), (1.4, 0.14)):
+        m.sphere(round=True, r=r, color="plastic_yellow", loc=(0.05, 0, z))
+    m.cyl(r=0.25, r2=0.15, h=0.3, seg=8, color="gunmetal", loc=(0, 0, 2.05))
+
+
+@asset("CoatRack", CAT, sub="Decor")
+def coat_rack(m):
+    m.cyl(r=0.1, h=5.0, seg=6, color="wood_dark", loc=(0, 0, 2.5))
+    for a in (0, 120, 240):
+        r = math.radians(a)
+        m.tube([(0, 0, 0.6), (math.cos(r) * 0.8, math.sin(r) * 0.8, 0.05)], [0.08, 0.08], seg=4, color="wood_dark")
+        m.tube([(0, 0, 4.6), (math.cos(r) * 0.4, math.sin(r) * 0.4, 4.9)], [0.06, 0.05], seg=4, color="wood_dark")
+    cube(m, (0.9, 0.6, 1.8), (0.4, 0, 3.6), "fabric_red", bev=0.2)
+    m.lathe([(0.4, 0), (0.4, 0.1), (0.25, 0.12), (0.25, 0.5), (0, 0.5)], seg=8, color="charcoal",
+            loc=(-0.35, 0.2, 4.9))
+
+
+@asset("DeskLamp", CAT, sub="Lighting")
+def desk_lamp(m):
+    m.cyl(r=0.5, h=0.12, seg=8, color="plastic_blue", loc=(0, 0, 0.06))
+    m.tube([(0, 0, 0.1), (0.2, 0, 1.2), (-0.4, 0, 1.9)], [0.06, 0.06, 0.06], seg=4, color="plastic_blue")
+    m.lathe([(0.12, 0), (0.4, -0.5), (0.4, -0.55), (0, -0.55)], seg=8, color="plastic_blue", loc=(-0.5, 0, 2.0),
+            rot=(0, 30, 0), caps=False)
+    m.sphere(round=True, r=0.14, color="glow", loc=(-0.65, 0, 1.6))
+
+
+@asset("Chandelier", CAT, sub="Lighting", origin="center")
+def chandelier(m):
+    m.cyl(r=0.05, h=1.5, seg=6, color="gold", loc=(0, 0, 1.6))
+    m.torus(R=1.4, r=0.08, seg=8, color="gold", loc=(0, 0, 0.8))
+    m.lathe([(0, 0.4), (0.4, 0.6), (0.3, 1.0), (0, 1.1)], seg=8, color="gold")
+    for i in range(8):
+        a = math.radians(45 * i)
+        x, y = math.cos(a) * 1.4, math.sin(a) * 1.4
+        m.cyl(r=0.1, h=0.4, seg=6, color="cream", loc=(x, y, 1.05))
+        m.pyramid(w=0.1, h=0.2, color="fire", loc=(x, y, 1.27))
+        m.gem(r=0.08, h=0.15, seg=6, color="diamond_light", loc=(x * 0.7, y * 0.7, 0.55))
+
+
+@asset("CeilingFan", CAT, sub="Lighting", origin="center", split=True)
+def ceiling_fan(m):
+    m.cyl(r=0.05, h=1.0, seg=6, color="gold", loc=(0, 0, 1.5))
+    m.cyl(r=0.35, h=0.4, seg=8, color="wood_dark", loc=(0, 0, 0.9))
+    m.sphere(round=True, r=0.25, color="glow", loc=(0, 0, 0.55))
+    with m.group("Blades"):
+        for a in range(0, 360, 90):
+            cube(m, (2.2, 0.5, 0.06), (0, 0, 0.95), "wood", rot=(0, 5, a), bev=0.02,
+                 deform=lambda co: co.__class__((co.x + 1.4, co.y, co.z)))
+
+
+@asset("AirConditioner", CAT, sub="Kitchen")
+def air_conditioner(m):
+    cube(m, (3.0, 1.0, 1.0), (0, 0, 0.5), "plastic_white", bev=0.2)
+    cube(m, (2.6, 0.1, 0.2), (0, -0.5, 0.3), "lightgray", bev=0.03)
+    cube(m, (0.3, 0.06, 0.1), (1.1, -0.51, 0.75), "neon_green", bev=0.02)
+
+
+@asset("Cabinet", CAT, sub="Storage")
+def cabinet(m):
+    cube(m, (3.0, 1.6, 4.0), (0, 0, 2.1), "wood_mid", bev=0.1)
+    legs4(m, 3.0, 1.6, 0.15, r=0.1, color="wood_dark", inset=0.2)
+    for x in (-0.72, 0.72):
+        cube(m, (1.35, 0.1, 3.5), (x, -0.8, 2.15), "wood", bev=0.05)
+        cube(m, (0.1, 0.1, 0.5), (x * 0.15, -0.88, 2.3), "gold", bev=0.02)
+
+
+@asset("SideTable", CAT, sub="Tables")
+def side_table(m):
+    m.cyl(r=0.8, h=0.15, seg=8, color="marble", loc=(0, 0, 2.0), bevel=0.04)
+    m.cyl(r=0.08, h=1.9, seg=6, color="gold", loc=(0, 0, 1.0))
+    m.cyl(r=0.5, h=0.1, seg=8, color="gold", loc=(0, 0, 0.05))
+    m.cyl(r=0.2, r2=0.25, h=0.4, seg=8, color="clay", loc=(0.3, 0.1, 2.28))
+    m.sphere(round=True, r=0.25, color="leaf", loc=(0.3, 0.1, 2.65))
+
+
+@asset("GamingChair", CAT, sub="Seating")
+def gaming_chair(m):
+    cushion(m, (2.0, 2.0, 0.4), (0, 0, 2.0), "plastic_black")
+    m.box((1.9, 0.4, 2.8), color=lambda c, n: "plastic_red" if abs(c.x) > 0.55 else "plastic_black", bevel=0.2,
+          loc=(0, 0.9, 3.6), cuts={"x": [-0.55, 0.55]})
+    cube(m, (1.2, 0.5, 0.5), (0, 0.8, 5.2), "plastic_red", bev=0.15)
+    m.cyl(r=0.15, h=1.4, seg=8, color="chrome", loc=(0, 0, 1.1))
+    for i in range(5):
+        a = math.radians(72 * i)
+        cube(m, (1.2, 0.18, 0.12), (math.cos(a) * 0.55, math.sin(a) * 0.55, 0.35), "plastic_black", rot=(0, 0, 72 * i))
+        m.sphere(r=0.14, color="rubber", loc=(math.cos(a) * 1.1, math.sin(a) * 1.1, 0.14))
+    for x in (-1.05, 1.05):
+        cube(m, (0.15, 0.15, 0.7), (x, 0.1, 2.5), "plastic_black")
+        cube(m, (0.28, 1.2, 0.14), (x, 0.1, 2.85), "plastic_red", bev=0.05)
+
+
+@asset("Laptop", CAT, sub="Living")
+def laptop(m):
+    cube(m, (2.0, 1.4, 0.1), (0, 0, 0.05), "silver", bev=0.03)
+    cube(m, (1.8, 0.9, 0.02), (0, -0.1, 0.11), "charcoal", bev=0.01)
+    m.box((2.0, 0.08, 1.3), color="silver", bevel=0.03, loc=(0, 0.75, 0.7), rot=(-15, 0, 0))
+    m.box((1.8, 0.06, 1.1), color="screen_glow", bevel=0.02, loc=(0, 0.7, 0.7), rot=(-15, 0, 0))
+
+
+@asset("Speaker", CAT, sub="Music")
+def speaker(m):
+    cube(m, (1.6, 1.4, 2.8), (0, 0, 1.4), "plastic_black", bev=0.1)
+    for z, r in ((0.9, 0.55), (2.1, 0.3)):
+        m.cyl(r=r, h=0.1, seg=8, color="charcoal", rot=(90, 0, 0), loc=(0, -0.7, z))
+        m.cyl(r=r * 0.4, h=0.14, seg=8, color="gunmetal", rot=(90, 0, 0), loc=(0, -0.72, z))
+
+
+@asset("Radio", CAT, sub="Music")
+def radio(m):
+    cube(m, (2.4, 0.9, 1.4), (0, 0, 0.7), "wood", bev=0.2)
+    m.cyl(r=0.45, h=0.1, seg=8, color="fabric_cream", rot=(90, 0, 0), loc=(-0.5, -0.45, 0.7))
+    cube(m, (0.8, 0.1, 0.35), (0.55, -0.45, 0.9), "plastic_yellow", bev=0.03)
+    for x in (0.35, 0.75):
+        m.cyl(r=0.1, h=0.12, seg=6, color="gold", rot=(90, 0, 0), loc=(x, -0.47, 0.4))
+    m.tube([(0.9, 0, 1.4), (1.2, 0.2, 2.6)], [0.03, 0.02], seg=4, color="chrome")
+
+
+@asset("Guitar", CAT, sub="Music", origin="center")
+def guitar(m):
+    for z, r in ((0.0, 0.8), (1.0, 0.6)):
+        m.cyl(r=r, h=0.4, seg=8, color="wood_light", rot=(90, 0, 0), loc=(0, 0, z))
+    m.cyl(r=0.25, h=0.42, seg=8, color="black", rot=(90, 0, 0), loc=(0, 0, 0.55))
+    cube(m, (0.3, 0.2, 2.2), (0, -0.1, 2.3), "wood_dark", bev=0.04)
+    cube(m, (0.4, 0.22, 0.6), (0, -0.1, 3.6), "wood_dark", bev=0.06)
+    for x in (-0.08, 0.0, 0.08):
+        m.tube([(x, -0.22, -0.3), (x, -0.22, 3.4)], [0.01, 0.01], seg=3, color="silver")
+    cube(m, (0.5, 0.1, 0.12), (0, -0.21, -0.3), "wood_dark", bev=0.02)
+
+
+@asset("DrumSet", CAT, sub="Music")
+def drum_set(m):
+    m.cyl(r=1.0, h=0.9, seg=8, color="plastic_red", rot=(90, 0, 0), loc=(0, 0, 1.0), bevel=0.05)
+    m.cyl(r=0.9, h=0.94, seg=8, color="plastic_white", rot=(90, 0, 0), loc=(0, 0, 1.0))
+    for x, z, r in ((-1.3, 1.4, 0.5), (1.3, 1.4, 0.5), (-0.5, 2.2, 0.4), (0.5, 2.2, 0.4)):
+        m.cyl(r=r, h=0.5, seg=8, color="plastic_red", loc=(x, -0.2, z), bevel=0.04)
+        m.cyl(r=r * 0.95, h=0.04, seg=8, color="plastic_white", loc=(x, -0.2, z + 0.27))
+        m.cyl(r=0.04, h=z - 0.2, seg=4, color="chrome", loc=(x, -0.2, (z - 0.2) / 2))
+    for x in (-2.1, 2.1):
+        m.cyl(r=0.04, h=2.8, seg=4, color="chrome", loc=(x, 0.3, 1.4))
+        m.cyl(r=0.7, h=0.04, seg=8, color="gold", loc=(x, 0.3, 2.8), rot=(8, 0, 0))
+
+
+@asset("Easel", CAT, sub="Decor")
+def easel(m):
+    for s in (-1, 1):
+        m.tube([(s * 0.9, -0.3, 0), (s * 0.2, 0, 4.2)], [0.08, 0.07], seg=4, color="wood")
+    m.tube([(0, 0.9, 0), (0, 0, 4.0)], [0.08, 0.07], seg=4, color="wood")
+    cube(m, (2.0, 0.2, 0.15), (0, -0.2, 1.4), "wood", bev=0.03)
+    cube(m, (2.2, 0.12, 1.8), (0, -0.25, 2.4), "paper", bev=0.03, rot=(-8, 0, 0))
+    for x, z, c in ((-0.5, 2.6, "plastic_blue"), (0.2, 2.2, "plastic_yellow"), (0.6, 2.8, "plastic_red")):
+        cube(m, (0.6, 0.08, 0.5), (x, -0.32, z), c, bev=0.02, rot=(-8, 0, 0))
+
+
+@asset("Globe", CAT, sub="Decor")
+def globe(m):
+    m.cyl(r=0.5, h=0.12, seg=8, color="wood_dark", loc=(0, 0, 0.06))
+    m.cyl(r=0.06, h=0.6, seg=6, color="gold", loc=(0, 0, 0.4))
+    m.torus(R=0.85, r=0.05, seg=10, arc=200, color="gold", rot=(90, 0, 70), loc=(0, 0, 1.5))
+    m.sphere(round=True, r=0.75, seg=10, rings=8, color=lambda c, n: "grass" if (c.x * 3 + c.y * 2 + c.z) % 1.1 > 0.6
+             else "water", loc=(0, 0, 1.5))
+
+
+@asset("FishTank", CAT, sub="Pets")
+def fish_tank(m):
+    cube(m, (3.6, 1.6, 0.3), (0, 0, 2.15), "wood_dark", bev=0.06)
+    for x in (-1.6, 1.6):
+        cube(m, (0.3, 1.4, 2.0), (x, 0, 1.0), "wood_dark", bev=0.06)
+    cube(m, (3.4, 1.4, 2.0), (0, 0, 3.3), "water", bev=0.06)
+    cube(m, (3.5, 1.5, 0.15), (0, 0, 4.35), "charcoal", bev=0.04)
+    cube(m, (3.3, 1.3, 0.3), (0, 0, 2.45), "sand", bev=0.04)
+    for x, z, c in ((-0.8, 3.4, "fish_orange"), (0.6, 3.8, "sapphire"), (0.9, 3.0, "plastic_yellow")):
+        cube(m, (0.4, 0.2, 0.25), (x, -0.72, z), c, bev=0.05)
+        m.pyramid(w=0.2, h=0.2, color=c, loc=(x + 0.25, -0.72, z), rot=(0, 90, 0))
+    for x in (-1.2, 1.1):
+        m.tube([(x, 0, 2.6), (x + 0.1, 0, 3.4), (x - 0.1, 0, 4.0)], [(0.12, 0.04)] * 3, seg=4, color="leaf",
+               up=(0, 1, 0))
+
+
+@asset("PetBed", CAT, sub="Pets")
+def pet_bed(m):
+    m.lathe([(0, 0), (1.3, 0), (1.4, 0.4), (1.2, 0.6), (1.0, 0.45), (0.95, 0.25), (0, 0.25)], seg=8,
+            color="fabric_pink", scale=(1.3, 1, 1))
+    cube(m, (0.5, 0.3, 0.25), (0.6, 0, 0.45), "plastic_yellow", bev=0.08)
+
+
+@asset("CatTree", CAT, sub="Pets")
+def cat_tree(m):
+    cube(m, (3.0, 3.0, 0.3), (0, 0, 0.15), "fabric_cream", bev=0.06)
+    for x, y, h in ((-0.8, -0.8, 4.0), (0.8, 0.6, 2.6)):
+        m.cyl(r=0.3, h=h, seg=8, color="rope", loc=(x, y, h / 2 + 0.3))
+    cube(m, (1.8, 1.8, 0.2), (-0.8, -0.8, 4.4), "fabric_cream", bev=0.06)
+    cube(m, (1.6, 1.6, 0.9), (0.8, 0.6, 3.3), "fabric_cream", bev=0.1)
+    cube(m, (0.8, 0.1, 0.7), (0.8, -0.2, 3.3), "charcoal", bev=0.2)
+    m.tube([(-0.8, -0.8, 4.4), (-1.3, -1.3, 3.6)], [0.02, 0.02], seg=3, color="string")
+    m.sphere(round=True, r=0.15, color="plastic_red", loc=(-1.3, -1.3, 3.5))
+
+
+@asset("ChristmasTree", CAT, sub="Holiday")
+def christmas_tree(m):
+    m.cyl(r=0.9, r2=0.7, h=0.8, seg=8, color="plastic_red", loc=(0, 0, 0.4))
+    m.cyl(r=0.3, h=0.6, seg=6, color="bark", loc=(0, 0, 1.0))
+    for i, (r, z, h) in enumerate(((2.4, 1.2, 2.2), (1.9, 2.6, 2.0), (1.3, 3.9, 1.8))):
+        m.lathe([(0, 0), (r, 0.3), (0, h)], seg=8, color="pine", loc=(0, 0, z), rot=(0, 0, 22 * i), smooth=False)
+    rnd = [(1.5, 0.3, 1.8), (-1.2, 0.8, 2.2), (0.3, -1.5, 1.9), (1.0, -0.6, 3.1), (-0.9, -0.6, 3.3), (0.4, 0.8, 4.3),
+           (-0.5, 0.2, 4.6)]
+    for i, (x, y, z) in enumerate(rnd):
+        m.sphere(round=True, r=0.18, color=["plastic_red", "gold", "plastic_blue", "silver"][i % 4], loc=(x, y, z))
+    m.prism(star_pts_local(0.45, 0.2), depth=0.15, color="gold", rot=(90, 0, 0), loc=(0, 0, 5.9))
+    for x, c in ((1.4, "plastic_green"), (-1.3, "plastic_blue")):
+        cube(m, (0.9, 0.9, 0.7), (x, -1.4, 0.35), c, bev=0.06)
+        cube(m, (0.15, 0.92, 0.72), (x, -1.4, 0.35), "gold", bev=0.02)
+
+
+def star_pts_local(ro, ri, n=5):
+    pts = []
+    for i in range(n * 2):
+        r = ro if i % 2 == 0 else ri
+        a = math.radians(90 + 180.0 * i / n)
+        pts.append((r * math.cos(a), r * math.sin(a)))
+    return pts
+
+
+@asset("Shower", CAT, sub="Bathroom")
+def shower(m):
+    cube(m, (3.0, 3.0, 0.3), (0, 0, 0.15), "tile_white", bev=0.06)
+    for x in (-1.45, 1.45):
+        cube(m, (0.1, 3.0, 6.0), (x, 0, 3.1), "glass", bev=0.02)
+    cube(m, (3.0, 0.1, 6.0), (0, 1.45, 3.1), "tile_blue", bev=0.02)
+    m.tube([(0, 1.35, 5.6), (0, 0.8, 5.9), (0, 0.4, 5.6)], [0.06, 0.06, 0.06], seg=4, color="chrome")
+    m.cyl(r=0.35, h=0.12, seg=8, color="chrome", loc=(0, 0.35, 5.5))
+    cube(m, (0.8, 0.3, 0.2), (0.8, 1.3, 3.0), "plastic_white", bev=0.05)
+
+
+@asset("Hammock", CAT, sub="Seating")
+def hammock(m):
+    for y in (-3.0, 3.0):
+        m.cyl(r=0.25, h=4.5, seg=6, color="bark", loc=(0, y, 2.25))
+    m.box((1.8, 5.0, 0.12), color=lambda c, n: "fabric_red" if int((c.x + 5) / 0.45) % 2 else "fabric_cream",
+          bevel=0.04, loc=(0, 0, 2.0), cuts={"x": 0.45},
+          deform=lambda co: co.__class__((co.x * (1 - 0.4 * (co.y / 2.5) ** 2), co.y, co.z - 0.8 * (1 - (co.y / 2.5) ** 2))))
+    for y in (-2.9, 2.9):
+        m.tube([(0, y, 3.6), (0, y * 0.87, 2.0)], [0.03, 0.03], seg=3, color="rope")

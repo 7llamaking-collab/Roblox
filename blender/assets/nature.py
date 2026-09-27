@@ -458,3 +458,496 @@ def crystal_cluster(m, c1, c2, seed):
 for _i, (_n, _c1, _c2) in enumerate(CRYSTALS):
     add(f"{_n}Crystals", CAT, (lambda m, a=_c1, b=_c2, s=_i: crystal_cluster(m, a, b, 50 + s)), sub="Crystals",
         tags=["mining", "simulator"])
+
+
+# =====================================================================================
+# Batch 2: more fruit trees, fantasy trees, crops, terrain chunks & sky decorations
+# =====================================================================================
+for _n, _leaves, _fruit, _seed, _tags in (
+        ("LemonTree", ("leaf_light", "leaf"), "lemon", 61, ["simulator"]),
+        ("PeachTree", ("leaf", "leaf_dark"), "peach", 62, ["simulator"]),
+        ("CherryTree", ("leaf", "leaf_dark"), "cherry", 63, ["simulator"]),
+        ("PearTree", ("leaf_light", "leaf"), "pear", 64, ["simulator"]),
+        ("MangoTree", ("leaf", "leaf_deep"), "mango", 65, ["simulator"]),
+        ("PlumTree", ("leaf", "leaf_dark"), "grape", 66, ["simulator"]),
+        ("DiamondTree", ("diamond_light", "diamond"), "diamond_dark", 67, ["simulator", "rare"]),
+        ("EmeraldTree", ("emerald_light", "emerald"), "emerald_dark", 68, ["simulator", "rare"]),
+        ("RubyTree", ("ruby_light", "ruby"), "ruby_dark", 69, ["simulator", "rare"]),
+        ("CandyTree", ("frosting_pink", "candy_pink"), "candy_blue", 70, ["simulator", "fantasy"]),
+        ("MagicTree", ("feather_purple", "amethyst"), "glow", 71, ["fantasy"]),
+        ("WinterTree", ("snow", "leaf_dark"), None, 72, []),
+        ("MapleTree", ("autumn_red", "apple_red_dark"), None, 73, [])):
+    add(_n, CAT, (lambda m, l=_leaves, f=_fruit, s=_seed: oak(m, leaves=l, fruit=f, seed=s)), sub="Trees",
+        tags=_tags)
+
+
+@asset("RainbowTree", CAT, sub="Trees", tags=["simulator", "rare"])
+def rainbow_tree(m):
+    trunk(m, 8.0, 0.8, 0.45, col="bark_dark")
+    rb = ["rb_red", "rb_orange", "rb_yellow", "rb_green", "rb_cyan", "rb_blue", "rb_purple"]
+    blob(m, (0, 0, 10.4), 3.2, "rb_pink", seed=3)
+    for i, c in enumerate(rb):
+        a = 2 * math.pi * i / 7
+        blob(m, (math.cos(a) * 3.0, math.sin(a) * 3.0, 9.6 + (i % 2) * 0.8), 2.0, c, seed=10 + i)
+
+
+@asset("BananaTree", CAT, sub="Trees", tags=["simulator"])
+def banana_tree(m):
+    m.tube([(0, 0, 0), (0.2, 0, 3.5), (0.3, 0, 6.5)], [0.55, 0.45, 0.4], seg=8,
+           color=lambda c, n: "leaf_dark" if int(c.z / 0.9) % 2 else "moss", cuts={"z": 0.9})
+    top = (0.3, 0, 6.5)
+    for i in range(6):
+        droop = lambda co: co.__class__((co.x, co.y, co.z - 0.22 * co.y ** 2))
+        m.leaf(length=4.6, width=1.6, thick=0.08, color="leaf_light" if i % 2 else "leaf", loc=top,
+               rot=(25, 0, 60 * i + 15), deform=droop)
+    for k in range(3):
+        for j in range(4):
+            a = math.radians(90 * j + 45 * k)
+            m.box((0.2, 0.2, 0.9), color="banana", bevel=0.06, loc=(0.8 + math.cos(a) * 0.3, math.sin(a) * 0.3, 5.0 - k * 0.55),
+                  rot=(math.sin(a) * 25, -math.cos(a) * 25, 0))
+    m.cyl(r=0.1, h=1.8, seg=4, color="leaf_dark", loc=(0.8, 0, 5.2))
+
+
+@asset("WillowTree", CAT, sub="Trees")
+def willow_tree(m):
+    trunk(m, 6.5, 0.9, 0.55, col="bark_dark", lean=0.4)
+    canopy(m, 8.2, 3.4, ["leaf_light", "leaf"], seed=81, n=6)
+    rnd = random.Random(82)
+    for i in range(22):
+        a = 2 * math.pi * i / 22 + rnd.uniform(-0.1, 0.1)
+        r = rnd.uniform(3.3, 4.3)
+        L = rnd.uniform(3.0, 5.0)
+        m.box((0.35, 0.35, L), color="leaf" if i % 2 else "leaf_light", loc=(math.cos(a) * r, math.sin(a) * r, 8.0 - L / 2),
+              bevel=0.05, rot=(0, 0, math.degrees(a)))
+
+
+@asset("JungleTree", CAT, sub="Trees")
+def jungle_tree(m):
+    trunk(m, 11.0, 1.0, 0.6, col="bark", lean=0.6)
+    for s in (-1, 1):
+        m.tube([(0.4, 0, 8.0), (s * 2.5, 0.5 * s, 10.0), (s * 3.8, 0.6 * s, 10.8)], [0.4, 0.3, 0.25], seg=6,
+               color="bark")
+        blob(m, (s * 3.8, 0.6 * s, 11.4), 2.2, ["leaf", "leaf_dark"], seed=90 + s, squash=0.55)
+    blob(m, (0.6, 0, 12.2), 3.4, ["leaf", "leaf_deep"], seed=93, squash=0.5)
+    for x, y in ((2.8, 1.0), (-2.6, -1.2), (0.9, -2.2)):
+        m.tube([(x, y, 11.0), (x + 0.1, y, 8.5), (x - 0.1, y, 6.0)], [0.08, 0.08, 0.06], seg=4, color="vine")
+
+
+@asset("Bonsai", CAT, sub="Trees")
+def bonsai(m):
+    m.box((2.4, 1.6, 0.6), color="clay", bevel=0.08, loc=(0, 0, 0.3))
+    m.box((2.2, 1.4, 0.05), color="dirt_dark", loc=(0, 0, 0.61))
+    m.tube([(0, 0, 0.6), (0.4, 0, 1.2), (-0.2, 0, 1.8), (0.3, 0, 2.3)], [0.22, 0.18, 0.15, 0.12], seg=6,
+           color="bark_dark")
+    m.tube([(-0.2, 0, 1.8), (-0.9, 0.1, 2.0)], [0.1, 0.07], seg=4, color="bark_dark")
+    for x, z, r in ((0.3, 2.5, 0.7), (-0.9, 2.15, 0.5), (0.9, 1.9, 0.45)):
+        m.box((r * 2.2, r * 1.6, r * 0.7), color=by_normal("leaf_light", "leaf"), bevel=0.1, loc=(x, 0, z))
+
+
+@asset("Bamboo", CAT, sub="Plants")
+def bamboo(m):
+    for i, (x, y, h) in enumerate(((0, 0, 7.0), (0.7, 0.3, 5.5), (-0.5, 0.5, 6.2), (0.2, -0.6, 4.6))):
+        m.cyl(r=0.2, h=h, seg=6, color=lambda c, n: "cactus" if int(c.z / 1.0) % 2 else "leaf_light", loc=(x, y, h / 2),
+              cuts={"z": 1.0})
+        for k in range(1, int(h)):
+            m.cyl(r=0.24, h=0.1, seg=6, color="cactus_dark", loc=(x, y, k * 1.0))
+        for k in range(2):
+            m.leaf(length=1.0, width=0.3, thick=0.03, color="leaf", loc=(x, y, h - 0.4 - k * 1.3),
+                   rot=(60, 0, 90 * i + 150 * k))
+
+
+@asset("Lavender", CAT, sub="Flowers")
+def lavender(m):
+    rnd = random.Random(3)
+    m.box((1.4, 1.4, 0.4), color="leaf_dark", bevel=0.15, loc=(0, 0, 0.2), deform=jitter(0.05, 2))
+    for i in range(11):
+        a = rnd.uniform(0, 2 * math.pi)
+        r = rnd.uniform(0, 0.55)
+        x, y, h = math.cos(a) * r, math.sin(a) * r, rnd.uniform(1.0, 1.5)
+        m.cyl(r=0.03, h=h, seg=4, color="leaf", loc=(x, y, h / 2 + 0.2))
+        m.box((0.14, 0.14, 0.45), color="feather_purple" if i % 2 else "amethyst", bevel=0.04, loc=(x, y, h + 0.3))
+
+
+@asset("Lotus", CAT, sub="Flowers")
+def lotus(m):
+    pts = circle_pts(1.2, 14, start=20)[:13] + [(0, 0)]
+    m.prism(pts, depth=0.08, color="lily", loc=(0, 0, 0.04))
+    for ring, (n, L, tilt, col) in enumerate(((8, 0.8, 55, "blossom_light"), (6, 0.65, 35, "blossom"))):
+        for i in range(n):
+            m.leaf(length=L, width=0.4, thick=0.04, color=col, loc=(0, 0, 0.12 + ring * 0.05),
+                   rot=(tilt, 0, 360 * i / n + ring * 30))
+    m.cyl(r=0.16, h=0.14, seg=6, color="egg_yolk", loc=(0, 0, 0.2))
+
+
+@asset("Hydrangea", CAT, sub="Bushes")
+def hydrangea(m):
+    bush(m, ("leaf", "leaf_dark"), seed=12)
+    for i, (x, y, z) in enumerate(((0.9, -0.9, 1.9), (-0.9, -0.6, 2.1), (0.1, 0.2, 2.8), (0.9, 0.9, 2.0),
+                                   (-0.8, 0.9, 1.8), (0, -1.3, 1.3))):
+        m.ico(r=0.5, sub=1, color="sapphire" if i % 2 else "feather_purple", loc=(x, y, z), deform=jitter(0.06, i))
+
+
+@asset("RoseBush", CAT, sub="Bushes")
+def rose_bush(m):
+    bush(m, ("leaf", "leaf_dark"), extra="apple_red", seed=14)
+
+
+@asset("Succulent", CAT, sub="Plants")
+def succulent(m):
+    m.cyl(r=0.7, r2=0.8, h=0.7, seg=8, color="clay", loc=(0, 0, 0.35), bevel=0.05)
+    m.cyl(r=0.72, h=0.05, seg=8, color="dirt_dark", loc=(0, 0, 0.7))
+    for ring, (n, L, tilt) in enumerate(((8, 0.7, 70), (6, 0.55, 45), (4, 0.35, 20))):
+        for i in range(n):
+            m.leaf(length=L, width=0.32, thick=0.12, color="cactus" if ring % 2 else "moss",
+                   loc=(0, 0, 0.75 + ring * 0.08), rot=(90 - tilt, 0, 360 * i / n + ring * 22))
+
+
+@asset("VenusFlytrap", CAT, sub="Plants", tags=["fantasy"])
+def venus_flytrap(m):
+    m.box((1.2, 1.2, 0.3), color="moss", bevel=0.1, loc=(0, 0, 0.15))
+    m.tube([(0, 0, 0.2), (0.1, 0, 1.2), (0, 0, 2.0)], [0.12, 0.1, 0.1], seg=6, color="leaf")
+    for s in (-1, 1):
+        m.box((1.1, 0.25, 0.8), color=lambda c, n: "strawberry" if n.y * s < -0.5 else "leaf", bevel=0.06,
+              loc=(0, s * 0.3, 2.35), rot=(-s * 30, 0, 0))
+        for k in range(5):
+            m.pyramid(w=0.1, h=0.22, color="offwhite", loc=(-0.45 + 0.22 * k, s * 0.42, 2.72), rot=(-s * 30, 0, 0))
+    for i in range(3):
+        m.leaf(length=0.9, width=0.35, thick=0.04, color="leaf", loc=(0, 0, 0.3), rot=(70, 0, 120 * i))
+
+
+@asset("GlowMushrooms", CAT, sub="Plants", tags=["fantasy"])
+def glow_mushrooms(m):
+    for x, y, h, r, c in ((0, 0, 1.1, 0.6, "neon_blue"), (0.8, 0.3, 0.7, 0.4, "neon_green"),
+                          (-0.7, 0.4, 0.8, 0.45, "neon_blue"), (0.2, -0.7, 0.5, 0.3, "neon_pink")):
+        m.cyl(r=r * 0.3, h=h, seg=6, color="offwhite", loc=(x, y, h / 2))
+        m.lathe([(0, h - 0.1), (r, h - 0.05), (r * 0.8, h + r * 0.4), (0, h + r * 0.55)], seg=8, color=c,
+                loc=(x, y, 0))
+
+
+@asset("MushroomCluster", CAT, sub="Plants")
+def mushroom_cluster(m):
+    for x, y, h, r, c in ((0, 0, 0.9, 0.55, "apple_red"), (0.7, 0.2, 0.6, 0.35, "wood_mid"),
+                          (-0.6, 0.35, 0.7, 0.4, "apple_red"), (0.1, -0.6, 0.45, 0.28, "wood_mid")):
+        m.cyl(r=r * 0.3, h=h, seg=6, color="offwhite", loc=(x, y, h / 2))
+        m.lathe([(0, h - 0.1), (r, h - 0.05), (r * 0.8, h + r * 0.4), (0, h + r * 0.55)], seg=8, color=c,
+                loc=(x, y, 0))
+        if c == "apple_red":
+            m.box((0.12, 0.12, 0.04), color="white", loc=(x + r * 0.35, y - r * 0.3, h + r * 0.4))
+
+
+@asset("PricklyPear", CAT, sub="Plants")
+def prickly_pear(m):
+    for x, z, rx, ry in ((0, 0.9, 0, 0), (0.55, 1.9, 0, -25), (-0.5, 2.0, 0, 25), (0.1, 2.9, 0, 5)):
+        m.box((1.0, 0.3, 1.3), color="cactus", bevel=0.14, loc=(x, 0, z), rot=(rx, ry, 0))
+    for x, z in ((0.1, 3.6), (0.7, 2.6), (-0.8, 2.6)):
+        m.box((0.2, 0.2, 0.25), color="strawberry", bevel=0.05, loc=(x, 0, z))
+
+
+@asset("BarrelCactus", CAT, sub="Plants")
+def barrel_cactus(m):
+    m.lathe([(0.6, 0), (0.95, 0.4), (1.0, 1.0), (0.7, 1.6), (0, 1.75)], seg=8,
+            color=lambda c, n: "cactus_dark" if int((math.degrees(math.atan2(c.y, c.x)) + 382.5) / 45) % 2 else "cactus")
+    for i in range(4):
+        a = math.radians(90 * i)
+        m.box((0.18, 0.18, 0.18), color="blossom", bevel=0.04, loc=(math.cos(a) * 0.25, math.sin(a) * 0.25, 1.78))
+
+
+@asset("Tumbleweed", CAT, sub="Plants")
+def tumbleweed(m):
+    m.ico(r=1.0, sub=1, color="wood_pale", loc=(0, 0, 1.0), deform=jitter(0.1, 4), smooth=False)
+    for i in range(6):
+        m.torus(R=0.95, r=0.05, seg=8, color="wood_light", loc=(0, 0, 1.0), rot=(30 * i, 60 * (i % 3), 0))
+
+
+@asset("TallGrass", CAT, sub="Plants")
+def tall_grass(m):
+    rnd = random.Random(12)
+    for i in range(14):
+        a = rnd.uniform(0, 2 * math.pi)
+        r = rnd.uniform(0, 0.8)
+        h = rnd.uniform(1.4, 2.4)
+        m.box((0.12, 0.08, h), color="grass" if i % 3 else "leaf_light", loc=(math.cos(a) * r, math.sin(a) * r, h / 2),
+              rot=(rnd.uniform(-10, 10), rnd.uniform(-10, 10), math.degrees(a)))
+
+
+@asset("Clover", CAT, sub="Plants", tags=["lucky"])
+def clover(m):
+    m.cyl(r=0.05, h=0.8, seg=4, color="leaf_dark", loc=(0, 0, 0.4))
+    for i in range(4):
+        a = math.radians(90 * i + 45)
+        m.prism([(0, 0), (0.3, 0.1), (0.35, 0.35), (0.1, 0.3)], depth=0.06, color="leaf_light",
+                loc=(0, 0, 0.82), rot=(0, 0, math.degrees(a) - 45))
+
+
+# --- farm crops (simulator plots) ------------------------------------------------------
+def crop_plot(m, crop, seed=1):
+    m.box((4.0, 4.0, 0.6), color=by_normal("dirt", "dirt_dark"), bevel=0.1, loc=(0, 0, 0.3))
+    for r in (-1.2, 0, 1.2):
+        m.box((3.6, 0.5, 0.15), color="dirt_dark", loc=(0, r, 0.62))
+        for k in (-1.2, 0, 1.2):
+            crop(m, k, r)
+
+
+def _wheat(m, x, y):
+    for dx, dy in ((0, 0), (0.25, 0.1), (-0.2, 0.15)):
+        m.cyl(r=0.03, h=1.4, seg=4, color="corn_husk", loc=(x + dx, y + dy, 1.3))
+        m.box((0.12, 0.12, 0.4), color="banana_dark", bevel=0.03, loc=(x + dx, y + dy, 2.1))
+
+
+def _carrot(m, x, y):
+    m.box((0.3, 0.3, 0.2), color="carrot", bevel=0.05, loc=(x, y, 0.72))
+    for i in range(3):
+        m.leaf(length=0.6, width=0.2, thick=0.04, color="leaf", loc=(x, y, 0.8), rot=(70, 0, 120 * i))
+
+
+def _pumpkin(m, x, y):
+    m.box((0.8, 0.8, 0.6), color=lambda c, n: "pumpkin_dark" if abs(c.x - x) < 0.1 else "pumpkin", bevel=0.14,
+          loc=(x, y, 0.95), cuts={"x": [x - 0.05, x + 0.05]})
+    m.box((0.1, 0.1, 0.25), color="leaf_dark", loc=(x, y, 1.35))
+
+
+def _cabbage(m, x, y):
+    m.box((0.7, 0.7, 0.5), color=by_normal("cabbage", "leaf_light"), bevel=0.15, loc=(x, y, 0.9))
+
+
+def _strawberry(m, x, y):
+    m.box((0.7, 0.7, 0.3), color="leaf", bevel=0.1, loc=(x, y, 0.8))
+    for dx in (-0.2, 0.2):
+        m.box((0.18, 0.18, 0.22), color="strawberry", bevel=0.04, loc=(x + dx, y - 0.35, 0.8))
+
+
+def _corn(m, x, y):
+    m.cyl(r=0.08, h=2.4, seg=4, color="leaf", loc=(x, y, 1.8))
+    m.box((0.22, 0.22, 0.6), color="corn", bevel=0.05, loc=(x + 0.15, y, 1.8), rot=(0, 15, 0))
+    for i in range(2):
+        m.leaf(length=0.8, width=0.2, thick=0.03, color="leaf_light", loc=(x, y, 1.4 + i * 0.6),
+               rot=(60, 0, 180 * i + 45))
+
+
+for _n, _fn in (("WheatField", _wheat), ("CarrotPatch", _carrot), ("PumpkinPatch", _pumpkin),
+                ("CabbagePatch", _cabbage), ("StrawberryPatch", _strawberry), ("CornField", _corn)):
+    add(_n, CAT, (lambda m, f=_fn: crop_plot(m, f)), sub="Crops", tags=["farm", "simulator"])
+
+
+@asset("EmptyPlot", CAT, sub="Crops", tags=["farm", "simulator"])
+def empty_plot(m):
+    crop_plot(m, lambda m, x, y: None)
+
+
+# --- terrain chunks --------------------------------------------------------------------
+@asset("FloatingIsland", CAT, sub="Terrain", origin="center", tags=["fantasy", "obby"])
+def floating_island(m):
+    m.box((8.0, 8.0, 1.2), color=by_normal("grass", "dirt"), bevel=0.3, loc=(0, 0, 0))
+    m.lathe([(3.8, -0.6), (3.0, -2.0), (1.8, -3.4), (0, -5.0)], seg=8, color="stone", deform=jitter(0.2, 5),
+            rot=(0, 0, 22.5), smooth=False)
+    m.lathe([(3.9, -0.4), (3.4, -1.2), (0, -1.3)], seg=8, color="dirt", rot=(0, 0, 22.5), smooth=False)
+    trunk(m, 2.6, 0.35, 0.22)
+    blob(m, (0, 0, 3.6), 1.4, ["leaf_light", "leaf"], seed=5)
+    for x, y in ((2.4, -2.0), (-2.6, 1.8)):
+        m.box((0.7, 0.7, 0.5), color="stone_light", bevel=0.12, loc=(x, y, 0.85))
+
+
+@asset("Cliff", CAT, sub="Terrain")
+def cliff(m):
+    for x, w, h in ((-2.5, 3.2, 7.0), (0.3, 3.4, 8.5), (3.0, 3.0, 6.2)):
+        m.box((w, 4.0, h), color=lambda c, n: "grass" if n.z > 0.5 else ("stone" if int(c.z / 1.4) % 2 else "stone_dark"),
+              bevel=0.25, loc=(x, 0, h / 2), deform=jitter(0.12, int(x * 10)), cuts={"z": 1.4})
+        m.box((w + 0.2, 4.2, 0.4), color="grass", bevel=0.1, loc=(x, 0, h))
+
+
+@asset("Volcano", CAT, sub="Terrain")
+def volcano(m):
+    m.lathe([(8.0, 0), (6.5, 2.0), (4.2, 5.0), (2.4, 7.2), (2.0, 7.4), (1.6, 6.8), (0, 6.6)], seg=8,
+            color=lambda c, n: "lava" if c.z > 6.5 and n.z > 0.2 and abs(c.x) < 1.8 and abs(c.y) < 1.8 else
+            ("stone_dark" if c.z > 3 else "stone_deep"), deform=jitter(0.25, 8), smooth=False, rot=(0, 0, 22.5))
+    for a in (30, 150, 260):
+        r = math.radians(a)
+        m.tube([(math.cos(r) * 2.2, math.sin(r) * 2.2, 7.2), (math.cos(r) * 4.4, math.sin(r) * 4.4, 4.6),
+                (math.cos(r) * 6.4, math.sin(r) * 6.4, 1.8)], [0.4, 0.35, 0.25], seg=4, color="lava")
+    for i in range(3):
+        m.box((0.6, 0.6, 0.6), color="fire", bevel=0.1, loc=(0.3 * i - 0.3, 0.2 * i, 8.0 + i * 0.9), rot=(20 * i, 30, 0))
+
+
+@asset("Geyser", CAT, sub="Terrain")
+def geyser(m):
+    for i in range(8):
+        a = math.radians(45 * i)
+        m.box((1.0, 1.0, 0.7), color="stone" if i % 2 else "stone_light", bevel=0.15,
+              loc=(math.cos(a) * 1.5, math.sin(a) * 1.5, 0.35), rot=(0, 0, 45 * i), deform=jitter(0.06, i))
+    m.cyl(r=1.2, h=0.2, seg=8, color="water", loc=(0, 0, 0.3))
+    m.lathe([(0.6, 0.3), (0.45, 3.0), (0.7, 5.5), (1.1, 6.4), (0.6, 7.0), (0, 7.1)], seg=6, color="ice",
+            smooth=False)
+    for i in range(6):
+        a = math.radians(60 * i)
+        m.box((0.3, 0.3, 0.3), color="water", bevel=0.05, loc=(math.cos(a) * 1.4, math.sin(a) * 1.4, 5.8 - (i % 2)))
+
+
+@asset("Pond", CAT, sub="Terrain")
+def pond(m):
+    m.cyl(r=3.2, h=0.2, seg=8, color="water", loc=(0, 0, 0.12), rot=(0, 0, 22.5))
+    for i in range(12):
+        a = math.radians(30 * i)
+        m.box((0.9, 0.8, 0.5), color="stone_light" if i % 3 else "stone", bevel=0.15,
+              loc=(math.cos(a) * 3.3, math.sin(a) * 3.3, 0.25), rot=(0, 0, 30 * i), deform=jitter(0.08, i))
+    for x, y in ((1.2, 0.8), (-1.0, -1.2)):
+        m.prism(circle_pts(0.5, 8, start=20)[:7] + [(0, 0)], depth=0.05, color="lily", loc=(x, y, 0.25))
+    m.box((0.2, 0.2, 0.2), color="blossom", bevel=0.05, loc=(1.2, 0.8, 0.35))
+    for x in (-2.2, -2.5):
+        m.cyl(r=0.05, h=1.6, seg=4, color="leaf_dark", loc=(x, 2.2, 0.8))
+        m.box((0.16, 0.16, 0.4), color="wood_dark", bevel=0.04, loc=(x, 2.2, 1.5))
+
+
+@asset("Waterfall", CAT, sub="Terrain")
+def waterfall(m):
+    for x in (-3.0, 3.0):
+        m.box((2.4, 3.0, 8.0), color=lambda c, n: "grass" if n.z > 0.5 else ("stone" if int(c.z / 1.6) % 2 else "stone_dark"),
+              bevel=0.25, loc=(x, 1.0, 4.0), cuts={"z": 1.6}, deform=jitter(0.1, int(x)))
+    m.box((3.8, 3.0, 7.0), color=by_normal("grass", "stone_dark"), bevel=0.2, loc=(0, 2.0, 3.5))
+    m.box((3.6, 0.3, 7.2), color=lambda c, n: "water" if int(c.z / 0.8) % 2 else "ice", loc=(0, 0.4, 3.8),
+          cuts={"z": 0.8})
+    m.box((3.6, 2.0, 0.3), color="water", loc=(0, 1.4, 7.2))
+    m.cyl(r=3.0, h=0.3, seg=8, color="water", loc=(0, -2.0, 0.15), scale=(1.3, 1, 1))
+    for x in (-1.2, 0, 1.2):
+        m.box((0.6, 0.6, 0.5), color="white", bevel=0.12, loc=(x, -0.4, 0.4))
+
+
+@asset("SteppingStones", CAT, sub="Terrain", tags=["obby"])
+def stepping_stones(m):
+    for i in range(5):
+        m.cyl(r=0.8 - (i % 2) * 0.1, h=0.4, seg=8, color=by_normal("stone_light", "stone"),
+              loc=(math.sin(i * 1.1) * 0.8, i * 1.8, 0.2), rot=(0, 0, 20 * i), deform=jitter(0.05, i), bevel=0.08)
+
+
+@asset("GrassHill", CAT, sub="Terrain")
+def grass_hill(m):
+    m.lathe([(6.0, 0), (5.2, 1.4), (3.4, 2.6), (0, 3.0)], seg=8, color=by_normal("grass", "leaf", thresh=0.3),
+            rot=(0, 0, 22.5), deform=jitter(0.15, 3), smooth=False)
+    for x, y in ((1.5, -2.0), (-2.2, 0.8), (0.4, 1.5)):
+        m.box((0.2, 0.2, 0.2), color="plastic_yellow" if x > 0 else "white", loc=(x, y, 3.0 - (x * x + y * y) * 0.09))
+
+
+@asset("Anthill", CAT, sub="Terrain")
+def anthill(m):
+    m.lathe([(1.6, 0), (1.2, 0.6), (0.5, 1.2), (0.25, 1.3), (0, 1.1)], seg=8, color="dirt", deform=jitter(0.06, 2),
+            smooth=False)
+    for x, y in ((1.2, -0.8), (1.6, 0.2)):
+        m.box((0.12, 0.2, 0.08), color="black", loc=(x, y, 0.2 if x < 1.5 else 0.04))
+
+
+@asset("SnowPile", CAT, sub="Terrain", tags=["winter"])
+def snow_pile(m):
+    for x, y, r in ((0, 0, 1.4), (1.2, 0.3, 0.9), (-1.1, -0.2, 1.0)):
+        m.sphere(r=r, color="snow", loc=(x, y, r * 0.5), scale=(1, 1, 0.6))
+
+
+@asset("Iceberg", CAT, sub="Terrain", tags=["winter"])
+def iceberg(m):
+    m.ico(r=2.6, sub=1, color=lambda c, n: "snow" if n.z > 0.6 else "ice", loc=(0, 0, 1.4), scale=(1.4, 1.1, 1.0),
+          deform=jitter(0.35, 6), smooth=False)
+    m.crystal(r=0.9, h=4.2, color="ice", loc=(0.8, 0.4, 2.0), rot=(8, -10, 0))
+    m.cyl(r=4.6, h=0.2, seg=8, color="water", loc=(0, 0, 0.1))
+
+
+@asset("IceCrystals", CAT, sub="Crystals", tags=["winter", "mining"])
+def ice_crystals(m):
+    crystal_cluster(m, "ice", "diamond_light", 77)
+
+
+@asset("Stalagmites", CAT, sub="Rocks", tags=["cave"])
+def stalagmites(m):
+    m.box((4.0, 3.0, 0.4), color="stone_dark", bevel=0.15, loc=(0, 0, 0.2), deform=jitter(0.1, 3))
+    for x, y, r, h in ((0, 0, 0.7, 3.6), (1.2, 0.5, 0.5, 2.4), (-1.1, -0.4, 0.55, 2.8), (0.8, -0.9, 0.35, 1.5),
+                       (-1.4, 0.8, 0.3, 1.2)):
+        m.lathe([(r, 0), (r * 0.7, h * 0.5), (r * 0.3, h * 0.85), (0, h)], seg=6,
+                color=lambda c, n: "stone" if int(c.z / 0.6) % 2 else "stone_light", loc=(x, y, 0.3),
+                cuts={"z": 0.6}, smooth=False)
+
+
+@asset("Meteorite", CAT, sub="Rocks", tags=["space", "mining"])
+def meteorite(m):
+    m.ico(r=1.8, sub=1, color=lambda c, n: "lava" if (c.x * 3 + c.y * 2 + c.z) % 1.3 < 0.18 else "obsidian",
+          loc=(0, 0, 1.3), deform=jitter(0.25, 11), smooth=False)
+    m.cyl(r=2.6, r2=3.0, h=0.4, seg=8, color="dirt_dark", loc=(0, 0, 0.1), deform=jitter(0.1, 3))
+    for i in range(4):
+        a = math.radians(90 * i + 20)
+        m.box((0.3, 0.3, 0.3), color="fire", loc=(math.cos(a) * 2.2, math.sin(a) * 2.2, 0.45))
+
+
+@asset("SandCastle", CAT, sub="Terrain", tags=["beach"])
+def sand_castle(m):
+    m.box((3.2, 3.2, 0.3), color="sand", bevel=0.1, loc=(0, 0, 0.15))
+    m.box((2.2, 2.2, 1.4), color="sandstone", bevel=0.08, loc=(0, 0, 1.0))
+    for x in (-1.2, 1.2):
+        for y in (-1.2, 1.2):
+            m.cyl(r=0.45, h=2.2, seg=8, color="sand", loc=(x, y, 1.4))
+            m.cone(r=0.5, h=0.6, seg=8, color="sandstone", loc=(x, y, 2.5))
+    m.box((0.6, 0.1, 0.8), color="dirt", loc=(0, -1.12, 0.7))
+    m.cyl(r=0.03, h=1.0, seg=4, color="wood", loc=(0, 0, 2.2))
+    m.prism([(0, 0), (0.5, 0.15), (0, 0.3)], depth=0.03, color="plastic_red", loc=(0.02, 0, 2.45), rot=(90, 0, 0))
+
+
+# --- sky decorations -------------------------------------------------------------------
+@asset("Rainbow", CAT, sub="Sky", tags=["decor"])
+def rainbow_arc(m):
+    rb = ["rb_red", "rb_orange", "rb_yellow", "rb_green", "rb_blue", "rb_purple"]
+    for i, c in enumerate(rb):
+        m.torus(R=6.0 - i * 0.55, r=0.3, seg=16, color=c, arc=180, rot=(90, 0, 0), loc=(0, 0, 0))
+    for x in (-5.4, 5.4):
+        for dx, r in ((-0.6, 1.0), (0.6, 0.9), (0, 1.2)):
+            m.sphere(r=r, color="white", loc=(x + dx, 0, 0.4), scale=(1, 0.8, 0.8))
+
+
+@asset("Sun", CAT, sub="Sky", origin="center", tags=["decor"])
+def sun(m):
+    m.box((3.0, 1.0, 3.0), color="gold_light", bevel=0.3)
+    for i in range(8):
+        a = 45 * i
+        m.prism([(-0.4, 0), (0.4, 0), (0, 1.2)], depth=0.6, color="fire_light" if i % 2 else "gold",
+                loc=(math.cos(math.radians(a + 90)) * 1.9, 0, math.sin(math.radians(a + 90)) * 1.9),
+                rot=(90, -a, 0))
+    for x in (-0.6, 0.6):
+        m.eye((x, -0.52, 0.3), r=0.2)
+    m.box((0.9, 0.1, 0.2), color="eye_black", loc=(0, -0.52, -0.5))
+
+
+@asset("Moon", CAT, sub="Sky", origin="center", tags=["decor"])
+def moon(m):
+    pts = [(math.cos(math.radians(a)) * 2.0, math.sin(math.radians(a)) * 2.0) for a in range(90, 271, 30)]
+    pts += [(math.cos(math.radians(a)) * 1.5 - 0.6, math.sin(math.radians(a)) * 1.5) for a in range(240, 89, -30)]
+    m.prism(pts, depth=0.9, color=by_normal("cheese", "cheese_dark", thresh=0.5), rot=(90, 0, 0), bevel=0.1)
+    m.box((0.3, 0.1, 0.3), color="eye_black", loc=(-1.2, -0.5, 0.4))
+
+
+@asset("StarDecor", CAT, sub="Sky", origin="center", tags=["decor"])
+def star_decor(m):
+    m.prism(star_pts(1.6, 0.75, 5), depth=0.6, color="gold_light", rot=(90, 0, 0), bevel=0.08)
+    for x in (-0.35, 0.35):
+        m.eye((x, -0.32, 0.1), r=0.12)
+
+
+@asset("Snowflake", CAT, sub="Sky", origin="center", tags=["winter", "decor"])
+def snowflake(m):
+    for i in range(3):
+        m.box((3.2, 0.2, 0.3), color="ice", rot=(0, 60 * i, 0), bevel=0.05)
+    for i in range(6):
+        a = math.radians(60 * i)
+        for s in (-1, 1):
+            m.box((0.7, 0.18, 0.18), color="diamond_light", loc=(math.cos(a) * 1.0, 0, math.sin(a) * 1.0),
+                  rot=(0, -(60 * i + s * 45), 0))
+
+
+@asset("StormCloud", CAT, sub="Sky", origin="center")
+def storm_cloud(m):
+    for x, y, z, r in ((0, 0, 0, 2.2), (2.2, 0.2, -0.4, 1.7), (-2.2, -0.1, -0.5, 1.6), (1.0, 0.6, 1.0, 1.5)):
+        m.sphere(r=r, color="darkgray", loc=(x, y, z), scale=(1, 0.8, 0.85))
+    m.prism([(0, 0), (0.6, 0), (0.3, -1.0), (0.8, -1.0), (-0.1, -2.8), (0.1, -1.5), (-0.4, -1.5)], depth=0.3,
+            color="gold_light", loc=(0.3, 0, -1.6), rot=(90, 0, 0))
+
+
+@asset("Tornado", CAT, sub="Sky")
+def tornado(m):
+    for i in range(7):
+        z = i * 1.1
+        r = 0.4 + i * 0.45
+        m.cyl(r=r, r2=r + 0.4, h=1.0, seg=8, color="lightgray" if i % 2 else "gray", loc=(math.sin(i) * 0.3, 0, z + 0.5),
+              rot=(0, 0, i * 15))

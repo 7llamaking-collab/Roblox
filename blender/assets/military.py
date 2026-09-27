@@ -8,7 +8,7 @@ import math
 
 from studlib.registry import add
 
-from vehicles import car, cube, four_wheels, glass_box, truck, wheel, _helicopter
+from vehicles import car, cube, four_wheels, glass_box, tracks, truck, wheel, _helicopter
 
 CAT = "Military"
 
@@ -410,3 +410,395 @@ def _army_flag(m):
 
 
 reg("ArmyFlag", _army_flag, sub="Battlefield", split=False)
+
+
+# ============================================================================
+# Batch 2: more tanks & vehicles, naval, aircraft, drones, guns and field gear
+# ============================================================================
+reg("WinterTank", lambda m: _tank(m, col="plastic_white", dark="lightgray"), sub="Vehicles")
+reg("NightTank", lambda m: _tank(m, col="charcoal", dark="gunmetal"), sub="Vehicles")
+reg("JungleTank", lambda m: _tank(m, col="leaf_deep", dark="camo_brown"), sub="Vehicles")
+
+
+def _heavy_tank(m):
+    cube(m, (5.4, 9.6, 2.0), (0, 0, 1.9), "army_green", bev=0.35)
+    cube(m, (4.8, 1.4, 1.0), (0, -4.8, 1.4), "army_green", bev=0.25, rot=(35, 0, 0))
+    for s in (-1, 1):
+        cube(m, (1.4, 10.2, 1.8), (s * 3.1, 0, 1.1), "charcoal", bev=0.35)
+        for y in (-3.6, -1.8, 0.0, 1.8, 3.6):
+            m.cyl(r=0.65, h=1.46, seg=8, color="gunmetal", rot=(0, 90, 0), loc=(s * 3.1, y, 0.85))
+        cube(m, (1.6, 10.4, 0.2), (s * 3.1, 0, 2.05), "army_dark", bev=0.05)
+    with m.group("Turret"):
+        cube(m, (4.2, 4.6, 1.8), (0, 0.6, 3.8), "army_green", bev=0.35)
+        cube(m, (1.4, 1.0, 1.0), (0, -1.8, 3.8), "army_dark", bev=0.15)
+        for s in (-1, 1):
+            m.cyl(r=0.26, h=6.2, seg=8, color="army_green", rot=(90, 0, 0), loc=(s * 0.4, -4.8, 3.85))
+            m.cyl(r=0.36, h=0.8, seg=8, color="army_dark", rot=(90, 0, 0), loc=(s * 0.4, -7.6, 3.85))
+        m.cyl(r=0.7, h=0.5, seg=8, color="army_dark", loc=(1.1, 1.4, 4.9))
+        m.cyl(r=0.1, h=1.2, seg=6, color="charcoal", rot=(90, 0, 0), loc=(1.1, 0.6, 5.3))
+
+
+reg("HeavyTank", _heavy_tank, sub="Vehicles")
+
+
+def _light_tank(m):
+    cube(m, (3.6, 6.0, 1.2), (0, 0, 1.3), "army_tan", bev=0.25)
+    for s in (-1, 1):
+        cube(m, (0.9, 6.4, 1.1), (s * 2.1, 0, 0.75), "charcoal", bev=0.25)
+        for y in (-2.2, -0.7, 0.8, 2.3):
+            m.cyl(r=0.4, h=0.96, seg=8, color="gunmetal", rot=(0, 90, 0), loc=(s * 2.1, y, 0.6))
+    with m.group("Turret"):
+        cube(m, (2.4, 2.6, 1.0), (0, 0.4, 2.4), "army_tan", bev=0.25)
+        m.cyl(r=0.18, h=3.6, seg=8, color="camo_brown", rot=(90, 0, 0), loc=(0, -2.6, 2.4))
+
+
+reg("LightTank", _light_tank, sub="Vehicles")
+
+
+def _apc(m):
+    cube(m, (4.4, 8.0, 2.6), (0, 0, 2.2), "army_green", bev=0.4)
+    cube(m, (4.0, 1.4, 1.2), (0, -4.1, 1.6), "army_green", bev=0.3, rot=(40, 0, 0))
+    cube(m, (2.4, 0.2, 1.8), (0, 4.0, 2.0), "army_dark", bev=0.05)
+    for s in (-1, 1):
+        cube(m, (0.2, 0.8, 0.4), (s * 2.2, -2.8, 3.0), "window_blue", bev=0.04)
+    tracks(m, 4.8, 8.2, h=1.3)
+    with m.group("Turret"):
+        m.cyl(r=0.8, h=0.6, seg=8, color="army_dark", loc=(0, 0.4, 3.8))
+        m.cyl(r=0.1, h=2.0, seg=6, color="gunmetal", rot=(90, 0, 0), loc=(0, -0.8, 3.9))
+
+
+reg("APC", _apc, sub="Vehicles")
+
+
+def _missile_truck(m, d):
+    z = d["z0"] + 1.0
+    cube(m, (d["W"], d["box_l"], 0.6), (0, d["box_y"], z + 0.3), "army_dark", bev=0.08)
+    with m.group("Launcher"):
+        cube(m, (d["W"] * 0.8, d["box_l"] * 0.85, 1.4), (0, d["box_y"], z + 1.6), "army_green", bev=0.12,
+             rot=(-18, 0, 0))
+        for i in range(3):
+            for j in range(2):
+                m.cone(r=0.25, h=0.5, seg=8, color="fire_red", rot=(72, 0, 0),
+                       loc=(-0.8 + i * 0.8, d["box_y"] - d["box_l"] * 0.42, z + 1.2 + j * 0.6))
+
+
+reg("MissileTruck", lambda m: truck(m, cab="army_green", box=None, extras=_missile_truck), sub="Vehicles")
+
+
+def _patrol_boat(m):
+    m.lathe([(0, 0), (1.6, 0.3), (2.0, 1.4), (0, 1.4)], seg=8, color=lambda c, n: "gunmetal" if c.z > 0.5 else "army_dark",
+            cuts={"z": [0.5]}, scale=(1.0, 3.0, 1.0),
+            deform=lambda co: co.__class__((co.x * (0.5 + 0.5 * min(1, (co.y + 2.2) / 2.2 + 0.2)), co.y, co.z)))
+    cube(m, (2.2, 2.4, 1.6), (0, 1.2, 2.2), "gunmetal", bev=0.2)
+    cube(m, (2.24, 0.1, 0.5), (0, 0.0, 2.6), "window_blue", bev=0.03)
+    m.cyl(r=0.1, h=2.2, seg=6, color="charcoal", loc=(0, 1.8, 4.0))
+    with m.group("Turret"):
+        m.cyl(r=0.6, h=0.5, seg=8, color="army_dark", loc=(0, -3.2, 1.65))
+        m.cyl(r=0.1, h=1.8, seg=6, color="charcoal", rot=(90, 0, 0), loc=(0, -4.2, 1.8))
+
+
+reg("PatrolBoat", _patrol_boat, sub="Naval")
+
+
+def _battleship(m):
+    m.lathe([(0, 0), (2.4, 0.4), (3.0, 2.2), (0, 2.2)], seg=8, color=lambda c, n: "fire_red" if c.z < 0.9 else "gunmetal",
+            cuts={"z": [0.9]}, scale=(1.0, 4.0, 1.0),
+            deform=lambda co: co.__class__((co.x * (0.45 + 0.55 * min(1, (co.y + 2.2) / 2.2 + 0.25)), co.y, co.z)))
+    cube(m, (3.8, 5.0, 2.2), (0, 2.2, 3.3), "gunmetal", bev=0.25)
+    cube(m, (2.6, 2.6, 2.0), (0, 2.8, 5.4), "gunmetal", bev=0.2)
+    cube(m, (2.64, 0.1, 0.5), (0, 1.5, 5.8), "window_blue", bev=0.03)
+    m.cyl(r=0.7, h=2.4, seg=8, color="charcoal", loc=(0, 5.0, 5.4))
+    m.cyl(r=0.12, h=3.0, seg=6, color="charcoal", loc=(0, 3.0, 7.8))
+    for name, y, flip in (("TurretFront", -6.0, 1), ("TurretBack", 8.0, -1)):
+        with m.group(name):
+            m.cyl(r=1.2, h=0.8, seg=8, color="army_dark", loc=(0, y, 2.6))
+            cube(m, (2.0, 2.0, 0.8), (0, y, 3.2), "gunmetal", bev=0.15)
+            for s in (-1, 1):
+                m.cyl(r=0.14, h=3.0, seg=6, color="charcoal", rot=(90, 0, 0), loc=(s * 0.45, y - flip * 2.2, 3.3))
+
+
+reg("Battleship", _battleship, sub="Naval")
+
+
+def _naval_cannon(m):
+    m.cyl(r=1.6, h=0.4, seg=8, color="gunmetal", loc=(0, 0, 0.2))
+    with m.group("Turret"):
+        m.cyl(r=1.3, h=0.6, seg=8, color="lightgray", loc=(0, 0, 0.7))
+        cube(m, (2.4, 2.8, 1.8), (0, 0.4, 1.9), "lightgray", bev=0.35)
+        m.cyl(r=0.25, h=4.4, seg=8, color="gunmetal", rot=(90, 0, 0), loc=(0, -2.8, 2.0))
+        m.cyl(r=0.34, h=0.6, seg=8, color="charcoal", rot=(90, 0, 0), loc=(0, -4.9, 2.0))
+
+
+reg("NavalCannon", _naval_cannon)
+
+
+def _anti_tank_gun(m):
+    for s in (-1, 1):
+        m.tube([(s * 0.5, 0.6, 0.9), (s * 1.6, 3.6, 0.2)], [0.18, 0.15], seg=4, color="army_green")
+    cube(m, (3.0, 0.2, 1.6), (0, -0.6, 1.5), "army_green", bev=0.06)
+    with m.group("Barrel"):
+        cube(m, (0.8, 1.6, 0.7), (0, 0.2, 1.3), "army_dark", bev=0.1)
+        m.cyl(r=0.16, h=4.2, seg=8, color="army_green", rot=(90, 0, 0), loc=(0, -2.4, 1.35))
+        m.cyl(r=0.26, h=0.5, seg=8, color="army_dark", rot=(90, 0, 0), loc=(0, -4.5, 1.35))
+    wheel(m, "WheelL", 1.3, 0.0, 0.8, 0.45)
+    wheel(m, "WheelR", -1.3, 0.0, 0.8, 0.45)
+
+
+reg("AntiTankGun", _anti_tank_gun)
+
+
+def _gatling(m):
+    for a in (0, 120, 240):
+        r = math.radians(a + 90)
+        m.tube([(0, 0, 1.6), (math.cos(r) * 1.3, math.sin(r) * 1.3, 0.05)], [0.08, 0.08], seg=4, color="gunmetal")
+    with m.group("Gun"):
+        cube(m, (0.9, 1.4, 0.9), (0, 0.6, 2.0), "army_green", bev=0.12)
+        cube(m, (0.3, 0.6, 0.6), (0, 1.5, 1.8), "charcoal", bev=0.04)
+        m.cyl(r=0.4, h=0.3, seg=8, color="gunmetal", rot=(90, 0, 0), loc=(0, -0.2, 2.0))
+    with m.group("Barrels"):
+        for i in range(6):
+            a = math.radians(60 * i)
+            m.cyl(r=0.08, h=2.4, seg=4, color="charcoal", rot=(90, 0, 0),
+                  loc=(math.cos(a) * 0.25, -1.5, 2.0 + math.sin(a) * 0.25))
+        m.cyl(r=0.4, h=0.2, seg=8, color="gunmetal", rot=(90, 0, 0), loc=(0, -2.3, 2.0))
+
+
+reg("GatlingGun", _gatling)
+
+
+def _searchlight(m):
+    cube(m, (1.8, 1.8, 0.4), (0, 0, 0.2), "army_dark", bev=0.08)
+    for s in (-1, 1):
+        cube(m, (0.2, 0.4, 1.6), (s * 0.95, 0, 1.1), "army_green", bev=0.04)
+    with m.group("Light"):
+        m.cyl(r=0.8, h=1.2, seg=8, color="army_green", rot=(70, 0, 0), loc=(0, 0, 1.6))
+        m.cyl(r=0.7, h=0.1, seg=8, color="glow", rot=(70, 0, 0), loc=(0, -0.58, 1.8))
+
+
+reg("Searchlight", _searchlight, sub="Battlefield")
+
+
+# --- aircraft & drones -------------------------------------------------------------
+def _bomber(m):
+    m.tube([(0, -6.5, 3.0), (0, -5.5, 3.2), (0, 3.0, 3.2), (0, 6.5, 3.4)], [0.5, 1.2, 1.1, 0.4], seg=8,
+           color="army_green")
+    cube(m, (1.6, 1.4, 0.8), (0, -5.0, 4.0), "window_blue", bev=0.3)
+    m.prism([(-7.5, -0.8), (7.5, -0.8), (7.5, 0.8), (-7.5, 0.8)], depth=0.3, color="army_green", loc=(0, -0.8, 3.4))
+    m.prism([(-3.0, 5.2), (3.0, 5.2), (3.0, 6.2), (-3.0, 6.2)], depth=0.2, color="army_green", loc=(0, 0, 3.6))
+    m.prism([(0, 0), (1.8, 0.4), (1.8, 1.4), (0, 1.0)], depth=0.2, color="army_green", rot=(0, 90, 0),
+            loc=(0, 5.0, 4.4))
+    for s in (-1, 1):
+        for k, x in enumerate((2.6, 5.0)):
+            m.cyl(r=0.45, h=2.0, seg=8, color="army_dark", rot=(90, 0, 0), loc=(s * x, -1.4, 3.3))
+            with m.group(f"Prop{'L' if s > 0 else 'R'}{k}"):
+                m.cyl(r=0.2, h=0.3, seg=6, color="charcoal", rot=(90, 0, 0), loc=(s * x, -2.55, 3.3))
+                for a in (0, 120, 240):
+                    cube(m, (0.2, 0.08, 1.2), (s * x, -2.65, 3.3), "charcoal", rot=(0, a, 0), bev=0.02)
+    for s in (-1, 1):
+        m.tube([(s * 2.6, -1.4, 2.8), (s * 2.6, -1.4, 1.0)], [0.08, 0.08], seg=4, color="charcoal")
+        wheel(m, f"Wheel{'L' if s > 0 else 'R'}", s * 2.6, -1.4, 0.55, 0.4)
+
+
+reg("Bomber", _bomber, sub="Aircraft")
+
+
+def _drone(m, col="gunmetal"):
+    cube(m, (1.4, 1.8, 0.6), (0, 0, 1.0), col, bev=0.15)
+    m.sphere(r=0.25, color="charcoal", loc=(0, -0.8, 0.8))
+    m.box((0.12, 0.06, 0.12), color="neon_red", loc=(0, -1.06, 0.8))
+    for i, (x, y) in enumerate(((1.4, 1.4), (-1.4, 1.4), (1.4, -1.4), (-1.4, -1.4))):
+        m.tube([(0, 0, 1.1), (x, y, 1.2)], [0.08, 0.08], seg=4, color=col)
+        m.cyl(r=0.18, h=0.3, seg=6, color="charcoal", loc=(x, y, 1.3))
+        with m.group(f"Rotor{i + 1}"):
+            cube(m, (1.4, 0.16, 0.04), (x, y, 1.48), "lightgray", bev=0.02, rot=(0, 0, 30 + 60 * i))
+    for s in (-1, 1):
+        cube(m, (0.08, 1.2, 0.08), (s * 0.5, 0, 0.1), "charcoal", bev=0.02)
+        m.tube([(s * 0.5, 0, 0.1), (s * 0.4, 0, 0.75)], [0.05, 0.05], seg=4, color="charcoal")
+
+
+reg("Drone", lambda m: _drone(m), sub="Aircraft")
+reg("ArmyDrone", lambda m: _drone(m, col="army_green"), sub="Aircraft")
+
+
+def _cargo_plane(m):
+    m.tube([(0, -6.0, 3.0), (0, -5.0, 3.3), (0, 3.0, 3.3), (0, 6.0, 4.0)], [0.9, 1.6, 1.6, 0.6], seg=8,
+           color="army_tan")
+    cube(m, (2.2, 1.0, 0.7), (0, -5.3, 4.2), "window_blue", bev=0.25)
+    m.prism([(-8.0, -0.8), (8.0, -0.8), (8.0, 0.8), (-8.0, 0.8)], depth=0.3, color="army_tan", loc=(0, -0.8, 4.9))
+    m.prism([(-3.2, 5.0), (3.2, 5.0), (3.2, 6.0), (-3.2, 6.0)], depth=0.2, color="army_tan", loc=(0, 0, 4.4))
+    m.prism([(0, 0), (2.2, 0.5), (2.2, 1.5), (0, 1.0)], depth=0.2, color="camo_brown", rot=(0, 90, 0), loc=(0, 5.0, 4.6))
+    for s in (-1, 1):
+        for k, x in enumerate((3.0, 5.6)):
+            m.cyl(r=0.45, h=1.6, seg=8, color="camo_brown", rot=(90, 0, 0), loc=(s * x, -1.4, 4.6))
+            with m.group(f"Prop{'L' if s > 0 else 'R'}{k}"):
+                for a in (0, 90):
+                    cube(m, (0.2, 0.08, 1.4), (s * x, -2.3, 4.6), "charcoal", rot=(0, a + 45, 0), bev=0.02)
+    for s in (-1, 1):
+        wheel(m, f"Wheel{'L' if s > 0 else 'R'}", s * 1.6, 0.8, 0.6, 0.5)
+    wheel(m, "WheelF", 0.2, -4.6, 0.45, 0.35)
+
+
+reg("CargoPlane", _cargo_plane, sub="Aircraft")
+
+
+# --- handheld guns (blocky toy style, face -Y) -----------------------------------------------
+def _gun_body(m, L, col="gunmetal", stock="wood_mid"):
+    cube(m, (0.35, L, 0.5), (0, 0, 1.2), col, bev=0.06)
+    cube(m, (0.3, 0.4, 0.8), (0, 0.5, 0.75), "charcoal", bev=0.05, rot=(-15, 0, 0))
+    cube(m, (0.3, 0.8, 0.12), (0, 0.25, 0.9), "charcoal", bev=0.02)
+    if stock:
+        cube(m, (0.32, 1.4, 0.6), (0, L / 2 + 0.6, 1.1), stock, bev=0.08, rot=(-8, 0, 0))
+
+
+def _pistol(m):
+    cube(m, (0.3, 1.4, 0.45), (0, -0.2, 1.2), "gunmetal", bev=0.06)
+    cube(m, (0.28, 0.45, 0.9), (0, 0.35, 0.7), "charcoal", bev=0.05, rot=(-12, 0, 0))
+    cube(m, (0.25, 0.5, 0.1), (0, 0.0, 0.85), "charcoal", bev=0.02)
+
+
+def _rifle(m):
+    _gun_body(m, 3.0)
+    m.cyl(r=0.08, h=1.4, seg=4, color="charcoal", rot=(90, 0, 0), loc=(0, -2.1, 1.25))
+    cube(m, (0.25, 0.4, 0.9), (0, -0.4, 0.6), "charcoal", bev=0.04, rot=(12, 0, 0))
+    cube(m, (0.2, 0.9, 0.2), (0, 0.0, 1.55), "charcoal", bev=0.03)
+
+
+def _sniper(m):
+    _gun_body(m, 3.6, col="army_green", stock="army_green")
+    m.cyl(r=0.08, h=2.4, seg=4, color="charcoal", rot=(90, 0, 0), loc=(0, -3.0, 1.25))
+    m.cyl(r=0.16, h=1.4, seg=8, color="charcoal", rot=(90, 0, 0), loc=(0, -0.2, 1.7))
+    m.cyl(r=0.12, h=0.05, seg=8, color="window_blue", rot=(90, 0, 0), loc=(0, -0.92, 1.7))
+    for s in (-1, 1):
+        m.tube([(0, -2.8, 1.0), (s * 0.3, -2.9, 0.2)], [0.04, 0.04], seg=4, color="charcoal")
+
+
+def _shotgun(m):
+    _gun_body(m, 2.8)
+    m.cyl(r=0.1, h=1.6, seg=4, color="charcoal", rot=(90, 0, 0), loc=(0, -2.2, 1.35))
+    cube(m, (0.35, 0.9, 0.3), (0, -1.6, 0.95), "wood", bev=0.06)
+
+
+def _smg(m):
+    cube(m, (0.35, 1.8, 0.55), (0, 0, 1.2), "charcoal", bev=0.06)
+    cube(m, (0.3, 0.4, 0.8), (0, 0.4, 0.7), "gunmetal", bev=0.05, rot=(-15, 0, 0))
+    cube(m, (0.25, 0.35, 1.0), (0, -0.4, 0.5), "gunmetal", bev=0.04)
+    m.cyl(r=0.07, h=0.7, seg=4, color="gunmetal", rot=(90, 0, 0), loc=(0, -1.2, 1.25))
+    cube(m, (0.12, 1.0, 0.12), (0, 1.3, 1.1), "gunmetal", bev=0.02)
+
+
+def _minigun(m):
+    cube(m, (0.8, 1.6, 0.8), (0, 0.6, 1.2), "gunmetal", bev=0.12)
+    cube(m, (0.25, 0.8, 0.25), (0, 0.4, 1.8), "charcoal", bev=0.04)
+    cube(m, (0.5, 0.8, 0.6), (0.6, 0.8, 0.9), "army_green", bev=0.08)
+    for i in range(6):
+        a = math.radians(60 * i)
+        m.cyl(r=0.07, h=2.6, seg=4, color="charcoal", rot=(90, 0, 0), loc=(math.cos(a) * 0.22, -1.4, 1.2 + math.sin(a) * 0.22))
+    for y in (-0.6, -2.4):
+        m.cyl(r=0.34, h=0.15, seg=8, color="gunmetal", rot=(90, 0, 0), loc=(0, y, 1.2))
+
+
+def _bazooka(m):
+    m.cyl(r=0.35, h=4.0, seg=8, color="army_green", rot=(90, 0, 0), loc=(0, 0, 1.2))
+    m.cyl(r=0.45, h=0.5, seg=8, color="army_dark", rot=(90, 0, 0), loc=(0, -2.0, 1.2))
+    cube(m, (0.25, 0.4, 0.8), (0, 0.3, 0.65), "charcoal", bev=0.04)
+    cube(m, (0.3, 0.6, 0.3), (0.35, -0.3, 1.6), "gunmetal", bev=0.05)
+    m.cone(r=0.3, h=0.8, seg=8, color="fire_red", rot=(90, 0, 0), loc=(0, -2.3, 1.2))
+
+
+for _n, _f in (("Pistol", _pistol), ("AssaultRifle", _rifle), ("SniperRifle", _sniper), ("Shotgun", _shotgun),
+               ("SMG", _smg), ("Minigun", _minigun), ("Bazooka", _bazooka)):
+    reg(_n, _f, sub="Weapons", split=False, tags=["gun"])
+
+
+# --- field gear -------------------------------------------------------------------
+def _helmet(m):
+    m.lathe([(1.1, 0), (1.05, 0.5), (0.85, 1.0), (0.45, 1.3), (0, 1.35)], seg=8, color="army_green",
+            rot=(0, 0, 22.5))
+    m.cyl(r=1.25, h=0.12, seg=8, color="army_dark", loc=(0, 0, 0.06), rot=(0, 0, 22.5))
+    cube(m, (0.6, 0.1, 0.4), (0, -1.05, 0.5), "army_dark", bev=0.03)
+
+
+def _radio(m):
+    cube(m, (1.6, 1.0, 2.0), (0, 0, 1.0), "army_green", bev=0.12)
+    cube(m, (1.2, 0.1, 0.6), (0, -0.52, 1.4), "screen_glow", bev=0.03)
+    for x in (-0.4, 0, 0.4):
+        m.cyl(r=0.12, h=0.12, seg=6, color="charcoal", rot=(90, 0, 0), loc=(x, -0.54, 0.7))
+    m.cyl(r=0.04, h=2.0, seg=4, color="charcoal", loc=(0.6, 0.3, 3.0))
+    cube(m, (0.4, 0.3, 0.8), (-0.95, 0, 1.2), "charcoal", bev=0.06)
+
+
+def _binoculars(m):
+    for s in (-1, 1):
+        m.cyl(r=0.3, h=1.0, seg=8, color="army_green", rot=(90, 0, 0), loc=(s * 0.38, 0, 0.35))
+        m.cyl(r=0.33, h=0.3, seg=8, color="charcoal", rot=(90, 0, 0), loc=(s * 0.38, -0.55, 0.35))
+        m.cyl(r=0.22, h=0.05, seg=8, color="window_blue", rot=(90, 0, 0), loc=(s * 0.38, -0.72, 0.35))
+    cube(m, (0.5, 0.4, 0.2), (0, 0.1, 0.45), "charcoal", bev=0.04)
+
+
+def _medkit(m):
+    cube(m, (2.0, 1.0, 1.4), (0, 0, 0.7), "plastic_white", bev=0.12)
+    cube(m, (0.8, 0.06, 0.24), (0, -0.52, 0.75), "fire_red", bev=0.02)
+    cube(m, (0.24, 0.06, 0.8), (0, -0.52, 0.75), "fire_red", bev=0.02)
+    m.torus(R=0.35, r=0.07, seg=6, color="charcoal", arc=180, rot=(90, 0, 0), loc=(0, 0, 1.4))
+
+
+def _supply_crate(m):
+    cube(m, (2.6, 2.6, 2.2), (0, 0, 1.1), "army_green", bev=0.12)
+    for s in (-1, 1):
+        cube(m, (2.7, 0.3, 2.3), (0, s * 0.8, 1.1), "army_dark", bev=0.04)
+    cube(m, (1.4, 0.06, 0.5), (0, -1.32, 1.1), "road_yellow", bev=0.02)
+
+
+def _supply_drop(m):
+    _supply_crate(m)
+    m.lathe([(3.4, 7.0), (3.0, 8.4), (1.8, 9.4), (0, 9.8)], seg=8,
+            color=lambda c, n: "fire_red" if int((math.degrees(math.atan2(c.y, c.x)) + 360) / 45) % 2 else "plastic_white",
+            smooth=False)
+    for a in range(0, 360, 90):
+        r = math.radians(a + 45)
+        m.tube([(math.cos(r) * 1.2, math.sin(r) * 1.2, 2.2), (math.cos(r) * 3.3, math.sin(r) * 3.3, 7.0)],
+               [0.03, 0.03], seg=4, color="string")
+
+
+def _parachute(m):
+    m.lathe([(3.4, 5.0), (3.0, 6.4), (1.8, 7.4), (0, 7.8)], seg=8,
+            color=lambda c, n: "army_green" if int((math.degrees(math.atan2(c.y, c.x)) + 360) / 45) % 2 else "army_tan",
+            smooth=False)
+    cube(m, (0.8, 0.5, 0.8), (0, 0, 0.4), "army_dark", bev=0.1)
+    for a in range(0, 360, 90):
+        r = math.radians(a + 45)
+        m.tube([(0, 0, 0.8), (math.cos(r) * 3.3, math.sin(r) * 3.3, 5.0)], [0.03, 0.03], seg=4, color="string")
+
+
+def _jetpack(m):
+    for s in (-1, 1):
+        m.cyl(r=0.45, h=2.0, seg=8, color="gunmetal", loc=(s * 0.5, 0, 1.6))
+        m.cone(r=0.45, h=0.5, seg=8, color="fire_red", loc=(s * 0.5, 0, 2.6))
+        m.cyl(r=0.3, r2=0.4, h=0.4, seg=8, color="charcoal", loc=(s * 0.5, 0, 0.4))
+        m.cone(r=0.3, h=0.6, seg=6, color="fire", loc=(s * 0.5, 0, 0.2), rot=(180, 0, 0))
+    cube(m, (0.8, 0.6, 1.4), (0, -0.2, 1.6), "army_green", bev=0.1)
+    for s in (-1, 1):
+        cube(m, (0.2, 0.2, 1.6), (s * 0.35, -0.6, 1.6), "charcoal", bev=0.03)
+
+
+def _shells(m):
+    for i, (x, y) in enumerate(((-0.6, 0), (0, 0), (0.6, 0), (-0.3, 0.55), (0.3, 0.55))):
+        m.lathe([(0.26, 0), (0.26, 1.2), (0.22, 1.5), (0, 1.9)], seg=6,
+                color=lambda c, n: "gold" if c.z < 1.1 else "gunmetal", cuts={"z": [1.1]}, loc=(x, y, 0))
+
+
+def _pillbox(m):
+    m.lathe([(3.4, 0), (3.2, 1.8), (2.6, 2.6), (0, 2.8)], seg=6, color="concrete", rot=(0, 0, 30), smooth=False)
+    cube(m, (2.4, 0.3, 0.4), (0, -3.0, 1.6), "charcoal", bev=0.04)
+    for a in (60, 120):
+        r = math.radians(a)
+        cube(m, (1.4, 0.3, 0.4), (math.cos(r + math.pi) * 2.95, math.sin(r + math.pi) * 2.95, 1.6), "charcoal",
+             rot=(0, 0, a - 90), bev=0.04)
+    cube(m, (1.2, 0.2, 1.8), (0, 3.1, 0.9), "wood_dark", bev=0.03)
+
+
+for _n, _f, _sub in (("ArmyHelmet", _helmet, "Gear"), ("FieldRadio", _radio, "Gear"), ("Binoculars", _binoculars, "Gear"),
+                     ("Medkit", _medkit, "Gear"), ("Jetpack", _jetpack, "Gear"), ("SupplyCrate", _supply_crate, "Ammo"),
+                     ("SupplyDrop", _supply_drop, "Ammo"), ("Parachute", _parachute, "Gear"),
+                     ("ArtilleryShells", _shells, "Ammo"), ("Pillbox", _pillbox, "Battlefield")):
+    reg(_n, _f, sub=_sub, split=False)

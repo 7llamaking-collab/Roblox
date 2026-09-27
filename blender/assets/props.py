@@ -3,7 +3,7 @@ trophies, signs, fences, lights, pads & portals, farm and town props."""
 import math
 import random
 
-from studlib.geo import (RAINBOW, by_height, by_normal, circle_pts, heart_pts, jitter, rainbow,
+from studlib.geo import (RAINBOW, by_height, by_normal, checker, circle_pts, heart_pts, jitter, rainbow,
                          star_pts)
 from studlib.registry import add, asset
 from studlib.tiers import ORDER, TIERS, paint, solid
@@ -561,3 +561,567 @@ def beehive(m):
     m.cyl(r=0.2, h=0.1, seg=8, color="chocolate_dark", rot=(90, 0, 0), loc=(0, -0.95, 0.8))
     for x, z in ((0.9, 2.2), (-1.0, 1.6)):
         m.sphere(r=0.14, seg=6, rings=4, color="bee", loc=(x, -0.4, z), scale=(1.3, 1, 1))
+
+
+# =====================================================================================
+# Batch 2: loot, obby parts, spooky & holiday props, magic items, adventure gear
+# =====================================================================================
+def cube(m, size, col, loc, bevel=0.06, **kw):
+    m.box(size, color=col, bevel=bevel, loc=loc, **kw)
+
+
+# --- tiered loot crates & keys -------------------------------------------------------------
+def loot_crate(m, T, tier):
+    m.box((2.4, 2.4, 2.4), bevel=0.1, loc=(0, 0, 1.2), **paint(T, "main", "z", 0, 2.4))
+    for x in (-1.1, 1.1):
+        for y in (-1.1, 1.1):
+            m.box((0.3, 0.3, 2.5), color=T["dark"], loc=(x, y, 1.2))
+    for z in (0.12, 2.28):
+        for s in (-1, 1):
+            m.box((2.5, 0.3, 0.3), color=T["dark"], loc=(0, s * 1.1, z))
+            m.box((0.3, 2.5, 0.3), color=T["dark"], loc=(s * 1.1, 0, z))
+    m.prism([(0, 0.55), (0.3, 0.15), (0.12, 0.15), (0.12, -0.55), (-0.12, -0.55), (-0.12, 0.15), (-0.3, 0.15)],
+            depth=0.08, color=T["accent"] if tier != "Wood" else "wood_dark", rot=(90, 0, 0), loc=(0, -1.22, 1.2))
+    m.box((0.5, 0.5, 0.5), color=solid(T, "gem", "gold"), bevel=0.08, loc=(0, 0, 2.55), rot=(0, 0, 45))
+
+
+def tier_key(m, T, tier):
+    m.torus(R=0.5, r=0.14, seg=8, rseg=4, color=solid(T, "main", "gold"), rot=(90, 0, 0), loc=(-1.0, 0, 0))
+    m.box((1.9, 0.22, 0.22), bevel=0.04, loc=(0.35, 0, 0), **paint(T, "main", "x", -0.6, 1.3))
+    m.box((0.2, 0.22, 0.45), color=T["dark"], loc=(0.95, 0, -0.3))
+    m.box((0.2, 0.22, 0.3), color=T["dark"], loc=(0.6, 0, -0.22))
+    m.box((0.28, 0.3, 0.28), color=solid(T, "gem", "gold"), bevel=0.05, loc=(-1.0, 0, 0), rot=(0, 45, 0))
+
+
+for _tier in ORDER:
+    add(f"{_tier}LootCrate", CAT, (lambda m, t=_tier: loot_crate(m, TIERS[t], t)), sub="LootCrates",
+        tags=["simulator", "tiered", _tier.lower()])
+    add(f"{_tier}Key", CAT, (lambda m, t=_tier: tier_key(m, TIERS[t], t)), sub="Keys", origin="center",
+        tags=["simulator", "tiered", _tier.lower()])
+
+
+# --- treasure --------------------------------------------------------------------------------
+def ingot(m, col, dark, loc=(0, 0, 0), rot=(0, 0, 0)):
+    m.lathe([(0.9, 0), (0.7, 0.45), (0, 0.45)], seg=4, color=by_normal(col, dark, thresh=0.8), loc=loc,
+            rot=(rot[0], rot[1], rot[2] + 45), scale=(1.0, 0.5, 1.0), smooth=False)
+
+
+for _n, _c, _d in (("GoldBar", "gold", "gold_dark"), ("SilverBar", "silver", "iron"), ("IronBar", "iron", "iron_dark"),
+                   ("CopperBar", "copper", "bronze"), ("DiamondBar", "diamond", "diamond_dark"),
+                   ("EmeraldBar", "emerald", "emerald_dark"), ("RubyBar", "ruby", "ruby_dark")):
+    add(_n, CAT, (lambda m, c=_c, d=_d: ingot(m, c, d)), sub="Currency", tags=["simulator", "mining"])
+
+
+@asset("GoldBarStack", CAT, sub="Currency", tags=["simulator"])
+def gold_bar_stack(m):
+    for row, n in enumerate((3, 2, 1)):
+        for i in range(n):
+            ingot(m, "gold", "gold_dark", loc=((i - (n - 1) / 2) * 1.3, 0, row * 0.45))
+
+
+@asset("TreasurePile", CAT, sub="Currency", tags=["simulator"])
+def treasure_pile(m):
+    m.lathe([(3.0, 0), (2.4, 0.6), (1.2, 1.4), (0, 1.7)], seg=8, color="gold", deform=jitter(0.12, 4), smooth=False)
+    rnd = random.Random(8)
+    for i in range(14):
+        a = rnd.uniform(0, 2 * math.pi)
+        r = rnd.uniform(0.4, 2.6)
+        z = 1.7 * (1 - r / 3.0) + 0.1
+        m.cyl(r=0.4, h=0.12, seg=8, color="gold_light", loc=(math.cos(a) * r, math.sin(a) * r, z),
+              rot=(rnd.uniform(-30, 30), rnd.uniform(-30, 30), 0))
+    for i, c in enumerate(("ruby", "emerald", "diamond", "amethyst", "sapphire")):
+        a = 2 * math.pi * i / 5
+        m.gem(r=0.3, h=0.35, color=c, loc=(math.cos(a) * 1.4, math.sin(a) * 1.4, 1.05), rot=(0, 180, 0))
+    ingot(m, "gold", "gold_dark", loc=(0.4, -0.6, 1.2), rot=(0, 10, 30))
+    m.box((0.6, 0.6, 0.6), color="ruby", bevel=0.1, loc=(-0.2, 0.3, 1.8), rot=(30, 45, 0))
+
+
+@asset("DiamondCrown", CAT, sub="Pickups")
+def diamond_crown(m):
+    m.cyl(r=0.9, h=0.5, seg=8, color="silver", loc=(0, 0, 0.25))
+    for i in range(8):
+        a = math.radians(45 * i)
+        m.pyramid(w=0.45, h=0.7, color="silver", loc=(math.cos(a) * 0.72, math.sin(a) * 0.72, 0.5),
+                  rot=(0, 0, 45 * i))
+        m.box((0.18, 0.18, 0.18), color="diamond", loc=(math.cos(a) * 0.72, math.sin(a) * 0.72, 1.28), rot=(45, 0, 45))
+        m.box((0.16, 0.1, 0.16), color="diamond_light", loc=(math.cos(a) * 0.93, math.sin(a) * 0.93, 0.25),
+              rot=(0, 0, 45 * i + 90))
+
+
+@asset("RoyalCrown", CAT, sub="Pickups")
+def royal_crown(m):
+    m.cyl(r=1.0, h=0.4, seg=8, color="fur_white", loc=(0, 0, 0.2))
+    m.lathe([(0.85, 0.4), (0.8, 1.2), (0.3, 1.6), (0, 1.65)], seg=8, color="fabric_red", smooth=False)
+    for i in range(4):
+        m.box((0.2, 1.8, 0.2), color="gold", loc=(0, 0, 1.15), rot=(0, 0, 45 * i),
+              deform=lambda co: co.__class__((co.x, co.y, co.z - 0.25 * co.y ** 2)))
+    m.box((0.35, 0.35, 0.35), color="gold", loc=(0, 0, 1.8))
+    m.box((0.12, 0.12, 0.5), color="gold", loc=(0, 0, 2.2))
+    m.box((0.4, 0.12, 0.12), color="gold", loc=(0, 0, 2.3))
+
+
+@asset("Tiara", CAT, sub="Pickups")
+def tiara(m):
+    m.torus(R=0.9, r=0.08, seg=8, color="silver", arc=180, loc=(0, 0, 0.1))
+    m.prism([(-0.6, 0), (-0.3, 0.4), (0, 0.8), (0.3, 0.4), (0.6, 0)], depth=0.1, color="silver", rot=(90, 0, 0),
+            loc=(0, 0.9, 0.1))
+    m.gem(r=0.14, h=0.16, color="crystal_pink", rot=(90, 0, 0), loc=(0, 0.84, 0.5))
+
+
+@asset("Ticket", CAT, sub="Currency", origin="center")
+def ticket(m):
+    m.prism([(-1.0, -0.5), (1.0, -0.5), (1.0, -0.15), (0.85, 0), (1.0, 0.15), (1.0, 0.5), (-1.0, 0.5), (-1.0, 0.15),
+             (-0.85, 0), (-1.0, -0.15)], depth=0.06, color="gold_light", rot=(90, 0, 0))
+    m.box((1.3, 0.08, 0.6), color="plastic_red", loc=(0, -0.02, 0))
+    m.prism(star_pts(0.22, 0.1, 5), depth=0.1, color="gold_light", rot=(90, 0, 0), loc=(0, -0.05, 0))
+
+
+@asset("TicketRoll", CAT, sub="Currency")
+def ticket_roll(m):
+    m.cyl(r=0.9, h=0.8, seg=8, color=lambda c, n: "plastic_red" if abs(n.z) > 0.5 else "gold_light", loc=(0, 0, 0.9),
+          rot=(90, 0, 0))
+    m.box((0.8, 0.05, 1.6), color="gold_light", loc=(0.8, 0, 0.1), rot=(0, 20, 0))
+
+
+# --- obby & game parts ---------------------------------------------------------------------------
+@asset("Checkpoint", CAT, sub="Obby", tags=["obby"])
+def checkpoint(m):
+    m.box((4.0, 4.0, 0.4), color=lambda c, n: "neon_green" if n.z > 0.5 else "stone", bevel=0.08, loc=(0, 0, 0.2))
+    m.cyl(r=0.12, h=4.5, seg=6, color="silver", loc=(-1.6, 1.6, 2.4))
+    m.prism([(0, 0), (1.8, 0.5), (0, 1.0)], depth=0.08, color="neon_green", loc=(-1.5, 1.6, 3.9), rot=(90, 0, 0))
+
+
+@asset("FinishLine", CAT, sub="Obby", tags=["obby"])
+def finish_line(m):
+    for x in (-3.5, 3.5):
+        m.box((0.6, 0.6, 6.0), color="plastic_red", bevel=0.08, loc=(x, 0, 3.0))
+    m.box((7.6, 0.6, 1.4), color=checker("white", "black", 0.7), bevel=0.05, loc=(0, 0, 6.2),
+          cuts={"x": 0.7, "z": [6.2]})
+    m.box((7.0, 1.6, 0.1), color=checker("white", "black", 0.7), loc=(0, 0, 0.05), cuts={"x": 0.7, "y": [0]})
+
+
+@asset("Spikes", CAT, sub="Obby", tags=["obby", "hazard"])
+def spikes(m):
+    m.box((4.0, 4.0, 0.4), color="iron_dark", bevel=0.06, loc=(0, 0, 0.2))
+    for i in range(4):
+        for j in range(4):
+            m.pyramid(w=0.8, h=1.2, color="silver", loc=(-1.5 + i, -1.5 + j, 0.4))
+
+
+@asset("LavaBlock", CAT, sub="Obby", tags=["obby", "hazard"])
+def lava_block(m):
+    m.box((4.0, 4.0, 1.0), color=lambda c, n: ("fire" if (int(c.x + 2) + int(c.y + 2)) % 2 else "lava") if n.z > 0.5
+          else "stone_dark", bevel=0.08, loc=(0, 0, 0.5), cuts={"x": 1.0, "y": 1.0})
+
+
+@asset("Trampoline", CAT, sub="Obby", tags=["obby"])
+def trampoline(m):
+    m.cyl(r=2.6, h=0.4, seg=8, color="plastic_blue", loc=(0, 0, 1.3), rot=(0, 0, 22.5))
+    m.cyl(r=2.2, h=0.1, seg=8, color="charcoal", loc=(0, 0, 1.52), rot=(0, 0, 22.5))
+    for i in range(4):
+        a = math.radians(90 * i + 45)
+        m.box((0.2, 0.2, 1.3), color="silver", loc=(math.cos(a) * 2.2, math.sin(a) * 2.2, 0.55))
+
+
+@asset("SpeedPad", CAT, sub="Obby", tags=["obby", "boost"])
+def speed_pad(m):
+    m.box((3.0, 5.0, 0.3), color="charcoal", bevel=0.06, loc=(0, 0, 0.15))
+    for k in range(3):
+        m.prism([(-1.0, 0), (0, 0.8), (1.0, 0), (0.6, 0), (0, 0.45), (-0.6, 0)], depth=0.1, color="neon_blue",
+                loc=(0, -1.6 + k * 1.3, 0.35))
+
+
+@asset("JumpPad", CAT, sub="Obby", tags=["obby", "boost"])
+def jump_pad(m):
+    m.cyl(r=1.8, h=0.4, seg=8, color="charcoal", loc=(0, 0, 0.2), rot=(0, 0, 22.5))
+    m.cyl(r=1.4, h=0.2, seg=8, color="neon_green", loc=(0, 0, 0.5), rot=(0, 0, 22.5))
+    m.prism([(0, 0.9), (0.8, 0.1), (0.3, 0.1), (0.3, -0.7), (-0.3, -0.7), (-0.3, 0.1), (-0.8, 0.1)], depth=0.1,
+            color="white", loc=(0, 0, 0.62), rot=(0, 0, 0))
+
+
+@asset("Ladder", CAT, sub="Obby")
+def ladder(m):
+    for x in (-0.8, 0.8):
+        m.box((0.25, 0.25, 8.0), color="wood", bevel=0.04, loc=(x, 0, 4.0))
+    for k in range(8):
+        m.box((1.5, 0.2, 0.2), color="wood_light", loc=(0, 0, 0.6 + k * 1.0))
+
+
+@asset("RopeCoil", CAT, sub="Adventure")
+def rope_coil(m):
+    for k in range(4):
+        m.torus(R=0.9 - k * 0.05, r=0.14, seg=8, color="rope", loc=(0, 0, 0.14 + k * 0.26))
+    m.tube([(0.9, 0, 0.9), (1.4, -0.3, 0.3), (2.0, -0.2, 0.1)], [0.12, 0.12, 0.12], seg=4, color="rope")
+
+
+@asset("Pallet", CAT, sub="Warehouse")
+def pallet(m):
+    for y in (-1.3, 0, 1.3):
+        m.box((3.2, 0.5, 0.4), color="wood_mid", loc=(0, y, 0.2))
+    for x in (-1.2, -0.4, 0.4, 1.2):
+        m.box((0.6, 3.2, 0.12), color="wood_light", loc=(x, 0, 0.46))
+
+
+@asset("CrateStack", CAT, sub="Warehouse")
+def crate_stack(m):
+    def crate(x, y, z, s, r=0):
+        m.box((s, s, s), color="wood_light", bevel=0.05, loc=(x, y, z + s / 2), rot=(0, 0, r))
+        for k in (-1, 1):
+            m.box((s * 1.02, s * 0.14, s * 0.14), color="wood_mid", loc=(x, y + k * s * 0.44, z + s * 0.93), rot=(0, 0, r))
+            m.box((s * 1.02, s * 0.14, s * 0.14), color="wood_mid", loc=(x, y + k * s * 0.44, z + s * 0.07), rot=(0, 0, r))
+    crate(-1.1, 0, 0, 2.0)
+    crate(1.1, 0.1, 0, 2.0, 6)
+    crate(-0.1, 0, 2.0, 1.8, -8)
+
+
+@asset("TNT", CAT, sub="Adventure", tags=["explosive"])
+def tnt(m):
+    m.box((1.6, 1.6, 1.6), color=lambda c, n: "white" if abs(c.z - 0.8) < 0.3 and abs(n.z) < 0.5 else "plastic_red",
+          bevel=0.05, loc=(0, 0, 0.8), cuts={"z": [0.5, 1.1]})
+    m.box((0.9, 0.05, 0.3), color="black", loc=(0, -0.82, 0.8))
+    m.cyl(r=0.05, h=0.6, seg=4, color="string", loc=(0, 0, 1.9))
+
+
+@asset("Dynamite", CAT, sub="Adventure", tags=["explosive"])
+def dynamite(m):
+    for x in (-0.3, 0, 0.3):
+        m.cyl(r=0.18, h=1.6, seg=6, color="plastic_red", loc=(x, 0, 0.8))
+    m.box((1.0, 0.45, 0.15), color="charcoal", loc=(0, 0, 0.9))
+    m.tube([(0, 0, 1.6), (0.2, 0, 2.0), (0.4, 0.1, 2.2)], [0.03] * 3, seg=4, color="string")
+    m.box((0.12, 0.12, 0.12), color="fire", loc=(0.42, 0.1, 2.25))
+
+
+@asset("CartoonBomb", CAT, sub="Adventure", tags=["explosive"])
+def cartoon_bomb(m):
+    m.sphere(r=1.0, color="charcoal", loc=(0, 0, 1.0), round=True, seg=10, rings=8)
+    m.cyl(r=0.3, h=0.3, seg=6, color="iron", loc=(0, 0, 2.05))
+    m.tube([(0, 0, 2.2), (0.2, 0, 2.6), (0.5, 0, 2.7)], [0.05] * 3, seg=4, color="string")
+    m.box((0.15, 0.15, 0.15), color="fire", loc=(0.55, 0, 2.72))
+    m.box((0.25, 0.1, 0.4), color="white", loc=(-0.45, -0.85, 1.4), rot=(0, -30, 0))
+
+
+# --- spooky ------------------------------------------------------------------------------------
+@asset("Tombstone", CAT, sub="Spooky", tags=["halloween"])
+def tombstone(m):
+    m.box((2.2, 1.6, 0.3), color="dirt", bevel=0.08, loc=(0, 0, 0.15))
+    m.prism([(-0.8, 0), (0.8, 0), (0.8, 1.6), (0.5, 2.0), (0, 2.1), (-0.5, 2.0), (-0.8, 1.6)], depth=0.35,
+            color="stone", rot=(90, 0, 0), loc=(0, 0.2, 0.3), bevel=0.05)
+    m.box((0.12, 0.05, 0.8), color="stone_dark", loc=(0, 0.0, 1.5))
+    m.box((0.5, 0.05, 0.12), color="stone_dark", loc=(0, 0.0, 1.65))
+
+
+@asset("Coffin", CAT, sub="Spooky", tags=["halloween"])
+def coffin(m):
+    pts = [(-0.5, -1.6), (0.5, -1.6), (0.8, 0.8), (0.55, 1.6), (-0.55, 1.6), (-0.8, 0.8)]
+    m.prism(pts, depth=0.8, color="wood_dark", loc=(0, 0, 0.4), bevel=0.05)
+    m.prism([(x * 1.04, y * 1.02) for x, y in pts], depth=0.15, color="wood_deep", loc=(0, 0, 0.85))
+    m.box((0.12, 0.8, 0.05), color="gold", loc=(0, 0.3, 0.94))
+    m.box((0.5, 0.12, 0.05), color="gold", loc=(0, 0.45, 0.94))
+
+
+@asset("Skull", CAT, sub="Spooky", tags=["halloween"])
+def skull(m):
+    m.box((1.2, 1.2, 1.1), color="offwhite", bevel=0.2, loc=(0, 0, 0.9))
+    m.box((0.9, 0.8, 0.5), color="offwhite", bevel=0.1, loc=(0, -0.2, 0.35))
+    for x in (-0.28, 0.28):
+        m.box((0.32, 0.1, 0.32), color="black", loc=(x, -0.58, 0.95))
+    m.box((0.15, 0.1, 0.18), color="black", loc=(0, -0.58, 0.62))
+    for x in (-0.24, -0.08, 0.08, 0.24):
+        m.box((0.1, 0.1, 0.18), color="lightgray", loc=(x, -0.6, 0.3))
+
+
+@asset("BonePile", CAT, sub="Spooky", tags=["halloween"])
+def bone_pile(m):
+    for i, (x, y, r) in enumerate(((0, 0, 20), (0.4, 0.5, -40), (-0.5, 0.3, 75), (0.1, -0.5, 130))):
+        rad = math.radians(r)
+        m.box((1.6, 0.2, 0.2), color="offwhite", loc=(x, y, 0.15 + i * 0.12), rot=(0, 0, r))
+        for s in (-1, 1):
+            for t in (-1, 1):
+                m.box((0.22, 0.22, 0.22), color="offwhite", bevel=0.05, loc=(
+                    x + s * 0.8 * math.cos(rad) - t * 0.1 * math.sin(rad),
+                    y + s * 0.8 * math.sin(rad) + t * 0.1 * math.cos(rad), 0.15 + i * 0.12))
+
+
+@asset("JackOLantern", CAT, sub="Spooky", tags=["halloween"])
+def jack_o_lantern(m):
+    m.box((2.0, 1.8, 1.6), color=lambda c, n: "pumpkin_dark" if abs(c.x) < 0.15 or abs(abs(c.x) - 0.55) < 0.12 else "pumpkin",
+          bevel=0.3, loc=(0, 0, 0.8), cuts={"x": [-0.67, -0.43, -0.15, 0.15, 0.43, 0.67]})
+    m.box((0.2, 0.2, 0.4), color="leaf_dark", loc=(0, 0, 1.75))
+    for x in (-0.45, 0.45):
+        m.prism([(-0.22, 0), (0.22, 0), (0, 0.3)], depth=0.1, color="fire_light", rot=(90, 0, 0), loc=(x, -0.88, 1.0))
+    m.prism([(-0.6, 0.15), (-0.3, 0.0), (0, 0.15), (0.3, 0.0), (0.6, 0.15), (0.3, -0.25), (-0.3, -0.25)], depth=0.1,
+            color="fire_light", rot=(90, 0, 0), loc=(0, -0.88, 0.6))
+
+
+@asset("WitchHat", CAT, sub="Spooky", tags=["halloween"])
+def witch_hat(m):
+    m.cyl(r=1.4, h=0.1, seg=8, color="charcoal", loc=(0, 0, 0.05), rot=(0, 0, 22.5))
+    m.lathe([(0.8, 0.1), (0.6, 0.9), (0.35, 1.6), (0, 2.4)], seg=8, color="charcoal", rot=(0, 0, 22.5),
+            deform=lambda co: co.__class__((co.x + 0.25 * max(0, co.z - 1.4) ** 2, co.y, co.z)))
+    m.cyl(r=0.82, h=0.25, seg=8, color="plastic_purple", loc=(0, 0, 0.28), rot=(0, 0, 22.5))
+    m.box((0.3, 0.1, 0.3), color="gold", loc=(0, -0.8, 0.28))
+
+
+@asset("SpiderWeb", CAT, sub="Spooky", tags=["halloween"], origin="center")
+def spider_web(m):
+    for i in range(4):
+        m.box((3.6, 0.05, 0.06), color="offwhite", rot=(0, 45 * i, 0))
+    for r in (0.5, 1.0, 1.5):
+        m.torus(R=r, r=0.03, seg=8, color="offwhite", rot=(90, 0, 22.5))
+    m.box((0.35, 0.3, 0.3), color="black", bevel=0.08, loc=(0.6, -0.1, -0.6))
+
+
+@asset("HauntedCandle", CAT, sub="Spooky", tags=["halloween"])
+def haunted_candle(m):
+    m.cyl(r=0.6, h=0.2, seg=8, color="iron_dark", loc=(0, 0, 0.1))
+    for x, h in ((0, 1.6), (0.35, 1.1), (-0.3, 0.9)):
+        m.cyl(r=0.16, h=h, seg=6, color="offwhite", loc=(x, 0, 0.2 + h / 2))
+        m.box((0.12, 0.12, 0.22), color="neon_green", loc=(x, 0, 0.35 + h))
+
+
+# --- holiday -----------------------------------------------------------------------------------
+def present(m, box, ribbon, size=(1.8, 1.8, 1.5), loc=(0, 0, 0), rot=0):
+    w, d, h = size
+    x0, y0, z0 = loc
+    m.box((w, d, h), color=box, bevel=0.05, loc=(x0, y0, z0 + h / 2), rot=(0, 0, rot))
+    m.box((w * 1.06, d * 1.06, h * 0.22), color=box, bevel=0.05, loc=(x0, y0, z0 + h * 0.95), rot=(0, 0, rot))
+    m.box((w * 0.16, d * 1.08, h * 1.08), color=ribbon, loc=(x0, y0, z0 + h * 0.54), rot=(0, 0, rot))
+    m.box((w * 1.08, d * 0.16, h * 1.08), color=ribbon, loc=(x0, y0, z0 + h * 0.54), rot=(0, 0, rot))
+    for s in (-1, 1):
+        m.box((w * 0.3, d * 0.12, h * 0.25), color=ribbon, loc=(x0 + s * w * 0.15, y0, z0 + h * 1.18),
+              rot=(0, s * 25, rot))
+
+
+for _n, _b, _r in (("BlueGift", "plastic_blue", "silver"), ("GreenGift", "plastic_green", "plastic_red"),
+                   ("PurpleGift", "plastic_purple", "gold"), ("PinkGift", "plastic_pink", "white"),
+                   ("GoldGift", "gold", "fabric_red")):
+    add(_n, CAT, (lambda m, b=_b, r=_r: present(m, b, r)), sub="Holiday", tags=["holiday", "simulator"])
+
+
+@asset("GiftPile", CAT, sub="Holiday", tags=["holiday"])
+def gift_pile(m):
+    present(m, "plastic_red", "gold", (2.0, 2.0, 1.6), (0, 0, 0), 10)
+    present(m, "plastic_blue", "white", (1.4, 1.4, 1.1), (1.9, 0.3, 0), -12)
+    present(m, "plastic_green", "plastic_red", (1.2, 1.2, 1.0), (-1.7, -0.2, 0), 30)
+    present(m, "plastic_purple", "gold", (1.0, 1.0, 0.9), (0.2, 0.1, 1.95), -20)
+
+
+@asset("Stocking", CAT, sub="Holiday", tags=["holiday"])
+def stocking(m):
+    m.box((0.9, 0.4, 1.8), color="fabric_red", bevel=0.1, loc=(0, 0, 1.3))
+    m.box((1.4, 0.4, 0.7), color="fabric_red", bevel=0.2, loc=(0.25, 0, 0.35))
+    m.box((1.05, 0.5, 0.45), color="fur_white", bevel=0.1, loc=(0, 0, 2.3))
+    m.torus(R=0.15, r=0.04, seg=6, color="fur_white", rot=(90, 0, 0), loc=(-0.4, 0, 2.65))
+
+
+@asset("CandyCaneDecor", CAT, sub="Holiday", tags=["holiday"])
+def candy_cane_decor(m):
+    stripes = lambda c, n: "plastic_red" if int((c.z + c.x) / 0.35) % 2 else "white"
+    m.box((0.4, 0.4, 4.0), color=stripes, loc=(0, 0, 2.0), cuts={"z": 0.35})
+    m.torus(R=0.55, r=0.2, seg=8, arc=180, color=stripes, rot=(90, 0, 0), loc=(0.55, 0, 4.0))
+    m.box((0.4, 0.4, 0.8), color="plastic_red", loc=(1.1, 0, 3.6))
+
+
+@asset("SnowGlobe", CAT, sub="Holiday", tags=["holiday", "decor"])
+def snow_globe(m):
+    m.cyl(r=1.0, r2=0.85, h=0.6, seg=8, color="wood_dark", loc=(0, 0, 0.3), rot=(0, 0, 22.5))
+    m.sphere(r=1.1, seg=10, rings=8, color="glass", loc=(0, 0, 1.6), round=True)
+    m.cyl(r=0.8, h=0.1, seg=8, color="snow", loc=(0, 0, 0.8))
+    m.cone(r=0.45, h=1.1, seg=4, color="pine", loc=(0, 0, 0.85), smooth=False)
+
+
+@asset("Wreath", CAT, sub="Holiday", tags=["holiday"], origin="center")
+def wreath(m):
+    m.torus(R=1.2, r=0.35, seg=8, rseg=4, color=by_normal("leaf", "pine_dark"), rot=(90, 0, 22.5))
+    for i in range(8):
+        a = math.radians(45 * i)
+        m.box((0.18, 0.18, 0.18), color="apple_red", loc=(math.cos(a) * 1.2, -0.3, math.sin(a) * 1.2))
+    m.box((0.6, 0.15, 0.35), color="fabric_red", loc=(0, -0.35, -1.2))
+
+
+# --- magic & adventure ---------------------------------------------------------------------------
+@asset("CrystalBall", CAT, sub="Magic", tags=["magic"])
+def crystal_ball(m):
+    m.cyl(r=0.8, r2=0.5, h=0.5, seg=8, color="gold_dark", loc=(0, 0, 0.25), rot=(0, 0, 22.5))
+    for i in range(4):
+        a = math.radians(90 * i)
+        m.box((0.15, 0.15, 0.5), color="gold", loc=(math.cos(a) * 0.45, math.sin(a) * 0.45, 0.6), rot=(0, 0, 90 * i))
+    m.sphere(r=0.8, seg=10, rings=8, color="diamond_light", loc=(0, 0, 1.3), round=True)
+    m.sphere(r=0.35, color="amethyst", loc=(0, 0, 1.3))
+
+
+@asset("MagicOrb", CAT, sub="Magic", origin="center", tags=["magic", "simulator"])
+def magic_orb(m):
+    m.ico(r=0.9, sub=1, color="neon_blue", smooth=False)
+    for i in range(3):
+        m.torus(R=1.3, r=0.06, seg=8, color="glow", rot=(60 * i, 45, 0))
+
+
+@asset("Spellbook", CAT, sub="Magic", tags=["magic"])
+def spellbook(m):
+    m.box((1.6, 2.1, 0.5), color="paper", loc=(0.05, 0, 0.3))
+    m.box((1.7, 2.2, 0.1), color="fabric_purple", bevel=0.03, loc=(0, 0, 0.05))
+    m.box((1.7, 2.2, 0.1), color="fabric_purple", bevel=0.03, loc=(0, 0, 0.6))
+    m.box((0.15, 2.2, 0.65), color="fabric_purple", loc=(-0.83, 0, 0.32))
+    m.prism(star_pts(0.4, 0.18, 5), depth=0.06, color="gold", loc=(0.05, 0, 0.67))
+    for y in (-0.95, 0.95):
+        m.box((0.3, 0.2, 0.12), color="gold", loc=(0.7, y, 0.66))
+
+
+@asset("Scroll", CAT, sub="Magic")
+def scroll(m):
+    m.box((2.2, 0.05, 2.6), color="paper", loc=(0, 0, 1.6))
+    for z in (0.3, 2.9):
+        m.cyl(r=0.2, h=2.6, seg=6, color="wood_mid", rot=(0, 90, 0), loc=(0, 0, z))
+        for x in (-1.35, 1.35):
+            m.box((0.2, 0.3, 0.3), color="gold", loc=(x, 0, z))
+    for z in (2.2, 1.8, 1.4, 1.0):
+        m.box((1.4, 0.07, 0.08), color="wood_dark", loc=(0, -0.02, z))
+
+
+@asset("TreasureMap", CAT, sub="Adventure")
+def treasure_map(m):
+    m.box((2.6, 2.0, 0.05), color="bread", loc=(0, 0, 0.03), deform=lambda co: co.__class__((co.x, co.y, co.z + 0.1 * math.sin(co.x * 2))))
+    for x, y in ((-0.8, -0.5), (-0.4, -0.2), (0, 0.1), (0.4, 0.3)):
+        m.box((0.18, 0.08, 0.02), color="brick", loc=(x, y, 0.1 + 0.1 * math.sin(x * 2)))
+    m.box((0.35, 0.08, 0.02), color="apple_red", loc=(0.8, 0.5, 0.2), rot=(0, 0, 45))
+    m.box((0.35, 0.08, 0.02), color="apple_red", loc=(0.8, 0.5, 0.2), rot=(0, 0, -45))
+    m.box((0.6, 0.4, 0.03), color="leaf", loc=(-0.6, 0.5, 0.08))
+
+
+@asset("Hourglass", CAT, sub="Magic")
+def hourglass(m):
+    for z in (0.1, 2.3):
+        m.box((1.4, 1.4, 0.2), color="wood_dark", bevel=0.04, loc=(0, 0, z))
+    for x in (-0.55, 0.55):
+        for y in (-0.55, 0.55):
+            m.box((0.12, 0.12, 2.1), color="wood_mid", loc=(x, y, 1.2))
+    m.lathe([(0.5, 0.2), (0.45, 0.8), (0.08, 1.2), (0.45, 1.6), (0.5, 2.2)], seg=6, color="glass", caps=True)
+    m.lathe([(0.45, 0.2), (0.35, 0.55), (0, 0.7)], seg=6, color="sand")
+    m.lathe([(0.3, 1.5), (0.44, 1.75), (0, 1.75)], seg=6, color="sand")
+
+
+@asset("RuneStone", CAT, sub="Magic", tags=["magic"])
+def rune_stone(m):
+    m.box((1.8, 1.0, 3.6), color="stone", bevel=0.2, loc=(0, 0, 1.8), deform=jitter(0.08, 3))
+    for z, w in ((2.8, 0.8), (2.0, 0.5), (1.2, 0.7)):
+        m.box((w, 0.1, 0.14), color="neon_blue", loc=(0, -0.52, z))
+        m.box((0.14, 0.1, 0.5), color="neon_blue", loc=(w / 2 - 0.07, -0.52, z - 0.18))
+
+
+@asset("Totem", CAT, sub="Adventure")
+def totem(m):
+    for k, (col, beak) in enumerate((("wood_mid", None), ("plank_red", "gold"), ("wood_light", "plastic_green"))):
+        z = 1.0 + k * 2.0
+        m.box((1.6, 1.6, 2.0), color=col, bevel=0.1, loc=(0, 0, z))
+        for x in (-0.4, 0.4):
+            m.box((0.4, 0.1, 0.3), color="white", loc=(x, -0.82, z + 0.35))
+            m.box((0.2, 0.1, 0.2), color="black", loc=(x, -0.86, z + 0.35))
+        m.box((0.8, 0.1, 0.2), color="black", loc=(0, -0.82, z - 0.5))
+        if beak:
+            m.pyramid(w=0.5, h=0.6, color=beak, loc=(0, -0.8, z), rot=(90, 0, 0))
+    for s in (-1, 1):
+        m.box((1.4, 0.3, 0.8), color="plastic_blue", bevel=0.05, loc=(s * 1.4, 0, 5.4), rot=(0, s * -20, 0))
+
+
+@asset("Altar", CAT, sub="Magic", tags=["magic"])
+def altar(m):
+    m.box((4.0, 3.0, 0.4), color="stone_dark", bevel=0.08, loc=(0, 0, 0.2))
+    m.box((3.0, 2.0, 1.4), color="stone", bevel=0.08, loc=(0, 0, 1.1))
+    m.box((3.4, 2.4, 0.3), color="stone_light", bevel=0.06, loc=(0, 0, 1.95))
+    m.gem(r=0.5, h=0.7, color="amethyst", loc=(0, 0, 2.1))
+    for x in (-1.4, 1.4):
+        m.cyl(r=0.15, h=0.6, seg=6, color="offwhite", loc=(x, 0, 2.4))
+        m.box((0.12, 0.12, 0.2), color="fire", loc=(x, 0, 2.8))
+
+
+@asset("MagicMirror", CAT, sub="Magic", tags=["magic"])
+def magic_mirror(m):
+    m.box((2.2, 0.4, 0.3), color="gold_dark", loc=(0, 0, 0.15))
+    m.prism([(-1.0, 0), (1.0, 0), (1.0, 2.4), (0.6, 3.0), (0, 3.2), (-0.6, 3.0), (-1.0, 2.4)], depth=0.3, color="gold",
+            rot=(90, 0, 0), loc=(0, 0, 0.3), bevel=0.05)
+    m.prism([(-0.8, 0), (0.8, 0), (0.8, 2.3), (0.5, 2.8), (0, 2.95), (-0.5, 2.8), (-0.8, 2.3)], depth=0.1,
+            color="crystal_pink", rot=(90, 0, 0), loc=(0, -0.12, 0.45))
+
+
+@asset("BrassCompass", CAT, sub="Adventure", origin="center")
+def compass_prop(m):
+    m.cyl(r=1.0, h=0.3, seg=8, color="gold", rot=(90, 0, 0), bevel=0.05)
+    m.cyl(r=0.85, h=0.1, seg=8, color="paper", rot=(90, 0, 0), loc=(0, -0.12, 0))
+    m.prism([(0, 0.7), (0.15, 0), (-0.15, 0)], depth=0.05, color="apple_red", rot=(90, 0, 0), loc=(0, -0.18, 0))
+    m.prism([(0, -0.7), (-0.15, 0), (0.15, 0)], depth=0.05, color="charcoal", rot=(90, 0, 0), loc=(0, -0.18, 0))
+    m.box((0.2, 0.2, 0.25), color="gold", loc=(0, 0, 1.1))
+
+
+@asset("Telescope", CAT, sub="Adventure")
+def telescope(m):
+    for a in (0, 120, 240):
+        r = math.radians(a)
+        m.tube([(0, 0, 2.2), (math.cos(r) * 1.0, math.sin(r) * 1.0, 0)], [0.08, 0.08], seg=4, color="wood_dark")
+    m.cyl(r=0.3, r2=0.45, h=3.0, seg=8, color="gold", rot=(0, 60, 0), loc=(0.3, 0, 2.8))
+    m.cyl(r=0.5, h=0.2, seg=8, color="gold_dark", rot=(0, 60, 0), loc=(1.6, 0, 3.55))
+
+
+@asset("DogHouse", CAT, sub="Pets", tags=["pets"])
+def dog_house(m):
+    m.box((3.0, 3.4, 2.2), color="plank_red", bevel=0.06, loc=(0, 0, 1.1), cuts={"z": 0.55},
+          )
+    m.prism([(-1.9, 0), (1.9, 0), (0, 1.5)], depth=3.8, color="roof_blue", rot=(90, 0, 0), loc=(0, 0, 2.2))
+    m.prism([(-0.6, 0), (0.6, 0), (0.6, 1.0), (0, 1.4), (-0.6, 1.0)], depth=0.1, color="charcoal", rot=(90, 0, 0),
+            loc=(0, -1.72, 0.05))
+    m.box((1.4, 0.1, 0.4), color="wood_light", loc=(0, -1.75, 2.55))
+
+
+@asset("PetBowl", CAT, sub="Pets", tags=["pets"])
+def pet_bowl(m):
+    m.cyl(r=0.9, r2=0.7, h=0.45, seg=8, color="plastic_blue", loc=(0, 0, 0.22), rot=(0, 0, 22.5))
+    m.cyl(r=0.62, h=0.05, seg=8, color="seed_brown", loc=(0, 0, 0.42), rot=(0, 0, 22.5))
+    m.box((0.5, 0.2, 0.15), color="plastic_white", loc=(0, -0.8, 0.25), rot=(-10, 0, 0))
+
+
+@asset("Toolbox", CAT, sub="Warehouse")
+def toolbox(m):
+    m.box((2.2, 1.0, 1.0), color="plastic_red", bevel=0.06, loc=(0, 0, 0.5))
+    m.box((2.25, 1.05, 0.12), color="charcoal", loc=(0, 0, 0.8))
+    m.torus(R=0.45, r=0.07, seg=6, color="charcoal", arc=180, rot=(90, 0, 0), loc=(0, 0, 1.0))
+    for x in (-0.8, 0.8):
+        m.box((0.2, 0.1, 0.2), color="silver", loc=(x, -0.52, 0.8))
+
+
+@asset("Battery", CAT, sub="Pickups", tags=["simulator", "energy"])
+def battery(m):
+    m.cyl(r=0.6, h=2.0, seg=8, color=lambda c, n: "plastic_green" if c.z > 1.2 else "charcoal", loc=(0, 0, 1.0),
+          cuts={"z": [1.2]}, rot=(0, 0, 22.5))
+    m.cyl(r=0.25, h=0.25, seg=8, color="silver", loc=(0, 0, 2.1))
+    m.prism([(0.1, 0.4), (-0.25, -0.05), (0.0, -0.05), (-0.1, -0.4), (0.25, 0.05), (0.0, 0.05)], depth=0.1,
+            color="gold_light", rot=(90, 0, 0), loc=(0, -0.62, 1.0))
+
+
+@asset("Gear", CAT, sub="Pickups", origin="center")
+def gear(m):
+    m.cyl(r=1.0, h=0.4, seg=8, color="iron", rot=(90, 0, 0))
+    for i in range(8):
+        a = math.radians(45 * i)
+        m.box((0.4, 0.4, 0.4), color="iron", loc=(math.cos(a) * 1.1, 0, math.sin(a) * 1.1), rot=(0, -45 * i, 0))
+    m.cyl(r=0.35, h=0.45, seg=8, color="iron_dark", rot=(90, 0, 0))
+
+
+@asset("Dice", CAT, sub="Pickups", origin="center")
+def dice(m):
+    m.box((1.4, 1.4, 1.4), color="plastic_white", bevel=0.2)
+    for x, z in ((0, 0),):
+        m.box((0.25, 0.1, 0.25), color="black", loc=(x, -0.7, z))
+    for x, y in ((-0.35, -0.35), (0.35, 0.35)):
+        m.box((0.25, 0.25, 0.1), color="black", loc=(x, y, 0.7))
+    for y, z in ((-0.35, -0.35), (0, 0), (0.35, 0.35)):
+        m.box((0.1, 0.25, 0.25), color="black", loc=(0.7, y, z))
+
+
+@asset("Firework", CAT, sub="Holiday", tags=["holiday"])
+def firework(m):
+    m.cyl(r=0.4, h=1.6, seg=8, color=lambda c, n: "plastic_red" if int(c.z / 0.4) % 2 else "white", loc=(0, 0, 1.0),
+          cuts={"z": 0.4})
+    m.cone(r=0.5, h=0.7, seg=8, color="plastic_blue", loc=(0, 0, 1.8))
+    m.box((0.1, 0.1, 1.2), color="wood_light", loc=(0.45, 0, 0.6))
+    for s in (-1, 1):
+        m.prism([(0, 0), (0.4, 0), (0, 0.6)], depth=0.08, color="gold", loc=(s * 0.4, 0, 0.2), rot=(90, 0, 0 if s > 0 else 180))

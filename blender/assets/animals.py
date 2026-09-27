@@ -750,7 +750,7 @@ def fin_yz(m, pts_yz, depth, color, loc, **kw):
 
 
 def fishy(m, *, W=0.7, L=1.7, H=1.2, col="fish_orange", belly=None, fin=None, stripes=None, stripe_col="white",
-          eye_r=0.13):
+          eye_r=0.13, extras=None):
     fin = fin or col
     cz = H / 2 + 0.15
     m.bone("Body", (0, L * 0.1, cz), (0, -L * 0.45, cz))
@@ -780,6 +780,8 @@ def fishy(m, *, W=0.7, L=1.7, H=1.2, col="fish_orange", belly=None, fin=None, st
                (0, L / 2 - 0.05, cz))
     with m.group("FinL"):
         cube(m, (0.4, 0.45, 0.08), (W / 2 + 0.18, -L * 0.02, cz - H * 0.2), fin, rot=(0, -25, 0), mirror="FinR")
+    if extras:
+        extras(m, dict(W=W, L=L, H=H, cz=cz))
 
 
 reg("Clownfish", lambda m: fishy(m, W=0.7, L=1.6, H=1.0, col="fish_orange",
@@ -1233,3 +1235,640 @@ def _mimic(m):
 
 
 reg("Mimic", _mimic, kind="blob", sub="Mythical", tags=["mythical"])
+
+
+# ============================================================================
+# batch 2: more pets, wildlife, birds, sea life, bugs and fantasy creatures
+# ============================================================================
+def _alpaca_extras(m, d):
+    with m.group("Body"):
+        rnd = random.Random(12)
+        for i in range(10):
+            cube(m, (0.5, 0.5, 0.4), (rnd.uniform(-0.45, 0.45), rnd.uniform(-0.8, 0.8), d["cz"] + d["H"] / 2),
+                 "fur_cream")
+    with m.group("Head"):
+        cube(m, (d["hw"] * 1.05, d["hd"] * 0.6, 0.35), (0, d["hy"] + 0.1, d["hz"] + d["hh"] / 2), "fur_cream")
+
+
+reg("Alpaca", lambda m: beast(m, W=1.4, L=2.2, H=1.4, leg_h=1.2, leg_w=0.3, body="fur_cream", legc="fur_tan",
+                              head=(0.9, 1.1, 0.9), head_col="fur_cream", head_fwd=0.5, head_up=0.1, neck=1.0,
+                              muzzle=(0.55, 0.3, 0.4), muzzle_col="fur_white", nose="fur_darkbrown", nose_w=0.22,
+                              ears="pointy", ear_s=0.9, ear_in="fur_tan", tail="stub", tail_col="fur_cream",
+                              extras=_alpaca_extras), sub="Farm")
+
+
+def _moose_extras(m, d):
+    with m.group("Head"):
+        for s in (-1, 1):
+            base = (s * d["hw"] * 0.45, d["hy"] + 0.15, d["hz"] + d["hh"] / 2)
+            m.tube([base, (s * 1.0, d["hy"] + 0.2, d["hz"] + d["hh"] / 2 + 0.2)], [0.1, 0.08], seg=4, color="antler")
+            cube(m, (1.2, 0.2, 0.8), (s * 1.5, d["hy"] + 0.2, d["hz"] + d["hh"] / 2 + 0.45), "antler",
+                 rot=(0, s * -20, 0))
+            for k in range(3):
+                m.pyramid(w=0.14, h=0.35, color="antler", loc=(s * (1.1 + k * 0.4), d["hy"] + 0.2,
+                                                               d["hz"] + d["hh"] / 2 + 0.8 + k * 0.12 * s * s),
+                          rot=(0, s * -20, 0))
+        cube(m, (0.25, 0.25, 0.5), (0, d["fy"] + 0.4, d["hz"] - d["hh"] / 2 - 0.2), "moose")
+
+
+reg("Moose", lambda m: beast(m, W=1.8, L=3.2, H=1.8, leg_h=1.6, leg_w=0.4, body="moose", paw="hoof",
+                             head=(1.1, 1.6, 1.1), head_fwd=0.7, head_up=0.0, neck=0.3, muzzle=(0.9, 0.5, 0.6),
+                             muzzle_col="fur_darkbrown", nose="black", nose_w=0.3, ears="pointy", ear_in="deer",
+                             tail="stub", extras=_moose_extras), sub="Wild")
+
+
+def _bison_extras(m, d):
+    with m.group("Body"):
+        cube(m, (d["W"] * 1.1, d["L"] * 0.45, d["H"] * 0.5), (0, -d["L"] * 0.25, d["cz"] + d["H"] * 0.45), "fur_darkbrown")
+    with m.group("Head"):
+        cube(m, (d["hw"] * 1.1, d["hd"] * 0.5, d["hh"] * 0.5), (0, d["hy"] + 0.2, d["hz"] + d["hh"] * 0.4), "fur_darkbrown")
+        cube(m, (0.6, 0.3, 0.6), (0, d["fy"] - 0.1, d["hz"] - d["hh"] / 2 - 0.2), "fur_darkbrown")
+        for s in (-1, 1):
+            m.tube([(s * d["hw"] / 2, d["hy"], d["hz"] + 0.2), (s * (d["hw"] / 2 + 0.35), d["hy"], d["hz"] + 0.5),
+                    (s * (d["hw"] / 2 + 0.3), d["hy"] - 0.1, d["hz"] + 0.8)], [0.12, 0.08, 0.0], seg=4, color="horn")
+
+
+reg("Bison", lambda m: beast(m, W=2.2, L=3.4, H=2.0, leg_h=0.9, leg_w=0.5, body="fur_brown", paw="hoof",
+                             head=(1.5, 1.3, 1.3), head_fwd=0.4, head_up=-0.4, muzzle=(0.9, 0.35, 0.55),
+                             muzzle_col="fur_darkbrown", nose="black", ears="tiny", tail="tuft",
+                             tail_tip="fur_darkbrown", extras=_bison_extras), sub="Wild")
+
+
+def _boar_extras(m, d):
+    with m.group("Head"):
+        for s in (-1, 1):
+            m.tube([(s * 0.3, d["fy"] - 0.2, d["hz"] - d["hh"] / 2 + 0.3), (s * 0.4, d["fy"] - 0.35, d["hz"] - 0.05)],
+                   [0.07, 0.0], seg=4, color="ceramic")
+            cube(m, (0.1, 0.04, 0.14), (s * 0.15, d["fy"] - 0.36, d["hz"] - d["hh"] / 2 + 0.3), "black", bev=0.02)
+    with m.group("Body"):
+        for i in range(6):
+            m.pyramid(w=0.25, h=0.3, color="fur_black", loc=(0, -d["L"] / 2 + 0.3 + i * 0.35, d["cz"] + d["H"] / 2 - 0.02))
+
+
+reg("Boar", lambda m: beast(m, W=1.5, L=2.4, H=1.3, leg_h=0.5, leg_w=0.34, body="fur_darkbrown", paw="hoof",
+                            head=(1.2, 1.2, 1.1), head_fwd=0.3, head_up=-0.2, muzzle=(0.6, 0.35, 0.45),
+                            muzzle_col="pig_dark", nose=None, ears="pointy", ear_in="fur_brown", tail="thin",
+                            extras=_boar_extras), sub="Wild")
+
+reg("Leopard", lambda m: beast(m, W=1.2, L=2.6, H=1.1, leg_h=0.9, leg_w=0.3, body="fur_gold", belly="fur_cream",
+                               head=(1.05, 1.0, 0.95), head_fwd=0.35, head_up=0.1, muzzle=(0.55, 0.3, 0.35),
+                               muzzle_col="fur_cream", nose="pink_nose", nose_w=0.22, ears="square", ear_s=0.8,
+                               ear_in="fur_black", tail="long", tail_len=1.4, spots=("fur_darkbrown", 20, 17)),
+    sub="Wild")
+reg("Panther", lambda m: beast(m, W=1.2, L=2.6, H=1.1, leg_h=0.9, leg_w=0.3, body="fur_black",
+                               head=(1.05, 1.0, 0.95), head_fwd=0.35, head_up=0.1, muzzle=(0.55, 0.3, 0.35),
+                               nose="charcoal", nose_w=0.22, ears="square", ear_s=0.8, ear_in="charcoal",
+                               tail="long", tail_len=1.4, extras=lambda m, d: cube(
+                                   m, (0.08, 0.04, 0.08), (d["hw"] * 0.3 + 0.03, d["fy"] - 0.08, d["hz"] + 0.14 * d["hh"]),
+                                   "gold", bev=0.01, mirror=True)), sub="Wild")
+
+
+def _hyena_extras(m, d):
+    with m.group("Head"):
+        for i in range(4):
+            cube(m, (0.14, 0.3, 0.3), (0, d["hy"] + 0.4 + i * 0.25, d["hz"] + d["hh"] * 0.45 - i * 0.2), "fur_darkbrown")
+
+
+reg("Hyena", lambda m: beast(m, W=1.3, L=2.3, H=1.3, leg_h=0.9, leg_w=0.3, body="fur_tan", belly="fur_cream",
+                             head=(1.1, 1.1, 1.0), head_fwd=0.4, head_up=0.1, muzzle=(0.55, 0.45, 0.4),
+                             muzzle_col="fur_darkbrown", ears="square", ear_s=1.2, ear_col="fur_darkbrown",
+                             ear_in="pink_inner", tail="tuft", spots=("fur_darkbrown", 14, 21), extras=_hyena_extras),
+    sub="Wild")
+
+
+def _lemur_extras(m, d):
+    with m.group("Head"):
+        cube(m, (0.3, 0.05, 0.36), (d["hw"] * 0.28, d["fy"] - 0.005, d["hz"] + 0.12), "black", bev=0.03, mirror=True)
+
+
+reg("Lemur", lambda m: beast(m, W=1.0, L=1.7, H=1.0, leg_h=0.5, leg_w=0.26, body="fur_gray", belly="fur_white",
+                             head=(1.0, 0.9, 0.9), head_col="fur_white", head_fwd=0.3, head_up=0.15,
+                             muzzle=(0.4, 0.35, 0.3), muzzle_col="fur_black", nose_w=0.18, ears="pointy",
+                             ear_col="fur_gray", ear_in="fur_white", tail="ringed", tail_len=1.6, tail_col="fur_white",
+                             tail_tip="black", eye_r=0.14, extras=_lemur_extras), sub="Wild")
+
+
+def _armadillo_extras(m, d):
+    with m.group("Body"):
+        for i in range(6):
+            cube(m, (d["W"] * 1.04, 0.14, d["H"] * 1.03), (0, -d["L"] / 2 + 0.3 + i * 0.3, d["cz"] + 0.02),
+                 "shell_brown", bev=0.04)
+
+
+reg("Armadillo", lambda m: beast(m, W=1.2, L=1.9, H=0.9, leg_h=0.22, leg_w=0.24, body="clay", belly="pink_skin",
+                                 head=(0.7, 0.9, 0.6), head_col="pink_skin", head_fwd=0.5, head_up=-0.35,
+                                 muzzle=(0.3, 0.4, 0.25), nose="pink_nose", nose_w=0.16, ears="pointy", ear_s=0.8,
+                                 ear_col="pink_skin", tail="thin", tail_col="clay", eye_r=0.09,
+                                 extras=_armadillo_extras), sub="Wild")
+
+
+def _platypus_extras(m, d):
+    with m.group("Head"):
+        cube(m, (0.8, 0.8, 0.2), (0, d["fy"] - 0.35, d["hz"] - 0.15), "charcoal", bev=0.06)
+
+
+reg("Platypus", lambda m: beast(m, W=1.1, L=1.9, H=0.8, leg_h=0.2, leg_w=0.26, body="fur_brown", belly="fur_tan",
+                                legc="charcoal", head=(0.9, 0.8, 0.75), head_fwd=0.2, head_up=-0.25, muzzle=None,
+                                ears="none", tail="flat", tail_col="fur_darkbrown", eye_r=0.1,
+                                extras=_platypus_extras), sub="Wild")
+
+
+def _badger_extras(m, d):
+    with m.group("Head"):
+        cube(m, (0.2, d["hd"] * 1.02, 0.06), (0, d["hy"], d["hz"] + d["hh"] / 2 + 0.005), "white", bev=0.02)
+        cube(m, (0.2, 0.05, d["hh"] * 0.6), (0, d["fy"] - 0.005, d["hz"] + d["hh"] * 0.1), "white", bev=0.02)
+        cube(m, (0.18, 0.05, d["hh"] * 0.8), (d["hw"] * 0.3, d["fy"] - 0.004, d["hz"]), "black", bev=0.02, mirror=True)
+
+
+reg("Badger", lambda m: beast(m, W=1.4, L=2.0, H=0.9, leg_h=0.25, leg_w=0.3, body="fur_gray", legc="black",
+                              head=(1.0, 0.9, 0.8), head_col="white", head_fwd=0.3, head_up=-0.2,
+                              muzzle=(0.4, 0.3, 0.3), muzzle_col="white", nose_w=0.18, ears="tiny", ear_col="black",
+                              tail="stub", extras=_badger_extras), sub="Wild")
+
+
+def _porcupine_extras(m, d):
+    with m.group("Body"):
+        for i in range(5):
+            for j in range(4):
+                m.pyramid(w=0.2, h=0.6, color="fur_white" if (i + j) % 3 == 0 else "fur_darkbrown",
+                          loc=(-0.45 + j * 0.3, -0.5 + i * 0.28, d["cz"] + d["H"] / 2 - 0.05), rot=(-35, 0, 0))
+
+
+reg("Porcupine", lambda m: beast(m, W=1.3, L=1.7, H=1.0, leg_h=0.2, leg_w=0.26, body="fur_darkbrown",
+                                 head=(0.9, 0.8, 0.8), head_col="fur_tan", head_fwd=0.3, head_up=-0.3,
+                                 muzzle=(0.4, 0.3, 0.3), nose_w=0.18, ears="tiny", ear_col="fur_tan", tail="stub",
+                                 eye_r=0.1, extras=_porcupine_extras), sub="Wild")
+
+
+def _chipmunk_extras(m, d):
+    with m.group("Body"):
+        for x, c in ((-0.22, "fur_darkbrown"), (0.0, "fur_cream"), (0.22, "fur_darkbrown")):
+            cube(m, (0.1, d["L"] * 0.85, 0.05), (x, 0, d["cz"] + d["H"] / 2 + 0.005), c, bev=0.02)
+
+
+reg("Chipmunk", lambda m: beast(m, W=0.8, L=1.2, H=0.8, leg_h=0.22, leg_w=0.22, body="fur_ginger", belly="fur_cream",
+                                head=(0.85, 0.75, 0.75), head_fwd=0.2, head_up=0.1, muzzle=(0.4, 0.2, 0.25),
+                                muzzle_col="fur_cream", nose_w=0.16, ears="square", ear_s=0.9, tail="fluffy",
+                                tail_len=0.9, tail_tip="fur_darkbrown", eye_r=0.1, cheeks="fur_cream",
+                                extras=_chipmunk_extras), sub="Pets")
+
+
+def _bulldog_extras(m, d):
+    with m.group("Head"):
+        for s in (-1, 1):
+            m.pyramid(w=0.08, h=0.14, color="white", loc=(s * 0.25, d["fy"] - 0.44, d["hz"] - d["hh"] / 2 + 0.36))
+
+
+reg("Bulldog", lambda m: beast(m, W=1.6, L=1.9, H=1.1, leg_h=0.35, leg_w=0.38, body="fur_tan", belly="fur_white",
+                               paw="fur_white", head=(1.5, 1.1, 1.2), head_fwd=0.2, head_up=-0.05,
+                               muzzle=(1.0, 0.35, 0.55), muzzle_col="fur_white", nose_w=0.36, ears="floppy",
+                               ear_s=0.6, ear_col="fur_brown", tail="stub", extras=_bulldog_extras), sub="Pets")
+
+
+def _poodle_extras(m, d):
+    with m.group("Body"):
+        cube(m, (d["W"] * 1.25, d["L"] * 0.5, d["H"] * 1.2), (0, -d["L"] * 0.22, d["cz"] + 0.05), "fur_white")
+    for nm, sx, sy in (("LegFL", 1, -1), ("LegFR", -1, -1), ("LegBL", 1, 1), ("LegBR", -1, 1)):
+        with m.group(nm):
+            cube(m, (0.45, 0.45, 0.4), (sx * (d["W"] / 2 - 0.2), sy * (d["L"] / 2 - 0.25), 0.2), "fur_white")
+    with m.group("Head"):
+        cube(m, (d["hw"] * 0.8, d["hd"] * 0.7, 0.5), (0, d["hy"] + 0.1, d["hz"] + d["hh"] / 2 + 0.15), "fur_white")
+    with m.group("Tail"):
+        cube(m, (0.45, 0.45, 0.45), (0, d["ty"] + 0.3, d["tz"] + 0.5), "fur_white")
+
+
+reg("Poodle", lambda m: beast(m, W=1.0, L=2.0, H=0.9, leg_h=0.9, leg_w=0.22, body="fur_white", head=(0.95, 1.0, 0.9),
+                              head_fwd=0.35, head_up=0.3, muzzle=(0.45, 0.45, 0.35), nose_w=0.2, ears="floppy",
+                              ear_col="fur_white", tail="thin", tail_col="fur_white", extras=_poodle_extras),
+    sub="Pets")
+reg("ShibaInu", lambda m: beast(m, W=1.3, L=2.2, H=1.15, leg_h=0.6, leg_w=0.32, body="fur_orange", belly="fur_cream",
+                                paw="fur_cream", head=(1.25, 1.1, 1.1), head_fwd=0.3, head_up=0.15,
+                                muzzle=(0.65, 0.4, 0.42), muzzle_col="fur_cream", ears="pointy", ear_in="fur_cream",
+                                tail="curly", tail_col="fur_orange", cheeks="fur_cream"), sub="Pets")
+reg("Pug", lambda m: beast(m, W=1.3, L=1.8, H=1.05, leg_h=0.4, leg_w=0.32, body="fur_tan", head=(1.3, 1.0, 1.15),
+                           head_fwd=0.2, head_up=0.0, muzzle=(0.75, 0.25, 0.5), muzzle_col="black", nose="black",
+                           ears="floppy", ear_s=0.55, ear_col="black", tail="curly", eye_r=0.17), sub="Pets")
+reg("BlackCat", lambda m: beast(m, W=1.1, L=1.8, H=1.0, leg_h=0.6, leg_w=0.26, body="fur_black",
+                                head=(1.15, 1.0, 1.0), head_fwd=0.25, head_up=0.2, muzzle=(0.45, 0.2, 0.28),
+                                nose="pink_nose", nose_w=0.16, ears="pointy", ear_s=1.1, ear_in="pink_inner",
+                                tail="long", tail_len=1.3,
+                                extras=lambda m, d: cube(m, (0.1, 0.04, 0.1), (d["hw"] * 0.3 + 0.03, d["fy"] - 0.08,
+                                                                                d["hz"] + 0.14 * d["hh"]), "neon_green",
+                                                         bev=0.01, mirror=True)), sub="Pets")
+
+
+def _hellhound_extras(m, d):
+    with m.group("Head"):
+        for i, (x, h) in enumerate(((-0.35, 0.5), (0, 0.8), (0.35, 0.5))):
+            m.pyramid(w=0.3, h=h, color="fire" if i != 1 else "fire_light", loc=(x, d["hy"] + 0.25, d["hz"] + d["hh"] / 2))
+        cube(m, (0.12, 0.04, 0.12), (d["hw"] * 0.3 + 0.03, d["fy"] - 0.08, d["hz"] + 0.14 * d["hh"]), "neon_red",
+             bev=0.01, mirror=True)
+        for s in (-1, 1):
+            m.pyramid(w=0.08, h=0.18, color="white", loc=(s * 0.2, d["fy"] - 0.5, d["hz"] - d["hh"] / 2 + 0.04),
+                      rot=(180, 0, 0))
+    with m.group("Body"):
+        spikes_row(m, -d["L"] / 2 + 0.3, d["L"] / 2 - 0.2, lambda y: d["cz"] + d["H"] / 2 - 0.02, 5, "fire", w=0.3, h=0.5)
+
+
+reg("Hellhound", lambda m: beast(m, W=1.5, L=2.6, H=1.35, leg_h=1.0, leg_w=0.38, body="obsidian", belly="coal",
+                                 paw="lava", head=(1.3, 1.3, 1.15), head_fwd=0.45, head_up=0.2,
+                                 muzzle=(0.7, 0.55, 0.45), muzzle_col="coal", nose="lava", ears="pointy", ear_s=1.2,
+                                 ear_col="obsidian", ear_in="lava", tail="long", tail_len=1.2, tail_tip="fire",
+                                 extras=_hellhound_extras), sub="Mythical", tags=["mythical"])
+
+
+def _robodog_extras(m, d):
+    with m.group("Head"):
+        cube(m, (d["hw"] * 0.8, 0.05, 0.3), (0, d["fy"] - 0.02, d["hz"] + 0.15), "screen", bev=0.03)
+        cube(m, (0.18, 0.06, 0.12), (d["hw"] * 0.2, d["fy"] - 0.04, d["hz"] + 0.15), "neon_blue", bev=0.02, mirror=True)
+        m.tube([(0, d["hy"] + 0.2, d["hz"] + d["hh"] / 2), (0, d["hy"] + 0.3, d["hz"] + d["hh"] / 2 + 0.5)],
+               [0.04, 0.04], seg=4, color="silver")
+        cube(m, (0.14, 0.14, 0.14), (0, d["hy"] + 0.3, d["hz"] + d["hh"] / 2 + 0.55), "neon_red", bev=0.03)
+    with m.group("Body"):
+        for i in range(3):
+            cube(m, (0.12, 0.06, 0.12), (-0.3 + i * 0.3, -d["L"] / 2 - 0.02, d["cz"] + 0.2), "neon_green", bev=0.02)
+        cube(m, (d["W"] * 0.6, d["L"] * 0.5, 0.06), (0, 0, d["cz"] + d["H"] / 2 + 0.01), "gunmetal", bev=0.02)
+
+
+reg("RobotDog", lambda m: beast(m, W=1.3, L=2.1, H=1.1, leg_h=0.7, leg_w=0.3, body="steel", legc="gunmetal",
+                                paw="charcoal", head=(1.15, 1.0, 1.0), head_fwd=0.3, head_up=0.15, muzzle=None,
+                                ears="square", ear_col="gunmetal", ear_in="neon_blue", tail="thin", tail_col="gunmetal",
+                                eye_r=0.0001, extras=_robodog_extras), sub="Mythical", tags=["fantasy"])
+
+
+# --- birds -------------------------------------------------------------------------------
+def _rooster_extras(m, d):
+    with m.group("Tail"):
+        for i, (a, c) in enumerate(((-25, "penguin_black"), (0, "feather_green"), (25, "penguin_black"))):
+            r = math.radians(a)
+            m.tube([(0, d["bd"] / 2 - 0.1, d["cz"] + 0.2), (math.sin(r) * 0.3, d["bd"] / 2 + 0.5, d["cz"] + 1.0),
+                    (math.sin(r) * 0.4, d["bd"] / 2 + 0.9, d["cz"] + 0.9)], [0.12, 0.1, 0.04], seg=4, color=c)
+
+
+breg("Rooster", lambda m: fowl(m, body=(1.1, 1.3, 1.1), col="fur_white", wing_col="fur_ginger", beak="wedge",
+                                beak_len=0.3, comb="plastic_red", wattle="plastic_red", tail="none", leg_h=0.45,
+                                extras=_rooster_extras), sub="Birds")
+
+
+def _turkey_extras(m, d):
+    with m.group("Tail"):
+        cols = ["fur_brown", "autumn_orange", "fur_darkbrown", "autumn_yellow", "fur_brown", "autumn_orange",
+                "fur_darkbrown"]
+        for i, c in enumerate(cols):
+            a = math.radians(-75 + i * 25)
+            m.panel([(0, d["bd"] / 2, d["cz"]), (math.sin(a) * 1.9 - math.cos(a) * 0.25, d["bd"] / 2 + 0.3,
+                                                  d["cz"] + math.cos(a) * 1.9 + math.sin(a) * 0.25),
+                     (math.sin(a) * 1.9 + math.cos(a) * 0.25, d["bd"] / 2 + 0.3,
+                      d["cz"] + math.cos(a) * 1.9 - math.sin(a) * 0.25)], 0.06, c)
+
+
+breg("Turkey", lambda m: fowl(m, body=(1.3, 1.4, 1.3), col="fur_brown", head=(0.5, 0.55, 0.55), head_col="tile_blue",
+                               neck=0.5, beak="wedge", beak_col="fur_tan", beak_len=0.2, wattle="plastic_red",
+                               tail="none", leg_col="fur_tan", leg_h=0.5, eye_r=0.07, extras=_turkey_extras))
+breg("Goose", lambda m: fowl(m, body=(1.1, 1.6, 1.0), col="fur_lightgray", belly="fur_white", head=(0.55, 0.65, 0.55),
+                              head_col="black", neck=0.9, beak="wedge", beak_len=0.35, tail="wedge", leg_h=0.35,
+                              eye_r=0.07))
+breg("Crow", lambda m: fowl(m, body=(0.9, 1.2, 0.9), col="penguin_black", beak="wedge", beak_col="charcoal",
+                             beak_len=0.4, tail="wedge", leg_col="charcoal", leg_h=0.35, eye_r=0.1))
+breg("Pelican", lambda m: fowl(m, body=(1.2, 1.6, 1.1), col="fur_white", head=(0.6, 0.7, 0.6), neck=0.7, beak="big",
+                                beak_col="beak_yellow", beak_len=1.3, tail="short", leg_h=0.45, eye_r=0.07,
+                                extras=lambda m, d: cube(m, (0.3, 0.9, 0.35), (0, d["fy"] - 0.6, d["hz"] - 0.35), "beak",
+                                                         bev=0.08)))
+breg("Dodo", lambda m: fowl(m, body=(1.4, 1.5, 1.4), col="fur_gray", belly="fur_lightgray", head=(0.8, 0.8, 0.8),
+                             neck=0.3, beak="hook", beak_col="beak_yellow", beak_len=0.6, tail="short",
+                             tail_col="fur_white", leg_col="beak_yellow", leg_h=0.35, eye_r=0.09))
+breg("Hummingbird", lambda m: fowl(m, body=(0.55, 0.9, 0.55), col="feather_green", belly="ruby", beak="big",
+                                    beak_col="charcoal", beak_len=0.7, tail="wedge", tail_col="feather_teal",
+                                    leg_col="charcoal", leg_h=0.35, eye_r=0.06))
+breg("Bluebird", lambda m: fowl(m, body=(0.9, 0.9, 0.9), col="feather_blue", belly="autumn_orange", beak="wedge",
+                                 beak_col="charcoal", beak_len=0.25, tail="wedge", leg_col="charcoal", leg_h=0.3,
+                                 eye_r=0.09))
+
+
+# --- sea -----------------------------------------------------------------------------------
+def _narwhal(m):
+    cetacean(m, col="dolphin", belly="dolphin_belly", snout=False, dorsal=0.3)
+    with m.group("Body"):
+        m.tube([(0, -2.05, 1.05), (0, -4.8, 1.35)], [0.1, 0.0], seg=4, color="ceramic", twist=40)
+        patches(m, (0, -0.2, 0.9), (1.3, 2.2, 1.25), "fur_gray", n=8, seed=3, s=0.16)
+
+
+reg("Narwhal", _narwhal, kind="sea", sub="Sea")
+
+
+def _beluga(m):
+    cetacean(m, col="snow", belly="fur_white", snout=True, dorsal=0.1)
+    with m.group("Body"):
+        cube(m, (1.1, 0.7, 0.5), (0, -1.75, 1.55), "snow")
+
+
+reg("Beluga", _beluga, kind="sea", sub="Sea")
+
+
+def _squid(m):
+    m.bone("Body", (0, 0, 0.8), (0, 0, 3.4))
+    with m.group("Body"):
+        cube(m, (1.2, 1.2, 2.2), (0, 0, 2.2), "octopus")
+        m.pyramid(w=1.2, h=0.9, color="octopus", loc=(0, 0, 3.3))
+        for s in (-1, 1):
+            m.panel([(s * 0.6, 0, 3.4), (s * 1.3, 0, 3.0), (s * 0.6, 0, 2.6)], 0.08, "octopus_dark")
+        m.eye((0.61, -0.2, 1.6), r=0.18, look=(1, -0.3, 0), mirror=True)
+    for i in range(8):
+        a = math.radians(45 * i + 22.5)
+        c, s = math.cos(a), math.sin(a)
+        nm = f"Tentacle{i + 1}"
+        m.bone(nm, (c * 0.4, s * 0.4, 1.1), (c * 1.2, s * 1.2, 0.1), parent="Body")
+        with m.group(nm):
+            m.tube([(c * 0.4, s * 0.4, 1.2), (c * 0.8, s * 0.8, 0.5), (c * 1.1, s * 1.1, 0.15)], [0.14, 0.1, 0.05],
+                   seg=8, color="octopus")
+
+
+reg("Squid", _squid, kind="float", sub="Sea")
+
+
+def _lobster(m):
+    m.bone("Body", (0, 0.2, 0.5), (0, -0.9, 0.5))
+    m.bone("ArmL", (0.4, -0.7, 0.5), (1.1, -1.8, 0.5), parent="Body")
+    m.bone("ArmR", (-0.4, -0.7, 0.5), (-1.1, -1.8, 0.5), parent="Body")
+    m.bone("Tail", (0, 0.6, 0.45), (0, 2.2, 0.3), parent="Body")
+    with m.group("Body"):
+        cube(m, (1.0, 1.6, 0.8), (0, -0.2, 0.55), "ladybug")
+        m.eye((0.25, -1.01, 0.8), r=0.1, mirror=True)
+        for s in (-1, 1):
+            m.tube([(s * 0.2, -1.0, 0.8), (s * 0.8, -2.2, 1.4), (s * 1.3, -2.4, 1.3)], [0.03, 0.03, 0.02], seg=4,
+                   color="ladybug")
+            for k in range(3):
+                m.tube([(s * 0.45, -0.3 + k * 0.35, 0.4), (s * 0.9, -0.2 + k * 0.35, 0.02)], [0.05, 0.04], seg=4,
+                       color="ruby_dark")
+    with m.group("ArmL"):
+        m.tube([(0.45, -0.7, 0.55), (0.9, -1.3, 0.55)], [0.12, 0.1], seg=4, color="ladybug", mirror="ArmR")
+        cube(m, (0.5, 0.8, 0.35), (1.0, -1.8, 0.55), "ladybug", mirror="ArmR")
+        cube(m, (0.2, 0.6, 0.25), (1.2, -2.25, 0.55), "ruby_dark", rot=(0, 0, -20), mirror="ArmR")
+    with m.group("Tail"):
+        for i in range(4):
+            cube(m, (0.9 - i * 0.12, 0.4, 0.6 - i * 0.07), (0, 0.8 + i * 0.35, 0.5 - i * 0.05), "ladybug")
+        m.prism([(0, 0), (0.5, 0.5), (-0.5, 0.5)], depth=0.1, color="ruby_dark", loc=(0, 2.1, 0.35))
+
+
+reg("Lobster", _lobster, kind="biped", sub="Sea")
+
+
+def _angler_extras(m, d):
+    with m.group("Body"):
+        m.tube([(0, -d["L"] * 0.2, d["cz"] + d["H"] / 2), (0, -d["L"] * 0.6, d["cz"] + d["H"] / 2 + 0.6),
+                (0, -d["L"] * 0.75, d["cz"] + d["H"] / 2 + 0.3)], [0.04, 0.04, 0.03], seg=4, color="charcoal")
+        cube(m, (0.3, 0.3, 0.3), (0, -d["L"] * 0.75, d["cz"] + d["H"] / 2 + 0.2), "glow", bev=0.08)
+        for i in range(5):
+            m.pyramid(w=0.1, h=0.2, color="white", loc=(-0.3 + i * 0.15, -d["L"] / 2 - 0.28, d["cz"] - 0.05),
+                      rot=(180 if i % 2 else 0, 0, 0))
+
+
+reg("Anglerfish", lambda m: fishy(m, W=1.1, L=1.6, H=1.2, col="obsidian", fin="amethyst_dark", eye_r=0.1,
+                                  extras=_angler_extras), kind="fish", sub="Sea")
+reg("Koi", lambda m: fishy(m, W=0.6, L=2.0, H=0.8, col="fur_white", fin="fur_white",
+                           stripes=[(-0.7, -0.3), (0.1, 0.4)], stripe_col="fish_orange"), kind="fish", sub="Sea")
+reg("Piranha", lambda m: fishy(m, W=0.55, L=1.4, H=1.2, col="stone", belly="apple_red", fin="stone_dark",
+                               extras=lambda m, d: [m.pyramid(w=0.08, h=0.14, color="white",
+                                                              loc=(-0.15 + i * 0.1, -d["L"] / 2 - 0.27, d["cz"] - 0.1),
+                                                              rot=(180, 0, 0)) for i in range(4)]), kind="fish", sub="Sea")
+
+
+# --- bugs ------------------------------------------------------------------------------------
+def bug8(m, *, body="black", abdomen=None, legc=None, size=1.0, claws=False, stinger=False, horn=None, head=None,
+         wing=None, eye_col="eye_black", glow=None):
+    """Spiders, ants, beetles and scorpions: 8 (or 6) legs grouped on 4 bones."""
+    abdomen = abdomen or body
+    legc = legc or body
+    head = head or body
+    s = size
+    cz = 0.55 * s
+    m.bone("Body", (0, 0.5 * s, cz), (0, -0.7 * s, cz))
+    for nm, sx, sy in (("LegFL", 1, -1), ("LegFR", -1, -1), ("LegBL", 1, 1), ("LegBR", -1, 1)):
+        m.bone(nm, (sx * 0.4 * s, sy * 0.25 * s, cz), (sx * 1.2 * s, sy * 0.4 * s, 0.02), parent="Body")
+    with m.group("Body"):
+        cube(m, (0.9 * s, 0.9 * s, 0.6 * s), (0, 0, cz), body)
+        cube(m, (1.2 * s, 1.3 * s, 0.9 * s), (0, 1.0 * s, cz + 0.15 * s), abdomen)
+        cube(m, (0.7 * s, 0.6 * s, 0.55 * s), (0, -0.7 * s, cz + 0.05 * s), head)
+        m.eye((0.18 * s, -1.01 * s, cz + 0.12 * s), r=0.08 * s, color=eye_col, mirror=True)
+        if glow:
+            cube(m, (1.0 * s, 0.6 * s, 0.7 * s), (0, 1.5 * s, cz + 0.1 * s), glow)
+        if horn:
+            m.tube([(0, -0.9 * s, cz + 0.2 * s), (0, -1.4 * s, cz + 0.7 * s), (0, -1.3 * s, cz + 1.0 * s)],
+                   [0.1 * s, 0.07 * s, 0.0], seg=4, color=horn)
+        for k in (-1, 1):
+            m.tube([(k * 0.12 * s, -0.95 * s, cz + 0.25 * s), (k * 0.35 * s, -1.4 * s, cz + 0.7 * s)],
+                   [0.025 * s, 0.02 * s], seg=4, color=legc)
+        if stinger:
+            pts = [(0, 1.6 * s, cz + 0.2 * s), (0, 2.1 * s, cz + 0.8 * s), (0, 2.0 * s, cz + 1.5 * s),
+                   (0, 1.5 * s, cz + 1.8 * s)]
+            m.tube(pts, [0.2 * s, 0.17 * s, 0.14 * s, 0.1 * s], seg=4, color=abdomen)
+            m.pyramid(w=0.15 * s, h=0.4 * s, color="black", loc=(0, 1.3 * s, cz + 1.8 * s), rot=(-110, 0, 0))
+    for nm, sx, sy in (("LegFL", 1, -1), ("LegFR", -1, -1), ("LegBL", 1, 1), ("LegBR", -1, 1)):
+        with m.group(nm):
+            for k in (0, 1):
+                y = sy * (0.12 + 0.28 * k) * s
+                m.tube([(sx * 0.4 * s, y, cz), (sx * 0.95 * s, y + sy * 0.1 * s, cz + 0.35 * s),
+                        (sx * 1.3 * s, y + sy * 0.2 * s, 0.02)], [0.06 * s, 0.05 * s, 0.03 * s], seg=4, color=legc)
+    if claws:
+        m.bone("ArmL", (0.35 * s, -0.9 * s, cz), (1.0 * s, -1.8 * s, cz), parent="Body")
+        m.bone("ArmR", (-0.35 * s, -0.9 * s, cz), (-1.0 * s, -1.8 * s, cz), parent="Body")
+        with m.group("ArmL"):
+            m.tube([(0.35 * s, -0.9 * s, cz), (0.8 * s, -1.4 * s, cz)], [0.1 * s, 0.08 * s], seg=4, color=body,
+                   mirror="ArmR")
+            cube(m, (0.4 * s, 0.6 * s, 0.3 * s), (0.9 * s, -1.8 * s, cz), body, mirror="ArmR")
+    if wing:
+        m.bone("WingL", (0.1, 0.2, cz + 0.6 * s), (0.9 * s, 1.2 * s, cz + 0.8 * s), parent="Body")
+        m.bone("WingR", (-0.1, 0.2, cz + 0.6 * s), (-0.9 * s, 1.2 * s, cz + 0.8 * s), parent="Body")
+        with m.group("WingL"):
+            cube(m, (0.62 * s, 1.4 * s, 0.2 * s), (0.31 * s, 1.0 * s, cz + 0.65 * s), wing, mirror="WingR")
+
+
+reg("Ant", lambda m: bug8(m, body="ladybug", size=0.9), kind="quadruped", sub="Bugs")
+reg("Spider", lambda m: bug8(m, body="fur_black", abdomen="penguin_black", size=1.1, eye_col="neon_red",
+                             glow=None), kind="quadruped", sub="Bugs")
+reg("Scorpion", lambda m: bug8(m, body="caramel", claws=True, stinger=True), kind="quadruped", sub="Bugs")
+reg("RhinoBeetle", lambda m: bug8(m, body="obsidian", horn="charcoal", wing="amethyst_dark"), kind="bug", sub="Bugs")
+reg("Firefly", lambda m: bug8(m, body="charcoal", abdomen="charcoal", head="plastic_red", glow="glow", wing="glass",
+                              size=0.8), kind="bug", sub="Bugs")
+
+
+def _caterpillar(m):
+    m.bone("Body", (0, 0.4, 0.5), (0, -1.2, 0.5))
+    m.bone("Tail", (0, 0.6, 0.45), (0, 2.2, 0.45), parent="Body")
+    for i in range(6):
+        grp = "Body" if i < 3 else "Tail"
+        with m.group(grp):
+            z = 0.45 + (0.12 if i % 2 else 0)
+            cube(m, (0.8, 0.7, 0.8), (0, -1.0 + i * 0.6, z), "lime" if i % 2 else "leaf")
+            if i:
+                for s in (-1, 1):
+                    cube(m, (0.12, 0.12, 0.2), (s * 0.3, -1.0 + i * 0.6, 0.08), "leaf_dark", bev=0.02)
+    with m.group("Body"):
+        cube(m, (0.9, 0.8, 0.9), (0, -1.5, 0.6), "leaf")
+        m.eye((0.2, -1.91, 0.75), r=0.1, mirror=True)
+        for s in (-1, 1):
+            m.tube([(s * 0.2, -1.6, 1.0), (s * 0.35, -1.8, 1.4)], [0.03, 0.03], seg=4, color="leaf_dark")
+            cube(m, (0.1, 0.1, 0.1), (s * 0.35, -1.8, 1.42), "plastic_red", bev=0.02)
+
+
+reg("Caterpillar", _caterpillar, kind="fish", sub="Bugs")
+
+
+# --- fantasy characters -----------------------------------------------------------------------
+def _werewolf_extras(m, d):
+    with m.group("Head"):
+        m.pyramid(w=0.35, h=0.6, color="fur_gray", loc=(0.35, 0.05, d["hz"] + d["hh"] / 2 - 0.05), mirror=True)
+        cube(m, (0.08, 0.04, 0.08), (d["hw"] * 0.24 + 0.03, d["fy"] - 0.08, d["hz"] + d["hh"] * 0.12), "gold",
+             bev=0.01, mirror=True)
+        for s in (-1, 1):
+            m.pyramid(w=0.08, h=0.18, color="white", loc=(s * 0.18, d["fy"] - 0.55, d["hz"] - 0.42), rot=(180, 0, 0))
+    with m.group("Body"):
+        cube(m, (d["bw"] * 1.02, d["bd"] * 1.02, 0.6), (0, 0, d["lh"] + 0.2), "fabric_navy")
+    for nm, sx in (("ArmL", 1), ("ArmR", -1)):
+        with m.group(nm):
+            x = sx * (d["bw"] / 2 + 0.24)
+            for k in (-0.12, 0.0, 0.12):
+                m.pyramid(w=0.06, h=0.2, color="white", loc=(x + k, -0.2, d["lh"] + d["bh"] - 2.0), rot=(160, 0, 0))
+
+
+reg("Werewolf", lambda m: biped(m, body=(1.6, 1.0, 1.8), col="fur_gray", belly="fur_lightgray", head=(1.2, 1.1, 1.05),
+                                 face="fur_lightgray", face_size=(0.5, 0.4), leg=(0.45, 0.8), arm=(0.4, 1.9),
+                                 hand="fur_darkgray", ears="none", eye_r=0.001, muzzle=(0.6, 0.55, 0.4),
+                                 extras=_werewolf_extras), kind="biped", sub="Mythical", tags=["mythical"])
+
+
+def _cyclops_extras(m, d):
+    with m.group("Head"):
+        cube(m, (0.7, 0.06, 0.7), (0, d["fy"] - 0.04, d["hz"] + 0.15), "white", bev=0.05)
+        cube(m, (0.35, 0.08, 0.35), (0, d["fy"] - 0.07, d["hz"] + 0.15), "eye_black", bev=0.04)
+        cube(m, (0.12, 0.09, 0.12), (0.08, d["fy"] - 0.1, d["hz"] + 0.22), "white", bev=0.02)
+        m.pyramid(w=0.3, h=0.5, color="horn", loc=(0, 0, d["hz"] + d["hh"] / 2 - 0.05))
+    with m.group("ArmR"):
+        x = -(d["bw"] / 2 + 0.35)
+        m.tube([(x, -0.2, d["lh"] + d["bh"] - 1.8), (x, -1.6, d["lh"] + d["bh"] - 2.6)], [0.18, 0.38], seg=4,
+               color="wood")
+    with m.group("Body"):
+        cube(m, (d["bw"] * 1.02, d["bd"] * 1.02, 0.7), (0, 0, d["lh"] + 0.25), "leather")
+
+
+reg("Cyclops", lambda m: biped(m, body=(1.8, 1.2, 1.9), col="scale_green", head=(1.3, 1.1, 1.2), leg=(0.5, 0.8),
+                                arm=(0.45, 1.9), ears="round", ear_col="scale_green", eye_r=0.001,
+                                extras=_cyclops_extras), kind="biped", sub="Mythical", tags=["mythical"])
+
+
+def _snowman(m):
+    m.bone("Body", (0, 0, 0.2), (0, 0, 2.4))
+    m.bone("Head", (0, 0, 2.4), (0, 0, 3.6), parent="Body")
+    m.bone("ArmL", (0.7, 0, 2.0), (1.8, 0, 2.6), parent="Body")
+    m.bone("ArmR", (-0.7, 0, 2.0), (-1.8, 0, 2.6), parent="Body")
+    with m.group("Body"):
+        cube(m, (1.8, 1.8, 1.4), (0, 0, 0.7), "snow")
+        cube(m, (1.4, 1.4, 1.1), (0, 0, 1.9), "snow")
+        for z in (1.7, 2.1):
+            cube(m, (0.18, 0.1, 0.18), (0, -0.72, z), "coal", bev=0.04)
+        cube(m, (1.55, 1.55, 0.3), (0, 0, 2.45), "plastic_red", bev=0.06)
+        cube(m, (0.3, 0.2, 0.9), (0.4, -0.75, 2.1), "plastic_red", bev=0.06)
+    with m.group("Head"):
+        cube(m, (1.1, 1.1, 1.0), (0, 0, 3.0), "snow")
+        m.eye((0.25, -0.56, 3.15), r=0.1, color="coal", mirror=True)
+        m.pyramid(w=0.2, h=0.6, color="carrot", loc=(0, -0.56, 2.95), rot=(90, 0, 0))
+        cube(m, (1.2, 1.2, 0.12), (0, 0, 3.55), "charcoal", bev=0.03)
+        cube(m, (0.8, 0.8, 0.7), (0, 0, 3.9), "charcoal", bev=0.06)
+    with m.group("ArmL"):
+        m.tube([(0.65, 0, 2.0), (1.6, 0, 2.5)], [0.06, 0.05], seg=4, color="bark", mirror="ArmR")
+        m.tube([(1.3, 0, 2.35), (1.5, -0.05, 2.8)], [0.04, 0.03], seg=4, color="bark", mirror="ArmR")
+
+
+reg("Snowman", _snowman, kind="biped", sub="Mythical", tags=["fantasy", "holiday"])
+
+
+def _gingerbread(m):
+    def extras(m, d):
+        with m.group("Head"):
+            cube(m, (0.4, 0.05, 0.08), (0, d["fy"] - 0.01, d["hz"] - 0.2), "frosting_white", bev=0.02)
+        with m.group("Body"):
+            for z in (0.4, 0.8):
+                cube(m, (0.2, 0.08, 0.2), (0, -d["bd"] / 2 - 0.02, d["lh"] + z), "candy_pink", bev=0.04)
+            cube(m, (d["bw"] * 1.02, 0.06, 0.1), (0, -d["bd"] / 2 - 0.01, d["lh"] + 1.2), "frosting_white", bev=0.02)
+        for nm, sx in (("ArmL", 1), ("ArmR", -1)):
+            with m.group(nm):
+                cube(m, (0.42, 0.44, 0.08), (sx * (d["bw"] / 2 + 0.2), -0.2, d["lh"] + d["bh"] - 0.9), "frosting_white",
+                     bev=0.02)
+    biped(m, body=(1.2, 0.5, 1.3), col="cookie", head=(1.1, 0.5, 1.0), leg=(0.4, 0.5), arm=(0.38, 1.0), ears="none",
+          eye_r=0.1, extras=extras)
+
+
+reg("Gingerbread", _gingerbread, kind="biped", sub="Mythical", tags=["fantasy", "holiday"])
+
+
+def _alien(m):
+    def extras(m, d):
+        with m.group("Head"):
+            for s in (-1, 1):
+                cube(m, (0.4, 0.05, 0.28), (s * 0.3, d["fy"] - 0.02, d["hz"] + 0.05), "black", bev=0.04,
+                     rot=(0, s * -15, 0))
+                m.tube([(s * 0.3, 0, d["hz"] + d["hh"] / 2), (s * 0.5, 0, d["hz"] + d["hh"] / 2 + 0.5)],
+                       [0.04, 0.04], seg=4, color="slime")
+                cube(m, (0.14, 0.14, 0.14), (s * 0.5, 0, d["hz"] + d["hh"] / 2 + 0.55), "glow", bev=0.03)
+    biped(m, body=(0.9, 0.6, 1.0), col="slime", head=(1.4, 1.1, 1.2), leg=(0.26, 0.5), arm=(0.22, 0.9), ears="none",
+          eye_r=0.001, extras=extras)
+
+
+reg("Alien", _alien, kind="biped", sub="Mythical", tags=["fantasy", "space"])
+
+
+def _mushroom_buddy(m):
+    m.bone("Body", (0, 0, 0.05), (0, 0, 1.6))
+    with m.group("Body"):
+        cube(m, (1.2, 1.2, 1.1), (0, 0, 0.55), "offwhite")
+        m.eye((0.25, -0.61, 0.7), r=0.12, mirror=True)
+        cube(m, (0.2, 0.04, 0.1), (0.42, -0.61, 0.5), "pink_nose", bev=0.02, mirror=True)
+        cube(m, (2.0, 2.0, 0.7), (0, 0, 1.45), "apple_red", bev=0.3)
+        cube(m, (1.4, 1.4, 0.4), (0, 0, 1.95), "apple_red", bev=0.15)
+        for x, y in ((0.5, -0.6), (-0.6, -0.4), (0.1, 0.4), (-0.3, -0.9), (0.7, 0.5)):
+            cube(m, (0.3, 0.3, 0.06), (x, y, 1.82 if abs(x) < 0.65 and abs(y) < 0.65 else 1.81), "white", bev=0.02)
+
+
+reg("MushroomBuddy", _mushroom_buddy, kind="blob", sub="Mythical", tags=["fantasy"])
+reg("LavaSlime", lambda m: _slime(m, "lava", "obsidian"), kind="blob", sub="Mythical", tags=["fantasy"])
+reg("CrystalSlime", lambda m: _slime(m, "crystal_pink", "amethyst_dark"), kind="blob", sub="Mythical", tags=["fantasy"])
+reg("GoldSlime", lambda m: _slime(m, "gold", "gold_dark", crown=True), kind="blob", sub="Mythical", tags=["fantasy"])
+
+
+def _cloud_pet(m):
+    m.bone("Body", (0, 0, 0.6), (0, 0, 2.2))
+    with m.group("Body"):
+        for x, y, z, s in ((0, 0, 1.4, 1.3), (0.8, 0.1, 1.2, 0.9), (-0.8, 0.1, 1.2, 0.9), (0.3, 0.3, 2.0, 0.8),
+                           (-0.4, 0.2, 1.9, 0.7)):
+            cube(m, (s, s * 0.9, s * 0.85), (x, y, z), "white")
+        m.eye((0.28, -0.6, 1.5), r=0.11, mirror=True)
+        cube(m, (0.22, 0.04, 0.1), (0.5, -0.59, 1.3), "pink_nose", bev=0.02, mirror=True)
+        for x in (-0.4, 0.0, 0.4):
+            m.pyramid(w=0.12, h=0.3, color="water", loc=(x, 0, 0.55), rot=(180, 0, 0))
+
+
+reg("CloudPet", _cloud_pet, kind="float", sub="Mythical", tags=["fantasy"])
+
+
+def _star_pet(m):
+    m.bone("Body", (0, 0, 0.6), (0, 0, 2.2))
+    with m.group("Body"):
+        m.prism(star_pts(1.2, 0.55, 5), depth=0.6, color="gold", rot=(90, 0, 0), loc=(0, 0, 1.4), bevel=0.08)
+        m.eye((0.25, -0.31, 1.5), r=0.11, mirror=True)
+        cube(m, (0.3, 0.04, 0.08), (0, -0.31, 1.25), "gold_dark", bev=0.02)
+
+
+reg("StarPet", _star_pet, kind="float", sub="Mythical", tags=["fantasy", "space"])
+
+DRAGONS2 = [
+    ("StormDragon", dict(body="sapphire", belly="neon_blue", dark="blueberry", horn="silver", membrane="neon_blue",
+                         spike="plastic_yellow", eye="plastic_yellow", claw="silver")),
+    ("CandyDragon", dict(body="candy_pink", belly="icecream_van", dark="frosting_pink", horn="candy_blue",
+                         membrane="candy_blue", spike="candy_green", eye="neon_blue", claw="white")),
+    ("BoneDragon", dict(body="ceramic", belly="stone_light", dark="charcoal", horn="black", membrane="charcoal",
+                        spike="black", eye="neon_green", claw="black")),
+    ("RainbowDragon", dict(body="rb_purple", belly="rb_yellow", dark="rb_blue", horn="white", membrane="rb_pink",
+                           spike="rb_green", eye="rb_orange", claw="white")),
+]
+for _n, _kw in DRAGONS2:
+    reg(_n, (lambda m, kw=_kw: dragon(m, **kw)), kind="dragon", sub="Mythical", tags=["mythical", "dragon"])

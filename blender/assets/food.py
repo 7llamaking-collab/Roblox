@@ -594,3 +594,334 @@ def juice(m):
     m.lathe([(0, 0), (0.3, 0), (0.34, 0.8), (0, 0.8)], seg=12, color=by_height("glass", 0.06, "orange", 0.7, "glass"))
     m.cyl(r=0.035, h=0.6, seg=5, color="plastic_pink", loc=(0.1, 0, 0.95), rot=(0, 12, 0))
     m.cyl(r=0.1, h=0.03, seg=8, color="lemon", loc=(-0.3, 0, 0.78), rot=(90, 0, 0))
+
+
+# ============================================================================
+# batch 2: more fruit, veg, snacks, drinks & treats
+# ============================================================================
+def cube(m, size, loc, color, bev=None, **kw):
+    b = min(size) * 0.14 if bev is None else bev
+    return m.box(size, color=color, bevel=b, loc=loc, **kw)
+
+
+@asset("Plum", CAT, sub="Fruit")
+def plum(m):
+    m.sphere(round=True, r=0.5, seg=12, rings=8, color="grape_dark", loc=(0, 0, 0.5), scale=(0.95, 1, 1.05))
+    stem_leaf(m, (0, 0, 1.0), stem_len=0.15)
+
+
+@asset("Pomegranate", CAT, sub="Fruit")
+def pomegranate(m):
+    m.sphere(round=True, r=0.6, seg=12, rings=8, color="ruby_dark", loc=(0, 0, 0.58))
+    m.prism(star_pts(0.25, 0.12, 6), depth=0.2, color="apple_red_dark", loc=(0, 0, 1.2))
+
+
+@asset("Raspberry", CAT, sub="Fruit")
+def raspberry(m):
+    for i in range(14):
+        a = i * 137.5
+        z = 0.2 + (i % 5) * 0.16
+        r = 0.32 * math.sin(math.pi * (0.2 + 0.6 * (z - 0.2) / 0.64 + 0.1))
+        m.sphere(round=True, r=0.15, seg=6, rings=4, color="strawberry",
+                 loc=(math.cos(math.radians(a)) * r, math.sin(math.radians(a)) * r, z))
+    m.prism(star_pts(0.25, 0.1, 5), depth=0.05, color="leaf", loc=(0, 0, 0.98))
+
+
+@asset("Blackberry", CAT, sub="Fruit")
+def blackberry(m):
+    for i in range(14):
+        a = i * 137.5
+        z = 0.2 + (i % 5) * 0.16
+        r = 0.32 * math.sin(math.pi * (0.2 + 0.6 * (z - 0.2) / 0.64 + 0.1))
+        m.sphere(round=True, r=0.15, seg=6, rings=4, color="grape_dark",
+                 loc=(math.cos(math.radians(a)) * r, math.sin(math.radians(a)) * r, z))
+    m.prism(star_pts(0.25, 0.1, 5), depth=0.05, color="leaf", loc=(0, 0, 0.98))
+
+
+@asset("Starfruit", CAT, sub="Fruit")
+def starfruit(m):
+    for y, k, d in ((-0.55, 0.7, 0.3), (0.0, 1.0, 0.8), (0.55, 0.7, 0.3)):
+        m.prism(star_pts(0.62 * k, 0.26 * k, 5), depth=d, color="lemon" if k == 1.0 else "banana", rot=(90, 0, 0),
+                loc=(0, y, 0.55))
+    m.box((0.1, 0.25, 0.1), color="leaf_dark", loc=(0, 0.8, 0.6))
+
+
+@asset("Papaya", CAT, sub="Fruit")
+def papaya(m):
+    m.lathe([(0, -0.8), (0.3, -0.7), (0.5, -0.3), (0.5, 0.3), (0.35, 0.7), (0, 0.85)], seg=8,
+            color=lambda c, n: "mango_red" if c.x > 0.2 else "pear", rot=(0, 90, 0), loc=(0, 0, 0.5))
+
+
+@asset("Lychee", CAT, sub="Fruit")
+def lychee(m):
+    m.ico(r=0.4, sub=1, color="strawberry", loc=(0, 0, 0.4), smooth=False)
+    m.tube([(0, 0, 0.78), (0.05, 0, 0.98)], [0.03, 0.02], seg=4, color="wood_dark")
+
+
+@asset("Durian", CAT, sub="Fruit")
+def durian(m):
+    m.sphere(round=True, r=0.7, seg=10, rings=7, color="pear", loc=(0, 0, 0.7), scale=(1, 1, 1.15))
+    for i in range(24):
+        a = i * 137.5
+        t = (i + 0.5) / 24
+        phi = math.acos(1 - 2 * t)
+        d = (math.sin(phi) * math.cos(math.radians(a)), math.sin(phi) * math.sin(math.radians(a)), math.cos(phi))
+        m.pyramid(w=0.16, h=0.22, color="corn_husk", loc=(d[0] * 0.66, d[1] * 0.66, 0.7 + d[2] * 0.76),
+                  rot=(math.degrees(math.acos(max(-1, min(1, d[2])))), 0, math.degrees(math.atan2(d[1], d[0])) + 90))
+
+
+@asset("Cucumber", CAT, sub="Vegetable")
+def cucumber(m):
+    m.tube([(-0.9, 0, 0.3), (0, 0, 0.32), (0.9, 0, 0.3)], [0.25, 0.3, 0.25], seg=8, color="leaf_dark")
+    for x in (-0.5, 0.0, 0.5):
+        m.sphere(round=True, r=0.05, seg=4, rings=3, color="lime", loc=(x, -0.3, 0.45))
+
+
+@asset("Garlic", CAT, sub="Vegetable")
+def garlic(m):
+    m.lathe([(0, 0), (0.35, 0.05), (0.5, 0.3), (0.4, 0.6), (0.12, 0.85), (0.05, 1.05), (0, 1.1)], seg=8,
+            color="offwhite")
+
+
+@asset("Lettuce", CAT, sub="Vegetable")
+def lettuce(m):
+    for i in range(7):
+        a = 360 * i / 7
+        m.leaf(length=0.8, width=0.7, thick=0.06, color="lettuce" if i % 2 else "leaf_light", loc=(0, 0, 0.1),
+               rot=(58, 0, a))
+    m.sphere(round=True, r=0.35, color="cabbage", loc=(0, 0, 0.45))
+
+
+@asset("SweetPotato", CAT, sub="Vegetable")
+def sweet_potato(m):
+    m.tube([(-0.7, 0, 0.25), (0, 0.05, 0.3), (0.7, 0, 0.25)], [0.12, 0.3, 0.12], seg=8, color="clay")
+
+
+@asset("ChiliPepper", CAT, sub="Vegetable")
+def chili(m):
+    m.tube([(0, 0, 0.3), (0.4, 0, 0.25), (0.8, 0, 0.35), (1.0, 0, 0.6)], [0.14, 0.12, 0.08, 0.0], seg=8,
+           color="pepper_red")
+    m.tube([(-0.05, 0, 0.3), (-0.25, 0, 0.45)], [0.06, 0.04], seg=4, color="leaf_dark")
+
+
+@asset("YellowPepper", CAT, sub="Vegetable")
+def yellow_pepper(m):
+    for i in range(4):
+        a = math.radians(90 * i + 45)
+        m.sphere(round=True, r=0.36, seg=10, rings=8, color="plastic_yellow",
+                 loc=(math.cos(a) * 0.16, math.sin(a) * 0.16, 0.48), scale=(0.9, 0.9, 1.35))
+    m.cyl(r=0.12, h=0.1, seg=6, color="leaf_dark", loc=(0, 0, 0.98))
+
+
+@asset("Peanut", CAT, sub="Snack")
+def peanut(m):
+    m.tube([(-0.35, 0, 0.2), (0, 0, 0.17), (0.35, 0, 0.2)], [0.2, 0.13, 0.2], seg=8, color="potato")
+
+
+@asset("Pretzel", CAT, sub="Snack")
+def pretzel(m):
+    m.torus(R=0.45, r=0.1, seg=8, color="bread_crust", rot=(90, 0, 0), loc=(0, 0, 0.6))
+    for s in (-1, 1):
+        m.tube([(s * 0.35, 0, 0.9), (0, 0, 0.55), (-s * 0.25, 0, 0.2)], [0.1, 0.1, 0.1], seg=4, color="bread_crust")
+    for x, z in ((-0.3, 0.8), (0.3, 0.8), (0, 0.4)):
+        cube(m, (0.06, 0.06, 0.06), (x, -0.1, z), "white", bev=0.01)
+
+
+@asset("Croissant", CAT, sub="Snack")
+def croissant(m):
+    for i, (a, w, h) in enumerate(((-160, 0.3, 0.3), (-128, 0.5, 0.45), (-90, 0.65, 0.6), (-52, 0.5, 0.45),
+                                   (-20, 0.3, 0.3))):
+        r = math.radians(a)
+        m.box((w * 1.1, 0.5 + w * 0.5, h), color=by_normal("bread" if i % 2 else "bread_crust", "bread_crust"),
+              bevel=0.1, loc=(math.cos(r) * 0.9, math.sin(r) * 0.9 + 0.5, h / 2), rot=(0, 0, a + 90))
+
+
+@asset("Pancakes", CAT, sub="Snack")
+def pancakes(m):
+    m.cyl(r=0.9, h=0.08, seg=8, color="ceramic", loc=(0, 0, 0.04))
+    for i in range(4):
+        m.cyl(r=0.65, h=0.16, seg=8, color="bread", loc=(0, 0, 0.16 + i * 0.17), bevel=0.04)
+    cube(m, (0.3, 0.3, 0.15), (0.05, 0, 0.87), "cheese", bev=0.04)
+    m.cyl(r=0.6, h=0.03, seg=8, color="honey", loc=(0, 0, 0.8))
+
+
+@asset("Waffle", CAT, sub="Snack")
+def waffle(m):
+    m.box((1.2, 1.2, 0.2), color="bread", bevel=0.05, loc=(0, 0, 0.1))
+    for i in range(4):
+        for j in range(4):
+            cube(m, (0.2, 0.2, 0.06), (-0.42 + i * 0.28, -0.42 + j * 0.28, 0.22), "bread_crust", bev=0.02)
+    m.sphere(round=True, r=0.18, color="icecream_van", loc=(0.1, 0.1, 0.32))
+
+
+@asset("Sandwich", CAT, sub="Snack")
+def sandwich(m):
+    tri = [(-0.6, -0.5), (0.6, -0.5), (0, 0.6)]
+    for z, c, d in ((0.1, "bread", 0.2), (0.24, "lettuce", 0.06), (0.31, "cheese", 0.06), (0.38, "meat_light", 0.08),
+                    (0.52, "bread", 0.2)):
+        m.prism([(x * (1.02 if c != "bread" else 1.0), y) for x, y in tri], depth=d, color=c, loc=(0, 0, z),
+                bevel=0.03 if c == "bread" else 0.0)
+
+
+@asset("Fries", CAT, sub="Snack")
+def fries(m):
+    m.box((0.8, 0.5, 0.9), color="plastic_red", bevel=0.06, loc=(0, 0, 0.45),
+          deform=lambda co: co.__class__((co.x * (1 + (co.z + 0.45) * 0.2), co.y, co.z)))
+    for i in range(9):
+        cube(m, (0.1, 0.1, 0.8), (-0.3 + (i % 5) * 0.15, -0.1 + (i // 5) * 0.2, 1.0 + (i % 3) * 0.08), "corn",
+             bev=0.02, rot=(0, (i % 3 - 1) * 8, 0))
+    cube(m, (0.3, 0.52, 0.3), (0, 0, 0.5), "plastic_yellow", bev=0.05)
+
+
+@asset("SodaCan", CAT, sub="Drinks")
+def soda_can(m):
+    m.cyl(r=0.33, h=1.0, seg=8, color=lambda c, n: "plastic_white" if 0.4 < c.z < 0.6 else "plastic_red",
+          loc=(0, 0, 0.5), cuts={"z": [0.4, 0.6]}, bevel=0.04)
+    m.cyl(r=0.28, h=0.04, seg=8, color="silver", loc=(0, 0, 1.01))
+
+
+@asset("CoffeeCup", CAT, sub="Drinks")
+def coffee_cup(m):
+    m.cyl(r=0.35, r2=0.42, h=0.9, seg=8, color=lambda c, n: "chocolate" if 0.35 < c.z < 0.6 else "plastic_white",
+          loc=(0, 0, 0.45), cuts={"z": [0.35, 0.6]})
+    m.cyl(r=0.45, h=0.12, seg=8, color="plastic_white", loc=(0, 0, 0.95))
+    m.cyl(r=0.06, h=0.1, seg=6, color="plastic_white", loc=(0.2, 0, 1.05))
+
+
+@asset("Milkshake", CAT, sub="Drinks")
+def milkshake(m):
+    m.lathe([(0, 0), (0.25, 0), (0.25, 0.1), (0.12, 0.2), (0.12, 0.35), (0.35, 0.6), (0.4, 1.3), (0, 1.3)], seg=8,
+            color=lambda c, n: "icecream_straw" if c.z > 0.4 else "glass", cuts={"z": [0.4]})
+    m.sphere(round=True, r=0.35, color="frosting_white", loc=(0, 0, 1.4), scale=(1, 1, 0.7))
+    m.sphere(round=True, r=0.1, color="cherry", loc=(0, 0, 1.72))
+    m.cyl(r=0.04, h=0.9, seg=6, color="candy_pink", loc=(0.12, 0, 1.6), rot=(0, 12, 0))
+
+
+@asset("RamenBowl", CAT, sub="Meals")
+def ramen(m):
+    m.lathe([(0, 0), (0.4, 0), (0.75, 0.5), (0.8, 0.6), (0.7, 0.6), (0.36, 0.1), (0, 0.1)], seg=8, color="plastic_red")
+    m.cyl(r=0.7, h=0.05, seg=8, color="caramel", loc=(0, 0, 0.5))
+    for i in range(5):
+        m.tube([(-0.4 + i * 0.2, -0.3, 0.54), (-0.35 + i * 0.2, 0.3, 0.54)], [0.03, 0.03], seg=4, color="corn")
+    m.sphere(round=True, r=0.15, color="egg_yolk", loc=(0.3, 0.2, 0.58), scale=(1, 1, 0.6))
+    m.cyl(r=0.15, h=0.06, seg=6, color="nori", loc=(-0.3, 0.3, 0.58), rot=(80, 0, 0))
+    for s in (-1, 1):
+        m.tube([(0.1 * s, -0.2, 0.55), (0.3 + 0.1 * s, -0.8, 1.3)], [0.03, 0.03], seg=4, color="wood_light")
+
+
+@asset("RiceBall", CAT, sub="Meals")
+def rice_ball(m):
+    m.prism([(-0.5, 0), (0.5, 0), (0, 0.75)], depth=0.4, color="sushi_rice", bevel=0.12, rot=(90, 0, 0),
+            loc=(0, 0, 0.0))
+    cube(m, (0.4, 0.46, 0.35), (0, 0, 0.17), "nori", bev=0.03)
+
+
+@asset("Dumplings", CAT, sub="Meals")
+def dumplings(m):
+    m.cyl(r=0.9, h=0.4, seg=8, color="wood_light", loc=(0, 0, 0.2))
+    for x, y in ((-0.35, -0.2), (0.35, -0.2), (0, 0.35)):
+        m.lathe([(0, 0), (0.3, 0.02), (0.28, 0.2), (0.1, 0.4), (0, 0.45)], seg=8, color="sushi_rice",
+                loc=(x, y, 0.4))
+
+
+@asset("Burrito", CAT, sub="Meals")
+def burrito(m):
+    m.tube([(-0.7, 0, 0.3), (0.7, 0, 0.3)], [0.3, 0.3], seg=8, color="cookie", caps=True)
+    m.cyl(r=0.28, h=0.02, seg=8, color="meat", rot=(0, 90, 0), loc=(0.71, 0, 0.3))
+    cube(m, (0.4, 0.62, 0.15), (0.2, 0, 0.3), "plastic_white", bev=0.03)
+
+
+@asset("Pie", CAT, sub="Treats")
+def pie(m):
+    m.cyl(r=0.9, r2=1.0, h=0.4, seg=8, color="bread_crust", loc=(0, 0, 0.2), bevel=0.05)
+    m.cyl(r=0.85, h=0.04, seg=8, color="cherry", loc=(0, 0, 0.42))
+    for a in (0, 90):
+        for k in (-0.4, 0.0, 0.4):
+            cube(m, (1.6, 0.12, 0.06), (0, k, 0.46), "bread", bev=0.02, rot=(0, 0, a))
+
+
+@asset("BirthdayCake", CAT, sub="Treats")
+def birthday_cake(m):
+    m.cyl(r=1.1, h=0.7, seg=8, color="frosting_pink", loc=(0, 0, 0.35), bevel=0.06)
+    m.cyl(r=0.8, h=0.6, seg=8, color="frosting_white", loc=(0, 0, 1.0), bevel=0.06)
+    for i in range(5):
+        a = math.radians(72 * i)
+        m.cyl(r=0.05, h=0.4, seg=6, color=["candy_blue", "plastic_yellow", "candy_green"][i % 3],
+              loc=(math.cos(a) * 0.5, math.sin(a) * 0.5, 1.5))
+        m.pyramid(w=0.08, h=0.15, color="fire", loc=(math.cos(a) * 0.5, math.sin(a) * 0.5, 1.7))
+    for i in range(8):
+        a = math.radians(45 * i)
+        m.sphere(round=True, r=0.08, color="cherry", loc=(math.cos(a) * 1.0, math.sin(a) * 1.0, 0.72))
+
+
+@asset("Macaron", CAT, sub="Treats")
+def macaron(m):
+    for z, c in ((0.12, "icecream_mint"), (0.26, "frosting_white"), (0.4, "icecream_mint")):
+        m.cyl(r=0.45 if c != "frosting_white" else 0.4, h=0.14, seg=8, color=c, loc=(0, 0, z), bevel=0.05)
+
+
+@asset("GummyBear", CAT, sub="Treats")
+def gummy_bear(m):
+    col = "candy_green"
+    cube(m, (0.6, 0.45, 0.6), (0, 0, 0.4), col, bev=0.18)
+    cube(m, (0.5, 0.42, 0.45), (0, 0, 0.9), col, bev=0.15)
+    for s in (-1, 1):
+        cube(m, (0.15, 0.15, 0.15), (s * 0.18, 0, 1.15), col, bev=0.05)
+        cube(m, (0.2, 0.25, 0.3), (s * 0.18, -0.05, 0.1), col, bev=0.07)
+        cube(m, (0.2, 0.2, 0.25), (s * 0.36, -0.05, 0.55), col, bev=0.07)
+
+
+@asset("CandyCane", CAT, sub="Treats")
+def candy_cane(m):
+    pts = [(0, 0, 0), (0, 0, 1.5), (0.1, 0, 1.8), (0.35, 0, 1.9), (0.55, 0, 1.75), (0.6, 0, 1.5)]
+    m.tube(pts, [0.1] * 6, seg=8, color=lambda c, n: "plastic_red" if int((c.z + c.x) / 0.2) % 2 else "white",
+           cuts={"z": 0.2})
+
+
+@asset("CottonCandy", CAT, sub="Treats")
+def cotton_candy(m):
+    m.cone(r=0.12, h=1.2, seg=6, color="paper", rot=(180, 0, 0), loc=(0, 0, 1.2))
+    for x, y, z, s in ((0, 0, 1.6, 0.8), (0.3, 0.1, 1.9, 0.6), (-0.3, -0.1, 1.9, 0.55), (0, 0.2, 2.2, 0.5)):
+        m.ico(r=s / 2 * 1.4, sub=1, color="candy_pink", loc=(x, y, z))
+
+
+@asset("Popcorn", CAT, sub="Treats")
+def popcorn(m):
+    m.cyl(r=0.45, r2=0.6, h=1.2, seg=8, color=lambda c, n: "plastic_red" if int((math.degrees(math.atan2(c.y, c.x)) + 382.5) / 45) % 2 else "white",
+          loc=(0, 0, 0.6))
+    rnd_pts = [(0.2, 0.1), (-0.2, 0.2), (0.1, -0.3), (-0.3, -0.1), (0.35, -0.1), (0.0, 0.3), (-0.1, 0.0)]
+    for i, (x, y) in enumerate(rnd_pts):
+        m.ico(r=0.16, sub=0, color="cream" if i % 2 else "icecream_van", loc=(x, y, 1.25 + (i % 3) * 0.1))
+
+
+@asset("CornDog", CAT, sub="Snack")
+def corn_dog(m):
+    m.cyl(r=0.04, h=0.8, seg=6, color="wood_pale", loc=(0, 0, 0.4))
+    m.lathe([(0, 0.7), (0.22, 0.8), (0.25, 1.6), (0.15, 1.85), (0, 1.9)], seg=8, color="caramel")
+    m.tube([(0, -0.24, 1.0), (0.05, -0.26, 1.3), (-0.05, -0.26, 1.6)], [0.03] * 3, seg=4, color="egg_yolk")
+
+
+@asset("SaladBowl", CAT, sub="Meals")
+def salad(m):
+    m.lathe([(0, 0), (0.4, 0), (0.8, 0.5), (0.85, 0.55), (0.75, 0.55), (0.36, 0.1), (0, 0.1)], seg=8,
+            color="plastic_white")
+    for i in range(7):
+        a = i * 137.5
+        r = 0.2 + (i % 3) * 0.18
+        m.leaf(length=0.35, width=0.3, thick=0.04, color="lettuce" if i % 2 else "leaf_light",
+               loc=(math.cos(math.radians(a)) * r, math.sin(math.radians(a)) * r, 0.5), rot=(30, 0, a))
+    for x, y, c in ((0.2, 0.1, "tomato"), (-0.25, 0.1, "tomato"), (0.0, -0.25, "carrot")):
+        cube(m, (0.18, 0.18, 0.12), (x, y, 0.6), c, bev=0.04)
+
+
+@asset("EasterEgg", CAT, sub="Treats")
+def easter_egg(m):
+    m.lathe([(0, 0), (0.28, 0.05), (0.38, 0.3), (0.34, 0.6), (0.2, 0.82), (0, 0.88)], seg=8,
+            color=lambda c, n: ["candy_pink", "candy_blue", "plastic_yellow", "candy_green"][int(c.z / 0.2) % 4],
+            cuts={"z": 0.2})
+
+
+@asset("ChocolateEgg", CAT, sub="Treats")
+def chocolate_egg(m):
+    m.lathe([(0, 0), (0.28, 0.05), (0.38, 0.3), (0.34, 0.6), (0.2, 0.82), (0, 0.88)], seg=8, color="chocolate")
+    cube(m, (0.8, 0.8, 0.1), (0, 0, 0.45), "plastic_pink", bev=0.03)

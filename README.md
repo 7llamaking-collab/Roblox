@@ -1,6 +1,6 @@
 # Stud Low Poly Asset Library (Blender → Roblox)
 
-**642 stud low-poly assets** for simulator games, modelled in **Blender** to match
+**1,154 stud low-poly assets** for simulator games, modelled in **Blender** to match
 `AnimalBundle_1.rbxl` and its screenshots: blocky chamfered shapes, square pixel eyes, flat
 shading, a shared colour palette and the same square-tile **stud overlay** your animals use.
 Every model is a real Blender mesh, ready for the Roblox 3D Importer.
@@ -11,19 +11,19 @@ includes a `HOW_TO_IMPORT.txt`.
 
 | Category | Count | What's inside |
 |---|---:|---|
-| [Food](previews/Food.png) | 60 | 24 fruits, 12 vegetables, 24 snacks & meals |
-| [Tools](previews/Tools.png) | 90 | Pickaxe, Heavy Pickaxe, Drill, Axe, Shovel, Hammer, Hoe, Scythe × 8 tiers, 4 Legendary pickaxes (Flame, Frost, Crystal, Void), 22 everyday / farm / simulator tools |
-| [Weapons](previews/Weapons.png) | 119 | Sword, Greatsword, Scimitar, Katana, Dagger, Mace, Halberd, BattleAxe, Spear, WarHammer, Bow, Staff, Shield × 8 tiers, 6 Legendary swords (Flame, Frost, Thunder, Shadow, Nature, Crystal), 9 specials |
-| [Furniture](previews/Furniture.png) | 60 | seating, tables, bedroom, kitchen, bathroom, living room, lighting, decor, storage |
-| [Nature](previews/Nature.png) | 58 | 14 trees (incl. fruit trees), bushes, flowers, plants, rocks, 9 ores, 7 crystal clusters, clouds |
-| [Props](previews/Props.png) | 91 | 21 pet eggs + egg stand, 8 tiered chests, 8 tiered backpacks, currency, pickups, potions, pads & portal, awards, town & farm props |
-| [Animals](previews/Animals.png) | 65 | **rigged & animated**: 44 pets, farm and wild animals, birds, sea creatures and bugs, plus 21 **mythical** creatures (6 dragons, 3 golems, Treant, Yeti, Mimic, Sea Serpent, Basilisk, Frost Wolf, Jackalope, Salamander, Fairy, Phoenix Chick, Baby Dragon, Slimes, Ghost) |
-| [Vehicles](previews/Vehicles.png) | 27 | cars, sports car, police car, taxi, jeep, pickup, van, ambulance, ice-cream truck, delivery & fire trucks, buses, tractor, monster truck, golf cart, go-kart, motorcycle, scooter, boats, helicopter, airplane, hot-air balloon, rocket, train |
-| [Buildings](previews/Buildings.png) | 45 | houses, apartments, skyscraper, shops (shop, cafe, pizza, toy store), gas station, police, fire station, hospital, school, bank, market / fruit / fish stalls, hot-dog & lemonade stands, ticket booth, kiosk, street signs, traffic light, billboard, bus stop, neon sign, barn, silo, windmill, lighthouse, castle tower & gate, fountain, bunker, barracks, watch tower, hangar, helipad, radar tower, guard post, command tent |
-| [Military](previews/Military.png) | 27 | cannon, howitzer, mortar, machine-gun turret, anti-air gun, missile launcher, rocket launcher, catapult, ballista, trebuchet, tanks, armored car, military jeep & truck, attack helicopter, fighter jet, ammo, explosive barrel, sandbags, tank trap, landmine, grenade, barbed wire, flag |
+| [Food](previews/Food.png) | 99 | 32 fruits, 18 vegetables, 32 snacks & meals, drinks, treats (cakes, candy, holiday eggs) |
+| [Tools](previews/Tools.png) | 122 | Pickaxe, Heavy Pickaxe, Drill, Axe, Shovel, Hammer, Hoe, Scythe, Fishing Rod, Bug Net, Coin Magnet, Chainsaw × 8 tiers, 4 Legendary pickaxes (Flame, Frost, Crystal, Void), 22 everyday / farm / simulator tools |
+| [Weapons](previews/Weapons.png) | 159 | Sword, Greatsword, Scimitar, Katana, Dagger, Rapier, Mace, Flail, Halberd, BattleAxe, Spear, Trident, WarHammer, Bow, Crossbow, Staff, Wand, Shield × 8 tiers, 6 Legendary swords (Flame, Frost, Thunder, Shadow, Nature, Crystal), 9 specials |
+| [Furniture](previews/Furniture.png) | 132 | seating (sofas, armchairs, beanbags, dining chairs in 8–10 colours), tables, bedroom, kitchen & appliances, bathroom, living room, electronics, music, lighting, decor, pets, storage |
+| [Nature](previews/Nature.png) | 119 | 32 trees (fruit, gem, candy, rainbow, willow, jungle, bonsai…), bushes, flowers, plants, 7 crop plots, rocks, 9 ores, 8 crystal clusters, terrain (floating island, cliff, volcano, waterfall, pond…), sky (clouds, rainbow, sun, moon, tornado) |
+| [Props](previews/Props.png) | 172 | 22 pet eggs, 8 tiered chests / loot crates / keys / backpacks, currency & gold bars, pickups, potions, pads & portal, obby parts (checkpoint, finish line, spikes, lava, trampoline, speed & jump pads), awards, town & farm props, spooky & holiday props, magic items |
+| [Animals](previews/Animals.png) | 121 | **rigged & animated**: 81 pets, farm and wild animals, birds, sea creatures and bugs, plus 40 **mythical** creatures (10 dragons, 3 golems, Treant, Yeti, Werewolf, Cyclops, Hellhound, Robot Dog, Mimic, Sea Serpent, Basilisk, Frost Wolf, Jackalope, Salamander, Fairy, Phoenix Chick, Alien, Snowman, Gingerbread, 5 slimes, Ghost, Cloud & Star pets…) |
+| [Vehicles](previews/Vehicles.png) | 85 | cars in 10 colours, sports cars, jeeps, pickups, vans, limo, race car, convertible, service vehicles, buses, construction (excavator, bulldozer, dump truck, cement mixer, forklift, tow & garbage trucks), motorcycles, go-karts, scooters, bicycle, skateboard, hoverboard, ATV, snowmobile, boats, jet ski, submarine, helicopter, airplane, blimp, hot-air balloon, rocket, spaceship, UFO, train |
+| [Buildings](previews/Buildings.png) | 84 | houses in 8 colours, two-storey houses, apartments, skyscraper, 9 shops (bakery, candy, pet, burger, arcade…), cinema, museum, civic buildings, stalls & stands, street furniture (vending machines, ATM, phone booth, dumpster…), landmarks (castle keep, pagoda, pyramid, greek temple, lighthouse…), fun park (ferris wheel, carousel, slide, swings, stage), farm and military buildings |
+| [Military](previews/Military.png) | 61 | artillery (cannons, howitzer, mortar, anti-tank, gatling, naval cannon), turrets & launchers, siege weapons, 8 tanks, APC, armored car, jeeps & trucks, missile truck, patrol boat, battleship, attack helicopter, fighter jet, bomber, cargo plane, drones, 7 guns, ammo & supply drops, field gear, battlefield props |
 
-The animals complement the 115 already in AnimalBundle (Pig, Sheep, Fox, Panda, Penguin,
-Dolphin, Bee, Fire/Ice/Shadow/Crystal/Golden/Forest dragons, golems, and more), with no duplicates.
+The animals complement the ones already in AnimalBundle (Cat, Cow, Horse, Lion, Tiger, Wolf,
+Shark, Whale, T-Rex, Unicorn, Pegasus, Griffin, Hydra, Kraken and many more), with no duplicates.
 
 ![Animals](previews/Animals.png)
 
@@ -40,7 +40,7 @@ Measured from `AnimalBundle_1.rbxl` and reproduced here:
   in Blender (`textures/Stud.png`, StudsPerTile = 2, i.e. studs every half stud). Because the studs are a separate overlay,
   you can leave them off for games that don't want the stud look.
 * **One palette for everything.** All meshes are UV-mapped to one 512×512 atlas
-  (`textures/StudPalette.png`, 278 named colours; see `textures/PaletteReference.png`).
+  (`textures/StudPalette.png`, 298 named colours; see `textures/PaletteReference.png`).
   One texture upload colours the whole library. Matching metalness and roughness atlases make
   metals and gems shine when used as a `SurfaceAppearance`.
 * **Tiers match your animals.** Wood → Stone → Iron → **Gold → Diamond → Emerald → Ruby → Rainbow**.
@@ -110,7 +110,7 @@ Everything was produced by Blender itself, driven by the scripts in `blender/`. 
 assets, you need Blender, or `pip install bpy pillow numpy` (Python 3.11):
 
 ```bash
-python3 blender/build.py                        # rebuild everything (~30 min on 4 cores)
+python3 blender/build.py                        # rebuild everything (~1 hour on 4 cores)
 python3 blender/build.py --style round          # softer, rounded low-poly variant of everything
 python3 blender/package.py                      # re-make the download ZIPs
 python3 blender/build.py --only Food,Props      # just some categories
