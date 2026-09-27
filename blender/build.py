@@ -32,9 +32,10 @@ from studlib import output, palette, registry, render, studs  # noqa: E402
 from studlib.geo import Builder, set_style  # noqa: E402
 
 CATEGORY_MODULES = ["food", "tools", "weapons", "furniture", "nature", "props", "animals", "vehicles",
-                    "buildings", "military"]
+                    "buildings", "military", "commercial", "tycoon"]
 CATEGORY_ORDER = ["Food", "Tools", "Weapons", "Furniture", "Nature", "Props", "Animals", "Vehicles", "Buildings",
-                  "Military"]
+                  "Military", "Commercial", "Tycoon"]
+PART_TRI_LIMIT = 20000   # Roblox MeshPart triangle limit
 
 
 def parse_args():
@@ -121,11 +122,28 @@ def build_category(cat, items, args, tex_dir, stud_png):
                     info["animations"][clip] = os.path.relpath(pa, args.out)
                 root.animation_data.action = bpy.data.actions[f"{root.name}_{root['clips'][0]}"]
                 bpy.context.scene.frame_set(1)
+        for po in [ob] + list(ob.children):
+            if po.type == "MESH":
+                pt = sum(len(p.vertices) - 2 for p in po.data.polygons)
+                if pt > PART_TRI_LIMIT:
+                    print(f"WARNING: {po.name} has {pt} triangles (Roblox limit {PART_TRI_LIMIT})", flush=True)
         if stage is not None:
+            big = "interior" in a["tags"]
+            res0 = stage.sc.render.resolution_x
+            if big:   # buildings with interiors get sharper renders
+                stage.sc.render.resolution_x = stage.sc.render.resolution_y = max(res0, 768)
             pp = os.path.join(prev_dir, a["name"] + ".png")
             stage.shoot([root], pp, studs_mat=studs_mat)
-            render.shrink(pp, 256)
+            render.shrink(pp, 512 if big else 256)
             info["preview"] = os.path.relpath(pp, args.out)
+            if big:
+                # cutaway: lift the roof off and look down into the rooms
+                roof = [c for c in ob.children if c.name.endswith("_Roof")]
+                pi = os.path.join(prev_dir, a["name"] + "_Inside.png")
+                stage.shoot([root], pi, direction=(0.6, -0.95, 2.4), studs_mat=studs_mat, hide=roof)
+                render.shrink(pi, 512)
+                info["preview_inside"] = os.path.relpath(pi, args.out)
+            stage.sc.render.resolution_x = stage.sc.render.resolution_y = res0
         placed.append((root, ob))
         catalog.append(info)
         print(f"[{cat}] {a['name']:<28} tris={ob['tris']:<6} size={info['size_studs']} "
@@ -162,7 +180,11 @@ def build_category(cat, items, args, tex_dir, stud_png):
         bpy.ops.wm.save_as_mainfile(filepath=blend, compress=True)
 
     if stage is not None and catalog:
-        items_png = [(os.path.join(args.out, c["preview"]), c["name"]) for c in catalog]
+        items_png = []
+        for c in catalog:
+            items_png.append((os.path.join(args.out, c["preview"]), c["name"]))
+            if c.get("preview_inside"):
+                items_png.append((os.path.join(args.out, c["preview_inside"]), c["name"] + " (inside)"))
         render.contact_sheet(items_png, os.path.join(args.out, "previews", f"{cat}.png"),
                              f"{cat} — {len(catalog)} assets (stud low poly)")
     return catalog

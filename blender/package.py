@@ -3,7 +3,7 @@
     python3 blender/package.py
 
 Writes to downloads/:
-    StudLowPoly_QuickStart_AllPacks.zip   7 "all-in-one" FBX files, one per category
+    StudLowPoly_QuickStart_AllPacks.zip   one "all-in-one" FBX file per category
     StudLowPoly_<Category>.zip            every asset of a category as its own FBX (+ animations)
     StudLowPoly_BlenderSource.zip         editable .blend files
     StudLowPoly_Everything.zip            all of the above in one download
@@ -14,7 +14,8 @@ import zipfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "downloads")
-CATS = ["Food", "Tools", "Weapons", "Furniture", "Nature", "Props", "Animals", "Vehicles", "Buildings", "Military"]
+CATS = ["Food", "Tools", "Weapons", "Furniture", "Nature", "Props", "Animals", "Vehicles", "Buildings", "Military",
+        "Commercial", "Tycoon"]
 
 HOW_TO = """STUD LOW POLY ASSETS - HOW TO PUT THEM IN ROBLOX STUDIO
 =====================================================
@@ -52,6 +53,26 @@ TOOLS & WEAPONS
   They stand upright with the pivot on the grip. Put the MeshPart inside a Tool,
   name it "Handle", and adjust Tool.Grip.
 
+RESTAURANTS, SHOPS, BANK... WITH INTERIORS (Commercial)
+  Every building is a Model of separate MeshParts:
+     <Name>            floor, walls and facade
+     <Name>_Roof       the roof, ceiling lights and rooftop units - hide it (Transparency 1)
+                       for a top-down / cutaway view of the inside
+     <Name>_Glass      all the window glass
+     <Name>_DoorL/R    door leaves you can hinge or slide open (also _BackDoor, _KitchenDoor...)
+     <Name>_Kitchen, _Counter, _Dining, _Booths, _Aisles...   furniture groups you can move or delete
+  After importing, select the building and run BuildingSetup.lua in the Command Bar: it makes the
+  glass see-through and sets precise collisions so players can walk in through the doors.
+  (Or by hand: Transparency 0.45 on _Glass, and CollisionFidelity = PreciseConvexDecomposition on
+  the main wall part.) Scale: doors are 8 studs tall, ceilings 13 studs - made for normal avatars.
+  Every piece of furniture is also available on its own (Fixtures groups in ASSET_LIST.txt).
+
+TYCOON & SIMULATOR BUILDS (Tycoon)
+  Scriptable pieces are separate parts: _Belt (conveyor belts), _Ore (the block a dropper makes),
+  _Laser / _Lasers (laser doors, upgraders), _Button (buy / lock buttons), _Barrier (zone gates),
+  _Slot1 ... _Slot14 (steal-base pedestals), _Dropper1..., _Button1... on the example plots.
+  BuildingSetup.lua turns lasers and barriers into glowing Neon.
+
 ANIMALS (rigged)
   Import Individual/<Animal>.fbx -> you get a skinned MeshPart with Bones.
   (Dragons, golems, yeti, treant, mimic... are in the "Mythical" group - see ASSET_LIST.txt.)
@@ -80,6 +101,7 @@ def add_dir(z, src, arc):
 def common(z, arc):
     z.writestr(os.path.join(arc, "HOW_TO_IMPORT.txt"), HOW_TO)
     z.write(os.path.join(ROOT, "roblox", "StudStyle.lua"), os.path.join(arc, "StudStyle.lua"))
+    z.write(os.path.join(ROOT, "roblox", "BuildingSetup.lua"), os.path.join(arc, "BuildingSetup.lua"))
     for f in ("StudPalette.png", "StudPalette_Metalness.png", "StudPalette_Roughness.png", "Stud.png",
               "PaletteReference.png"):
         z.write(os.path.join(ROOT, "textures", f), os.path.join(arc, "Textures", f))
@@ -94,6 +116,10 @@ def category(z, cat, arc, catalog):
         size = " x ".join(f"{v:g}" for v in a["size_studs"])
         lines.append(f"{a['name']:<26}{a['group']:<12}{size:<30}{a['tris']}")
     z.writestr(os.path.join(arc, "ASSET_LIST.txt"), "\n".join(lines) + "\n")
+    for a in catalog[cat]:
+        if a.get("preview_inside"):
+            for key, suffix in (("preview", ""), ("preview_inside", "_Inside")):
+                add_preview(z, os.path.join(ROOT, a[key]), os.path.join(arc, "Previews", f"{a['name']}{suffix}.jpg"))
     if cat == "Animals":
         add_dir(z, os.path.join(ROOT, "exports", "animations"), os.path.join(arc, "Animations"))
 

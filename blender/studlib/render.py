@@ -129,12 +129,13 @@ class Stage:
         self.cam.data.clip_end = dist * 10
         self.ground.location = (center.x, center.y, lo.z)
 
-    def shoot(self, objs, path, direction=(0.95, -1.55, 0.95), studs_mat=None):
-        """Render only ``objs`` (others hidden) to ``path``."""
+    def shoot(self, objs, path, direction=(0.95, -1.55, 0.95), studs_mat=None, hide=()):
+        """Render only ``objs`` (others hidden) to ``path``. ``hide``: child parts to leave out (cutaways)."""
         visible = set()
         for ob in objs:
             visible.add(ob)
             visible.update(ob.children_recursive)
+        visible -= set(hide)
         saved = {}
         for ob in self.sc.objects:
             if ob.name.startswith("_") or ob.users_collection[0] == self.col:

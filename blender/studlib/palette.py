@@ -134,6 +134,14 @@ _add("city", rough=0.6,
      fire_red="D72F2F", school_yellow="FFB91C", sign_green="2F8C58", neon_red="FF3C50",
      awning_red="E24444", awning_white="F8F6F0", awning_blue="3F7FD6", awning_green="46A85A")
 
+# --- interiors, shops & tycoons (appended so existing atlas cells never move) ---
+_add("interior", rough=0.7,
+     wall_cream="F3E7C9", wall_mint="BFE6CF", wall_peach="F6C9A8", wall_sky="BCD9F0", wall_lilac="D8C8EE",
+     wall_red="C8453C", wall_navy="2E3F6B", wall_green="3D7A55", tile_cream="EFE6D2", tile_gray="B8BCC4",
+     cash="7BBF5A", cash_dark="4F8A3A", neon_yellow="FFE83B", neon_orange="FF9A2E", neon_purple="B44CFF",
+     menu_black="26262B", booth_red="B8332E", booth_teal="2E9C98", velvet="7A1F3D", marble_green="3E6B5A")
+_add("interior_metal", rough=0.25, metal=1.0,
+     stainless="C9CDD2", brass="C9A247", vault="8D949C")
 NAMES = list(_C.keys())
 assert len(NAMES) <= GRID * GRID, len(NAMES)
 INDEX = {n: i for i, n in enumerate(NAMES)}

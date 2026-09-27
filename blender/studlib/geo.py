@@ -157,6 +157,7 @@ class Builder:
         self.groups = ["Root"]
         self.bones = {}          # name -> dict(head, tail, parent)
         self._grp = 0
+        self._xf = None          # placement matrix applied last (see ``at``)
         self.meta = {}
 
     # -- rig groups ---------------------------------------------------------
@@ -166,6 +167,21 @@ class Builder:
             self.groups.append(name)
         self.bones[name] = dict(head=Vector(head), tail=Vector(tail), parent=parent)
         return name
+
+    @contextmanager
+    def at(self, loc=(0, 0, 0), rotz=0.0):
+        """Place everything built inside the block at ``loc``, turned ``rotz`` degrees.
+
+        Colours, cuts and mirroring are worked out in the block's own local space
+        first, so reusable pieces (a table, a stove...) can be dropped anywhere.
+        """
+        prev = self._xf
+        mat = Matrix.Translation(Vector(loc)) @ Matrix.Rotation(math.radians(rotz), 4, "Z")
+        self._xf = mat if prev is None else prev @ mat
+        try:
+            yield
+        finally:
+            self._xf = prev
 
     @contextmanager
     def group(self, name):
@@ -208,6 +224,8 @@ class Builder:
                 co = v.co.copy()
                 if flip:
                     co.x = -co.x
+                if self._xf is not None:
+                    co = self._xf @ co
                 vmap[v] = self.bm.verts.new(co)
             for f in tmp.faces:
                 vs = [vmap[v] for v in f.verts]

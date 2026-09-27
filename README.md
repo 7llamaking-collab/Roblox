@@ -1,6 +1,6 @@
 # Stud Low Poly Asset Library (Blender → Roblox)
 
-**1,154 stud low-poly assets** for simulator games, modelled in **Blender** to match
+**1,286 stud low-poly assets** for simulator games, modelled in **Blender** to match
 `AnimalBundle_1.rbxl` and its screenshots: blocky chamfered shapes, square pixel eyes, flat
 shading, a shared colour palette and the same square-tile **stud overlay** your animals use.
 Every model is a real Blender mesh, ready for the Roblox 3D Importer.
@@ -21,6 +21,8 @@ includes a `HOW_TO_IMPORT.txt`.
 | [Vehicles](previews/Vehicles.png) | 85 | cars in 10 colours, sports cars, jeeps, pickups, vans, limo, race car, convertible, service vehicles, buses, construction (excavator, bulldozer, dump truck, cement mixer, forklift, tow & garbage trucks), motorcycles, go-karts, scooters, bicycle, skateboard, hoverboard, ATV, snowmobile, boats, jet ski, submarine, helicopter, airplane, blimp, hot-air balloon, rocket, spaceship, UFO, train |
 | [Buildings](previews/Buildings.png) | 84 | houses in 8 colours, two-storey houses, apartments, skyscraper, 9 shops (bakery, candy, pet, burger, arcade…), cinema, museum, civic buildings, stalls & stands, street furniture (vending machines, ATM, phone booth, dumpster…), landmarks (castle keep, pagoda, pyramid, greek temple, lighthouse…), fun park (ferris wheel, carousel, slide, swings, stage), farm and military buildings |
 | [Military](previews/Military.png) | 61 | artillery (cannons, howitzer, mortar, anti-tank, gatling, naval cannon), turrets & launchers, siege weapons, 8 tanks, APC, armored car, jeeps & trucks, missile truck, patrol boat, battleship, attack helicopter, fighter jet, bomber, cargo plane, drones, 7 guns, ammo & supply drops, field gear, battlefield props |
+| [Commercial](previews/Commercial.png) | 90 | **21 walk-in buildings with full interiors**: Diner, Burger Restaurant (with drive-thru), Pizzeria, Sushi Bar, Coffee Shop, Ice Cream Parlor, Donut Shop, Grand Bank (vault, tellers, gold), Supermarket, Convenience Store, Clothing, Electronics, Jewelry and Pet stores, Pharmacy, Hair Salon, Laundromat, Gym (boxing ring), Arcade, Office, Movie Theater; plus 69 interior fixtures (booths, stoves, fryers, grills, counters, registers, shelves, checkouts, racks, teller counters, vault door, treadmills, claw machines, cinema seats...) |
+| [Tycoon](previews/Tycoon.png) | 42 | tycoon plots (dropper tycoon and restaurant tycoon starter layouts), 8 tiered droppers, conveyors, upgraders, furnace, cash collector, buy buttons, owner door; steal-style bases with numbered pedestal slots, laser door, lock button and red-carpet conveyor; simulator builds (sell shop, egg hatchery, upgrade shop, rebirth shrine, leaderboard, zone gates, daily reward, quest board, shop stand) |
 
 The animals complement the ones already in AnimalBundle (Cat, Cow, Horse, Lion, Tiger, Wolf,
 Shark, Whale, T-Rex, Unicorn, Pegasus, Griffin, Hydra, Kraken and many more), with no duplicates.
@@ -61,6 +63,7 @@ textures/                                   StudPalette (+ Metalness/Roughness),
 previews/                                   contact sheets + a render of every asset
 catalog.json                                every asset: size in studs, triangle count, files
 roblox/StudStyle.lua                        optional one-click stud overlay for Studio
+roblox/BuildingSetup.lua                    optional one-click glass / collision setup for buildings
 blender/                                    the Blender build scripts that made everything
 ```
 
@@ -81,6 +84,17 @@ blender/                                    the Blender build scripts that made 
 **Vehicles, machines & military** come in as a Model whose moving pieces are separate MeshParts
 (`<Name>_WheelFL`, `_Rotor`, `_Propeller`, `_Turret`, `_Barrel`, `_Blades`, `_Dish`...) with their
 origin at their own centre, ready for HingeConstraints or any vehicle chassis.
+
+**Buildings with interiors (Commercial).** Doors are 8 studs tall and ceilings 13, so normal avatars
+walk right in. Each building is a Model of separate MeshParts: `<Name>` (floor, walls, facade),
+`<Name>_Roof` (hide it for a cutaway / top-down view), `<Name>_Glass`, `<Name>_DoorL` / `_DoorR`,
+and furniture groups such as `_Kitchen`, `_Counter`, `_Dining`, `_Aisles`, `_Vault` that you can move
+or delete. Select the building and run `roblox/BuildingSetup.lua` in the Command Bar: it makes the
+glass see-through and sets `CollisionFidelity = PreciseConvexDecomposition` so doorways are walkable.
+Each building has an inside preview too (`previews/Commercial/<Name>_Inside.png`).
+
+**Tycoon and simulator builds.** Scriptable bits are separate parts: `_Belt`, `_Ore`, `_Laser(s)`,
+`_Button`, `_Barrier`, and `_Slot1`…`_Slot14` on the steal-style bases.
 
 **Tools and weapons** stand upright with their pivot on the grip, where the hand holds them.
 Put the MeshPart in a `Tool` as `Handle` and adjust `Tool.Grip`, for example with a grip editor plugin.
@@ -111,7 +125,7 @@ Everything was produced by Blender itself, driven by the scripts in `blender/`. 
 assets, you need Blender, or `pip install bpy pillow numpy` (Python 3.11):
 
 ```bash
-python3 blender/build.py                        # rebuild everything (~1 hour on 4 cores)
+python3 blender/build.py                        # rebuild everything (~70 min on 4 cores)
 python3 blender/build.py --style round          # softer, rounded low-poly variant of everything
 python3 blender/package.py                      # re-make the download ZIPs
 python3 blender/build.py --only Food,Props      # just some categories
