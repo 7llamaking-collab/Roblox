@@ -414,6 +414,13 @@ def painted_egg(m, base, a, style="stripes", loc=(0, 0, 0), s=1.0):
             return a if (30 < ang < 60 and 0.5 < z < 1.8 and int(z / 0.6) % 2 == 0) else base
         return base
     m.lathe([(r * s, z * s) for r, z in EGG], seg=8, color=col, loc=loc, cuts={"z": [loc[2] + k * 0.15 * s for k in range(1, 15)]})
+    if style == "dots":
+        for k in range(10):
+            ang = math.radians(36 * k + (18 if k % 2 else 0))
+            z = (0.7 if k % 2 else 1.4)
+            rr = 0.93 * s
+            m.box((0.28 * s, 0.28 * s, 0.28 * s), color=a, bevel=0.06 * s,
+                  loc=(loc[0] + rr * math.cos(ang), loc[1] + rr * math.sin(ang), loc[2] + z * s))
 
 
 def egg_basket(m):
@@ -964,12 +971,13 @@ def roast_turkey(m):
 
 
 def cornucopia(m):
-    pts = [(0, 1.8, 1.0), (0, 0.6, 1.2), (0.3, -0.6, 1.4), (0.8, -1.4, 1.9), (1.1, -1.7, 2.6)]
-    m.tube(pts, [0.02, 0.5, 0.9, 1.2, 1.3], seg=8, color=lambda c, n: "wood_light" if int((c.y + 5) / 0.5) % 2 else
-           "wood_mid", up=(0, 0, 1), cuts={"y": 0.5})
-    for i, (c, x, y) in enumerate((("pumpkin", 1.2, -2.6), ("apple_red", 0.4, -2.8), ("grape", 1.9, -2.4),
-                                   ("corn", 0.8, -3.2), ("pear", 1.8, -3.3))):
-        blk(m, (0.8, 0.8, 0.8), (x, y, 0.5), c, bev=0.2)
+    stripes = lambda c, n: "wood_light" if int((c.x + 5) / 0.45) % 2 else "wood_mid"
+    m.lathe([(1.3, 0), (1.0, 1.2), (0.6, 2.4), (0.3, 3.2), (0, 3.6)], seg=8, color=stripes, rot=(0, -90, 0),
+            loc=(0.6, 0, 1.3), cuts={"x": 0.45})
+    m.tube([(-3.0, 0, 1.3), (-3.5, 0, 1.8), (-3.2, 0, 2.3)], [0.18, 0.12, 0.02], seg=4, color="wood_mid")
+    for i, (c, x, y, z) in enumerate((("pumpkin", 1.2, -0.2, 0.5), ("apple_red", 1.4, 0.8, 0.45), ("grape", 1.9, -0.9, 0.4),
+                                      ("corn", 2.2, 0.3, 0.35), ("pear", 1.0, -1.0, 0.4), ("orange", 0.8, 0.4, 1.7))):
+        m.box((0.8, 0.8, 0.8), color=c, bevel=0.2, loc=(x, y, z))
 
 
 def harvest_table(m):
@@ -1413,7 +1421,7 @@ def sky_lantern(m):
     m.lathe([(0, 0), (1.2, 0.8), (1.2, 1.4), (0, 2.2)], seg=8, color="plastic_orange", loc=(0, 0, 3.0), rot=(0, 0, 22.5))
     for k in range(8):
         a = math.radians(45 * k + 22.5)
-        blk(m, (0.1, 0.1, 1.6), (1.2 * math.cos(a), 1.2 * math.sin(a), 2.5), "lemon")
+        blk(m, (0.1, 0.1, 1.4), (1.21 * math.cos(a), 1.21 * math.sin(a), 3.75), "lemon")
     blk(m, (0.5, 0.5, 0.5), (0, 0, 3.4), "glow")
 
 

@@ -30,6 +30,49 @@ Shark, Whale, T-Rex, Unicorn, Pegasus, Griffin, Hydra, Kraken and many more), wi
 
 ![Animals](previews/Animals.png)
 
+## Game UI kit (studs style) + prompt generator
+
+Everything for the game UI, in the same studs style as the models (see `ui/kits/*/Preview.jpg`):
+
+* **`roblox/SimUI_Plugin.lua`, a Studio plugin.** Type a prompt such as `"Pet Legends" candy simulator`,
+  `lava fighting` or `spooky horror` and click **Build UI**. It creates `StarterGui > SimUI`:
+  * **HUD:** top tabs, side buttons with icons and labels, currencies with a + button, a hotbar,
+    boost tiles, a level bar, Daily Quests and x2 Luck.
+  * **Windows:** Shop (item cards with Buy buttons and tabs), Pets (rarity slots), Rebirth, Settings
+    (toggles), Codes, Index (mutations, collection grid, reward bar), Daily Rewards and Quests.
+  * **A LocalScript** that opens and closes the windows with a pop animation, makes buttons grow on
+    hover, sweeps a shine across buttons, scales the UI for every screen and shows leaderstats values.
+  * **Layouts** for simulator, tycoon, obby, fighting, horror, racing and rpg games.
+  * **17 themes:** classic, candy, ocean, lava, forest, galaxy, neon, winter, spooky, holiday, royal,
+    desert, toxic, pastel, military, midnight, sunset. Colour words (red, blue, pink...) and a
+    "quoted title" also work. It is keyword matching, no AI.
+
+  Install: Studio > Plugins tab > **Plugins Folder**, drop the file in and restart Studio. Or paste it
+  into the Command Bar once. It works straight away with native Roblox UI (UICorner, UIStroke,
+  UIGradient, shine, emoji icons).
+* **`ui/generate.py`, the art generator** (Python and Pillow only). Run
+  `python3 ui/generate.py "galaxy space simulator"` and it draws the whole kit:
+  * studded glossy buttons in 13 colours, square menu buttons, window headers, panels
+  * gradient item cards, rarity slots (Common to Secret), progress bars, currency pills, tabs, toggles,
+    close and plus buttons, badges
+  * textured mutation buttons (Molten, Icy, Shocked, Radioactive, Rainbow, Galaxy, Golden, Diamond)
+  * shine effects (sunburst, glow, sparkle) and 45 stroked title words
+  * an optional logo
+
+  The sprites are packed into 1024 px sprite sheets, so you upload a few images instead of hundreds.
+  It also writes `SimUIKit.lua`, which records where every sprite is. Ready-made kits for all 17
+  themes are in `ui/kits/`.
+* **`ui/icons/`: 70 shiny outlined icons** rendered in Blender from this library (coin, gem, cash,
+  eggs, potions, chest, gift, crown, trophy, sword, pickaxe, settings gear, shop cart, paw, rebirth
+  arrows, lock, check / X, arrows, and more), plus one icon sprite sheet.
+
+**Using a kit's images.** Upload the kit's `Atlas_*.png`, `ui/icons/Atlas_Icons.png` and `Stud_Tile.png`
+(Asset Manager > Bulk Import) and paste their ids into `SimUIKit.lua`. Put `SimUIKit.lua` in
+ReplicatedStorage as a ModuleScript named `SimUIKit`, then click Build UI again: buttons, panels,
+cards, icons and titles now use the images, as 9-slice sprites that stay crisp at any size. Fonts:
+Fredoka (the same family as Roblox's FredokaOne), Luckiest Guy and Lilita One, all open-licensed
+(`ui/fonts/`).
+
 ## The style: "stud low poly"
 
 Measured from `AnimalBundle_1.rbxl` and reproduced here:
@@ -63,6 +106,8 @@ blend/<Category>.blend                      editable Blender files, every asset 
 textures/                                   StudPalette (+ Metalness/Roughness), Stud.png overlay
 previews/                                   contact sheets + a render of every asset
 catalog.json                                every asset: size in studs, triangle count, files
+roblox/SimUI_Plugin.lua                     Studio plugin: builds a whole game UI from a prompt
+ui/                                         UI art generator, themes, fonts, icons and ready-made kits
 roblox/StudStyle.lua                        optional one-click stud overlay for Studio
 roblox/BuildingSetup.lua                    optional one-click glass / collision setup for buildings
 blender/                                    the Blender build scripts that made everything
