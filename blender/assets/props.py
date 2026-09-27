@@ -662,10 +662,14 @@ def royal_crown(m):
 
 @asset("Tiara", CAT, sub="Pickups")
 def tiara(m):
-    m.torus(R=0.9, r=0.08, seg=8, color="silver", arc=180, loc=(0, 0, 0.1))
-    m.prism([(-0.6, 0), (-0.3, 0.4), (0, 0.8), (0.3, 0.4), (0.6, 0)], depth=0.1, color="silver", rot=(90, 0, 0),
-            loc=(0, 0.9, 0.1))
-    m.gem(r=0.14, h=0.16, color="crystal_pink", rot=(90, 0, 0), loc=(0, 0.84, 0.5))
+    m.torus(R=0.9, r=0.1, seg=8, color="silver", loc=(0, 0, 0.1), rot=(0, 0, 22.5))
+    m.prism([(-0.7, 0), (-0.35, 0.35), (0, 0.8), (0.35, 0.35), (0.7, 0)], depth=0.16, color="silver", rot=(90, 0, 0),
+            loc=(0, -0.85, 0.1))
+    for x, h in ((-0.4, 0.3), (0.4, 0.3)):
+        m.pyramid(w=0.16, h=h, color="silver", loc=(x, -0.8, 0.3))
+    m.box((0.26, 0.12, 0.26), color="crystal_pink", bevel=0.04, loc=(0, -0.95, 0.42), rot=(0, 45, 0))
+    for x in (-0.3, 0.3):
+        m.box((0.12, 0.1, 0.12), color="diamond", loc=(x, -0.94, 0.2), rot=(0, 45, 0))
 
 
 @asset("Ticket", CAT, sub="Currency", origin="center")
@@ -678,7 +682,7 @@ def ticket(m):
 
 @asset("TicketRoll", CAT, sub="Currency")
 def ticket_roll(m):
-    m.cyl(r=0.9, h=0.8, seg=8, color=lambda c, n: "plastic_red" if abs(n.z) > 0.5 else "gold_light", loc=(0, 0, 0.9),
+    m.cyl(r=0.9, h=0.8, seg=8, color=lambda c, n: "plastic_red" if abs(n.y) > 0.5 else "gold_light", loc=(0, 0, 0.9),
           rot=(90, 0, 0))
     m.box((0.8, 0.05, 1.6), color="gold_light", loc=(0.8, 0, 0.1), rot=(0, 20, 0))
 
