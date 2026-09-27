@@ -15,7 +15,7 @@ import zipfile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "downloads")
 CATS = ["Food", "Tools", "Weapons", "Furniture", "Nature", "Props", "Animals", "Vehicles", "Buildings", "Military",
-        "Commercial", "Tycoon"]
+        "Commercial", "Tycoon", "Holidays"]
 
 HOW_TO = """STUD LOW POLY ASSETS - HOW TO PUT THEM IN ROBLOX STUDIO
 =====================================================

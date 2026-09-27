@@ -32,9 +32,9 @@ from studlib import output, palette, registry, render, studs  # noqa: E402
 from studlib.geo import Builder, set_style  # noqa: E402
 
 CATEGORY_MODULES = ["food", "tools", "weapons", "furniture", "nature", "props", "animals", "vehicles",
-                    "buildings", "military", "commercial", "tycoon"]
+                    "buildings", "military", "commercial", "tycoon", "seasonal"]
 CATEGORY_ORDER = ["Food", "Tools", "Weapons", "Furniture", "Nature", "Props", "Animals", "Vehicles", "Buildings",
-                  "Military", "Commercial", "Tycoon"]
+                  "Military", "Commercial", "Tycoon", "Holidays"]
 PART_TRI_LIMIT = 20000   # Roblox MeshPart triangle limit
 
 

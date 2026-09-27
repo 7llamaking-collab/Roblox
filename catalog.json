@@ -21755,5 +21755,2818 @@
    "fbx": "exports/fbx/Military/Pillbox.fbx",
    "preview": "previews/Military/Pillbox.png"
   }
+ ],
+ "Commercial": [
+  {
+   "name": "RestaurantTable2",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 388,
+   "size_studs": [
+    3.0,
+    6.54,
+    3.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/RestaurantTable2.fbx",
+   "preview": "previews/Commercial/RestaurantTable2.png"
+  },
+  {
+   "name": "RestaurantTable4",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 684,
+   "size_studs": [
+    7.34,
+    7.34,
+    3.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/RestaurantTable4.fbx",
+   "preview": "previews/Commercial/RestaurantTable4.png"
+  },
+  {
+   "name": "CheckeredTable4",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 876,
+   "size_studs": [
+    7.34,
+    7.34,
+    3.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/CheckeredTable4.fbx",
+   "preview": "previews/Commercial/CheckeredTable4.png"
+  },
+  {
+   "name": "DinerBooth",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 500,
+   "size_studs": [
+    5.0,
+    7.9,
+    4.65
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/DinerBooth.fbx",
+   "preview": "previews/Commercial/DinerBooth.png"
+  },
+  {
+   "name": "TealBooth",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 500,
+   "size_studs": [
+    5.0,
+    7.9,
+    4.65
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/TealBooth.fbx",
+   "preview": "previews/Commercial/TealBooth.png"
+  },
+  {
+   "name": "DinerStool",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 164,
+   "size_studs": [
+    1.5,
+    1.5,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/DinerStool.fbx",
+   "preview": "previews/Commercial/DinerStool.png"
+  },
+  {
+   "name": "HostStand",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 68,
+   "size_studs": [
+    2.2,
+    1.61,
+    4.14
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/HostStand.fbx",
+   "preview": "previews/Commercial/HostStand.png"
+  },
+  {
+   "name": "ServiceCounter",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 224,
+   "size_studs": [
+    8.3,
+    2.4,
+    4.84
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/ServiceCounter.fbx",
+   "preview": "previews/Commercial/ServiceCounter.png"
+  },
+  {
+   "name": "CashRegister",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 124,
+   "size_studs": [
+    1.4,
+    1.2,
+    1.57
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/CashRegister.fbx",
+   "preview": "previews/Commercial/CashRegister.png"
+  },
+  {
+   "name": "Jukebox",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 144,
+   "size_studs": [
+    2.6,
+    1.88,
+    4.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/Jukebox.fbx",
+   "preview": "previews/Commercial/Jukebox.png"
+  },
+  {
+   "name": "MenuBoard",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 780,
+   "size_studs": [
+    9.2,
+    0.65,
+    3.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/MenuBoard.fbx",
+   "preview": "previews/Commercial/MenuBoard.png"
+  },
+  {
+   "name": "RestaurantTrashCan",
+   "category": "Commercial",
+   "group": "FixturesRestaurant",
+   "tris": 68,
+   "size_studs": [
+    2.0,
+    2.0,
+    3.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/RestaurantTrashCan.fbx",
+   "preview": "previews/Commercial/RestaurantTrashCan.png"
+  },
+  {
+   "name": "CommercialStove",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 596,
+   "size_studs": [
+    4.0,
+    2.85,
+    4.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/CommercialStove.fbx",
+   "preview": "previews/Commercial/CommercialStove.png"
+  },
+  {
+   "name": "ExhaustHood",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 68,
+   "size_studs": [
+    6.0,
+    3.1,
+    5.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/ExhaustHood.fbx",
+   "preview": "previews/Commercial/ExhaustHood.png"
+  },
+  {
+   "name": "DeepFryer",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 128,
+   "size_studs": [
+    2.4,
+    2.66,
+    4.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/DeepFryer.fbx",
+   "preview": "previews/Commercial/DeepFryer.png"
+  },
+  {
+   "name": "FlatGrill",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 248,
+   "size_studs": [
+    4.0,
+    2.6,
+    4.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/FlatGrill.fbx",
+   "preview": "previews/Commercial/FlatGrill.png"
+  },
+  {
+   "name": "CommercialFridge",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 168,
+   "size_studs": [
+    4.0,
+    2.92,
+    8.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/CommercialFridge.fbx",
+   "preview": "previews/Commercial/CommercialFridge.png"
+  },
+  {
+   "name": "DrinkFridge",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 528,
+   "size_studs": [
+    4.0,
+    2.92,
+    8.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/DrinkFridge.fbx",
+   "preview": "previews/Commercial/DrinkFridge.png"
+  },
+  {
+   "name": "DishSink",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 188,
+   "size_studs": [
+    4.0,
+    2.6,
+    4.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/DishSink.fbx",
+   "preview": "previews/Commercial/DishSink.png"
+  },
+  {
+   "name": "PrepTable",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 368,
+   "size_studs": [
+    5.0,
+    2.4,
+    4.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/PrepTable.fbx",
+   "preview": "previews/Commercial/PrepTable.png"
+  },
+  {
+   "name": "PizzaOven",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 274,
+   "size_studs": [
+    5.0,
+    4.43,
+    8.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/PizzaOven.fbx",
+   "preview": "previews/Commercial/PizzaOven.png"
+  },
+  {
+   "name": "SodaFountain",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 440,
+   "size_studs": [
+    4.3,
+    2.45,
+    6.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/SodaFountain.fbx",
+   "preview": "previews/Commercial/SodaFountain.png"
+  },
+  {
+   "name": "EspressoMachine",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 148,
+   "size_studs": [
+    2.4,
+    2.0,
+    2.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/EspressoMachine.fbx",
+   "preview": "previews/Commercial/EspressoMachine.png"
+  },
+  {
+   "name": "PastryCase",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 564,
+   "size_studs": [
+    5.0,
+    2.4,
+    4.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/PastryCase.fbx",
+   "preview": "previews/Commercial/PastryCase.png"
+  },
+  {
+   "name": "IceCreamCase",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 772,
+   "size_studs": [
+    6.0,
+    2.8,
+    4.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/IceCreamCase.fbx",
+   "preview": "previews/Commercial/IceCreamCase.png"
+  },
+  {
+   "name": "SushiConveyor",
+   "category": "Commercial",
+   "group": "FixturesKitchen",
+   "tris": 1308,
+   "size_studs": [
+    16.8,
+    7.8,
+    3.83
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/SushiConveyor.fbx",
+   "preview": "previews/Commercial/SushiConveyor.png"
+  },
+  {
+   "name": "GroceryShelf",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 1416,
+   "size_studs": [
+    10.31,
+    2.7,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/GroceryShelf.fbx",
+   "preview": "previews/Commercial/GroceryShelf.png"
+  },
+  {
+   "name": "DrinkCooler",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 1376,
+   "size_studs": [
+    12.0,
+    2.7,
+    8.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/DrinkCooler.fbx",
+   "preview": "previews/Commercial/DrinkCooler.png"
+  },
+  {
+   "name": "FreezerChest",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 152,
+   "size_studs": [
+    8.0,
+    3.0,
+    2.91
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/FreezerChest.fbx",
+   "preview": "previews/Commercial/FreezerChest.png"
+  },
+  {
+   "name": "CheckoutLane",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 588,
+   "size_studs": [
+    7.5,
+    3.65,
+    6.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/CheckoutLane.fbx",
+   "preview": "previews/Commercial/CheckoutLane.png"
+  },
+  {
+   "name": "ProduceStand",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 1904,
+   "size_studs": [
+    6.1,
+    3.6,
+    3.35
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/ProduceStand.fbx",
+   "preview": "previews/Commercial/ProduceStand.png"
+  },
+  {
+   "name": "ShoppingCart",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 216,
+   "size_studs": [
+    2.4,
+    3.45,
+    3.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/ShoppingCart.fbx",
+   "preview": "previews/Commercial/ShoppingCart.png"
+  },
+  {
+   "name": "SlushieMachine",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 252,
+   "size_studs": [
+    4.3,
+    2.4,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/SlushieMachine.fbx",
+   "preview": "previews/Commercial/SlushieMachine.png"
+  },
+  {
+   "name": "ClothingRack",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 396,
+   "size_studs": [
+    5.2,
+    2.2,
+    4.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/ClothingRack.fbx",
+   "preview": "previews/Commercial/ClothingRack.png"
+  },
+  {
+   "name": "Mannequin",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 188,
+   "size_studs": [
+    2.81,
+    1.6,
+    6.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/Mannequin.fbx",
+   "preview": "previews/Commercial/Mannequin.png"
+  },
+  {
+   "name": "FittingRoom",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 132,
+   "size_studs": [
+    4.3,
+    4.05,
+    7.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/FittingRoom.fbx",
+   "preview": "previews/Commercial/FittingRoom.png"
+  },
+  {
+   "name": "ClothesShelf",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 800,
+   "size_studs": [
+    6.0,
+    1.8,
+    7.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/ClothesShelf.fbx",
+   "preview": "previews/Commercial/ClothesShelf.png"
+  },
+  {
+   "name": "TVWall",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 348,
+   "size_studs": [
+    12.0,
+    0.82,
+    7.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/TVWall.fbx",
+   "preview": "previews/Commercial/TVWall.png"
+  },
+  {
+   "name": "LaptopTable",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 164,
+   "size_studs": [
+    6.0,
+    3.0,
+    4.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/LaptopTable.fbx",
+   "preview": "previews/Commercial/LaptopTable.png"
+  },
+  {
+   "name": "PhoneTable",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 272,
+   "size_studs": [
+    6.0,
+    3.0,
+    4.35
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/PhoneTable.fbx",
+   "preview": "previews/Commercial/PhoneTable.png"
+  },
+  {
+   "name": "JewelryCase",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 496,
+   "size_studs": [
+    6.0,
+    2.4,
+    3.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/JewelryCase.fbx",
+   "preview": "previews/Commercial/JewelryCase.png"
+  },
+  {
+   "name": "FishTankRow",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 296,
+   "size_studs": [
+    8.0,
+    2.4,
+    5.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/FishTankRow.fbx",
+   "preview": "previews/Commercial/FishTankRow.png"
+  },
+  {
+   "name": "PetCages",
+   "category": "Commercial",
+   "group": "FixturesStore",
+   "tris": 1188,
+   "size_studs": [
+    8.0,
+    2.6,
+    5.52
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/PetCages.fbx",
+   "preview": "previews/Commercial/PetCages.png"
+  },
+  {
+   "name": "TellerCounter",
+   "category": "Commercial",
+   "group": "FixturesBank",
+   "tris": 712,
+   "size_studs": [
+    12.4,
+    2.96,
+    8.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/TellerCounter.fbx",
+   "preview": "previews/Commercial/TellerCounter.png"
+  },
+  {
+   "name": "VaultDoor",
+   "category": "Commercial",
+   "group": "FixturesBank",
+   "tris": 456,
+   "size_studs": [
+    10.4,
+    3.3,
+    10.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/VaultDoor.fbx",
+   "preview": "previews/Commercial/VaultDoor.png"
+  },
+  {
+   "name": "DepositBoxes",
+   "category": "Commercial",
+   "group": "FixturesBank",
+   "tris": 1548,
+   "size_studs": [
+    8.0,
+    1.65,
+    8.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/DepositBoxes.fbx",
+   "preview": "previews/Commercial/DepositBoxes.png"
+  },
+  {
+   "name": "CashPallet",
+   "category": "Commercial",
+   "group": "FixturesBank",
+   "tris": 1356,
+   "size_studs": [
+    3.4,
+    3.4,
+    2.41
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/CashPallet.fbx",
+   "preview": "previews/Commercial/CashPallet.png"
+  },
+  {
+   "name": "GoldPallet",
+   "category": "Commercial",
+   "group": "FixturesBank",
+   "tris": 292,
+   "size_studs": [
+    4.66,
+    3.4,
+    2.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/GoldPallet.fbx",
+   "preview": "previews/Commercial/GoldPallet.png"
+  },
+  {
+   "name": "QueuePosts",
+   "category": "Commercial",
+   "group": "FixturesBank",
+   "tris": 664,
+   "size_studs": [
+    10.8,
+    3.9,
+    3.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/QueuePosts.fbx",
+   "preview": "previews/Commercial/QueuePosts.png"
+  },
+  {
+   "name": "LobbyBench",
+   "category": "Commercial",
+   "group": "FixturesBank",
+   "tris": 112,
+   "size_studs": [
+    6.0,
+    1.9,
+    3.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/LobbyBench.fbx",
+   "preview": "previews/Commercial/LobbyBench.png"
+  },
+  {
+   "name": "OfficeDesk",
+   "category": "Commercial",
+   "group": "FixturesOffice",
+   "tris": 328,
+   "size_studs": [
+    5.0,
+    4.5,
+    4.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/OfficeDesk.fbx",
+   "preview": "previews/Commercial/OfficeDesk.png"
+  },
+  {
+   "name": "Cubicle",
+   "category": "Commercial",
+   "group": "FixturesOffice",
+   "tris": 440,
+   "size_studs": [
+    7.25,
+    8.65,
+    4.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/Cubicle.fbx",
+   "preview": "previews/Commercial/Cubicle.png"
+  },
+  {
+   "name": "WaterCooler",
+   "category": "Commercial",
+   "group": "FixturesOffice",
+   "tris": 96,
+   "size_studs": [
+    1.4,
+    1.65,
+    5.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/WaterCooler.fbx",
+   "preview": "previews/Commercial/WaterCooler.png"
+  },
+  {
+   "name": "OfficePrinter",
+   "category": "Commercial",
+   "group": "FixturesOffice",
+   "tris": 112,
+   "size_studs": [
+    2.6,
+    2.1,
+    3.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/OfficePrinter.fbx",
+   "preview": "previews/Commercial/OfficePrinter.png"
+  },
+  {
+   "name": "Treadmill",
+   "category": "Commercial",
+   "group": "FixturesGym",
+   "tris": 136,
+   "size_studs": [
+    2.2,
+    5.5,
+    4.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/Treadmill.fbx",
+   "preview": "previews/Commercial/Treadmill.png"
+  },
+  {
+   "name": "DumbbellRack",
+   "category": "Commercial",
+   "group": "FixturesGym",
+   "tris": 1448,
+   "size_studs": [
+    6.3,
+    1.6,
+    3.54
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/DumbbellRack.fbx",
+   "preview": "previews/Commercial/DumbbellRack.png"
+  },
+  {
+   "name": "BenchPress",
+   "category": "Commercial",
+   "group": "FixturesGym",
+   "tris": 156,
+   "size_studs": [
+    6.0,
+    4.5,
+    4.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/BenchPress.fbx",
+   "preview": "previews/Commercial/BenchPress.png"
+  },
+  {
+   "name": "PunchingBag",
+   "category": "Commercial",
+   "group": "FixturesGym",
+   "tris": 100,
+   "size_studs": [
+    1.9,
+    1.9,
+    6.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/PunchingBag.fbx",
+   "preview": "previews/Commercial/PunchingBag.png"
+  },
+  {
+   "name": "ClawMachine",
+   "category": "Commercial",
+   "group": "FixturesArcade",
+   "tris": 960,
+   "size_studs": [
+    3.2,
+    3.5,
+    7.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/ClawMachine.fbx",
+   "preview": "previews/Commercial/ClawMachine.png"
+  },
+  {
+   "name": "ArcadeCabinet",
+   "category": "Commercial",
+   "group": "FixturesArcade",
+   "tris": 208,
+   "size_studs": [
+    2.4,
+    3.12,
+    7.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/ArcadeCabinet.fbx",
+   "preview": "previews/Commercial/ArcadeCabinet.png"
+  },
+  {
+   "name": "Diner",
+   "category": "Commercial",
+   "group": "Restaurants",
+   "tris": 14148,
+   "size_studs": [
+    44.0,
+    40.35,
+    16.58
+   ],
+   "rigged": false,
+   "parts": [
+    "Diner_Glass",
+    "Diner_DoorL",
+    "Diner_DoorR",
+    "Diner_BackDoor",
+    "Diner_KitchenDoor",
+    "Diner_Booths",
+    "Diner_Tables",
+    "Diner_Counter",
+    "Diner_Kitchen",
+    "Diner_Decor",
+    "Diner_Roof",
+    "Diner_Sign"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/Diner.fbx",
+   "preview": "previews/Commercial/Diner.png",
+   "preview_inside": "previews/Commercial/Diner_Inside.png"
+  },
+  {
+   "name": "BurgerRestaurant",
+   "category": "Commercial",
+   "group": "Restaurants",
+   "tris": 16526,
+   "size_studs": [
+    56.0,
+    42.35,
+    22.32
+   ],
+   "rigged": false,
+   "parts": [
+    "BurgerRestaurant_Glass",
+    "BurgerRestaurant_DoorL",
+    "BurgerRestaurant_DoorR",
+    "BurgerRestaurant_BackDoor",
+    "BurgerRestaurant_Roof",
+    "BurgerRestaurant_Sign",
+    "BurgerRestaurant_Counter",
+    "BurgerRestaurant_Kitchen",
+    "BurgerRestaurant_MenuBoards",
+    "BurgerRestaurant_Dining"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/BurgerRestaurant.fbx",
+   "preview": "previews/Commercial/BurgerRestaurant.png",
+   "preview_inside": "previews/Commercial/BurgerRestaurant_Inside.png"
+  },
+  {
+   "name": "Pizzeria",
+   "category": "Commercial",
+   "group": "Restaurants",
+   "tris": 9974,
+   "size_studs": [
+    40.0,
+    38.35,
+    16.5
+   ],
+   "rigged": false,
+   "parts": [
+    "Pizzeria_Glass",
+    "Pizzeria_DoorL",
+    "Pizzeria_DoorR",
+    "Pizzeria_BackDoor",
+    "Pizzeria_Roof",
+    "Pizzeria_Sign",
+    "Pizzeria_Kitchen",
+    "Pizzeria_Counter",
+    "Pizzeria_Dining",
+    "Pizzeria_Decor"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/Pizzeria.fbx",
+   "preview": "previews/Commercial/Pizzeria.png",
+   "preview_inside": "previews/Commercial/Pizzeria_Inside.png"
+  },
+  {
+   "name": "SushiBar",
+   "category": "Commercial",
+   "group": "Restaurants",
+   "tris": 10128,
+   "size_studs": [
+    42.0,
+    38.35,
+    16.5
+   ],
+   "rigged": false,
+   "parts": [
+    "SushiBar_Glass",
+    "SushiBar_DoorL",
+    "SushiBar_DoorR",
+    "SushiBar_BackDoor",
+    "SushiBar_Roof",
+    "SushiBar_Sign",
+    "SushiBar_SushiCounter",
+    "SushiBar_Kitchen",
+    "SushiBar_Tatami",
+    "SushiBar_Decor"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/SushiBar.fbx",
+   "preview": "previews/Commercial/SushiBar.png",
+   "preview_inside": "previews/Commercial/SushiBar_Inside.png"
+  },
+  {
+   "name": "CoffeeShop",
+   "category": "Commercial",
+   "group": "Restaurants",
+   "tris": 9360,
+   "size_studs": [
+    38.0,
+    34.35,
+    16.25
+   ],
+   "rigged": false,
+   "parts": [
+    "CoffeeShop_Glass",
+    "CoffeeShop_DoorL",
+    "CoffeeShop_DoorR",
+    "CoffeeShop_BackDoor",
+    "CoffeeShop_Roof",
+    "CoffeeShop_Sign",
+    "CoffeeShop_Counter",
+    "CoffeeShop_Seating",
+    "CoffeeShop_Decor"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/CoffeeShop.fbx",
+   "preview": "previews/Commercial/CoffeeShop.png",
+   "preview_inside": "previews/Commercial/CoffeeShop_Inside.png"
+  },
+  {
+   "name": "IceCreamParlor",
+   "category": "Commercial",
+   "group": "Restaurants",
+   "tris": 8414,
+   "size_studs": [
+    34.0,
+    32.35,
+    22.1
+   ],
+   "rigged": false,
+   "parts": [
+    "IceCreamParlor_Glass",
+    "IceCreamParlor_DoorL",
+    "IceCreamParlor_DoorR",
+    "IceCreamParlor_BackDoor",
+    "IceCreamParlor_Roof",
+    "IceCreamParlor_Sign",
+    "IceCreamParlor_Counter",
+    "IceCreamParlor_Seating",
+    "IceCreamParlor_Decor"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/IceCreamParlor.fbx",
+   "preview": "previews/Commercial/IceCreamParlor.png",
+   "preview_inside": "previews/Commercial/IceCreamParlor_Inside.png"
+  },
+  {
+   "name": "DonutShop",
+   "category": "Commercial",
+   "group": "Restaurants",
+   "tris": 7876,
+   "size_studs": [
+    32.0,
+    30.35,
+    22.0
+   ],
+   "rigged": false,
+   "parts": [
+    "DonutShop_Glass",
+    "DonutShop_DoorL",
+    "DonutShop_DoorR",
+    "DonutShop_BackDoor",
+    "DonutShop_Roof",
+    "DonutShop_Sign",
+    "DonutShop_Counter",
+    "DonutShop_Seating"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/DonutShop.fbx",
+   "preview": "previews/Commercial/DonutShop.png",
+   "preview_inside": "previews/Commercial/DonutShop_Inside.png"
+  },
+  {
+   "name": "BankATM",
+   "category": "Commercial",
+   "group": "FixturesBank",
+   "tris": 424,
+   "size_studs": [
+    2.6,
+    2.61,
+    6.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/BankATM.fbx",
+   "preview": "previews/Commercial/BankATM.png"
+  },
+  {
+   "name": "GrandBank",
+   "category": "Commercial",
+   "group": "Bank",
+   "tris": 21772,
+   "size_studs": [
+    48.3,
+    48.85,
+    24.2
+   ],
+   "rigged": false,
+   "parts": [
+    "GrandBank_Glass",
+    "GrandBank_DoorL",
+    "GrandBank_DoorR",
+    "GrandBank_Roof",
+    "GrandBank_Vault",
+    "GrandBank_StaffDoor",
+    "GrandBank_Tellers",
+    "GrandBank_Lobby",
+    "GrandBank_Security"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/GrandBank.fbx",
+   "preview": "previews/Commercial/GrandBank.png",
+   "preview_inside": "previews/Commercial/GrandBank_Inside.png"
+  },
+  {
+   "name": "Supermarket",
+   "category": "Commercial",
+   "group": "Stores",
+   "tris": 34168,
+   "size_studs": [
+    68.0,
+    54.35,
+    18.5
+   ],
+   "rigged": false,
+   "parts": [
+    "Supermarket_Glass",
+    "Supermarket_DoorL",
+    "Supermarket_DoorR",
+    "Supermarket_BackDoor",
+    "Supermarket_Roof",
+    "Supermarket_Sign",
+    "Supermarket_Checkouts",
+    "Supermarket_Produce",
+    "Supermarket_Aisles",
+    "Supermarket_Coolers",
+    "Supermarket_Deli",
+    "Supermarket_Carts",
+    "Supermarket_AisleSigns"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/Supermarket.fbx",
+   "preview": "previews/Commercial/Supermarket.png",
+   "preview_inside": "previews/Commercial/Supermarket_Inside.png"
+  },
+  {
+   "name": "ConvenienceStore",
+   "category": "Commercial",
+   "group": "Stores",
+   "tris": 10352,
+   "size_studs": [
+    40.0,
+    30.35,
+    15.51
+   ],
+   "rigged": false,
+   "parts": [
+    "ConvenienceStore_Glass",
+    "ConvenienceStore_DoorL",
+    "ConvenienceStore_DoorR",
+    "ConvenienceStore_BackDoor",
+    "ConvenienceStore_Roof",
+    "ConvenienceStore_Sign",
+    "ConvenienceStore_Counter",
+    "ConvenienceStore_Aisles",
+    "ConvenienceStore_Coolers"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/ConvenienceStore.fbx",
+   "preview": "previews/Commercial/ConvenienceStore.png",
+   "preview_inside": "previews/Commercial/ConvenienceStore_Inside.png"
+  },
+  {
+   "name": "ClothingStore",
+   "category": "Commercial",
+   "group": "Stores",
+   "tris": 10240,
+   "size_studs": [
+    40.0,
+    36.35,
+    16.1
+   ],
+   "rigged": false,
+   "parts": [
+    "ClothingStore_Glass",
+    "ClothingStore_DoorL",
+    "ClothingStore_DoorR",
+    "ClothingStore_BackDoor",
+    "ClothingStore_Roof",
+    "ClothingStore_Sign",
+    "ClothingStore_Window",
+    "ClothingStore_Racks",
+    "ClothingStore_Shelves",
+    "ClothingStore_FittingRooms",
+    "ClothingStore_Counter"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/ClothingStore.fbx",
+   "preview": "previews/Commercial/ClothingStore.png",
+   "preview_inside": "previews/Commercial/ClothingStore_Inside.png"
+  },
+  {
+   "name": "ElectronicsStore",
+   "category": "Commercial",
+   "group": "Stores",
+   "tris": 7332,
+   "size_studs": [
+    42.0,
+    36.35,
+    16.0
+   ],
+   "rigged": false,
+   "parts": [
+    "ElectronicsStore_Glass",
+    "ElectronicsStore_DoorL",
+    "ElectronicsStore_DoorR",
+    "ElectronicsStore_BackDoor",
+    "ElectronicsStore_Roof",
+    "ElectronicsStore_Sign",
+    "ElectronicsStore_TVs",
+    "ElectronicsStore_Tables",
+    "ElectronicsStore_Games",
+    "ElectronicsStore_Counter"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/ElectronicsStore.fbx",
+   "preview": "previews/Commercial/ElectronicsStore.png",
+   "preview_inside": "previews/Commercial/ElectronicsStore_Inside.png"
+  },
+  {
+   "name": "JewelryStore",
+   "category": "Commercial",
+   "group": "Stores",
+   "tris": 6280,
+   "size_studs": [
+    32.0,
+    30.35,
+    16.13
+   ],
+   "rigged": false,
+   "parts": [
+    "JewelryStore_Glass",
+    "JewelryStore_DoorL",
+    "JewelryStore_DoorR",
+    "JewelryStore_BackDoor",
+    "JewelryStore_Roof",
+    "JewelryStore_Sign",
+    "JewelryStore_Cases",
+    "JewelryStore_Back"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/JewelryStore.fbx",
+   "preview": "previews/Commercial/JewelryStore.png",
+   "preview_inside": "previews/Commercial/JewelryStore_Inside.png"
+  },
+  {
+   "name": "PetStore",
+   "category": "Commercial",
+   "group": "Stores",
+   "tris": 9706,
+   "size_studs": [
+    38.0,
+    34.35,
+    16.0
+   ],
+   "rigged": false,
+   "parts": [
+    "PetStore_Glass",
+    "PetStore_DoorL",
+    "PetStore_DoorR",
+    "PetStore_BackDoor",
+    "PetStore_Roof",
+    "PetStore_Sign",
+    "PetStore_FishTanks",
+    "PetStore_Cages",
+    "PetStore_Shelves",
+    "PetStore_Counter",
+    "PetStore_PetStuff"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/PetStore.fbx",
+   "preview": "previews/Commercial/PetStore.png",
+   "preview_inside": "previews/Commercial/PetStore_Inside.png"
+  },
+  {
+   "name": "BoxingRing",
+   "category": "Commercial",
+   "group": "FixturesGym",
+   "tris": 248,
+   "size_studs": [
+    12.0,
+    12.0,
+    5.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/BoxingRing.fbx",
+   "preview": "previews/Commercial/BoxingRing.png"
+  },
+  {
+   "name": "Gym",
+   "category": "Commercial",
+   "group": "Leisure",
+   "tris": 10432,
+   "size_studs": [
+    50.0,
+    42.35,
+    19.25
+   ],
+   "rigged": false,
+   "parts": [
+    "Gym_Glass",
+    "Gym_DoorL",
+    "Gym_DoorR",
+    "Gym_BackDoor",
+    "Gym_Roof",
+    "Gym_Sign",
+    "Gym_Cardio",
+    "Gym_Weights",
+    "Gym_Boxing",
+    "Gym_FrontDesk",
+    "Gym_Lockers"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/Gym.fbx",
+   "preview": "previews/Commercial/Gym.png",
+   "preview_inside": "previews/Commercial/Gym_Inside.png"
+  },
+  {
+   "name": "AirHockey",
+   "category": "Commercial",
+   "group": "FixturesArcade",
+   "tris": 152,
+   "size_studs": [
+    4.0,
+    7.0,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/AirHockey.fbx",
+   "preview": "previews/Commercial/AirHockey.png"
+  },
+  {
+   "name": "ArcadeHall",
+   "category": "Commercial",
+   "group": "Leisure",
+   "tris": 11672,
+   "size_studs": [
+    44.0,
+    38.35,
+    16.5
+   ],
+   "rigged": false,
+   "parts": [
+    "ArcadeHall_Glass",
+    "ArcadeHall_DoorL",
+    "ArcadeHall_DoorR",
+    "ArcadeHall_BackDoor",
+    "ArcadeHall_Roof",
+    "ArcadeHall_Sign",
+    "ArcadeHall_Cabinets",
+    "ArcadeHall_Claws",
+    "ArcadeHall_Prizes",
+    "ArcadeHall_Games"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/ArcadeHall.fbx",
+   "preview": "previews/Commercial/ArcadeHall.png",
+   "preview_inside": "previews/Commercial/ArcadeHall_Inside.png"
+  },
+  {
+   "name": "Office",
+   "category": "Commercial",
+   "group": "Leisure",
+   "tris": 8044,
+   "size_studs": [
+    48.0,
+    42.35,
+    16.1
+   ],
+   "rigged": false,
+   "parts": [
+    "Office_Glass",
+    "Office_DoorL",
+    "Office_DoorR",
+    "Office_BackDoor",
+    "Office_Roof",
+    "Office_Sign",
+    "Office_Reception",
+    "Office_Cubicles",
+    "Office_MeetingRoom",
+    "Office_Services"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/Office.fbx",
+   "preview": "previews/Commercial/Office.png",
+   "preview_inside": "previews/Commercial/Office_Inside.png"
+  },
+  {
+   "name": "SalonChair",
+   "category": "Commercial",
+   "group": "FixturesServices",
+   "tris": 216,
+   "size_studs": [
+    2.7,
+    3.21,
+    5.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/SalonChair.fbx",
+   "preview": "previews/Commercial/SalonChair.png"
+  },
+  {
+   "name": "SalonStation",
+   "category": "Commercial",
+   "group": "FixturesServices",
+   "tris": 344,
+   "size_studs": [
+    4.4,
+    5.36,
+    8.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/SalonStation.fbx",
+   "preview": "previews/Commercial/SalonStation.png"
+  },
+  {
+   "name": "Washer",
+   "category": "Commercial",
+   "group": "FixturesServices",
+   "tris": 176,
+   "size_studs": [
+    2.6,
+    2.8,
+    3.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/Washer.fbx",
+   "preview": "previews/Commercial/Washer.png"
+  },
+  {
+   "name": "CoinDryer",
+   "category": "Commercial",
+   "group": "FixturesServices",
+   "tris": 176,
+   "size_studs": [
+    2.6,
+    2.8,
+    3.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/CoinDryer.fbx",
+   "preview": "previews/Commercial/CoinDryer.png"
+  },
+  {
+   "name": "TheaterSeat",
+   "category": "Commercial",
+   "group": "FixturesServices",
+   "tris": 152,
+   "size_studs": [
+    2.35,
+    1.9,
+    3.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/TheaterSeat.fbx",
+   "preview": "previews/Commercial/TheaterSeat.png"
+  },
+  {
+   "name": "TheaterSeatRows",
+   "category": "Commercial",
+   "group": "FixturesServices",
+   "tris": 2760,
+   "size_studs": [
+    13.6,
+    8.9,
+    5.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fixture"
+   ],
+   "fbx": "exports/fbx/Commercial/TheaterSeatRows.fbx",
+   "preview": "previews/Commercial/TheaterSeatRows.png"
+  },
+  {
+   "name": "Pharmacy",
+   "category": "Commercial",
+   "group": "Stores",
+   "tris": 11680,
+   "size_studs": [
+    40.0,
+    36.35,
+    16.13
+   ],
+   "rigged": false,
+   "parts": [
+    "Pharmacy_Glass",
+    "Pharmacy_DoorL",
+    "Pharmacy_DoorR",
+    "Pharmacy_BackDoor",
+    "Pharmacy_Roof",
+    "Pharmacy_Sign",
+    "Pharmacy_Aisles",
+    "Pharmacy_Counter",
+    "Pharmacy_Seating"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/Pharmacy.fbx",
+   "preview": "previews/Commercial/Pharmacy.png",
+   "preview_inside": "previews/Commercial/Pharmacy_Inside.png"
+  },
+  {
+   "name": "HairSalon",
+   "category": "Commercial",
+   "group": "Services",
+   "tris": 6636,
+   "size_studs": [
+    36.0,
+    32.35,
+    15.86
+   ],
+   "rigged": false,
+   "parts": [
+    "HairSalon_Glass",
+    "HairSalon_DoorL",
+    "HairSalon_DoorR",
+    "HairSalon_BackDoor",
+    "HairSalon_Roof",
+    "HairSalon_Sign",
+    "HairSalon_Stations",
+    "HairSalon_Washing",
+    "HairSalon_Reception"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/HairSalon.fbx",
+   "preview": "previews/Commercial/HairSalon.png",
+   "preview_inside": "previews/Commercial/HairSalon_Inside.png"
+  },
+  {
+   "name": "Laundromat",
+   "category": "Commercial",
+   "group": "Services",
+   "tris": 8088,
+   "size_studs": [
+    38.0,
+    34.35,
+    16.1
+   ],
+   "rigged": false,
+   "parts": [
+    "Laundromat_Glass",
+    "Laundromat_DoorL",
+    "Laundromat_DoorR",
+    "Laundromat_BackDoor",
+    "Laundromat_Roof",
+    "Laundromat_Sign",
+    "Laundromat_Washers",
+    "Laundromat_Tables"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/Laundromat.fbx",
+   "preview": "previews/Commercial/Laundromat.png",
+   "preview_inside": "previews/Commercial/Laundromat_Inside.png"
+  },
+  {
+   "name": "MovieTheater",
+   "category": "Commercial",
+   "group": "Leisure",
+   "tris": 15312,
+   "size_studs": [
+    48.0,
+    54.35,
+    20.75
+   ],
+   "rigged": false,
+   "parts": [
+    "MovieTheater_Glass",
+    "MovieTheater_DoorL",
+    "MovieTheater_DoorR",
+    "MovieTheater_BackDoor",
+    "MovieTheater_Roof",
+    "MovieTheater_Sign",
+    "MovieTheater_SnackBar",
+    "MovieTheater_Screen",
+    "MovieTheater_Seats",
+    "MovieTheater_Posters"
+   ],
+   "tags": [
+    "building",
+    "interior"
+   ],
+   "fbx": "exports/fbx/Commercial/MovieTheater.fbx",
+   "preview": "previews/Commercial/MovieTheater.png",
+   "preview_inside": "previews/Commercial/MovieTheater_Inside.png"
+  }
+ ],
+ "Tycoon": [
+  {
+   "name": "WoodDropper",
+   "category": "Tycoon",
+   "group": "Droppers",
+   "tris": 414,
+   "size_studs": [
+    4.6,
+    4.62,
+    11.9
+   ],
+   "rigged": false,
+   "parts": [
+    "WoodDropper_Ore"
+   ],
+   "tags": [
+    "tiered",
+    "wood",
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/WoodDropper.fbx",
+   "preview": "previews/Tycoon/WoodDropper.png"
+  },
+  {
+   "name": "StoneDropper",
+   "category": "Tycoon",
+   "group": "Droppers",
+   "tris": 342,
+   "size_studs": [
+    4.6,
+    4.62,
+    11.9
+   ],
+   "rigged": false,
+   "parts": [
+    "StoneDropper_Ore"
+   ],
+   "tags": [
+    "tiered",
+    "stone",
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/StoneDropper.fbx",
+   "preview": "previews/Tycoon/StoneDropper.png"
+  },
+  {
+   "name": "IronDropper",
+   "category": "Tycoon",
+   "group": "Droppers",
+   "tris": 342,
+   "size_studs": [
+    4.6,
+    4.62,
+    11.9
+   ],
+   "rigged": false,
+   "parts": [
+    "IronDropper_Ore"
+   ],
+   "tags": [
+    "tiered",
+    "iron",
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/IronDropper.fbx",
+   "preview": "previews/Tycoon/IronDropper.png"
+  },
+  {
+   "name": "GoldDropper",
+   "category": "Tycoon",
+   "group": "Droppers",
+   "tris": 366,
+   "size_studs": [
+    4.6,
+    4.62,
+    11.9
+   ],
+   "rigged": false,
+   "parts": [
+    "GoldDropper_Ore"
+   ],
+   "tags": [
+    "tiered",
+    "gold",
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/GoldDropper.fbx",
+   "preview": "previews/Tycoon/GoldDropper.png"
+  },
+  {
+   "name": "DiamondDropper",
+   "category": "Tycoon",
+   "group": "Droppers",
+   "tris": 378,
+   "size_studs": [
+    4.6,
+    4.62,
+    11.9
+   ],
+   "rigged": false,
+   "parts": [
+    "DiamondDropper_Ore"
+   ],
+   "tags": [
+    "tiered",
+    "diamond",
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/DiamondDropper.fbx",
+   "preview": "previews/Tycoon/DiamondDropper.png"
+  },
+  {
+   "name": "EmeraldDropper",
+   "category": "Tycoon",
+   "group": "Droppers",
+   "tris": 342,
+   "size_studs": [
+    4.6,
+    4.62,
+    11.9
+   ],
+   "rigged": false,
+   "parts": [
+    "EmeraldDropper_Ore"
+   ],
+   "tags": [
+    "tiered",
+    "emerald",
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/EmeraldDropper.fbx",
+   "preview": "previews/Tycoon/EmeraldDropper.png"
+  },
+  {
+   "name": "RubyDropper",
+   "category": "Tycoon",
+   "group": "Droppers",
+   "tris": 378,
+   "size_studs": [
+    4.6,
+    4.62,
+    11.9
+   ],
+   "rigged": false,
+   "parts": [
+    "RubyDropper_Ore"
+   ],
+   "tags": [
+    "tiered",
+    "ruby",
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/RubyDropper.fbx",
+   "preview": "previews/Tycoon/RubyDropper.png"
+  },
+  {
+   "name": "RainbowDropper",
+   "category": "Tycoon",
+   "group": "Droppers",
+   "tris": 490,
+   "size_studs": [
+    4.6,
+    4.62,
+    11.9
+   ],
+   "rigged": false,
+   "parts": [
+    "RainbowDropper_Ore"
+   ],
+   "tags": [
+    "tiered",
+    "rainbow",
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/RainbowDropper.fbx",
+   "preview": "previews/Tycoon/RainbowDropper.png"
+  },
+  {
+   "name": "Conveyor",
+   "category": "Tycoon",
+   "group": "Conveyors",
+   "tris": 412,
+   "size_studs": [
+    4.8,
+    12.0,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [
+    "Conveyor_Belt"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/Conveyor.fbx",
+   "preview": "previews/Tycoon/Conveyor.png"
+  },
+  {
+   "name": "LongConveyor",
+   "category": "Tycoon",
+   "group": "Conveyors",
+   "tris": 652,
+   "size_studs": [
+    4.8,
+    24.0,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [
+    "LongConveyor_Belt"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/LongConveyor.fbx",
+   "preview": "previews/Tycoon/LongConveyor.png"
+  },
+  {
+   "name": "ConveyorCorner",
+   "category": "Tycoon",
+   "group": "Conveyors",
+   "tris": 216,
+   "size_studs": [
+    5.0,
+    4.4,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [
+    "ConveyorCorner_Belt"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/ConveyorCorner.fbx",
+   "preview": "previews/Tycoon/ConveyorCorner.png"
+  },
+  {
+   "name": "Upgrader",
+   "category": "Tycoon",
+   "group": "Upgraders",
+   "tris": 348,
+   "size_studs": [
+    7.2,
+    2.12,
+    8.15
+   ],
+   "rigged": false,
+   "parts": [
+    "Upgrader_Laser"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/Upgrader.fbx",
+   "preview": "previews/Tycoon/Upgrader.png"
+  },
+  {
+   "name": "MegaUpgrader",
+   "category": "Tycoon",
+   "group": "Upgraders",
+   "tris": 348,
+   "size_studs": [
+    7.2,
+    2.12,
+    8.15
+   ],
+   "rigged": false,
+   "parts": [
+    "MegaUpgrader_Laser"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/MegaUpgrader.fbx",
+   "preview": "previews/Tycoon/MegaUpgrader.png"
+  },
+  {
+   "name": "UltraUpgrader",
+   "category": "Tycoon",
+   "group": "Upgraders",
+   "tris": 444,
+   "size_studs": [
+    7.2,
+    2.12,
+    8.15
+   ],
+   "rigged": false,
+   "parts": [
+    "UltraUpgrader_Laser"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/UltraUpgrader.fbx",
+   "preview": "previews/Tycoon/UltraUpgrader.png"
+  },
+  {
+   "name": "Furnace",
+   "category": "Tycoon",
+   "group": "Collectors",
+   "tris": 376,
+   "size_studs": [
+    6.4,
+    5.45,
+    9.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/Furnace.fbx",
+   "preview": "previews/Tycoon/Furnace.png"
+  },
+  {
+   "name": "CashCollector",
+   "category": "Tycoon",
+   "group": "Collectors",
+   "tris": 452,
+   "size_studs": [
+    3.4,
+    4.0,
+    5.5
+   ],
+   "rigged": false,
+   "parts": [
+    "CashCollector_Button"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/CashCollector.fbx",
+   "preview": "previews/Tycoon/CashCollector.png"
+  },
+  {
+   "name": "BuyButton",
+   "category": "Tycoon",
+   "group": "Buttons",
+   "tris": 448,
+   "size_studs": [
+    5.5,
+    4.0,
+    5.65
+   ],
+   "rigged": false,
+   "parts": [
+    "BuyButton_Button"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/BuyButton.fbx",
+   "preview": "previews/Tycoon/BuyButton.png"
+  },
+  {
+   "name": "BuyButtonExpensive",
+   "category": "Tycoon",
+   "group": "Buttons",
+   "tris": 544,
+   "size_studs": [
+    6.7,
+    4.0,
+    5.65
+   ],
+   "rigged": false,
+   "parts": [
+    "BuyButtonExpensive_Button"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/BuyButtonExpensive.fbx",
+   "preview": "previews/Tycoon/BuyButtonExpensive.png"
+  },
+  {
+   "name": "BuyButtonLocked",
+   "category": "Tycoon",
+   "group": "Buttons",
+   "tris": 592,
+   "size_studs": [
+    7.9,
+    4.0,
+    5.6
+   ],
+   "rigged": false,
+   "parts": [
+    "BuyButtonLocked_Button"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/BuyButtonLocked.fbx",
+   "preview": "previews/Tycoon/BuyButtonLocked.png"
+  },
+  {
+   "name": "OwnerDoor",
+   "category": "Tycoon",
+   "group": "Tycoon",
+   "tris": 880,
+   "size_studs": [
+    18.4,
+    7.0,
+    12.75
+   ],
+   "rigged": false,
+   "parts": [
+    "OwnerDoor_Laser"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/OwnerDoor.fbx",
+   "preview": "previews/Tycoon/OwnerDoor.png"
+  },
+  {
+   "name": "DropperTycoonPlot",
+   "category": "Tycoon",
+   "group": "Plots",
+   "tris": 7312,
+   "size_studs": [
+    80.0,
+    83.8,
+    13.85
+   ],
+   "rigged": false,
+   "parts": [
+    "DropperTycoonPlot_Laser",
+    "DropperTycoonPlot_Belt",
+    "DropperTycoonPlot_Dropper1",
+    "DropperTycoonPlot_Ore",
+    "DropperTycoonPlot_Dropper2",
+    "DropperTycoonPlot_Dropper3",
+    "DropperTycoonPlot_Dropper4",
+    "DropperTycoonPlot_Upgrader",
+    "DropperTycoonPlot_Collector",
+    "DropperTycoonPlot_Button",
+    "DropperTycoonPlot_Button1",
+    "DropperTycoonPlot_Button2",
+    "DropperTycoonPlot_Button3",
+    "DropperTycoonPlot_Button4",
+    "DropperTycoonPlot_Button5"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/DropperTycoonPlot.fbx",
+   "preview": "previews/Tycoon/DropperTycoonPlot.png"
+  },
+  {
+   "name": "RestaurantTycoonPlot",
+   "category": "Tycoon",
+   "group": "Plots",
+   "tris": 13832,
+   "size_studs": [
+    80.0,
+    83.8,
+    13.85
+   ],
+   "rigged": false,
+   "parts": [
+    "RestaurantTycoonPlot_Kitchen",
+    "RestaurantTycoonPlot_Counter",
+    "RestaurantTycoonPlot_Dining",
+    "RestaurantTycoonPlot_Laser",
+    "RestaurantTycoonPlot_Button1",
+    "RestaurantTycoonPlot_Button",
+    "RestaurantTycoonPlot_Button2",
+    "RestaurantTycoonPlot_Button3",
+    "RestaurantTycoonPlot_Button4",
+    "RestaurantTycoonPlot_Button5",
+    "RestaurantTycoonPlot_Button6"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/RestaurantTycoonPlot.fbx",
+   "preview": "previews/Tycoon/RestaurantTycoonPlot.png"
+  },
+  {
+   "name": "TycoonPlot",
+   "category": "Tycoon",
+   "group": "Plots",
+   "tris": 1420,
+   "size_studs": [
+    80.0,
+    83.8,
+    13.85
+   ],
+   "rigged": false,
+   "parts": [
+    "TycoonPlot_Laser"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/TycoonPlot.fbx",
+   "preview": "previews/Tycoon/TycoonPlot.png"
+  },
+  {
+   "name": "DisplayPedestal",
+   "category": "Tycoon",
+   "group": "StealBase",
+   "tris": 124,
+   "size_studs": [
+    4.4,
+    6.1,
+    3.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/DisplayPedestal.fbx",
+   "preview": "previews/Tycoon/DisplayPedestal.png"
+  },
+  {
+   "name": "GoldPedestal",
+   "category": "Tycoon",
+   "group": "StealBase",
+   "tris": 124,
+   "size_studs": [
+    4.4,
+    6.1,
+    3.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/GoldPedestal.fbx",
+   "preview": "previews/Tycoon/GoldPedestal.png"
+  },
+  {
+   "name": "RainbowPedestal",
+   "category": "Tycoon",
+   "group": "StealBase",
+   "tris": 176,
+   "size_studs": [
+    4.4,
+    6.1,
+    3.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/RainbowPedestal.fbx",
+   "preview": "previews/Tycoon/RainbowPedestal.png"
+  },
+  {
+   "name": "LaserDoor",
+   "category": "Tycoon",
+   "group": "StealBase",
+   "tris": 280,
+   "size_studs": [
+    15.2,
+    1.6,
+    10.0
+   ],
+   "rigged": false,
+   "parts": [
+    "LaserDoor_Lasers"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/LaserDoor.fbx",
+   "preview": "previews/Tycoon/LaserDoor.png"
+  },
+  {
+   "name": "LockButton",
+   "category": "Tycoon",
+   "group": "StealBase",
+   "tris": 464,
+   "size_studs": [
+    3.0,
+    2.28,
+    5.0
+   ],
+   "rigged": false,
+   "parts": [
+    "LockButton_Button"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/LockButton.fbx",
+   "preview": "previews/Tycoon/LockButton.png"
+  },
+  {
+   "name": "RedCarpetConveyor",
+   "category": "Tycoon",
+   "group": "StealBase",
+   "tris": 1812,
+   "size_studs": [
+    10.2,
+    41.0,
+    9.3
+   ],
+   "rigged": false,
+   "parts": [
+    "RedCarpetConveyor_Belt"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/RedCarpetConveyor.fbx",
+   "preview": "previews/Tycoon/RedCarpetConveyor.png"
+  },
+  {
+   "name": "StealBase",
+   "category": "Tycoon",
+   "group": "StealBase",
+   "tris": 6904,
+   "size_studs": [
+    40.4,
+    98.8,
+    15.1
+   ],
+   "rigged": false,
+   "parts": [
+    "StealBase_Lasers",
+    "StealBase_LockButton",
+    "StealBase_Button",
+    "StealBase_Slot1",
+    "StealBase_Slot2",
+    "StealBase_Slot3",
+    "StealBase_Slot4",
+    "StealBase_Slot5",
+    "StealBase_Slot6",
+    "StealBase_Slot7",
+    "StealBase_Slot8",
+    "StealBase_Slot9",
+    "StealBase_Slot10",
+    "StealBase_Floor2",
+    "StealBase_Slot11",
+    "StealBase_Slot12",
+    "StealBase_Slot13",
+    "StealBase_Slot14",
+    "StealBase_Belt"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/StealBase.fbx",
+   "preview": "previews/Tycoon/StealBase.png"
+  },
+  {
+   "name": "RedStealBase",
+   "category": "Tycoon",
+   "group": "StealBase",
+   "tris": 6904,
+   "size_studs": [
+    40.4,
+    98.8,
+    15.1
+   ],
+   "rigged": false,
+   "parts": [
+    "RedStealBase_Lasers",
+    "RedStealBase_LockButton",
+    "RedStealBase_Button",
+    "RedStealBase_Slot1",
+    "RedStealBase_Slot2",
+    "RedStealBase_Slot3",
+    "RedStealBase_Slot4",
+    "RedStealBase_Slot5",
+    "RedStealBase_Slot6",
+    "RedStealBase_Slot7",
+    "RedStealBase_Slot8",
+    "RedStealBase_Slot9",
+    "RedStealBase_Slot10",
+    "RedStealBase_Floor2",
+    "RedStealBase_Slot11",
+    "RedStealBase_Slot12",
+    "RedStealBase_Slot13",
+    "RedStealBase_Slot14",
+    "RedStealBase_Belt"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/RedStealBase.fbx",
+   "preview": "previews/Tycoon/RedStealBase.png"
+  },
+  {
+   "name": "GoldStealBase",
+   "category": "Tycoon",
+   "group": "StealBase",
+   "tris": 6904,
+   "size_studs": [
+    40.4,
+    98.8,
+    15.1
+   ],
+   "rigged": false,
+   "parts": [
+    "GoldStealBase_Lasers",
+    "GoldStealBase_LockButton",
+    "GoldStealBase_Button",
+    "GoldStealBase_Slot1",
+    "GoldStealBase_Slot2",
+    "GoldStealBase_Slot3",
+    "GoldStealBase_Slot4",
+    "GoldStealBase_Slot5",
+    "GoldStealBase_Slot6",
+    "GoldStealBase_Slot7",
+    "GoldStealBase_Slot8",
+    "GoldStealBase_Slot9",
+    "GoldStealBase_Slot10",
+    "GoldStealBase_Floor2",
+    "GoldStealBase_Slot11",
+    "GoldStealBase_Slot12",
+    "GoldStealBase_Slot13",
+    "GoldStealBase_Slot14",
+    "GoldStealBase_Belt"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/GoldStealBase.fbx",
+   "preview": "previews/Tycoon/GoldStealBase.png"
+  },
+  {
+   "name": "SellShop",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 1092,
+   "size_studs": [
+    16.0,
+    19.2,
+    12.4
+   ],
+   "rigged": false,
+   "parts": [
+    "SellShop_SellPad"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/SellShop.fbx",
+   "preview": "previews/Tycoon/SellShop.png"
+  },
+  {
+   "name": "EggHatchery",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 1884,
+   "size_studs": [
+    24.0,
+    18.85,
+    15.5
+   ],
+   "rigged": false,
+   "parts": [
+    "EggHatchery_Egg1",
+    "EggHatchery_Egg2",
+    "EggHatchery_Egg3"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/EggHatchery.fbx",
+   "preview": "previews/Tycoon/EggHatchery.png"
+  },
+  {
+   "name": "UpgradeShop",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 1400,
+   "size_studs": [
+    18.0,
+    13.15,
+    12.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/UpgradeShop.fbx",
+   "preview": "previews/Tycoon/UpgradeShop.png"
+  },
+  {
+   "name": "RebirthShrine",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 988,
+   "size_studs": [
+    16.0,
+    16.0,
+    15.73
+   ],
+   "rigged": false,
+   "parts": [
+    "RebirthShrine_Portal"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/RebirthShrine.fbx",
+   "preview": "previews/Tycoon/RebirthShrine.png"
+  },
+  {
+   "name": "Leaderboard",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 1568,
+   "size_studs": [
+    16.0,
+    1.52,
+    16.2
+   ],
+   "rigged": false,
+   "parts": [
+    "Leaderboard_Board"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/Leaderboard.fbx",
+   "preview": "previews/Tycoon/Leaderboard.png"
+  },
+  {
+   "name": "ZoneGate",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 948,
+   "size_studs": [
+    28.8,
+    4.8,
+    19.1
+   ],
+   "rigged": false,
+   "parts": [
+    "ZoneGate_Barrier"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/ZoneGate.fbx",
+   "preview": "previews/Tycoon/ZoneGate.png"
+  },
+  {
+   "name": "VIPZoneGate",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 756,
+   "size_studs": [
+    28.8,
+    4.8,
+    19.1
+   ],
+   "rigged": false,
+   "parts": [
+    "VIPZoneGate_Barrier"
+   ],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/VIPZoneGate.fbx",
+   "preview": "previews/Tycoon/VIPZoneGate.png"
+  },
+  {
+   "name": "DailyRewardChest",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 660,
+   "size_studs": [
+    8.8,
+    8.0,
+    11.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/DailyRewardChest.fbx",
+   "preview": "previews/Tycoon/DailyRewardChest.png"
+  },
+  {
+   "name": "QuestBoard",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 932,
+   "size_studs": [
+    12.0,
+    1.6,
+    11.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/QuestBoard.fbx",
+   "preview": "previews/Tycoon/QuestBoard.png"
+  },
+  {
+   "name": "ShopStand",
+   "category": "Tycoon",
+   "group": "Simulator",
+   "tris": 840,
+   "size_studs": [
+    16.0,
+    13.15,
+    12.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tycoon"
+   ],
+   "fbx": "exports/fbx/Tycoon/ShopStand.fbx",
+   "preview": "previews/Tycoon/ShopStand.png"
+  }
  ]
 }
