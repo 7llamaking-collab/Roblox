@@ -961,6 +961,630 @@
    "tags": [],
    "fbx": "exports/fbx/Food/Juice.fbx",
    "preview": "previews/Food/Juice.png"
+  },
+  {
+   "name": "Plum",
+   "category": "Food",
+   "group": "Fruit",
+   "tris": 156,
+   "size_studs": [
+    0.9,
+    1.0,
+    1.59
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Plum.fbx",
+   "preview": "previews/Food/Plum.png"
+  },
+  {
+   "name": "Pomegranate",
+   "category": "Food",
+   "group": "Fruit",
+   "tris": 144,
+   "size_studs": [
+    1.14,
+    1.2,
+    1.32
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Pomegranate.fbx",
+   "preview": "previews/Food/Pomegranate.png"
+  },
+  {
+   "name": "Raspberry",
+   "category": "Food",
+   "group": "Fruit",
+   "tris": 540,
+   "size_studs": [
+    0.78,
+    0.91,
+    0.95
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Raspberry.fbx",
+   "preview": "previews/Food/Raspberry.png"
+  },
+  {
+   "name": "Blackberry",
+   "category": "Food",
+   "group": "Fruit",
+   "tris": 540,
+   "size_studs": [
+    0.78,
+    0.91,
+    0.95
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Blackberry.fbx",
+   "preview": "previews/Food/Blackberry.png"
+  },
+  {
+   "name": "Starfruit",
+   "category": "Food",
+   "group": "Fruit",
+   "tris": 120,
+   "size_studs": [
+    1.18,
+    1.62,
+    1.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Starfruit.fbx",
+   "preview": "previews/Food/Starfruit.png"
+  },
+  {
+   "name": "Papaya",
+   "category": "Food",
+   "group": "Fruit",
+   "tris": 64,
+   "size_studs": [
+    1.65,
+    1.0,
+    1.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Papaya.fbx",
+   "preview": "previews/Food/Papaya.png"
+  },
+  {
+   "name": "Lychee",
+   "category": "Food",
+   "group": "Fruit",
+   "tris": 32,
+   "size_studs": [
+    0.72,
+    0.68,
+    0.98
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Lychee.fbx",
+   "preview": "previews/Food/Lychee.png"
+  },
+  {
+   "name": "Durian",
+   "category": "Food",
+   "group": "Fruit",
+   "tris": 244,
+   "size_studs": [
+    1.65,
+    1.67,
+    1.88
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Durian.fbx",
+   "preview": "previews/Food/Durian.png"
+  },
+  {
+   "name": "Cucumber",
+   "category": "Food",
+   "group": "Vegetable",
+   "tris": 68,
+   "size_studs": [
+    1.81,
+    0.61,
+    0.53
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Cucumber.fbx",
+   "preview": "previews/Food/Cucumber.png"
+  },
+  {
+   "name": "Garlic",
+   "category": "Food",
+   "group": "Vegetable",
+   "tris": 80,
+   "size_studs": [
+    1.0,
+    1.0,
+    1.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Garlic.fbx",
+   "preview": "previews/Food/Garlic.png"
+  },
+  {
+   "name": "Lettuce",
+   "category": "Food",
+   "group": "Vegetable",
+   "tris": 408,
+   "size_studs": [
+    0.88,
+    0.88,
+    0.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Lettuce.fbx",
+   "preview": "previews/Food/Lettuce.png"
+  },
+  {
+   "name": "SweetPotato",
+   "category": "Food",
+   "group": "Vegetable",
+   "tris": 20,
+   "size_studs": [
+    1.43,
+    0.53,
+    0.53
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/SweetPotato.fbx",
+   "preview": "previews/Food/SweetPotato.png"
+  },
+  {
+   "name": "ChiliPepper",
+   "category": "Food",
+   "group": "Vegetable",
+   "tris": 34,
+   "size_studs": [
+    1.27,
+    0.25,
+    0.46
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/ChiliPepper.fbx",
+   "preview": "previews/Food/ChiliPepper.png"
+  },
+  {
+   "name": "YellowPepper",
+   "category": "Food",
+   "group": "Vegetable",
+   "tris": 420,
+   "size_studs": [
+    0.84,
+    0.87,
+    1.04
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/YellowPepper.fbx",
+   "preview": "previews/Food/YellowPepper.png"
+  },
+  {
+   "name": "Peanut",
+   "category": "Food",
+   "group": "Snack",
+   "tris": 20,
+   "size_studs": [
+    0.73,
+    0.35,
+    0.35
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Peanut.fbx",
+   "preview": "previews/Food/Peanut.png"
+  },
+  {
+   "name": "Pretzel",
+   "category": "Food",
+   "group": "Snack",
+   "tris": 236,
+   "size_studs": [
+    1.1,
+    0.23,
+    1.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Pretzel.fbx",
+   "preview": "previews/Food/Pretzel.png"
+  },
+  {
+   "name": "Croissant",
+   "category": "Food",
+   "group": "Snack",
+   "tris": 220,
+   "size_studs": [
+    2.35,
+    1.24,
+    0.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Croissant.fbx",
+   "preview": "previews/Food/Croissant.png"
+  },
+  {
+   "name": "Pancakes",
+   "category": "Food",
+   "group": "Snack",
+   "tris": 340,
+   "size_studs": [
+    1.8,
+    1.8,
+    0.94
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Pancakes.fbx",
+   "preview": "previews/Food/Pancakes.png"
+  },
+  {
+   "name": "Waffle",
+   "category": "Food",
+   "group": "Snack",
+   "tris": 848,
+   "size_studs": [
+    1.2,
+    1.2,
+    0.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Waffle.fbx",
+   "preview": "previews/Food/Waffle.png"
+  },
+  {
+   "name": "Sandwich",
+   "category": "Food",
+   "group": "Snack",
+   "tris": 88,
+   "size_studs": [
+    1.22,
+    1.1,
+    0.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Sandwich.fbx",
+   "preview": "previews/Food/Sandwich.png"
+  },
+  {
+   "name": "Fries",
+   "category": "Food",
+   "group": "Snack",
+   "tris": 484,
+   "size_studs": [
+    0.93,
+    0.52,
+    1.56
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Fries.fbx",
+   "preview": "previews/Food/Fries.png"
+  },
+  {
+   "name": "SodaCan",
+   "category": "Food",
+   "group": "Drinks",
+   "tris": 120,
+   "size_studs": [
+    0.66,
+    0.66,
+    1.03
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/SodaCan.fbx",
+   "preview": "previews/Food/SodaCan.png"
+  },
+  {
+   "name": "CoffeeCup",
+   "category": "Food",
+   "group": "Drinks",
+   "tris": 108,
+   "size_studs": [
+    0.9,
+    0.9,
+    1.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/CoffeeCup.fbx",
+   "preview": "previews/Food/CoffeeCup.png"
+  },
+  {
+   "name": "Milkshake",
+   "category": "Food",
+   "group": "Drinks",
+   "tris": 332,
+   "size_studs": [
+    0.8,
+    0.8,
+    2.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Milkshake.fbx",
+   "preview": "previews/Food/Milkshake.png"
+  },
+  {
+   "name": "RamenBowl",
+   "category": "Food",
+   "group": "Meals",
+   "tris": 312,
+   "size_studs": [
+    1.6,
+    1.62,
+    1.32
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/RamenBowl.fbx",
+   "preview": "previews/Food/RamenBowl.png"
+  },
+  {
+   "name": "RiceBall",
+   "category": "Food",
+   "group": "Meals",
+   "tris": 76,
+   "size_studs": [
+    1.0,
+    0.46,
+    0.75
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/RiceBall.fbx",
+   "preview": "previews/Food/RiceBall.png"
+  },
+  {
+   "name": "Dumplings",
+   "category": "Food",
+   "group": "Meals",
+   "tris": 172,
+   "size_studs": [
+    1.8,
+    1.8,
+    0.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Dumplings.fbx",
+   "preview": "previews/Food/Dumplings.png"
+  },
+  {
+   "name": "Burrito",
+   "category": "Food",
+   "group": "Meals",
+   "tris": 84,
+   "size_studs": [
+    1.42,
+    0.62,
+    0.56
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Burrito.fbx",
+   "preview": "previews/Food/Burrito.png"
+  },
+  {
+   "name": "Pie",
+   "category": "Food",
+   "group": "Treats",
+   "tris": 352,
+   "size_studs": [
+    1.98,
+    2.4,
+    0.49
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Pie.fbx",
+   "preview": "previews/Food/Pie.png"
+  },
+  {
+   "name": "BirthdayCake",
+   "category": "Food",
+   "group": "Treats",
+   "tris": 1050,
+   "size_studs": [
+    2.2,
+    2.2,
+    1.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/BirthdayCake.fbx",
+   "preview": "previews/Food/BirthdayCake.png"
+  },
+  {
+   "name": "Macaron",
+   "category": "Food",
+   "group": "Treats",
+   "tris": 180,
+   "size_studs": [
+    0.9,
+    0.9,
+    0.42
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Macaron.fbx",
+   "preview": "previews/Food/Macaron.png"
+  },
+  {
+   "name": "GummyBear",
+   "category": "Food",
+   "group": "Treats",
+   "tris": 352,
+   "size_studs": [
+    0.92,
+    0.45,
+    1.27
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/GummyBear.fbx",
+   "preview": "previews/Food/GummyBear.png"
+  },
+  {
+   "name": "CandyCane",
+   "category": "Food",
+   "group": "Treats",
+   "tris": 136,
+   "size_studs": [
+    0.81,
+    0.25,
+    1.99
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/CandyCane.fbx",
+   "preview": "previews/Food/CandyCane.png"
+  },
+  {
+   "name": "CottonCandy",
+   "category": "Food",
+   "group": "Treats",
+   "tris": 90,
+   "size_studs": [
+    1.32,
+    0.97,
+    2.55
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/CottonCandy.fbx",
+   "preview": "previews/Food/CottonCandy.png"
+  },
+  {
+   "name": "Popcorn",
+   "category": "Food",
+   "group": "Treats",
+   "tris": 168,
+   "size_studs": [
+    1.2,
+    1.2,
+    1.61
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/Popcorn.fbx",
+   "preview": "previews/Food/Popcorn.png"
+  },
+  {
+   "name": "CornDog",
+   "category": "Food",
+   "group": "Snack",
+   "tris": 88,
+   "size_studs": [
+    0.5,
+    0.54,
+    1.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/CornDog.fbx",
+   "preview": "previews/Food/CornDog.png"
+  },
+  {
+   "name": "SaladBowl",
+   "category": "Food",
+   "group": "Meals",
+   "tris": 520,
+   "size_studs": [
+    1.7,
+    1.7,
+    0.69
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/SaladBowl.fbx",
+   "preview": "previews/Food/SaladBowl.png"
+  },
+  {
+   "name": "EasterEgg",
+   "category": "Food",
+   "group": "Treats",
+   "tris": 112,
+   "size_studs": [
+    0.76,
+    0.76,
+    0.88
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/EasterEgg.fbx",
+   "preview": "previews/Food/EasterEgg.png"
+  },
+  {
+   "name": "ChocolateEgg",
+   "category": "Food",
+   "group": "Treats",
+   "tris": 108,
+   "size_studs": [
+    0.8,
+    0.8,
+    0.88
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Food/ChocolateEgg.fbx",
+   "preview": "previews/Food/ChocolateEgg.png"
   }
  ],
  "Tools": [
@@ -2607,6 +3231,614 @@
    ],
    "fbx": "exports/fbx/Tools/VoidPickaxe.fbx",
    "preview": "previews/Tools/VoidPickaxe.png"
+  },
+  {
+   "name": "WoodFishingRod",
+   "category": "Tools",
+   "group": "FishingRod",
+   "tris": 324,
+   "size_studs": [
+    0.74,
+    0.44,
+    4.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Tools/WoodFishingRod.fbx",
+   "preview": "previews/Tools/WoodFishingRod.png"
+  },
+  {
+   "name": "StoneFishingRod",
+   "category": "Tools",
+   "group": "FishingRod",
+   "tris": 324,
+   "size_studs": [
+    0.74,
+    0.44,
+    4.47
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Tools/StoneFishingRod.fbx",
+   "preview": "previews/Tools/StoneFishingRod.png"
+  },
+  {
+   "name": "IronFishingRod",
+   "category": "Tools",
+   "group": "FishingRod",
+   "tris": 324,
+   "size_studs": [
+    0.74,
+    0.44,
+    4.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Tools/IronFishingRod.fbx",
+   "preview": "previews/Tools/IronFishingRod.png"
+  },
+  {
+   "name": "GoldFishingRod",
+   "category": "Tools",
+   "group": "FishingRod",
+   "tris": 324,
+   "size_studs": [
+    0.74,
+    0.44,
+    4.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Tools/GoldFishingRod.fbx",
+   "preview": "previews/Tools/GoldFishingRod.png"
+  },
+  {
+   "name": "DiamondFishingRod",
+   "category": "Tools",
+   "group": "FishingRod",
+   "tris": 324,
+   "size_studs": [
+    0.74,
+    0.44,
+    4.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Tools/DiamondFishingRod.fbx",
+   "preview": "previews/Tools/DiamondFishingRod.png"
+  },
+  {
+   "name": "EmeraldFishingRod",
+   "category": "Tools",
+   "group": "FishingRod",
+   "tris": 324,
+   "size_studs": [
+    0.74,
+    0.44,
+    4.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Tools/EmeraldFishingRod.fbx",
+   "preview": "previews/Tools/EmeraldFishingRod.png"
+  },
+  {
+   "name": "RubyFishingRod",
+   "category": "Tools",
+   "group": "FishingRod",
+   "tris": 324,
+   "size_studs": [
+    0.74,
+    0.44,
+    4.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Tools/RubyFishingRod.fbx",
+   "preview": "previews/Tools/RubyFishingRod.png"
+  },
+  {
+   "name": "RainbowFishingRod",
+   "category": "Tools",
+   "group": "FishingRod",
+   "tris": 380,
+   "size_studs": [
+    0.74,
+    0.44,
+    4.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Tools/RainbowFishingRod.fbx",
+   "preview": "previews/Tools/RainbowFishingRod.png"
+  },
+  {
+   "name": "WoodBugNet",
+   "category": "Tools",
+   "group": "BugNet",
+   "tris": 552,
+   "size_studs": [
+    1.24,
+    1.03,
+    4.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Tools/WoodBugNet.fbx",
+   "preview": "previews/Tools/WoodBugNet.png"
+  },
+  {
+   "name": "StoneBugNet",
+   "category": "Tools",
+   "group": "BugNet",
+   "tris": 552,
+   "size_studs": [
+    1.24,
+    1.03,
+    4.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Tools/StoneBugNet.fbx",
+   "preview": "previews/Tools/StoneBugNet.png"
+  },
+  {
+   "name": "IronBugNet",
+   "category": "Tools",
+   "group": "BugNet",
+   "tris": 552,
+   "size_studs": [
+    1.24,
+    1.03,
+    4.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Tools/IronBugNet.fbx",
+   "preview": "previews/Tools/IronBugNet.png"
+  },
+  {
+   "name": "GoldBugNet",
+   "category": "Tools",
+   "group": "BugNet",
+   "tris": 574,
+   "size_studs": [
+    1.24,
+    1.1,
+    4.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Tools/GoldBugNet.fbx",
+   "preview": "previews/Tools/GoldBugNet.png"
+  },
+  {
+   "name": "DiamondBugNet",
+   "category": "Tools",
+   "group": "BugNet",
+   "tris": 574,
+   "size_studs": [
+    1.24,
+    1.1,
+    4.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Tools/DiamondBugNet.fbx",
+   "preview": "previews/Tools/DiamondBugNet.png"
+  },
+  {
+   "name": "EmeraldBugNet",
+   "category": "Tools",
+   "group": "BugNet",
+   "tris": 574,
+   "size_studs": [
+    1.24,
+    1.1,
+    4.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Tools/EmeraldBugNet.fbx",
+   "preview": "previews/Tools/EmeraldBugNet.png"
+  },
+  {
+   "name": "RubyBugNet",
+   "category": "Tools",
+   "group": "BugNet",
+   "tris": 574,
+   "size_studs": [
+    1.24,
+    1.1,
+    4.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Tools/RubyBugNet.fbx",
+   "preview": "previews/Tools/RubyBugNet.png"
+  },
+  {
+   "name": "RainbowBugNet",
+   "category": "Tools",
+   "group": "BugNet",
+   "tris": 574,
+   "size_studs": [
+    1.24,
+    1.1,
+    4.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Tools/RainbowBugNet.fbx",
+   "preview": "previews/Tools/RainbowBugNet.png"
+  },
+  {
+   "name": "WoodCoinMagnet",
+   "category": "Tools",
+   "group": "CoinMagnet",
+   "tris": 768,
+   "size_studs": [
+    1.68,
+    0.51,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Tools/WoodCoinMagnet.fbx",
+   "preview": "previews/Tools/WoodCoinMagnet.png"
+  },
+  {
+   "name": "StoneCoinMagnet",
+   "category": "Tools",
+   "group": "CoinMagnet",
+   "tris": 768,
+   "size_studs": [
+    1.68,
+    0.51,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Tools/StoneCoinMagnet.fbx",
+   "preview": "previews/Tools/StoneCoinMagnet.png"
+  },
+  {
+   "name": "IronCoinMagnet",
+   "category": "Tools",
+   "group": "CoinMagnet",
+   "tris": 768,
+   "size_studs": [
+    1.68,
+    0.51,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Tools/IronCoinMagnet.fbx",
+   "preview": "previews/Tools/IronCoinMagnet.png"
+  },
+  {
+   "name": "GoldCoinMagnet",
+   "category": "Tools",
+   "group": "CoinMagnet",
+   "tris": 768,
+   "size_studs": [
+    1.68,
+    0.51,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Tools/GoldCoinMagnet.fbx",
+   "preview": "previews/Tools/GoldCoinMagnet.png"
+  },
+  {
+   "name": "DiamondCoinMagnet",
+   "category": "Tools",
+   "group": "CoinMagnet",
+   "tris": 768,
+   "size_studs": [
+    1.68,
+    0.51,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Tools/DiamondCoinMagnet.fbx",
+   "preview": "previews/Tools/DiamondCoinMagnet.png"
+  },
+  {
+   "name": "EmeraldCoinMagnet",
+   "category": "Tools",
+   "group": "CoinMagnet",
+   "tris": 768,
+   "size_studs": [
+    1.68,
+    0.51,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Tools/EmeraldCoinMagnet.fbx",
+   "preview": "previews/Tools/EmeraldCoinMagnet.png"
+  },
+  {
+   "name": "RubyCoinMagnet",
+   "category": "Tools",
+   "group": "CoinMagnet",
+   "tris": 768,
+   "size_studs": [
+    1.68,
+    0.51,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Tools/RubyCoinMagnet.fbx",
+   "preview": "previews/Tools/RubyCoinMagnet.png"
+  },
+  {
+   "name": "RainbowCoinMagnet",
+   "category": "Tools",
+   "group": "CoinMagnet",
+   "tris": 824,
+   "size_studs": [
+    1.68,
+    0.51,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Tools/RainbowCoinMagnet.fbx",
+   "preview": "previews/Tools/RainbowCoinMagnet.png"
+  },
+  {
+   "name": "WoodChainsaw",
+   "category": "Tools",
+   "group": "Chainsaw",
+   "tris": 476,
+   "size_studs": [
+    0.57,
+    4.45,
+    1.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Tools/WoodChainsaw.fbx",
+   "preview": "previews/Tools/WoodChainsaw.png"
+  },
+  {
+   "name": "StoneChainsaw",
+   "category": "Tools",
+   "group": "Chainsaw",
+   "tris": 476,
+   "size_studs": [
+    0.57,
+    4.45,
+    1.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Tools/StoneChainsaw.fbx",
+   "preview": "previews/Tools/StoneChainsaw.png"
+  },
+  {
+   "name": "IronChainsaw",
+   "category": "Tools",
+   "group": "Chainsaw",
+   "tris": 476,
+   "size_studs": [
+    0.57,
+    4.45,
+    1.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Tools/IronChainsaw.fbx",
+   "preview": "previews/Tools/IronChainsaw.png"
+  },
+  {
+   "name": "GoldChainsaw",
+   "category": "Tools",
+   "group": "Chainsaw",
+   "tris": 476,
+   "size_studs": [
+    0.57,
+    4.45,
+    1.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Tools/GoldChainsaw.fbx",
+   "preview": "previews/Tools/GoldChainsaw.png"
+  },
+  {
+   "name": "DiamondChainsaw",
+   "category": "Tools",
+   "group": "Chainsaw",
+   "tris": 476,
+   "size_studs": [
+    0.57,
+    4.45,
+    1.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Tools/DiamondChainsaw.fbx",
+   "preview": "previews/Tools/DiamondChainsaw.png"
+  },
+  {
+   "name": "EmeraldChainsaw",
+   "category": "Tools",
+   "group": "Chainsaw",
+   "tris": 476,
+   "size_studs": [
+    0.57,
+    4.45,
+    1.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Tools/EmeraldChainsaw.fbx",
+   "preview": "previews/Tools/EmeraldChainsaw.png"
+  },
+  {
+   "name": "RubyChainsaw",
+   "category": "Tools",
+   "group": "Chainsaw",
+   "tris": 476,
+   "size_studs": [
+    0.57,
+    4.45,
+    1.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Tools/RubyChainsaw.fbx",
+   "preview": "previews/Tools/RubyChainsaw.png"
+  },
+  {
+   "name": "RainbowChainsaw",
+   "category": "Tools",
+   "group": "Chainsaw",
+   "tris": 588,
+   "size_studs": [
+    0.57,
+    4.45,
+    1.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Tools/RainbowChainsaw.fbx",
+   "preview": "previews/Tools/RainbowChainsaw.png"
   }
  ],
  "Weapons": [
@@ -4843,6 +6075,766 @@
    ],
    "fbx": "exports/fbx/Weapons/CrystalSword.fbx",
    "preview": "previews/Weapons/CrystalSword.png"
+  },
+  {
+   "name": "WoodWand",
+   "category": "Weapons",
+   "group": "Wand",
+   "tris": 256,
+   "size_studs": [
+    0.65,
+    0.18,
+    2.37
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodWand.fbx",
+   "preview": "previews/Weapons/WoodWand.png"
+  },
+  {
+   "name": "StoneWand",
+   "category": "Weapons",
+   "group": "Wand",
+   "tris": 256,
+   "size_studs": [
+    0.65,
+    0.18,
+    2.37
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneWand.fbx",
+   "preview": "previews/Weapons/StoneWand.png"
+  },
+  {
+   "name": "IronWand",
+   "category": "Weapons",
+   "group": "Wand",
+   "tris": 256,
+   "size_studs": [
+    0.65,
+    0.18,
+    2.37
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronWand.fbx",
+   "preview": "previews/Weapons/IronWand.png"
+  },
+  {
+   "name": "GoldWand",
+   "category": "Weapons",
+   "group": "Wand",
+   "tris": 256,
+   "size_studs": [
+    0.65,
+    0.18,
+    2.37
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldWand.fbx",
+   "preview": "previews/Weapons/GoldWand.png"
+  },
+  {
+   "name": "DiamondWand",
+   "category": "Weapons",
+   "group": "Wand",
+   "tris": 256,
+   "size_studs": [
+    0.65,
+    0.18,
+    2.37
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondWand.fbx",
+   "preview": "previews/Weapons/DiamondWand.png"
+  },
+  {
+   "name": "EmeraldWand",
+   "category": "Weapons",
+   "group": "Wand",
+   "tris": 256,
+   "size_studs": [
+    0.65,
+    0.18,
+    2.37
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldWand.fbx",
+   "preview": "previews/Weapons/EmeraldWand.png"
+  },
+  {
+   "name": "RubyWand",
+   "category": "Weapons",
+   "group": "Wand",
+   "tris": 256,
+   "size_studs": [
+    0.65,
+    0.18,
+    2.37
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyWand.fbx",
+   "preview": "previews/Weapons/RubyWand.png"
+  },
+  {
+   "name": "RainbowWand",
+   "category": "Weapons",
+   "group": "Wand",
+   "tris": 400,
+   "size_studs": [
+    0.65,
+    0.18,
+    2.37
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowWand.fbx",
+   "preview": "previews/Weapons/RainbowWand.png"
+  },
+  {
+   "name": "WoodCrossbow",
+   "category": "Weapons",
+   "group": "Crossbow",
+   "tris": 248,
+   "size_studs": [
+    2.02,
+    2.21,
+    0.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodCrossbow.fbx",
+   "preview": "previews/Weapons/WoodCrossbow.png"
+  },
+  {
+   "name": "StoneCrossbow",
+   "category": "Weapons",
+   "group": "Crossbow",
+   "tris": 248,
+   "size_studs": [
+    2.02,
+    2.21,
+    0.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneCrossbow.fbx",
+   "preview": "previews/Weapons/StoneCrossbow.png"
+  },
+  {
+   "name": "IronCrossbow",
+   "category": "Weapons",
+   "group": "Crossbow",
+   "tris": 248,
+   "size_studs": [
+    2.02,
+    2.21,
+    0.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronCrossbow.fbx",
+   "preview": "previews/Weapons/IronCrossbow.png"
+  },
+  {
+   "name": "GoldCrossbow",
+   "category": "Weapons",
+   "group": "Crossbow",
+   "tris": 270,
+   "size_studs": [
+    2.02,
+    2.21,
+    0.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldCrossbow.fbx",
+   "preview": "previews/Weapons/GoldCrossbow.png"
+  },
+  {
+   "name": "DiamondCrossbow",
+   "category": "Weapons",
+   "group": "Crossbow",
+   "tris": 270,
+   "size_studs": [
+    2.02,
+    2.21,
+    0.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondCrossbow.fbx",
+   "preview": "previews/Weapons/DiamondCrossbow.png"
+  },
+  {
+   "name": "EmeraldCrossbow",
+   "category": "Weapons",
+   "group": "Crossbow",
+   "tris": 270,
+   "size_studs": [
+    2.02,
+    2.21,
+    0.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldCrossbow.fbx",
+   "preview": "previews/Weapons/EmeraldCrossbow.png"
+  },
+  {
+   "name": "RubyCrossbow",
+   "category": "Weapons",
+   "group": "Crossbow",
+   "tris": 270,
+   "size_studs": [
+    2.02,
+    2.21,
+    0.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyCrossbow.fbx",
+   "preview": "previews/Weapons/RubyCrossbow.png"
+  },
+  {
+   "name": "RainbowCrossbow",
+   "category": "Weapons",
+   "group": "Crossbow",
+   "tris": 326,
+   "size_studs": [
+    2.02,
+    2.21,
+    0.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowCrossbow.fbx",
+   "preview": "previews/Weapons/RainbowCrossbow.png"
+  },
+  {
+   "name": "WoodTrident",
+   "category": "Weapons",
+   "group": "Trident",
+   "tris": 242,
+   "size_studs": [
+    1.5,
+    0.34,
+    5.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodTrident.fbx",
+   "preview": "previews/Weapons/WoodTrident.png"
+  },
+  {
+   "name": "StoneTrident",
+   "category": "Weapons",
+   "group": "Trident",
+   "tris": 242,
+   "size_studs": [
+    1.5,
+    0.34,
+    5.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneTrident.fbx",
+   "preview": "previews/Weapons/StoneTrident.png"
+  },
+  {
+   "name": "IronTrident",
+   "category": "Weapons",
+   "group": "Trident",
+   "tris": 242,
+   "size_studs": [
+    1.5,
+    0.34,
+    5.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronTrident.fbx",
+   "preview": "previews/Weapons/IronTrident.png"
+  },
+  {
+   "name": "GoldTrident",
+   "category": "Weapons",
+   "group": "Trident",
+   "tris": 242,
+   "size_studs": [
+    1.5,
+    0.34,
+    5.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldTrident.fbx",
+   "preview": "previews/Weapons/GoldTrident.png"
+  },
+  {
+   "name": "DiamondTrident",
+   "category": "Weapons",
+   "group": "Trident",
+   "tris": 242,
+   "size_studs": [
+    1.5,
+    0.34,
+    5.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondTrident.fbx",
+   "preview": "previews/Weapons/DiamondTrident.png"
+  },
+  {
+   "name": "EmeraldTrident",
+   "category": "Weapons",
+   "group": "Trident",
+   "tris": 242,
+   "size_studs": [
+    1.5,
+    0.34,
+    5.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldTrident.fbx",
+   "preview": "previews/Weapons/EmeraldTrident.png"
+  },
+  {
+   "name": "RubyTrident",
+   "category": "Weapons",
+   "group": "Trident",
+   "tris": 242,
+   "size_studs": [
+    1.5,
+    0.34,
+    5.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyTrident.fbx",
+   "preview": "previews/Weapons/RubyTrident.png"
+  },
+  {
+   "name": "RainbowTrident",
+   "category": "Weapons",
+   "group": "Trident",
+   "tris": 378,
+   "size_studs": [
+    1.5,
+    0.34,
+    5.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowTrident.fbx",
+   "preview": "previews/Weapons/RainbowTrident.png"
+  },
+  {
+   "name": "WoodFlail",
+   "category": "Weapons",
+   "group": "Flail",
+   "tris": 714,
+   "size_studs": [
+    1.26,
+    1.1,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodFlail.fbx",
+   "preview": "previews/Weapons/WoodFlail.png"
+  },
+  {
+   "name": "StoneFlail",
+   "category": "Weapons",
+   "group": "Flail",
+   "tris": 714,
+   "size_studs": [
+    1.26,
+    1.1,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneFlail.fbx",
+   "preview": "previews/Weapons/StoneFlail.png"
+  },
+  {
+   "name": "IronFlail",
+   "category": "Weapons",
+   "group": "Flail",
+   "tris": 714,
+   "size_studs": [
+    1.26,
+    1.1,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronFlail.fbx",
+   "preview": "previews/Weapons/IronFlail.png"
+  },
+  {
+   "name": "GoldFlail",
+   "category": "Weapons",
+   "group": "Flail",
+   "tris": 714,
+   "size_studs": [
+    1.26,
+    1.1,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldFlail.fbx",
+   "preview": "previews/Weapons/GoldFlail.png"
+  },
+  {
+   "name": "DiamondFlail",
+   "category": "Weapons",
+   "group": "Flail",
+   "tris": 714,
+   "size_studs": [
+    1.26,
+    1.1,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondFlail.fbx",
+   "preview": "previews/Weapons/DiamondFlail.png"
+  },
+  {
+   "name": "EmeraldFlail",
+   "category": "Weapons",
+   "group": "Flail",
+   "tris": 714,
+   "size_studs": [
+    1.26,
+    1.1,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldFlail.fbx",
+   "preview": "previews/Weapons/EmeraldFlail.png"
+  },
+  {
+   "name": "RubyFlail",
+   "category": "Weapons",
+   "group": "Flail",
+   "tris": 714,
+   "size_studs": [
+    1.26,
+    1.1,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyFlail.fbx",
+   "preview": "previews/Weapons/RubyFlail.png"
+  },
+  {
+   "name": "RainbowFlail",
+   "category": "Weapons",
+   "group": "Flail",
+   "tris": 826,
+   "size_studs": [
+    1.26,
+    1.1,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowFlail.fbx",
+   "preview": "previews/Weapons/RainbowFlail.png"
+  },
+  {
+   "name": "WoodRapier",
+   "category": "Weapons",
+   "group": "Rapier",
+   "tris": 564,
+   "size_studs": [
+    0.8,
+    0.52,
+    4.86
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Weapons/WoodRapier.fbx",
+   "preview": "previews/Weapons/WoodRapier.png"
+  },
+  {
+   "name": "StoneRapier",
+   "category": "Weapons",
+   "group": "Rapier",
+   "tris": 564,
+   "size_studs": [
+    0.8,
+    0.52,
+    4.86
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Weapons/StoneRapier.fbx",
+   "preview": "previews/Weapons/StoneRapier.png"
+  },
+  {
+   "name": "IronRapier",
+   "category": "Weapons",
+   "group": "Rapier",
+   "tris": 564,
+   "size_studs": [
+    0.8,
+    0.52,
+    4.86
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Weapons/IronRapier.fbx",
+   "preview": "previews/Weapons/IronRapier.png"
+  },
+  {
+   "name": "GoldRapier",
+   "category": "Weapons",
+   "group": "Rapier",
+   "tris": 586,
+   "size_studs": [
+    0.8,
+    0.52,
+    4.86
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Weapons/GoldRapier.fbx",
+   "preview": "previews/Weapons/GoldRapier.png"
+  },
+  {
+   "name": "DiamondRapier",
+   "category": "Weapons",
+   "group": "Rapier",
+   "tris": 586,
+   "size_studs": [
+    0.8,
+    0.52,
+    4.86
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Weapons/DiamondRapier.fbx",
+   "preview": "previews/Weapons/DiamondRapier.png"
+  },
+  {
+   "name": "EmeraldRapier",
+   "category": "Weapons",
+   "group": "Rapier",
+   "tris": 586,
+   "size_studs": [
+    0.8,
+    0.52,
+    4.86
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Weapons/EmeraldRapier.fbx",
+   "preview": "previews/Weapons/EmeraldRapier.png"
+  },
+  {
+   "name": "RubyRapier",
+   "category": "Weapons",
+   "group": "Rapier",
+   "tris": 586,
+   "size_studs": [
+    0.8,
+    0.52,
+    4.86
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Weapons/RubyRapier.fbx",
+   "preview": "previews/Weapons/RubyRapier.png"
+  },
+  {
+   "name": "RainbowRapier",
+   "category": "Weapons",
+   "group": "Rapier",
+   "tris": 642,
+   "size_studs": [
+    0.8,
+    0.52,
+    4.86
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Weapons/RainbowRapier.fbx",
+   "preview": "previews/Weapons/RainbowRapier.png"
   }
  ],
  "Furniture": [
@@ -5807,6 +7799,1242 @@
    "tags": [],
    "fbx": "exports/fbx/Furniture/TreasureChest.fbx",
    "preview": "previews/Furniture/TreasureChest.png"
+  },
+  {
+   "name": "RedSofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/RedSofa.fbx",
+   "preview": "previews/Furniture/RedSofa.png"
+  },
+  {
+   "name": "RedArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/RedArmchair.fbx",
+   "preview": "previews/Furniture/RedArmchair.png"
+  },
+  {
+   "name": "RedBed",
+   "category": "Furniture",
+   "group": "Bedroom",
+   "tris": 484,
+   "size_studs": [
+    3.9,
+    7.73,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/RedBed.fbx",
+   "preview": "previews/Furniture/RedBed.png"
+  },
+  {
+   "name": "RedBeanbag",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 88,
+   "size_studs": [
+    2.6,
+    2.6,
+    2.46
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/RedBeanbag.fbx",
+   "preview": "previews/Furniture/RedBeanbag.png"
+  },
+  {
+   "name": "BlueArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/BlueArmchair.fbx",
+   "preview": "previews/Furniture/BlueArmchair.png"
+  },
+  {
+   "name": "BlueBeanbag",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 88,
+   "size_studs": [
+    2.6,
+    2.6,
+    2.46
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/BlueBeanbag.fbx",
+   "preview": "previews/Furniture/BlueBeanbag.png"
+  },
+  {
+   "name": "BlueDiningChair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 440,
+   "size_studs": [
+    1.9,
+    1.9,
+    4.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/BlueDiningChair.fbx",
+   "preview": "previews/Furniture/BlueDiningChair.png"
+  },
+  {
+   "name": "GreenSofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GreenSofa.fbx",
+   "preview": "previews/Furniture/GreenSofa.png"
+  },
+  {
+   "name": "GreenArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GreenArmchair.fbx",
+   "preview": "previews/Furniture/GreenArmchair.png"
+  },
+  {
+   "name": "GreenBed",
+   "category": "Furniture",
+   "group": "Bedroom",
+   "tris": 484,
+   "size_studs": [
+    3.9,
+    7.73,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GreenBed.fbx",
+   "preview": "previews/Furniture/GreenBed.png"
+  },
+  {
+   "name": "GreenBeanbag",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 88,
+   "size_studs": [
+    2.6,
+    2.6,
+    2.46
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GreenBeanbag.fbx",
+   "preview": "previews/Furniture/GreenBeanbag.png"
+  },
+  {
+   "name": "GreenDiningChair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 440,
+   "size_studs": [
+    1.9,
+    1.9,
+    4.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GreenDiningChair.fbx",
+   "preview": "previews/Furniture/GreenDiningChair.png"
+  },
+  {
+   "name": "YellowSofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/YellowSofa.fbx",
+   "preview": "previews/Furniture/YellowSofa.png"
+  },
+  {
+   "name": "YellowArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/YellowArmchair.fbx",
+   "preview": "previews/Furniture/YellowArmchair.png"
+  },
+  {
+   "name": "YellowBed",
+   "category": "Furniture",
+   "group": "Bedroom",
+   "tris": 484,
+   "size_studs": [
+    3.9,
+    7.73,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/YellowBed.fbx",
+   "preview": "previews/Furniture/YellowBed.png"
+  },
+  {
+   "name": "YellowDiningChair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 440,
+   "size_studs": [
+    1.9,
+    1.9,
+    4.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/YellowDiningChair.fbx",
+   "preview": "previews/Furniture/YellowDiningChair.png"
+  },
+  {
+   "name": "PurpleSofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/PurpleSofa.fbx",
+   "preview": "previews/Furniture/PurpleSofa.png"
+  },
+  {
+   "name": "PurpleArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/PurpleArmchair.fbx",
+   "preview": "previews/Furniture/PurpleArmchair.png"
+  },
+  {
+   "name": "PurpleBed",
+   "category": "Furniture",
+   "group": "Bedroom",
+   "tris": 484,
+   "size_studs": [
+    3.9,
+    7.73,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/PurpleBed.fbx",
+   "preview": "previews/Furniture/PurpleBed.png"
+  },
+  {
+   "name": "PurpleDiningChair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 440,
+   "size_studs": [
+    1.9,
+    1.9,
+    4.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/PurpleDiningChair.fbx",
+   "preview": "previews/Furniture/PurpleDiningChair.png"
+  },
+  {
+   "name": "PinkSofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/PinkSofa.fbx",
+   "preview": "previews/Furniture/PinkSofa.png"
+  },
+  {
+   "name": "PinkArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/PinkArmchair.fbx",
+   "preview": "previews/Furniture/PinkArmchair.png"
+  },
+  {
+   "name": "PinkBed",
+   "category": "Furniture",
+   "group": "Bedroom",
+   "tris": 484,
+   "size_studs": [
+    3.9,
+    7.73,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/PinkBed.fbx",
+   "preview": "previews/Furniture/PinkBed.png"
+  },
+  {
+   "name": "PinkBeanbag",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 88,
+   "size_studs": [
+    2.6,
+    2.6,
+    2.46
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/PinkBeanbag.fbx",
+   "preview": "previews/Furniture/PinkBeanbag.png"
+  },
+  {
+   "name": "TealSofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/TealSofa.fbx",
+   "preview": "previews/Furniture/TealSofa.png"
+  },
+  {
+   "name": "TealBed",
+   "category": "Furniture",
+   "group": "Bedroom",
+   "tris": 484,
+   "size_studs": [
+    3.9,
+    7.73,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/TealBed.fbx",
+   "preview": "previews/Furniture/TealBed.png"
+  },
+  {
+   "name": "TealBeanbag",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 88,
+   "size_studs": [
+    2.6,
+    2.6,
+    2.46
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/TealBeanbag.fbx",
+   "preview": "previews/Furniture/TealBeanbag.png"
+  },
+  {
+   "name": "GraySofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GraySofa.fbx",
+   "preview": "previews/Furniture/GraySofa.png"
+  },
+  {
+   "name": "GrayArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GrayArmchair.fbx",
+   "preview": "previews/Furniture/GrayArmchair.png"
+  },
+  {
+   "name": "GrayBed",
+   "category": "Furniture",
+   "group": "Bedroom",
+   "tris": 484,
+   "size_studs": [
+    3.9,
+    7.73,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GrayBed.fbx",
+   "preview": "previews/Furniture/GrayBed.png"
+  },
+  {
+   "name": "OrangeSofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/OrangeSofa.fbx",
+   "preview": "previews/Furniture/OrangeSofa.png"
+  },
+  {
+   "name": "OrangeArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/OrangeArmchair.fbx",
+   "preview": "previews/Furniture/OrangeArmchair.png"
+  },
+  {
+   "name": "OrangeBeanbag",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 88,
+   "size_studs": [
+    2.6,
+    2.6,
+    2.46
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/OrangeBeanbag.fbx",
+   "preview": "previews/Furniture/OrangeBeanbag.png"
+  },
+  {
+   "name": "BrownSofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/BrownSofa.fbx",
+   "preview": "previews/Furniture/BrownSofa.png"
+  },
+  {
+   "name": "BrownArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/BrownArmchair.fbx",
+   "preview": "previews/Furniture/BrownArmchair.png"
+  },
+  {
+   "name": "CreamSofa",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 464,
+   "size_studs": [
+    5.6,
+    2.9,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/CreamSofa.fbx",
+   "preview": "previews/Furniture/CreamSofa.png"
+  },
+  {
+   "name": "CreamArmchair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 332,
+   "size_studs": [
+    3.3,
+    2.9,
+    3.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/CreamArmchair.fbx",
+   "preview": "previews/Furniture/CreamArmchair.png"
+  },
+  {
+   "name": "GreenRug",
+   "category": "Furniture",
+   "group": "Living",
+   "tris": 80,
+   "size_studs": [
+    6.0,
+    4.0,
+    0.15
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GreenRug.fbx",
+   "preview": "previews/Furniture/GreenRug.png"
+  },
+  {
+   "name": "PurpleRug",
+   "category": "Furniture",
+   "group": "Living",
+   "tris": 80,
+   "size_studs": [
+    6.0,
+    4.0,
+    0.15
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/PurpleRug.fbx",
+   "preview": "previews/Furniture/PurpleRug.png"
+  },
+  {
+   "name": "BlueRug",
+   "category": "Furniture",
+   "group": "Living",
+   "tris": 80,
+   "size_studs": [
+    6.0,
+    4.0,
+    0.15
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/BlueRug.fbx",
+   "preview": "previews/Furniture/BlueRug.png"
+  },
+  {
+   "name": "GrayRug",
+   "category": "Furniture",
+   "group": "Living",
+   "tris": 80,
+   "size_studs": [
+    6.0,
+    4.0,
+    0.15
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant"
+   ],
+   "fbx": "exports/fbx/Furniture/GrayRug.fbx",
+   "preview": "previews/Furniture/GrayRug.png"
+  },
+  {
+   "name": "WashingMachine",
+   "category": "Furniture",
+   "group": "Kitchen",
+   "tris": 216,
+   "size_studs": [
+    2.6,
+    2.54,
+    3.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/WashingMachine.fbx",
+   "preview": "previews/Furniture/WashingMachine.png"
+  },
+  {
+   "name": "Dryer",
+   "category": "Furniture",
+   "group": "Kitchen",
+   "tris": 216,
+   "size_studs": [
+    2.6,
+    2.54,
+    3.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Dryer.fbx",
+   "preview": "previews/Furniture/Dryer.png"
+  },
+  {
+   "name": "Dishwasher",
+   "category": "Furniture",
+   "group": "Kitchen",
+   "tris": 176,
+   "size_studs": [
+    2.7,
+    2.65,
+    3.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Dishwasher.fbx",
+   "preview": "previews/Furniture/Dishwasher.png"
+  },
+  {
+   "name": "CoffeeMachine",
+   "category": "Furniture",
+   "group": "Kitchen",
+   "tris": 224,
+   "size_studs": [
+    1.2,
+    1.2,
+    2.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/CoffeeMachine.fbx",
+   "preview": "previews/Furniture/CoffeeMachine.png"
+  },
+  {
+   "name": "Blender",
+   "category": "Furniture",
+   "group": "Kitchen",
+   "tris": 190,
+   "size_studs": [
+    0.9,
+    0.94,
+    2.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Blender.fbx",
+   "preview": "previews/Furniture/Blender.png"
+  },
+  {
+   "name": "Kettle",
+   "category": "Furniture",
+   "group": "Kitchen",
+   "tris": 120,
+   "size_studs": [
+    1.49,
+    1.1,
+    1.36
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Kettle.fbx",
+   "preview": "previews/Furniture/Kettle.png"
+  },
+  {
+   "name": "DinnerPlate",
+   "category": "Furniture",
+   "group": "Kitchen",
+   "tris": 360,
+   "size_studs": [
+    2.49,
+    2.0,
+    0.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/DinnerPlate.fbx",
+   "preview": "previews/Furniture/DinnerPlate.png"
+  },
+  {
+   "name": "Vase",
+   "category": "Furniture",
+   "group": "Decor",
+   "tris": 464,
+   "size_studs": [
+    1.1,
+    1.1,
+    2.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Vase.fbx",
+   "preview": "previews/Furniture/Vase.png"
+  },
+  {
+   "name": "Candles",
+   "category": "Furniture",
+   "group": "Decor",
+   "tris": 102,
+   "size_studs": [
+    1.11,
+    0.36,
+    1.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Candles.fbx",
+   "preview": "previews/Furniture/Candles.png"
+  },
+  {
+   "name": "LavaLamp",
+   "category": "Furniture",
+   "group": "Lighting",
+   "tris": 302,
+   "size_studs": [
+    0.8,
+    0.8,
+    2.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/LavaLamp.fbx",
+   "preview": "previews/Furniture/LavaLamp.png"
+  },
+  {
+   "name": "CoatRack",
+   "category": "Furniture",
+   "group": "Decor",
+   "tris": 198,
+   "size_studs": [
+    1.6,
+    1.47,
+    5.42
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/CoatRack.fbx",
+   "preview": "previews/Furniture/CoatRack.png"
+  },
+  {
+   "name": "DeskLamp",
+   "category": "Furniture",
+   "group": "Lighting",
+   "tris": 188,
+   "size_studs": [
+    1.62,
+    1.0,
+    2.06
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/DeskLamp.fbx",
+   "preview": "previews/Furniture/DeskLamp.png"
+  },
+  {
+   "name": "Chandelier",
+   "category": "Furniture",
+   "group": "Lighting",
+   "tris": 500,
+   "size_studs": [
+    2.97,
+    3.0,
+    1.95
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Chandelier.fbx",
+   "preview": "previews/Furniture/Chandelier.png"
+  },
+  {
+   "name": "CeilingFan",
+   "category": "Furniture",
+   "group": "Lighting",
+   "tris": 324,
+   "size_studs": [
+    4.98,
+    4.98,
+    1.7
+   ],
+   "rigged": false,
+   "parts": [
+    "CeilingFan_Blades"
+   ],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/CeilingFan.fbx",
+   "preview": "previews/Furniture/CeilingFan.png"
+  },
+  {
+   "name": "AirConditioner",
+   "category": "Furniture",
+   "group": "Kitchen",
+   "tris": 132,
+   "size_studs": [
+    3.0,
+    1.05,
+    1.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/AirConditioner.fbx",
+   "preview": "previews/Furniture/AirConditioner.png"
+  },
+  {
+   "name": "Cabinet",
+   "category": "Furniture",
+   "group": "Storage",
+   "tris": 396,
+   "size_studs": [
+    3.0,
+    1.73,
+    4.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Cabinet.fbx",
+   "preview": "previews/Furniture/Cabinet.png"
+  },
+  {
+   "name": "SideTable",
+   "category": "Furniture",
+   "group": "Tables",
+   "tris": 236,
+   "size_studs": [
+    1.6,
+    1.6,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/SideTable.fbx",
+   "preview": "previews/Furniture/SideTable.png"
+  },
+  {
+   "name": "GamingChair",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 808,
+   "size_studs": [
+    2.43,
+    2.37,
+    5.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/GamingChair.fbx",
+   "preview": "previews/Furniture/GamingChair.png"
+  },
+  {
+   "name": "Laptop",
+   "category": "Furniture",
+   "group": "Living",
+   "tris": 176,
+   "size_studs": [
+    2.0,
+    1.65,
+    1.33
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Laptop.fbx",
+   "preview": "previews/Furniture/Laptop.png"
+  },
+  {
+   "name": "Speaker",
+   "category": "Furniture",
+   "group": "Music",
+   "tris": 156,
+   "size_studs": [
+    1.6,
+    1.49,
+    2.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Speaker.fbx",
+   "preview": "previews/Furniture/Speaker.png"
+  },
+  {
+   "name": "Radio",
+   "category": "Furniture",
+   "group": "Music",
+   "tris": 168,
+   "size_studs": [
+    2.42,
+    0.98,
+    2.61
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Radio.fbx",
+   "preview": "previews/Furniture/Radio.png"
+  },
+  {
+   "name": "Guitar",
+   "category": "Furniture",
+   "group": "Music",
+   "tris": 240,
+   "size_studs": [
+    1.6,
+    0.47,
+    4.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Guitar.fbx",
+   "preview": "previews/Furniture/Guitar.png"
+  },
+  {
+   "name": "DrumSet",
+   "category": "Furniture",
+   "group": "Music",
+   "tris": 568,
+   "size_studs": [
+    5.6,
+    1.7,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/DrumSet.fbx",
+   "preview": "previews/Furniture/DrumSet.png"
+  },
+  {
+   "name": "Easel",
+   "category": "Furniture",
+   "group": "Decor",
+   "tris": 256,
+   "size_studs": [
+    2.2,
+    1.41,
+    4.23
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Easel.fbx",
+   "preview": "previews/Furniture/Easel.png"
+  },
+  {
+   "name": "Globe",
+   "category": "Furniture",
+   "group": "Decor",
+   "tris": 184,
+   "size_studs": [
+    1.43,
+    1.64,
+    2.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Globe.fbx",
+   "preview": "previews/Furniture/Globe.png"
+  },
+  {
+   "name": "FishTank",
+   "category": "Furniture",
+   "group": "Pets",
+   "tris": 454,
+   "size_studs": [
+    3.6,
+    1.62,
+    4.42
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/FishTank.fbx",
+   "preview": "previews/Furniture/FishTank.png"
+  },
+  {
+   "name": "PetBed",
+   "category": "Furniture",
+   "group": "Pets",
+   "tris": 124,
+   "size_studs": [
+    3.64,
+    2.8,
+    0.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/PetBed.fbx",
+   "preview": "previews/Furniture/PetBed.png"
+  },
+  {
+   "name": "CatTree",
+   "category": "Furniture",
+   "group": "Pets",
+   "tris": 340,
+   "size_studs": [
+    3.3,
+    3.2,
+    4.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/CatTree.fbx",
+   "preview": "previews/Furniture/CatTree.png"
+  },
+  {
+   "name": "ChristmasTree",
+   "category": "Furniture",
+   "group": "Holiday",
+   "tris": 1008,
+   "size_studs": [
+    4.8,
+    4.8,
+    6.36
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/ChristmasTree.fbx",
+   "preview": "previews/Furniture/ChristmasTree.png"
+  },
+  {
+   "name": "Shower",
+   "category": "Furniture",
+   "group": "Bathroom",
+   "tris": 268,
+   "size_studs": [
+    3.0,
+    3.0,
+    6.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Shower.fbx",
+   "preview": "previews/Furniture/Shower.png"
+  },
+  {
+   "name": "Hammock",
+   "category": "Furniture",
+   "group": "Seating",
+   "tris": 148,
+   "size_studs": [
+    1.1,
+    6.5,
+    4.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Furniture/Hammock.fbx",
+   "preview": "previews/Furniture/Hammock.png"
   }
  ],
  "Nature": [
@@ -6796,6 +10024,1070 @@
    ],
    "fbx": "exports/fbx/Nature/PinkCrystals.fbx",
    "preview": "previews/Nature/PinkCrystals.png"
+  },
+  {
+   "name": "LemonTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    11.72,
+    11.5,
+    14.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/LemonTree.fbx",
+   "preview": "previews/Nature/LemonTree.png"
+  },
+  {
+   "name": "PeachTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    11.63,
+    11.31,
+    14.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/PeachTree.fbx",
+   "preview": "previews/Nature/PeachTree.png"
+  },
+  {
+   "name": "CherryTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    11.45,
+    11.37,
+    14.27
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/CherryTree.fbx",
+   "preview": "previews/Nature/CherryTree.png"
+  },
+  {
+   "name": "PearTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    12.39,
+    11.16,
+    14.22
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/PearTree.fbx",
+   "preview": "previews/Nature/PearTree.png"
+  },
+  {
+   "name": "MangoTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    11.13,
+    11.56,
+    13.99
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/MangoTree.fbx",
+   "preview": "previews/Nature/MangoTree.png"
+  },
+  {
+   "name": "PlumTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    11.12,
+    11.22,
+    14.16
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/PlumTree.fbx",
+   "preview": "previews/Nature/PlumTree.png"
+  },
+  {
+   "name": "DiamondTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    11.48,
+    11.49,
+    14.04
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "rare"
+   ],
+   "fbx": "exports/fbx/Nature/DiamondTree.fbx",
+   "preview": "previews/Nature/DiamondTree.png"
+  },
+  {
+   "name": "EmeraldTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    12.26,
+    11.62,
+    14.11
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "rare"
+   ],
+   "fbx": "exports/fbx/Nature/EmeraldTree.fbx",
+   "preview": "previews/Nature/EmeraldTree.png"
+  },
+  {
+   "name": "RubyTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    11.14,
+    11.66,
+    14.09
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "rare"
+   ],
+   "fbx": "exports/fbx/Nature/RubyTree.fbx",
+   "preview": "previews/Nature/RubyTree.png"
+  },
+  {
+   "name": "CandyTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    11.38,
+    10.47,
+    13.91
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "fantasy"
+   ],
+   "fbx": "exports/fbx/Nature/CandyTree.fbx",
+   "preview": "previews/Nature/CandyTree.png"
+  },
+  {
+   "name": "MagicTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 768,
+   "size_studs": [
+    12.36,
+    11.42,
+    14.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fantasy"
+   ],
+   "fbx": "exports/fbx/Nature/MagicTree.fbx",
+   "preview": "previews/Nature/MagicTree.png"
+  },
+  {
+   "name": "WinterTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 240,
+   "size_studs": [
+    11.08,
+    10.65,
+    14.19
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/WinterTree.fbx",
+   "preview": "previews/Nature/WinterTree.png"
+  },
+  {
+   "name": "MapleTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 240,
+   "size_studs": [
+    11.23,
+    10.77,
+    14.17
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/MapleTree.fbx",
+   "preview": "previews/Nature/MapleTree.png"
+  },
+  {
+   "name": "RainbowTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 220,
+   "size_studs": [
+    9.47,
+    9.45,
+    13.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "rare"
+   ],
+   "fbx": "exports/fbx/Nature/RainbowTree.fbx",
+   "preview": "previews/Nature/RainbowTree.png"
+  },
+  {
+   "name": "BananaTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 888,
+   "size_studs": [
+    11.89,
+    11.89,
+    6.77
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/BananaTree.fbx",
+   "preview": "previews/Nature/BananaTree.png"
+  },
+  {
+   "name": "WillowTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 1168,
+   "size_studs": [
+    8.89,
+    8.94,
+    11.46
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/WillowTree.fbx",
+   "preview": "previews/Nature/WillowTree.png"
+  },
+  {
+   "name": "JungleTree",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 220,
+   "size_studs": [
+    11.41,
+    5.86,
+    14.17
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/JungleTree.fbx",
+   "preview": "previews/Nature/JungleTree.png"
+  },
+  {
+   "name": "Bonsai",
+   "category": "Nature",
+   "group": "Trees",
+   "tris": 228,
+   "size_studs": [
+    2.85,
+    1.6,
+    2.74
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Bonsai.fbx",
+   "preview": "previews/Nature/Bonsai.png"
+  },
+  {
+   "name": "Bamboo",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 1044,
+   "size_studs": [
+    1.85,
+    1.78,
+    7.47
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Bamboo.fbx",
+   "preview": "previews/Nature/Bamboo.png"
+  },
+  {
+   "name": "Lavender",
+   "category": "Nature",
+   "group": "Flowers",
+   "tris": 660,
+   "size_studs": [
+    1.44,
+    1.48,
+    2.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Lavender.fbx",
+   "preview": "previews/Nature/Lavender.png"
+  },
+  {
+   "name": "Lotus",
+   "category": "Nature",
+   "group": "Flowers",
+   "tris": 688,
+   "size_studs": [
+    2.32,
+    2.38,
+    0.79
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Lotus.fbx",
+   "preview": "previews/Nature/Lotus.png"
+  },
+  {
+   "name": "Hydrangea",
+   "category": "Nature",
+   "group": "Bushes",
+   "tris": 220,
+   "size_studs": [
+    3.16,
+    3.74,
+    3.36
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Hydrangea.fbx",
+   "preview": "previews/Nature/Hydrangea.png"
+  },
+  {
+   "name": "RoseBush",
+   "category": "Nature",
+   "group": "Bushes",
+   "tris": 540,
+   "size_studs": [
+    3.28,
+    3.75,
+    2.21
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/RoseBush.fbx",
+   "preview": "previews/Nature/RoseBush.png"
+  },
+  {
+   "name": "Succulent",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 880,
+   "size_studs": [
+    1.59,
+    1.59,
+    1.26
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Succulent.fbx",
+   "preview": "previews/Nature/Succulent.png"
+  },
+  {
+   "name": "VenusFlytrap",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 344,
+   "size_studs": [
+    1.2,
+    1.2,
+    2.91
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fantasy"
+   ],
+   "fbx": "exports/fbx/Nature/VenusFlytrap.fbx",
+   "preview": "previews/Nature/VenusFlytrap.png"
+  },
+  {
+   "name": "GlowMushrooms",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 208,
+   "size_studs": [
+    2.35,
+    1.85,
+    1.43
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fantasy"
+   ],
+   "fbx": "exports/fbx/Nature/GlowMushrooms.fbx",
+   "preview": "previews/Nature/GlowMushrooms.png"
+  },
+  {
+   "name": "MushroomCluster",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 232,
+   "size_studs": [
+    2.05,
+    1.63,
+    1.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/MushroomCluster.fbx",
+   "preview": "previews/Nature/MushroomCluster.png"
+  },
+  {
+   "name": "PricklyPear",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 308,
+   "size_studs": [
+    2.39,
+    0.3,
+    3.47
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/PricklyPear.fbx",
+   "preview": "previews/Nature/PricklyPear.png"
+  },
+  {
+   "name": "BarrelCactus",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 238,
+   "size_studs": [
+    2.0,
+    2.0,
+    1.87
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/BarrelCactus.fbx",
+   "preview": "previews/Nature/BarrelCactus.png"
+  },
+  {
+   "name": "Tumbleweed",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 404,
+   "size_studs": [
+    2.0,
+    2.0,
+    2.09
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Tumbleweed.fbx",
+   "preview": "previews/Nature/Tumbleweed.png"
+  },
+  {
+   "name": "TallGrass",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 168,
+   "size_studs": [
+    1.54,
+    1.1,
+    2.36
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/TallGrass.fbx",
+   "preview": "previews/Nature/TallGrass.png"
+  },
+  {
+   "name": "Clover",
+   "category": "Nature",
+   "group": "Plants",
+   "tris": 60,
+   "size_studs": [
+    0.7,
+    0.7,
+    0.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "lucky"
+   ],
+   "fbx": "exports/fbx/Nature/Clover.fbx",
+   "preview": "previews/Nature/Clover.png"
+  },
+  {
+   "name": "WheatField",
+   "category": "Nature",
+   "group": "Crops",
+   "tris": 1592,
+   "size_studs": [
+    4.0,
+    4.0,
+    2.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "farm",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/WheatField.fbx",
+   "preview": "previews/Nature/WheatField.png"
+  },
+  {
+   "name": "CarrotPatch",
+   "category": "Nature",
+   "group": "Crops",
+   "tris": 1664,
+   "size_studs": [
+    4.0,
+    4.0,
+    1.37
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "farm",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/CarrotPatch.fbx",
+   "preview": "previews/Nature/CarrotPatch.png"
+  },
+  {
+   "name": "PumpkinPatch",
+   "category": "Nature",
+   "group": "Crops",
+   "tris": 872,
+   "size_studs": [
+    4.0,
+    4.0,
+    1.48
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "farm",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/PumpkinPatch.fbx",
+   "preview": "previews/Nature/PumpkinPatch.png"
+  },
+  {
+   "name": "CabbagePatch",
+   "category": "Nature",
+   "group": "Crops",
+   "tris": 476,
+   "size_studs": [
+    4.0,
+    4.0,
+    1.15
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "farm",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/CabbagePatch.fbx",
+   "preview": "previews/Nature/CabbagePatch.png"
+  },
+  {
+   "name": "StrawberryPatch",
+   "category": "Nature",
+   "group": "Crops",
+   "tris": 1268,
+   "size_studs": [
+    4.0,
+    4.0,
+    0.95
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "farm",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/StrawberryPatch.fbx",
+   "preview": "previews/Nature/StrawberryPatch.png"
+  },
+  {
+   "name": "CornField",
+   "category": "Nature",
+   "group": "Crops",
+   "tris": 1376,
+   "size_studs": [
+    4.0,
+    4.0,
+    3.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "farm",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/CornField.fbx",
+   "preview": "previews/Nature/CornField.png"
+  },
+  {
+   "name": "EmptyPlot",
+   "category": "Nature",
+   "group": "Crops",
+   "tris": 80,
+   "size_studs": [
+    4.0,
+    4.0,
+    0.69
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "farm",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Nature/EmptyPlot.fbx",
+   "preview": "previews/Nature/EmptyPlot.png"
+  },
+  {
+   "name": "FloatingIsland",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 288,
+   "size_studs": [
+    8.0,
+    8.0,
+    9.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "obby"
+   ],
+   "fbx": "exports/fbx/Nature/FloatingIsland.fbx",
+   "preview": "previews/Nature/FloatingIsland.png"
+  },
+  {
+   "name": "Cliff",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 532,
+   "size_studs": [
+    8.8,
+    4.2,
+    8.79
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Cliff.fbx",
+   "preview": "previews/Nature/Cliff.png"
+  },
+  {
+   "name": "Volcano",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 286,
+   "size_studs": [
+    14.83,
+    15.09,
+    10.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Volcano.fbx",
+   "preview": "previews/Nature/Volcano.png"
+  },
+  {
+   "name": "Geyser",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 702,
+   "size_studs": [
+    4.11,
+    4.07,
+    7.16
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Geyser.fbx",
+   "preview": "previews/Nature/Geyser.png"
+  },
+  {
+   "name": "Pond",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 768,
+   "size_studs": [
+    7.64,
+    7.57,
+    1.78
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Pond.fbx",
+   "preview": "previews/Nature/Pond.png"
+  },
+  {
+   "name": "Waterfall",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 572,
+   "size_studs": [
+    8.57,
+    8.5,
+    8.15
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Waterfall.fbx",
+   "preview": "previews/Nature/Waterfall.png"
+  },
+  {
+   "name": "SteppingStones",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 300,
+   "size_studs": [
+    3.02,
+    8.8,
+    0.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "obby"
+   ],
+   "fbx": "exports/fbx/Nature/SteppingStones.fbx",
+   "preview": "previews/Nature/SteppingStones.png"
+  },
+  {
+   "name": "GrassHill",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 82,
+   "size_studs": [
+    11.16,
+    11.21,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/GrassHill.fbx",
+   "preview": "previews/Nature/GrassHill.png"
+  },
+  {
+   "name": "Anthill",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 86,
+   "size_studs": [
+    3.32,
+    3.26,
+    1.39
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Anthill.fbx",
+   "preview": "previews/Nature/Anthill.png"
+  },
+  {
+   "name": "SnowPile",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 132,
+   "size_studs": [
+    4.2,
+    2.8,
+    1.68
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "winter"
+   ],
+   "fbx": "exports/fbx/Nature/SnowPile.fbx",
+   "preview": "previews/Nature/SnowPile.png"
+  },
+  {
+   "name": "Iceberg",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 82,
+   "size_studs": [
+    9.2,
+    9.2,
+    7.15
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "winter"
+   ],
+   "fbx": "exports/fbx/Nature/Iceberg.fbx",
+   "preview": "previews/Nature/Iceberg.png"
+  },
+  {
+   "name": "IceCrystals",
+   "category": "Nature",
+   "group": "Crystals",
+   "tris": 258,
+   "size_studs": [
+    2.68,
+    2.38,
+    3.29
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "winter",
+    "mining"
+   ],
+   "fbx": "exports/fbx/Nature/IceCrystals.fbx",
+   "preview": "previews/Nature/IceCrystals.png"
+  },
+  {
+   "name": "Stalagmites",
+   "category": "Nature",
+   "group": "Rocks",
+   "tris": 442,
+   "size_studs": [
+    4.12,
+    3.16,
+    3.99
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "cave"
+   ],
+   "fbx": "exports/fbx/Nature/Stalagmites.fbx",
+   "preview": "previews/Nature/Stalagmites.png"
+  },
+  {
+   "name": "Meteorite",
+   "category": "Nature",
+   "group": "Rocks",
+   "tris": 96,
+   "size_studs": [
+    6.04,
+    6.01,
+    3.83
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "space",
+    "mining"
+   ],
+   "fbx": "exports/fbx/Nature/Meteorite.fbx",
+   "preview": "previews/Nature/Meteorite.png"
+  },
+  {
+   "name": "SandCastle",
+   "category": "Nature",
+   "group": "Terrain",
+   "tris": 288,
+   "size_studs": [
+    3.4,
+    3.4,
+    3.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "beach"
+   ],
+   "fbx": "exports/fbx/Nature/SandCastle.fbx",
+   "preview": "previews/Nature/SandCastle.png"
+  },
+  {
+   "name": "Rainbow",
+   "category": "Nature",
+   "group": "Sky",
+   "tris": 480,
+   "size_studs": [
+    13.9,
+    1.92,
+    6.86
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "decor"
+   ],
+   "fbx": "exports/fbx/Nature/Rainbow.fbx",
+   "preview": "previews/Nature/Rainbow.png"
+  },
+  {
+   "name": "Sun",
+   "category": "Nature",
+   "group": "Sky",
+   "tris": 168,
+   "size_studs": [
+    6.2,
+    1.1,
+    6.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "decor"
+   ],
+   "fbx": "exports/fbx/Nature/Sun.fbx",
+   "preview": "previews/Nature/Sun.png"
+  },
+  {
+   "name": "Moon",
+   "category": "Nature",
+   "group": "Sky",
+   "tris": 164,
+   "size_studs": [
+    2.2,
+    1.0,
+    4.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "decor"
+   ],
+   "fbx": "exports/fbx/Nature/Moon.fbx",
+   "preview": "previews/Nature/Moon.png"
+  },
+  {
+   "name": "StarDecor",
+   "category": "Nature",
+   "group": "Sky",
+   "tris": 164,
+   "size_studs": [
+    3.04,
+    0.67,
+    2.89
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "decor"
+   ],
+   "fbx": "exports/fbx/Nature/StarDecor.fbx",
+   "preview": "previews/Nature/StarDecor.png"
+  },
+  {
+   "name": "Snowflake",
+   "category": "Nature",
+   "group": "Sky",
+   "tris": 276,
+   "size_studs": [
+    3.2,
+    0.2,
+    2.87
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "winter",
+    "decor"
+   ],
+   "fbx": "exports/fbx/Nature/Snowflake.fbx",
+   "preview": "previews/Nature/Snowflake.png"
+  },
+  {
+   "name": "StormCloud",
+   "category": "Nature",
+   "group": "Sky",
+   "tris": 200,
+   "size_studs": [
+    7.7,
+    3.56,
+    6.68
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/StormCloud.fbx",
+   "preview": "previews/Nature/StormCloud.png"
+  },
+  {
+   "name": "Tornado",
+   "category": "Nature",
+   "group": "Sky",
+   "tris": 196,
+   "size_studs": [
+    7.0,
+    7.0,
+    7.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Nature/Tornado.fbx",
+   "preview": "previews/Nature/Tornado.png"
   }
  ],
  "Props": [
@@ -8418,6 +12710,1479 @@
    "tags": [],
    "fbx": "exports/fbx/Props/Beehive.fbx",
    "preview": "previews/Props/Beehive.png"
+  },
+  {
+   "name": "WoodLootCrate",
+   "category": "Props",
+   "group": "LootCrates",
+   "tris": 256,
+   "size_studs": [
+    2.5,
+    2.51,
+    2.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Props/WoodLootCrate.fbx",
+   "preview": "previews/Props/WoodLootCrate.png"
+  },
+  {
+   "name": "WoodKey",
+   "category": "Props",
+   "group": "Keys",
+   "tris": 176,
+   "size_studs": [
+    2.94,
+    0.3,
+    1.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "wood"
+   ],
+   "fbx": "exports/fbx/Props/WoodKey.fbx",
+   "preview": "previews/Props/WoodKey.png"
+  },
+  {
+   "name": "StoneLootCrate",
+   "category": "Props",
+   "group": "LootCrates",
+   "tris": 256,
+   "size_studs": [
+    2.5,
+    2.51,
+    2.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Props/StoneLootCrate.fbx",
+   "preview": "previews/Props/StoneLootCrate.png"
+  },
+  {
+   "name": "StoneKey",
+   "category": "Props",
+   "group": "Keys",
+   "tris": 176,
+   "size_studs": [
+    2.94,
+    0.3,
+    1.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "stone"
+   ],
+   "fbx": "exports/fbx/Props/StoneKey.fbx",
+   "preview": "previews/Props/StoneKey.png"
+  },
+  {
+   "name": "IronLootCrate",
+   "category": "Props",
+   "group": "LootCrates",
+   "tris": 256,
+   "size_studs": [
+    2.5,
+    2.51,
+    2.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Props/IronLootCrate.fbx",
+   "preview": "previews/Props/IronLootCrate.png"
+  },
+  {
+   "name": "IronKey",
+   "category": "Props",
+   "group": "Keys",
+   "tris": 176,
+   "size_studs": [
+    2.94,
+    0.3,
+    1.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "iron"
+   ],
+   "fbx": "exports/fbx/Props/IronKey.fbx",
+   "preview": "previews/Props/IronKey.png"
+  },
+  {
+   "name": "GoldLootCrate",
+   "category": "Props",
+   "group": "LootCrates",
+   "tris": 256,
+   "size_studs": [
+    2.5,
+    2.51,
+    2.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Props/GoldLootCrate.fbx",
+   "preview": "previews/Props/GoldLootCrate.png"
+  },
+  {
+   "name": "GoldKey",
+   "category": "Props",
+   "group": "Keys",
+   "tris": 176,
+   "size_studs": [
+    2.94,
+    0.3,
+    1.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "gold"
+   ],
+   "fbx": "exports/fbx/Props/GoldKey.fbx",
+   "preview": "previews/Props/GoldKey.png"
+  },
+  {
+   "name": "DiamondLootCrate",
+   "category": "Props",
+   "group": "LootCrates",
+   "tris": 256,
+   "size_studs": [
+    2.5,
+    2.51,
+    2.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Props/DiamondLootCrate.fbx",
+   "preview": "previews/Props/DiamondLootCrate.png"
+  },
+  {
+   "name": "DiamondKey",
+   "category": "Props",
+   "group": "Keys",
+   "tris": 176,
+   "size_studs": [
+    2.94,
+    0.3,
+    1.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "diamond"
+   ],
+   "fbx": "exports/fbx/Props/DiamondKey.fbx",
+   "preview": "previews/Props/DiamondKey.png"
+  },
+  {
+   "name": "EmeraldLootCrate",
+   "category": "Props",
+   "group": "LootCrates",
+   "tris": 256,
+   "size_studs": [
+    2.5,
+    2.51,
+    2.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Props/EmeraldLootCrate.fbx",
+   "preview": "previews/Props/EmeraldLootCrate.png"
+  },
+  {
+   "name": "EmeraldKey",
+   "category": "Props",
+   "group": "Keys",
+   "tris": 176,
+   "size_studs": [
+    2.94,
+    0.3,
+    1.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "emerald"
+   ],
+   "fbx": "exports/fbx/Props/EmeraldKey.fbx",
+   "preview": "previews/Props/EmeraldKey.png"
+  },
+  {
+   "name": "RubyLootCrate",
+   "category": "Props",
+   "group": "LootCrates",
+   "tris": 256,
+   "size_studs": [
+    2.5,
+    2.51,
+    2.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Props/RubyLootCrate.fbx",
+   "preview": "previews/Props/RubyLootCrate.png"
+  },
+  {
+   "name": "RubyKey",
+   "category": "Props",
+   "group": "Keys",
+   "tris": 176,
+   "size_studs": [
+    2.94,
+    0.3,
+    1.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "ruby"
+   ],
+   "fbx": "exports/fbx/Props/RubyKey.fbx",
+   "preview": "previews/Props/RubyKey.png"
+  },
+  {
+   "name": "RainbowLootCrate",
+   "category": "Props",
+   "group": "LootCrates",
+   "tris": 368,
+   "size_studs": [
+    2.5,
+    2.51,
+    2.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Props/RainbowLootCrate.fbx",
+   "preview": "previews/Props/RainbowLootCrate.png"
+  },
+  {
+   "name": "RainbowKey",
+   "category": "Props",
+   "group": "Keys",
+   "tris": 288,
+   "size_studs": [
+    2.94,
+    0.3,
+    1.28
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "tiered",
+    "rainbow"
+   ],
+   "fbx": "exports/fbx/Props/RainbowKey.fbx",
+   "preview": "previews/Props/RainbowKey.png"
+  },
+  {
+   "name": "GoldBar",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 14,
+   "size_studs": [
+    1.27,
+    1.27,
+    0.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "mining"
+   ],
+   "fbx": "exports/fbx/Props/GoldBar.fbx",
+   "preview": "previews/Props/GoldBar.png"
+  },
+  {
+   "name": "SilverBar",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 14,
+   "size_studs": [
+    1.27,
+    1.27,
+    0.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "mining"
+   ],
+   "fbx": "exports/fbx/Props/SilverBar.fbx",
+   "preview": "previews/Props/SilverBar.png"
+  },
+  {
+   "name": "IronBar",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 14,
+   "size_studs": [
+    1.27,
+    1.27,
+    0.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "mining"
+   ],
+   "fbx": "exports/fbx/Props/IronBar.fbx",
+   "preview": "previews/Props/IronBar.png"
+  },
+  {
+   "name": "CopperBar",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 14,
+   "size_studs": [
+    1.27,
+    1.27,
+    0.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "mining"
+   ],
+   "fbx": "exports/fbx/Props/CopperBar.fbx",
+   "preview": "previews/Props/CopperBar.png"
+  },
+  {
+   "name": "DiamondBar",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 14,
+   "size_studs": [
+    1.27,
+    1.27,
+    0.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "mining"
+   ],
+   "fbx": "exports/fbx/Props/DiamondBar.fbx",
+   "preview": "previews/Props/DiamondBar.png"
+  },
+  {
+   "name": "EmeraldBar",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 14,
+   "size_studs": [
+    1.27,
+    1.27,
+    0.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "mining"
+   ],
+   "fbx": "exports/fbx/Props/EmeraldBar.fbx",
+   "preview": "previews/Props/EmeraldBar.png"
+  },
+  {
+   "name": "RubyBar",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 14,
+   "size_studs": [
+    1.27,
+    1.27,
+    0.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "mining"
+   ],
+   "fbx": "exports/fbx/Props/RubyBar.fbx",
+   "preview": "previews/Props/RubyBar.png"
+  },
+  {
+   "name": "GoldBarStack",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 84,
+   "size_studs": [
+    3.87,
+    1.27,
+    1.35
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Props/GoldBarStack.fbx",
+   "preview": "previews/Props/GoldBarStack.png"
+  },
+  {
+   "name": "TreasurePile",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 606,
+   "size_studs": [
+    6.11,
+    5.98,
+    2.23
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Props/TreasurePile.fbx",
+   "preview": "previews/Props/TreasurePile.png"
+  },
+  {
+   "name": "DiamondCrown",
+   "category": "Props",
+   "group": "Pickups",
+   "tris": 268,
+   "size_studs": [
+    1.96,
+    1.96,
+    1.41
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/DiamondCrown.fbx",
+   "preview": "previews/Props/DiamondCrown.png"
+  },
+  {
+   "name": "RoyalCrown",
+   "category": "Props",
+   "group": "Pickups",
+   "tris": 158,
+   "size_studs": [
+    2.0,
+    2.0,
+    2.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/RoyalCrown.fbx",
+   "preview": "previews/Props/RoyalCrown.png"
+  },
+  {
+   "name": "Tiara",
+   "category": "Props",
+   "group": "Pickups",
+   "tris": 160,
+   "size_studs": [
+    1.85,
+    1.93,
+    0.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Tiara.fbx",
+   "preview": "previews/Props/Tiara.png"
+  },
+  {
+   "name": "Ticket",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 84,
+   "size_studs": [
+    2.0,
+    0.13,
+    1.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Ticket.fbx",
+   "preview": "previews/Props/Ticket.png"
+  },
+  {
+   "name": "TicketRoll",
+   "category": "Props",
+   "group": "Currency",
+   "tris": 76,
+   "size_studs": [
+    3.1,
+    0.8,
+    1.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/TicketRoll.fbx",
+   "preview": "previews/Props/TicketRoll.png"
+  },
+  {
+   "name": "Checkpoint",
+   "category": "Props",
+   "group": "Obby",
+   "tris": 72,
+   "size_studs": [
+    4.0,
+    4.0,
+    4.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "obby"
+   ],
+   "fbx": "exports/fbx/Props/Checkpoint.fbx",
+   "preview": "previews/Props/Checkpoint.png"
+  },
+  {
+   "name": "FinishLine",
+   "category": "Props",
+   "group": "Obby",
+   "tris": 496,
+   "size_studs": [
+    7.6,
+    1.6,
+    6.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "obby"
+   ],
+   "fbx": "exports/fbx/Props/FinishLine.fbx",
+   "preview": "previews/Props/FinishLine.png"
+  },
+  {
+   "name": "Spikes",
+   "category": "Props",
+   "group": "Obby",
+   "tris": 140,
+   "size_studs": [
+    4.0,
+    4.0,
+    1.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "obby",
+    "hazard"
+   ],
+   "fbx": "exports/fbx/Props/Spikes.fbx",
+   "preview": "previews/Props/Spikes.png"
+  },
+  {
+   "name": "LavaBlock",
+   "category": "Props",
+   "group": "Obby",
+   "tris": 176,
+   "size_studs": [
+    4.0,
+    4.0,
+    1.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "obby",
+    "hazard"
+   ],
+   "fbx": "exports/fbx/Props/LavaBlock.fbx",
+   "preview": "previews/Props/LavaBlock.png"
+  },
+  {
+   "name": "Trampoline",
+   "category": "Props",
+   "group": "Obby",
+   "tris": 104,
+   "size_studs": [
+    4.8,
+    4.8,
+    1.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "obby"
+   ],
+   "fbx": "exports/fbx/Props/Trampoline.fbx",
+   "preview": "previews/Props/Trampoline.png"
+  },
+  {
+   "name": "SpeedPad",
+   "category": "Props",
+   "group": "Obby",
+   "tris": 104,
+   "size_studs": [
+    3.0,
+    5.0,
+    0.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "obby",
+    "boost"
+   ],
+   "fbx": "exports/fbx/Props/SpeedPad.fbx",
+   "preview": "previews/Props/SpeedPad.png"
+  },
+  {
+   "name": "JumpPad",
+   "category": "Props",
+   "group": "Obby",
+   "tris": 80,
+   "size_studs": [
+    3.33,
+    3.33,
+    0.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "obby",
+    "boost"
+   ],
+   "fbx": "exports/fbx/Props/JumpPad.fbx",
+   "preview": "previews/Props/JumpPad.png"
+  },
+  {
+   "name": "Ladder",
+   "category": "Props",
+   "group": "Obby",
+   "tris": 184,
+   "size_studs": [
+    1.85,
+    0.25,
+    8.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Ladder.fbx",
+   "preview": "previews/Props/Ladder.png"
+  },
+  {
+   "name": "RopeCoil",
+   "category": "Props",
+   "group": "Adventure",
+   "tris": 276,
+   "size_studs": [
+    3.08,
+    2.08,
+    1.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/RopeCoil.fbx",
+   "preview": "previews/Props/RopeCoil.png"
+  },
+  {
+   "name": "Pallet",
+   "category": "Props",
+   "group": "Warehouse",
+   "tris": 84,
+   "size_studs": [
+    3.2,
+    3.2,
+    0.52
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Pallet.fbx",
+   "preview": "previews/Props/Pallet.png"
+  },
+  {
+   "name": "CrateStack",
+   "category": "Props",
+   "group": "Warehouse",
+   "tris": 276,
+   "size_studs": [
+    4.31,
+    2.27,
+    3.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/CrateStack.fbx",
+   "preview": "previews/Props/CrateStack.png"
+  },
+  {
+   "name": "TNT",
+   "category": "Props",
+   "group": "Adventure",
+   "tris": 100,
+   "size_studs": [
+    1.6,
+    1.64,
+    2.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "explosive"
+   ],
+   "fbx": "exports/fbx/Props/TNT.fbx",
+   "preview": "previews/Props/TNT.png"
+  },
+  {
+   "name": "Dynamite",
+   "category": "Props",
+   "group": "Adventure",
+   "tris": 104,
+   "size_studs": [
+    1.0,
+    0.45,
+    2.31
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "explosive"
+   ],
+   "fbx": "exports/fbx/Props/Dynamite.fbx",
+   "preview": "previews/Props/Dynamite.png"
+  },
+  {
+   "name": "CartoonBomb",
+   "category": "Props",
+   "group": "Adventure",
+   "tris": 164,
+   "size_studs": [
+    1.9,
+    2.0,
+    2.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "explosive"
+   ],
+   "fbx": "exports/fbx/Props/CartoonBomb.fbx",
+   "preview": "previews/Props/CartoonBomb.png"
+  },
+  {
+   "name": "Tombstone",
+   "category": "Props",
+   "group": "Spooky",
+   "tris": 148,
+   "size_studs": [
+    2.2,
+    1.6,
+    2.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Props/Tombstone.fbx",
+   "preview": "previews/Props/Tombstone.png"
+  },
+  {
+   "name": "Coffin",
+   "category": "Props",
+   "group": "Spooky",
+   "tris": 112,
+   "size_studs": [
+    1.66,
+    3.26,
+    0.96
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Props/Coffin.fbx",
+   "preview": "previews/Props/Coffin.png"
+  },
+  {
+   "name": "Skull",
+   "category": "Props",
+   "group": "Spooky",
+   "tris": 172,
+   "size_studs": [
+    1.2,
+    1.25,
+    1.35
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Props/Skull.fbx",
+   "preview": "previews/Props/Skull.png"
+  },
+  {
+   "name": "BonePile",
+   "category": "Props",
+   "group": "Spooky",
+   "tris": 752,
+   "size_studs": [
+    2.1,
+    2.5,
+    0.58
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Props/BonePile.fbx",
+   "preview": "previews/Props/BonePile.png"
+  },
+  {
+   "name": "JackOLantern",
+   "category": "Props",
+   "group": "Spooky",
+   "tris": 192,
+   "size_studs": [
+    2.0,
+    1.83,
+    1.95
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Props/JackOLantern.fbx",
+   "preview": "previews/Props/JackOLantern.png"
+  },
+  {
+   "name": "WitchHat",
+   "category": "Props",
+   "group": "Spooky",
+   "tris": 114,
+   "size_studs": [
+    2.59,
+    2.59,
+    2.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Props/WitchHat.fbx",
+   "preview": "previews/Props/WitchHat.png"
+  },
+  {
+   "name": "SpiderWeb",
+   "category": "Props",
+   "group": "Spooky",
+   "tris": 284,
+   "size_studs": [
+    3.6,
+    1.2,
+    3.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Props/SpiderWeb.fbx",
+   "preview": "previews/Props/SpiderWeb.png"
+  },
+  {
+   "name": "HauntedCandle",
+   "category": "Props",
+   "group": "Spooky",
+   "tris": 124,
+   "size_studs": [
+    1.2,
+    1.2,
+    2.06
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Props/HauntedCandle.fbx",
+   "preview": "previews/Props/HauntedCandle.png"
+  },
+  {
+   "name": "BlueGift",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 136,
+   "size_studs": [
+    1.94,
+    1.94,
+    2.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Props/BlueGift.fbx",
+   "preview": "previews/Props/BlueGift.png"
+  },
+  {
+   "name": "GreenGift",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 136,
+   "size_studs": [
+    1.94,
+    1.94,
+    2.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Props/GreenGift.fbx",
+   "preview": "previews/Props/GreenGift.png"
+  },
+  {
+   "name": "PurpleGift",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 136,
+   "size_studs": [
+    1.94,
+    1.94,
+    2.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Props/PurpleGift.fbx",
+   "preview": "previews/Props/PurpleGift.png"
+  },
+  {
+   "name": "PinkGift",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 136,
+   "size_studs": [
+    1.94,
+    1.94,
+    2.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Props/PinkGift.fbx",
+   "preview": "previews/Props/PinkGift.png"
+  },
+  {
+   "name": "GoldGift",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 136,
+   "size_studs": [
+    1.94,
+    1.94,
+    2.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Props/GoldGift.fbx",
+   "preview": "previews/Props/GoldGift.png"
+  },
+  {
+   "name": "GiftPile",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 544,
+   "size_studs": [
+    5.31,
+    2.44,
+    3.18
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday"
+   ],
+   "fbx": "exports/fbx/Props/GiftPile.fbx",
+   "preview": "previews/Props/GiftPile.png"
+  },
+  {
+   "name": "Stocking",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 180,
+   "size_studs": [
+    1.54,
+    0.5,
+    2.81
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday"
+   ],
+   "fbx": "exports/fbx/Props/Stocking.fbx",
+   "preview": "previews/Props/Stocking.png"
+  },
+  {
+   "name": "CandyCaneDecor",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 148,
+   "size_studs": [
+    1.5,
+    0.4,
+    4.75
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday"
+   ],
+   "fbx": "exports/fbx/Props/CandyCaneDecor.fbx",
+   "preview": "previews/Props/CandyCaneDecor.png"
+  },
+  {
+   "name": "SnowGlobe",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 162,
+   "size_studs": [
+    2.09,
+    2.2,
+    2.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "decor"
+   ],
+   "fbx": "exports/fbx/Props/SnowGlobe.fbx",
+   "preview": "previews/Props/SnowGlobe.png"
+  },
+  {
+   "name": "Wreath",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 172,
+   "size_studs": [
+    2.86,
+    1.57,
+    3.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday"
+   ],
+   "fbx": "exports/fbx/Props/Wreath.fbx",
+   "preview": "previews/Props/Wreath.png"
+  },
+  {
+   "name": "CrystalBall",
+   "category": "Props",
+   "group": "Magic",
+   "tris": 220,
+   "size_studs": [
+    1.52,
+    1.6,
+    2.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "magic"
+   ],
+   "fbx": "exports/fbx/Props/CrystalBall.fbx",
+   "preview": "previews/Props/CrystalBall.png"
+  },
+  {
+   "name": "MagicOrb",
+   "category": "Props",
+   "group": "Magic",
+   "tris": 212,
+   "size_studs": [
+    2.54,
+    2.72,
+    2.54
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "magic",
+    "simulator"
+   ],
+   "fbx": "exports/fbx/Props/MagicOrb.fbx",
+   "preview": "previews/Props/MagicOrb.png"
+  },
+  {
+   "name": "Spellbook",
+   "category": "Props",
+   "group": "Magic",
+   "tris": 172,
+   "size_studs": [
+    1.75,
+    2.2,
+    0.73
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "magic"
+   ],
+   "fbx": "exports/fbx/Props/Spellbook.fbx",
+   "preview": "previews/Props/Spellbook.png"
+  },
+  {
+   "name": "Scroll",
+   "category": "Props",
+   "group": "Magic",
+   "tris": 148,
+   "size_studs": [
+    2.9,
+    0.4,
+    2.95
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Scroll.fbx",
+   "preview": "previews/Props/Scroll.png"
+  },
+  {
+   "name": "TreasureMap",
+   "category": "Props",
+   "group": "Adventure",
+   "tris": 96,
+   "size_studs": [
+    2.6,
+    2.0,
+    0.26
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/TreasureMap.fbx",
+   "preview": "previews/Props/TreasureMap.png"
+  },
+  {
+   "name": "Hourglass",
+   "category": "Props",
+   "group": "Magic",
+   "tris": 236,
+   "size_studs": [
+    1.4,
+    1.4,
+    2.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Hourglass.fbx",
+   "preview": "previews/Props/Hourglass.png"
+  },
+  {
+   "name": "RuneStone",
+   "category": "Props",
+   "group": "Magic",
+   "tris": 116,
+   "size_studs": [
+    1.83,
+    1.08,
+    3.71
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "magic"
+   ],
+   "fbx": "exports/fbx/Props/RuneStone.fbx",
+   "preview": "previews/Props/RuneStone.png"
+  },
+  {
+   "name": "Totem",
+   "category": "Props",
+   "group": "Adventure",
+   "tris": 412,
+   "size_studs": [
+    4.35,
+    2.2,
+    6.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Totem.fbx",
+   "preview": "previews/Props/Totem.png"
+  },
+  {
+   "name": "Altar",
+   "category": "Props",
+   "group": "Magic",
+   "tris": 218,
+   "size_studs": [
+    4.0,
+    3.0,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "magic"
+   ],
+   "fbx": "exports/fbx/Props/Altar.fbx",
+   "preview": "previews/Props/Altar.png"
+  },
+  {
+   "name": "MagicMirror",
+   "category": "Props",
+   "group": "Magic",
+   "tris": 116,
+   "size_studs": [
+    2.2,
+    0.4,
+    3.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "magic"
+   ],
+   "fbx": "exports/fbx/Props/MagicMirror.fbx",
+   "preview": "previews/Props/MagicMirror.png"
+  },
+  {
+   "name": "BrassCompass",
+   "category": "Props",
+   "group": "Adventure",
+   "tris": 116,
+   "size_studs": [
+    2.0,
+    0.36,
+    2.22
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/BrassCompass.fbx",
+   "preview": "previews/Props/BrassCompass.png"
+  },
+  {
+   "name": "Telescope",
+   "category": "Props",
+   "group": "Adventure",
+   "tris": 92,
+   "size_studs": [
+    3.09,
+    1.86,
+    4.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Telescope.fbx",
+   "preview": "previews/Props/Telescope.png"
+  },
+  {
+   "name": "DogHouse",
+   "category": "Props",
+   "group": "Pets",
+   "tris": 128,
+   "size_studs": [
+    3.8,
+    3.8,
+    3.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "pets"
+   ],
+   "fbx": "exports/fbx/Props/DogHouse.fbx",
+   "preview": "previews/Props/DogHouse.png"
+  },
+  {
+   "name": "PetBowl",
+   "category": "Props",
+   "group": "Pets",
+   "tris": 68,
+   "size_studs": [
+    1.66,
+    1.74,
+    0.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "pets"
+   ],
+   "fbx": "exports/fbx/Props/PetBowl.fbx",
+   "preview": "previews/Props/PetBowl.png"
+  },
+  {
+   "name": "Toolbox",
+   "category": "Props",
+   "group": "Warehouse",
+   "tris": 116,
+   "size_studs": [
+    2.25,
+    1.1,
+    1.52
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Toolbox.fbx",
+   "preview": "previews/Props/Toolbox.png"
+  },
+  {
+   "name": "Battery",
+   "category": "Props",
+   "group": "Pickups",
+   "tris": 92,
+   "size_studs": [
+    1.11,
+    1.22,
+    2.22
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "simulator",
+    "energy"
+   ],
+   "fbx": "exports/fbx/Props/Battery.fbx",
+   "preview": "previews/Props/Battery.png"
+  },
+  {
+   "name": "Gear",
+   "category": "Props",
+   "group": "Pickups",
+   "tris": 152,
+   "size_studs": [
+    2.6,
+    0.45,
+    2.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Gear.fbx",
+   "preview": "previews/Props/Gear.png"
+  },
+  {
+   "name": "Dice",
+   "category": "Props",
+   "group": "Pickups",
+   "tris": 116,
+   "size_studs": [
+    1.45,
+    1.45,
+    1.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [],
+   "fbx": "exports/fbx/Props/Dice.fbx",
+   "preview": "previews/Props/Dice.png"
+  },
+  {
+   "name": "Firework",
+   "category": "Props",
+   "group": "Holiday",
+   "tris": 134,
+   "size_studs": [
+    1.6,
+    1.0,
+    2.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday"
+   ],
+   "fbx": "exports/fbx/Props/Firework.fbx",
+   "preview": "previews/Props/Firework.png"
   }
  ],
  "Animals": [
@@ -9964,6 +15729,1333 @@
     "Walk": "exports/animations/Mimic/Mimic_Walk.fbx"
    },
    "preview": "previews/Animals/Mimic.png"
+  },
+  {
+   "name": "Alpaca",
+   "category": "Animals",
+   "group": "Farm",
+   "tris": 996,
+   "size_studs": [
+    1.4,
+    3.27,
+    4.52
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Alpaca.fbx",
+   "animations": {
+    "Idle": "exports/animations/Alpaca/Alpaca_Idle.fbx",
+    "Walk": "exports/animations/Alpaca/Alpaca_Walk.fbx"
+   },
+   "preview": "previews/Animals/Alpaca.png"
+  },
+  {
+   "name": "Moose",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 880,
+   "size_studs": [
+    4.38,
+    4.67,
+    5.62
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Moose.fbx",
+   "animations": {
+    "Idle": "exports/animations/Moose/Moose_Idle.fbx",
+    "Walk": "exports/animations/Moose/Moose_Walk.fbx"
+   },
+   "preview": "previews/Animals/Moose.png"
+  },
+  {
+   "name": "Bison",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 888,
+   "size_studs": [
+    2.42,
+    4.52,
+    3.35
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Bison.fbx",
+   "animations": {
+    "Idle": "exports/animations/Bison/Bison_Idle.fbx",
+    "Walk": "exports/animations/Bison/Bison_Walk.fbx"
+   },
+   "preview": "previews/Animals/Bison.png"
+  },
+  {
+   "name": "Boar",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 720,
+   "size_studs": [
+    1.5,
+    4.6,
+    2.66
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Boar.fbx",
+   "animations": {
+    "Idle": "exports/animations/Boar/Boar_Idle.fbx",
+    "Walk": "exports/animations/Boar/Boar_Walk.fbx"
+   },
+   "preview": "previews/Animals/Boar.png"
+  },
+  {
+   "name": "Leopard",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 1608,
+   "size_studs": [
+    1.26,
+    4.52,
+    2.97
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Leopard.fbx",
+   "animations": {
+    "Idle": "exports/animations/Leopard/Leopard_Idle.fbx",
+    "Walk": "exports/animations/Leopard/Leopard_Walk.fbx"
+   },
+   "preview": "previews/Animals/Leopard.png"
+  },
+  {
+   "name": "Panther",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 728,
+   "size_studs": [
+    1.2,
+    4.52,
+    2.97
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Panther.fbx",
+   "animations": {
+    "Idle": "exports/animations/Panther/Panther_Idle.fbx",
+    "Walk": "exports/animations/Panther/Panther_Walk.fbx"
+   },
+   "preview": "previews/Animals/Panther.png"
+  },
+  {
+   "name": "Hyena",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 1520,
+   "size_studs": [
+    1.36,
+    3.52,
+    3.08
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Hyena.fbx",
+   "animations": {
+    "Idle": "exports/animations/Hyena/Hyena_Idle.fbx",
+    "Walk": "exports/animations/Hyena/Hyena_Walk.fbx"
+   },
+   "preview": "previews/Animals/Hyena.png"
+  },
+  {
+   "name": "Lemur",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 820,
+   "size_studs": [
+    1.0,
+    3.56,
+    2.95
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Lemur.fbx",
+   "animations": {
+    "Idle": "exports/animations/Lemur/Lemur_Idle.fbx",
+    "Walk": "exports/animations/Lemur/Lemur_Walk.fbx"
+   },
+   "preview": "previews/Animals/Lemur.png"
+  },
+  {
+   "name": "Armadillo",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 804,
+   "size_studs": [
+    1.25,
+    4.34,
+    1.36
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Armadillo.fbx",
+   "animations": {
+    "Idle": "exports/animations/Armadillo/Armadillo_Idle.fbx",
+    "Walk": "exports/animations/Armadillo/Armadillo_Walk.fbx"
+   },
+   "preview": "previews/Animals/Armadillo.png"
+  },
+  {
+   "name": "Platypus",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 488,
+   "size_studs": [
+    1.1,
+    3.85,
+    1.12
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Platypus.fbx",
+   "animations": {
+    "Idle": "exports/animations/Platypus/Platypus_Idle.fbx",
+    "Walk": "exports/animations/Platypus/Platypus_Walk.fbx"
+   },
+   "preview": "previews/Animals/Platypus.png"
+  },
+  {
+   "name": "Badger",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 708,
+   "size_studs": [
+    1.4,
+    2.87,
+    1.49
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Badger.fbx",
+   "animations": {
+    "Idle": "exports/animations/Badger/Badger_Idle.fbx",
+    "Walk": "exports/animations/Badger/Badger_Walk.fbx"
+   },
+   "preview": "previews/Animals/Badger.png"
+  },
+  {
+   "name": "Porcupine",
+   "category": "Animals",
+   "group": "Wild",
+   "tris": 652,
+   "size_studs": [
+    1.3,
+    2.57,
+    1.64
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Porcupine.fbx",
+   "animations": {
+    "Idle": "exports/animations/Porcupine/Porcupine_Idle.fbx",
+    "Walk": "exports/animations/Porcupine/Porcupine_Walk.fbx"
+   },
+   "preview": "previews/Animals/Porcupine.png"
+  },
+  {
+   "name": "Chipmunk",
+   "category": "Animals",
+   "group": "Pets",
+   "tris": 1016,
+   "size_studs": [
+    0.85,
+    2.58,
+    1.98
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Chipmunk.fbx",
+   "animations": {
+    "Idle": "exports/animations/Chipmunk/Chipmunk_Idle.fbx",
+    "Walk": "exports/animations/Chipmunk/Chipmunk_Walk.fbx"
+   },
+   "preview": "previews/Animals/Chipmunk.png"
+  },
+  {
+   "name": "Bulldog",
+   "category": "Animals",
+   "group": "Pets",
+   "tris": 808,
+   "size_studs": [
+    1.84,
+    2.83,
+    2.0
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Bulldog.fbx",
+   "animations": {
+    "Idle": "exports/animations/Bulldog/Bulldog_Idle.fbx",
+    "Walk": "exports/animations/Bulldog/Bulldog_Walk.fbx"
+   },
+   "preview": "previews/Animals/Bulldog.png"
+  },
+  {
+   "name": "Poodle",
+   "category": "Animals",
+   "group": "Pets",
+   "tris": 824,
+   "size_studs": [
+    1.31,
+    4.34,
+    2.95
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Poodle.fbx",
+   "animations": {
+    "Idle": "exports/animations/Poodle/Poodle_Idle.fbx",
+    "Walk": "exports/animations/Poodle/Poodle_Walk.fbx"
+   },
+   "preview": "previews/Animals/Poodle.png"
+  },
+  {
+   "name": "ShibaInu",
+   "category": "Animals",
+   "group": "Pets",
+   "tris": 836,
+   "size_studs": [
+    1.3,
+    3.3,
+    2.96
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/ShibaInu.fbx",
+   "animations": {
+    "Idle": "exports/animations/ShibaInu/ShibaInu_Idle.fbx",
+    "Walk": "exports/animations/ShibaInu/ShibaInu_Walk.fbx"
+   },
+   "preview": "previews/Animals/ShibaInu.png"
+  },
+  {
+   "name": "Pug",
+   "category": "Animals",
+   "group": "Pets",
+   "tris": 548,
+   "size_studs": [
+    1.64,
+    2.65,
+    2.03
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Pug.fbx",
+   "animations": {
+    "Idle": "exports/animations/Pug/Pug_Idle.fbx",
+    "Walk": "exports/animations/Pug/Pug_Walk.fbx"
+   },
+   "preview": "previews/Animals/Pug.png"
+  },
+  {
+   "name": "BlackCat",
+   "category": "Animals",
+   "group": "Pets",
+   "tris": 576,
+   "size_studs": [
+    1.15,
+    3.44,
+    2.81
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/BlackCat.fbx",
+   "animations": {
+    "Idle": "exports/animations/BlackCat/BlackCat_Idle.fbx",
+    "Walk": "exports/animations/BlackCat/BlackCat_Walk.fbx"
+   },
+   "preview": "previews/Animals/BlackCat.png"
+  },
+  {
+   "name": "Hellhound",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 900,
+   "size_studs": [
+    1.5,
+    4.7,
+    3.92
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "mythical",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Hellhound.fbx",
+   "animations": {
+    "Idle": "exports/animations/Hellhound/Hellhound_Idle.fbx",
+    "Walk": "exports/animations/Hellhound/Hellhound_Walk.fbx"
+   },
+   "preview": "previews/Animals/Hellhound.png"
+  },
+  {
+   "name": "RobotDog",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 1040,
+   "size_studs": [
+    1.3,
+    3.99,
+    3.07
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/RobotDog.fbx",
+   "animations": {
+    "Idle": "exports/animations/RobotDog/RobotDog_Idle.fbx",
+    "Walk": "exports/animations/RobotDog/RobotDog_Walk.fbx"
+   },
+   "preview": "previews/Animals/RobotDog.png"
+  },
+  {
+   "name": "Rooster",
+   "category": "Animals",
+   "group": "Birds",
+   "tris": 598,
+   "size_studs": [
+    1.34,
+    2.49,
+    2.09
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Rooster.fbx",
+   "animations": {
+    "Idle": "exports/animations/Rooster/Rooster_Idle.fbx",
+    "Walk": "exports/animations/Rooster/Rooster_Walk.fbx",
+    "Fly": "exports/animations/Rooster/Rooster_Fly.fbx"
+   },
+   "preview": "previews/Animals/Rooster.png"
+  },
+  {
+   "name": "Turkey",
+   "category": "Animals",
+   "group": "Birds",
+   "tris": 550,
+   "size_studs": [
+    3.81,
+    1.96,
+    3.05
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Turkey.fbx",
+   "animations": {
+    "Idle": "exports/animations/Turkey/Turkey_Idle.fbx",
+    "Walk": "exports/animations/Turkey/Turkey_Walk.fbx",
+    "Fly": "exports/animations/Turkey/Turkey_Fly.fbx"
+   },
+   "preview": "previews/Animals/Turkey.png"
+  },
+  {
+   "name": "Goose",
+   "category": "Animals",
+   "group": "Birds",
+   "tris": 538,
+   "size_studs": [
+    1.34,
+    2.38,
+    2.72
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Goose.fbx",
+   "animations": {
+    "Idle": "exports/animations/Goose/Goose_Idle.fbx",
+    "Walk": "exports/animations/Goose/Goose_Walk.fbx",
+    "Fly": "exports/animations/Goose/Goose_Fly.fbx"
+   },
+   "preview": "previews/Animals/Goose.png"
+  },
+  {
+   "name": "Crow",
+   "category": "Animals",
+   "group": "Birds",
+   "tris": 406,
+   "size_studs": [
+    1.14,
+    1.96,
+    1.31
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Crow.fbx",
+   "animations": {
+    "Idle": "exports/animations/Crow/Crow_Idle.fbx",
+    "Walk": "exports/animations/Crow/Crow_Walk.fbx",
+    "Fly": "exports/animations/Crow/Crow_Fly.fbx"
+   },
+   "preview": "previews/Animals/Crow.png"
+  },
+  {
+   "name": "Pelican",
+   "category": "Animals",
+   "group": "Birds",
+   "tris": 596,
+   "size_studs": [
+    1.44,
+    3.24,
+    2.76
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Pelican.fbx",
+   "animations": {
+    "Idle": "exports/animations/Pelican/Pelican_Idle.fbx",
+    "Walk": "exports/animations/Pelican/Pelican_Walk.fbx",
+    "Fly": "exports/animations/Pelican/Pelican_Fly.fbx"
+   },
+   "preview": "previews/Animals/Pelican.png"
+  },
+  {
+   "name": "Dodo",
+   "category": "Animals",
+   "group": "Birds",
+   "tris": 620,
+   "size_studs": [
+    1.64,
+    2.44,
+    2.73
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Dodo.fbx",
+   "animations": {
+    "Idle": "exports/animations/Dodo/Dodo_Idle.fbx",
+    "Walk": "exports/animations/Dodo/Dodo_Walk.fbx",
+    "Fly": "exports/animations/Dodo/Dodo_Fly.fbx"
+   },
+   "preview": "previews/Animals/Dodo.png"
+  },
+  {
+   "name": "Hummingbird",
+   "category": "Animals",
+   "group": "Birds",
+   "tris": 508,
+   "size_studs": [
+    0.79,
+    2.03,
+    1.06
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Hummingbird.fbx",
+   "animations": {
+    "Idle": "exports/animations/Hummingbird/Hummingbird_Idle.fbx",
+    "Walk": "exports/animations/Hummingbird/Hummingbird_Walk.fbx",
+    "Fly": "exports/animations/Hummingbird/Hummingbird_Fly.fbx"
+   },
+   "preview": "previews/Animals/Hummingbird.png"
+  },
+  {
+   "name": "Bluebird",
+   "category": "Animals",
+   "group": "Birds",
+   "tris": 450,
+   "size_studs": [
+    1.14,
+    1.51,
+    1.26
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Bluebird.fbx",
+   "animations": {
+    "Idle": "exports/animations/Bluebird/Bluebird_Idle.fbx",
+    "Walk": "exports/animations/Bluebird/Bluebird_Walk.fbx",
+    "Fly": "exports/animations/Bluebird/Bluebird_Fly.fbx"
+   },
+   "preview": "previews/Animals/Bluebird.png"
+  },
+  {
+   "name": "Narwhal",
+   "category": "Animals",
+   "group": "Sea",
+   "tris": 750,
+   "size_studs": [
+    2.52,
+    7.7,
+    1.57
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Narwhal.fbx",
+   "animations": {
+    "Idle": "exports/animations/Narwhal/Narwhal_Idle.fbx",
+    "Swim": "exports/animations/Narwhal/Narwhal_Swim.fbx"
+   },
+   "preview": "previews/Animals/Narwhal.png"
+  },
+  {
+   "name": "Beluga",
+   "category": "Animals",
+   "group": "Sea",
+   "tris": 480,
+   "size_studs": [
+    2.52,
+    5.5,
+    1.57
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Beluga.fbx",
+   "animations": {
+    "Idle": "exports/animations/Beluga/Beluga_Idle.fbx",
+    "Swim": "exports/animations/Beluga/Beluga_Swim.fbx"
+   },
+   "preview": "previews/Animals/Beluga.png"
+  },
+  {
+   "name": "Squid",
+   "category": "Animals",
+   "group": "Sea",
+   "tris": 274,
+   "size_studs": [
+    2.6,
+    2.13,
+    4.08
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Squid.fbx",
+   "animations": {
+    "Idle": "exports/animations/Squid/Squid_Idle.fbx",
+    "Walk": "exports/animations/Squid/Squid_Walk.fbx"
+   },
+   "preview": "previews/Animals/Squid.png"
+  },
+  {
+   "name": "Lobster",
+   "category": "Animals",
+   "group": "Sea",
+   "tris": 588,
+   "size_studs": [
+    2.77,
+    5.16,
+    1.44
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Lobster.fbx",
+   "animations": {
+    "Idle": "exports/animations/Lobster/Lobster_Idle.fbx",
+    "Walk": "exports/animations/Lobster/Lobster_Walk.fbx"
+   },
+   "preview": "previews/Animals/Lobster.png"
+  },
+  {
+   "name": "Anglerfish",
+   "category": "Animals",
+   "group": "Sea",
+   "tris": 382,
+   "size_studs": [
+    1.85,
+    2.54,
+    1.84
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Anglerfish.fbx",
+   "animations": {
+    "Idle": "exports/animations/Anglerfish/Anglerfish_Idle.fbx",
+    "Swim": "exports/animations/Anglerfish/Anglerfish_Swim.fbx"
+   },
+   "preview": "previews/Animals/Anglerfish.png"
+  },
+  {
+   "name": "Koi",
+   "category": "Animals",
+   "group": "Sea",
+   "tris": 352,
+   "size_studs": [
+    1.35,
+    2.79,
+    1.14
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Koi.fbx",
+   "animations": {
+    "Idle": "exports/animations/Koi/Koi_Idle.fbx",
+    "Swim": "exports/animations/Koi/Koi_Swim.fbx"
+   },
+   "preview": "previews/Animals/Koi.png"
+  },
+  {
+   "name": "Piranha",
+   "category": "Animals",
+   "group": "Sea",
+   "tris": 356,
+   "size_studs": [
+    1.3,
+    2.05,
+    1.75
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Piranha.fbx",
+   "animations": {
+    "Idle": "exports/animations/Piranha/Piranha_Idle.fbx",
+    "Swim": "exports/animations/Piranha/Piranha_Swim.fbx"
+   },
+   "preview": "previews/Animals/Piranha.png"
+  },
+  {
+   "name": "Ant",
+   "category": "Animals",
+   "group": "Bugs",
+   "tris": 364,
+   "size_studs": [
+    2.39,
+    2.76,
+    1.13
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Ant.fbx",
+   "animations": {
+    "Idle": "exports/animations/Ant/Ant_Idle.fbx",
+    "Walk": "exports/animations/Ant/Ant_Walk.fbx"
+   },
+   "preview": "previews/Animals/Ant.png"
+  },
+  {
+   "name": "Spider",
+   "category": "Animals",
+   "group": "Bugs",
+   "tris": 364,
+   "size_studs": [
+    2.92,
+    3.37,
+    1.38
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Spider.fbx",
+   "animations": {
+    "Idle": "exports/animations/Spider/Spider_Idle.fbx",
+    "Walk": "exports/animations/Spider/Spider_Walk.fbx"
+   },
+   "preview": "previews/Animals/Spider.png"
+  },
+  {
+   "name": "Scorpion",
+   "category": "Animals",
+   "group": "Bugs",
+   "tris": 510,
+   "size_studs": [
+    2.65,
+    4.36,
+    2.43
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Scorpion.fbx",
+   "animations": {
+    "Idle": "exports/animations/Scorpion/Scorpion_Idle.fbx",
+    "Walk": "exports/animations/Scorpion/Scorpion_Walk.fbx"
+   },
+   "preview": "previews/Animals/Scorpion.png"
+  },
+  {
+   "name": "RhinoBeetle",
+   "category": "Animals",
+   "group": "Bugs",
+   "tris": 466,
+   "size_studs": [
+    2.65,
+    3.17,
+    1.54
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/RhinoBeetle.fbx",
+   "animations": {
+    "Idle": "exports/animations/RhinoBeetle/RhinoBeetle_Idle.fbx",
+    "Walk": "exports/animations/RhinoBeetle/RhinoBeetle_Walk.fbx",
+    "Fly": "exports/animations/RhinoBeetle/RhinoBeetle_Fly.fbx"
+   },
+   "preview": "previews/Animals/RhinoBeetle.png"
+  },
+  {
+   "name": "Firefly",
+   "category": "Animals",
+   "group": "Bugs",
+   "tris": 496,
+   "size_studs": [
+    2.12,
+    2.57,
+    1.03
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Firefly.fbx",
+   "animations": {
+    "Idle": "exports/animations/Firefly/Firefly_Idle.fbx",
+    "Walk": "exports/animations/Firefly/Firefly_Walk.fbx",
+    "Fly": "exports/animations/Firefly/Firefly_Fly.fbx"
+   },
+   "preview": "previews/Animals/Firefly.png"
+  },
+  {
+   "name": "Caterpillar",
+   "category": "Animals",
+   "group": "Bugs",
+   "tris": 908,
+   "size_studs": [
+    0.9,
+    4.3,
+    1.49
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Caterpillar.fbx",
+   "animations": {
+    "Idle": "exports/animations/Caterpillar/Caterpillar_Idle.fbx",
+    "Swim": "exports/animations/Caterpillar/Caterpillar_Swim.fbx"
+   },
+   "preview": "previews/Animals/Caterpillar.png"
+  },
+  {
+   "name": "Werewolf",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 856,
+   "size_studs": [
+    2.48,
+    1.7,
+    4.15
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "mythical",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Werewolf.fbx",
+   "animations": {
+    "Idle": "exports/animations/Werewolf/Werewolf_Idle.fbx",
+    "Walk": "exports/animations/Werewolf/Werewolf_Walk.fbx"
+   },
+   "preview": "previews/Animals/Werewolf.png"
+  },
+  {
+   "name": "Cyclops",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 858,
+   "size_studs": [
+    3.02,
+    2.4,
+    4.53
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "mythical",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Cyclops.fbx",
+   "animations": {
+    "Idle": "exports/animations/Cyclops/Cyclops_Idle.fbx",
+    "Walk": "exports/animations/Cyclops/Cyclops_Walk.fbx"
+   },
+   "preview": "previews/Animals/Cyclops.png"
+  },
+  {
+   "name": "Snowman",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 498,
+   "size_studs": [
+    3.25,
+    2.06,
+    4.25
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "holiday",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Snowman.fbx",
+   "animations": {
+    "Idle": "exports/animations/Snowman/Snowman_Idle.fbx",
+    "Walk": "exports/animations/Snowman/Snowman_Walk.fbx"
+   },
+   "preview": "previews/Animals/Snowman.png"
+  },
+  {
+   "name": "Gingerbread",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 752,
+   "size_studs": [
+    2.04,
+    0.67,
+    2.75
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "holiday",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Gingerbread.fbx",
+   "animations": {
+    "Idle": "exports/animations/Gingerbread/Gingerbread_Idle.fbx",
+    "Walk": "exports/animations/Gingerbread/Gingerbread_Walk.fbx"
+   },
+   "preview": "previews/Animals/Gingerbread.png"
+  },
+  {
+   "name": "Alien",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 688,
+   "size_studs": [
+    1.4,
+    1.15,
+    3.27
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "space",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/Alien.fbx",
+   "animations": {
+    "Idle": "exports/animations/Alien/Alien_Idle.fbx",
+    "Walk": "exports/animations/Alien/Alien_Walk.fbx"
+   },
+   "preview": "previews/Animals/Alien.png"
+  },
+  {
+   "name": "MushroomBuddy",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 488,
+   "size_studs": [
+    2.0,
+    2.05,
+    2.15
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/MushroomBuddy.fbx",
+   "animations": {
+    "Idle": "exports/animations/MushroomBuddy/MushroomBuddy_Idle.fbx",
+    "Walk": "exports/animations/MushroomBuddy/MushroomBuddy_Walk.fbx"
+   },
+   "preview": "previews/Animals/MushroomBuddy.png"
+  },
+  {
+   "name": "LavaSlime",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 180,
+   "size_studs": [
+    2.2,
+    2.06,
+    1.6
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/LavaSlime.fbx",
+   "animations": {
+    "Idle": "exports/animations/LavaSlime/LavaSlime_Idle.fbx",
+    "Walk": "exports/animations/LavaSlime/LavaSlime_Walk.fbx"
+   },
+   "preview": "previews/Animals/LavaSlime.png"
+  },
+  {
+   "name": "CrystalSlime",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 180,
+   "size_studs": [
+    2.2,
+    2.06,
+    1.6
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/CrystalSlime.fbx",
+   "animations": {
+    "Idle": "exports/animations/CrystalSlime/CrystalSlime_Idle.fbx",
+    "Walk": "exports/animations/CrystalSlime/CrystalSlime_Walk.fbx"
+   },
+   "preview": "previews/Animals/CrystalSlime.png"
+  },
+  {
+   "name": "GoldSlime",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 294,
+   "size_studs": [
+    2.2,
+    2.06,
+    2.19
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/GoldSlime.fbx",
+   "animations": {
+    "Idle": "exports/animations/GoldSlime/GoldSlime_Idle.fbx",
+    "Walk": "exports/animations/GoldSlime/GoldSlime_Walk.fbx"
+   },
+   "preview": "previews/Animals/GoldSlime.png"
+  },
+  {
+   "name": "CloudPet",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 374,
+   "size_studs": [
+    2.5,
+    1.3,
+    2.09
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/CloudPet.fbx",
+   "animations": {
+    "Idle": "exports/animations/CloudPet/CloudPet_Idle.fbx",
+    "Walk": "exports/animations/CloudPet/CloudPet_Walk.fbx"
+   },
+   "preview": "previews/Animals/CloudPet.png"
+  },
+  {
+   "name": "StarPet",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 208,
+   "size_studs": [
+    2.28,
+    0.65,
+    2.17
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "fantasy",
+    "space",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/StarPet.fbx",
+   "animations": {
+    "Idle": "exports/animations/StarPet/StarPet_Idle.fbx",
+    "Walk": "exports/animations/StarPet/StarPet_Walk.fbx"
+   },
+   "preview": "previews/Animals/StarPet.png"
+  },
+  {
+   "name": "StormDragon",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 1946,
+   "size_studs": [
+    7.62,
+    7.89,
+    4.62
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "mythical",
+    "dragon",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/StormDragon.fbx",
+   "animations": {
+    "Idle": "exports/animations/StormDragon/StormDragon_Idle.fbx",
+    "Walk": "exports/animations/StormDragon/StormDragon_Walk.fbx",
+    "Fly": "exports/animations/StormDragon/StormDragon_Fly.fbx"
+   },
+   "preview": "previews/Animals/StormDragon.png"
+  },
+  {
+   "name": "CandyDragon",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 1946,
+   "size_studs": [
+    7.62,
+    7.89,
+    4.62
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "mythical",
+    "dragon",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/CandyDragon.fbx",
+   "animations": {
+    "Idle": "exports/animations/CandyDragon/CandyDragon_Idle.fbx",
+    "Walk": "exports/animations/CandyDragon/CandyDragon_Walk.fbx",
+    "Fly": "exports/animations/CandyDragon/CandyDragon_Fly.fbx"
+   },
+   "preview": "previews/Animals/CandyDragon.png"
+  },
+  {
+   "name": "BoneDragon",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 1946,
+   "size_studs": [
+    7.62,
+    7.89,
+    4.62
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "mythical",
+    "dragon",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/BoneDragon.fbx",
+   "animations": {
+    "Idle": "exports/animations/BoneDragon/BoneDragon_Idle.fbx",
+    "Walk": "exports/animations/BoneDragon/BoneDragon_Walk.fbx",
+    "Fly": "exports/animations/BoneDragon/BoneDragon_Fly.fbx"
+   },
+   "preview": "previews/Animals/BoneDragon.png"
+  },
+  {
+   "name": "RainbowDragon",
+   "category": "Animals",
+   "group": "Mythical",
+   "tris": 1946,
+   "size_studs": [
+    7.62,
+    7.89,
+    4.62
+   ],
+   "rigged": true,
+   "parts": [],
+   "tags": [
+    "mythical",
+    "dragon",
+    "animal",
+    "rigged"
+   ],
+   "fbx": "exports/fbx/Animals/RainbowDragon.fbx",
+   "animations": {
+    "Idle": "exports/animations/RainbowDragon/RainbowDragon_Idle.fbx",
+    "Walk": "exports/animations/RainbowDragon/RainbowDragon_Walk.fbx",
+    "Fly": "exports/animations/RainbowDragon/RainbowDragon_Fly.fbx"
+   },
+   "preview": "previews/Animals/RainbowDragon.png"
   }
  ],
  "Vehicles": [
@@ -10570,6 +17662,1334 @@
    ],
    "fbx": "exports/fbx/Vehicles/Train.fbx",
    "preview": "previews/Vehicles/Train.png"
+  },
+  {
+   "name": "GreenCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1404,
+   "size_studs": [
+    4.95,
+    9.6,
+    3.67
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenCar_WheelFL",
+    "GreenCar_WheelFR",
+    "GreenCar_WheelBL",
+    "GreenCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenCar.fbx",
+   "preview": "previews/Vehicles/GreenCar.png"
+  },
+  {
+   "name": "YellowCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1404,
+   "size_studs": [
+    4.95,
+    9.6,
+    3.67
+   ],
+   "rigged": false,
+   "parts": [
+    "YellowCar_WheelFL",
+    "YellowCar_WheelFR",
+    "YellowCar_WheelBL",
+    "YellowCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/YellowCar.fbx",
+   "preview": "previews/Vehicles/YellowCar.png"
+  },
+  {
+   "name": "BlackCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1404,
+   "size_studs": [
+    4.95,
+    9.6,
+    3.67
+   ],
+   "rigged": false,
+   "parts": [
+    "BlackCar_WheelFL",
+    "BlackCar_WheelFR",
+    "BlackCar_WheelBL",
+    "BlackCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlackCar.fbx",
+   "preview": "previews/Vehicles/BlackCar.png"
+  },
+  {
+   "name": "WhiteCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1404,
+   "size_studs": [
+    4.95,
+    9.6,
+    3.67
+   ],
+   "rigged": false,
+   "parts": [
+    "WhiteCar_WheelFL",
+    "WhiteCar_WheelFR",
+    "WhiteCar_WheelBL",
+    "WhiteCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhiteCar.fbx",
+   "preview": "previews/Vehicles/WhiteCar.png"
+  },
+  {
+   "name": "PurpleCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1404,
+   "size_studs": [
+    4.95,
+    9.6,
+    3.67
+   ],
+   "rigged": false,
+   "parts": [
+    "PurpleCar_WheelFL",
+    "PurpleCar_WheelFR",
+    "PurpleCar_WheelBL",
+    "PurpleCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/PurpleCar.fbx",
+   "preview": "previews/Vehicles/PurpleCar.png"
+  },
+  {
+   "name": "OrangeCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1404,
+   "size_studs": [
+    4.95,
+    9.6,
+    3.67
+   ],
+   "rigged": false,
+   "parts": [
+    "OrangeCar_WheelFL",
+    "OrangeCar_WheelFR",
+    "OrangeCar_WheelBL",
+    "OrangeCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/OrangeCar.fbx",
+   "preview": "previews/Vehicles/OrangeCar.png"
+  },
+  {
+   "name": "PinkCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1404,
+   "size_studs": [
+    4.95,
+    9.6,
+    3.67
+   ],
+   "rigged": false,
+   "parts": [
+    "PinkCar_WheelFL",
+    "PinkCar_WheelFR",
+    "PinkCar_WheelBL",
+    "PinkCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/PinkCar.fbx",
+   "preview": "previews/Vehicles/PinkCar.png"
+  },
+  {
+   "name": "RedSportsCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.1,
+    2.66
+   ],
+   "rigged": false,
+   "parts": [
+    "RedSportsCar_WheelFL",
+    "RedSportsCar_WheelFR",
+    "RedSportsCar_WheelBL",
+    "RedSportsCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RedSportsCar.fbx",
+   "preview": "previews/Vehicles/RedSportsCar.png"
+  },
+  {
+   "name": "BlueSportsCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.1,
+    2.66
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueSportsCar_WheelFL",
+    "BlueSportsCar_WheelFR",
+    "BlueSportsCar_WheelBL",
+    "BlueSportsCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueSportsCar.fbx",
+   "preview": "previews/Vehicles/BlueSportsCar.png"
+  },
+  {
+   "name": "BlackSportsCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.1,
+    2.66
+   ],
+   "rigged": false,
+   "parts": [
+    "BlackSportsCar_WheelFL",
+    "BlackSportsCar_WheelFR",
+    "BlackSportsCar_WheelBL",
+    "BlackSportsCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlackSportsCar.fbx",
+   "preview": "previews/Vehicles/BlackSportsCar.png"
+  },
+  {
+   "name": "WhiteSportsCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.1,
+    2.66
+   ],
+   "rigged": false,
+   "parts": [
+    "WhiteSportsCar_WheelFL",
+    "WhiteSportsCar_WheelFR",
+    "WhiteSportsCar_WheelBL",
+    "WhiteSportsCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhiteSportsCar.fbx",
+   "preview": "previews/Vehicles/WhiteSportsCar.png"
+  },
+  {
+   "name": "GreenSportsCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.1,
+    2.66
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenSportsCar_WheelFL",
+    "GreenSportsCar_WheelFR",
+    "GreenSportsCar_WheelBL",
+    "GreenSportsCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenSportsCar.fbx",
+   "preview": "previews/Vehicles/GreenSportsCar.png"
+  },
+  {
+   "name": "PurpleSportsCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.1,
+    2.66
+   ],
+   "rigged": false,
+   "parts": [
+    "PurpleSportsCar_WheelFL",
+    "PurpleSportsCar_WheelFR",
+    "PurpleSportsCar_WheelBL",
+    "PurpleSportsCar_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/PurpleSportsCar.fbx",
+   "preview": "previews/Vehicles/PurpleSportsCar.png"
+  },
+  {
+   "name": "TanJeep",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    9.75,
+    4.48
+   ],
+   "rigged": false,
+   "parts": [
+    "TanJeep_WheelFL",
+    "TanJeep_WheelFR",
+    "TanJeep_WheelBL",
+    "TanJeep_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/TanJeep.fbx",
+   "preview": "previews/Vehicles/TanJeep.png"
+  },
+  {
+   "name": "BlackJeep",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    9.75,
+    4.48
+   ],
+   "rigged": false,
+   "parts": [
+    "BlackJeep_WheelFL",
+    "BlackJeep_WheelFR",
+    "BlackJeep_WheelBL",
+    "BlackJeep_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlackJeep.fbx",
+   "preview": "previews/Vehicles/BlackJeep.png"
+  },
+  {
+   "name": "RedJeep",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    9.75,
+    4.48
+   ],
+   "rigged": false,
+   "parts": [
+    "RedJeep_WheelFL",
+    "RedJeep_WheelFR",
+    "RedJeep_WheelBL",
+    "RedJeep_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RedJeep.fbx",
+   "preview": "previews/Vehicles/RedJeep.png"
+  },
+  {
+   "name": "WhiteJeep",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    9.75,
+    4.48
+   ],
+   "rigged": false,
+   "parts": [
+    "WhiteJeep_WheelFL",
+    "WhiteJeep_WheelFR",
+    "WhiteJeep_WheelBL",
+    "WhiteJeep_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhiteJeep.fbx",
+   "preview": "previews/Vehicles/WhiteJeep.png"
+  },
+  {
+   "name": "RedPickupTruck",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.6,
+    4.25
+   ],
+   "rigged": false,
+   "parts": [
+    "RedPickupTruck_WheelFL",
+    "RedPickupTruck_WheelFR",
+    "RedPickupTruck_WheelBL",
+    "RedPickupTruck_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RedPickupTruck.fbx",
+   "preview": "previews/Vehicles/RedPickupTruck.png"
+  },
+  {
+   "name": "BluePickupTruck",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.6,
+    4.25
+   ],
+   "rigged": false,
+   "parts": [
+    "BluePickupTruck_WheelFL",
+    "BluePickupTruck_WheelFR",
+    "BluePickupTruck_WheelBL",
+    "BluePickupTruck_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BluePickupTruck.fbx",
+   "preview": "previews/Vehicles/BluePickupTruck.png"
+  },
+  {
+   "name": "BlackPickupTruck",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.6,
+    4.25
+   ],
+   "rigged": false,
+   "parts": [
+    "BlackPickupTruck_WheelFL",
+    "BlackPickupTruck_WheelFR",
+    "BlackPickupTruck_WheelBL",
+    "BlackPickupTruck_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlackPickupTruck.fbx",
+   "preview": "previews/Vehicles/BlackPickupTruck.png"
+  },
+  {
+   "name": "WhitePickupTruck",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 1580,
+   "size_studs": [
+    5.15,
+    10.6,
+    4.25
+   ],
+   "rigged": false,
+   "parts": [
+    "WhitePickupTruck_WheelFL",
+    "WhitePickupTruck_WheelFR",
+    "WhitePickupTruck_WheelBL",
+    "WhitePickupTruck_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhitePickupTruck.fbx",
+   "preview": "previews/Vehicles/WhitePickupTruck.png"
+  },
+  {
+   "name": "WhiteVan",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 1184,
+   "size_studs": [
+    5.02,
+    12.1,
+    4.93
+   ],
+   "rigged": false,
+   "parts": [
+    "WhiteVan_WheelFL",
+    "WhiteVan_WheelFR",
+    "WhiteVan_WheelBL",
+    "WhiteVan_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/WhiteVan.fbx",
+   "preview": "previews/Vehicles/WhiteVan.png"
+  },
+  {
+   "name": "RedVan",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 1184,
+   "size_studs": [
+    5.02,
+    12.1,
+    4.93
+   ],
+   "rigged": false,
+   "parts": [
+    "RedVan_WheelFL",
+    "RedVan_WheelFR",
+    "RedVan_WheelBL",
+    "RedVan_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RedVan.fbx",
+   "preview": "previews/Vehicles/RedVan.png"
+  },
+  {
+   "name": "GreenVan",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 1184,
+   "size_studs": [
+    5.02,
+    12.1,
+    4.93
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenVan_WheelFL",
+    "GreenVan_WheelFR",
+    "GreenVan_WheelBL",
+    "GreenVan_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenVan.fbx",
+   "preview": "previews/Vehicles/GreenVan.png"
+  },
+  {
+   "name": "YellowVan",
+   "category": "Vehicles",
+   "group": "Trucks",
+   "tris": 1184,
+   "size_studs": [
+    5.02,
+    12.1,
+    4.93
+   ],
+   "rigged": false,
+   "parts": [
+    "YellowVan_WheelFL",
+    "YellowVan_WheelFR",
+    "YellowVan_WheelBL",
+    "YellowVan_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/YellowVan.fbx",
+   "preview": "previews/Vehicles/YellowVan.png"
+  },
+  {
+   "name": "BlueMotorcycle",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 616,
+   "size_studs": [
+    1.8,
+    5.4,
+    2.93
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueMotorcycle_WheelF",
+    "BlueMotorcycle_WheelB"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueMotorcycle.fbx",
+   "preview": "previews/Vehicles/BlueMotorcycle.png"
+  },
+  {
+   "name": "GreenMotorcycle",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 616,
+   "size_studs": [
+    1.8,
+    5.4,
+    2.93
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenMotorcycle_WheelF",
+    "GreenMotorcycle_WheelB"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenMotorcycle.fbx",
+   "preview": "previews/Vehicles/GreenMotorcycle.png"
+  },
+  {
+   "name": "YellowMotorcycle",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 616,
+   "size_studs": [
+    1.8,
+    5.4,
+    2.93
+   ],
+   "rigged": false,
+   "parts": [
+    "YellowMotorcycle_WheelF",
+    "YellowMotorcycle_WheelB"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/YellowMotorcycle.fbx",
+   "preview": "previews/Vehicles/YellowMotorcycle.png"
+  },
+  {
+   "name": "BlackMotorcycle",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 616,
+   "size_studs": [
+    1.8,
+    5.4,
+    2.93
+   ],
+   "rigged": false,
+   "parts": [
+    "BlackMotorcycle_WheelF",
+    "BlackMotorcycle_WheelB"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlackMotorcycle.fbx",
+   "preview": "previews/Vehicles/BlackMotorcycle.png"
+  },
+  {
+   "name": "BlueGoKart",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1004,
+   "size_studs": [
+    3.72,
+    4.55,
+    1.88
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueGoKart_WheelFL",
+    "BlueGoKart_WheelFR",
+    "BlueGoKart_WheelBL",
+    "BlueGoKart_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueGoKart.fbx",
+   "preview": "previews/Vehicles/BlueGoKart.png"
+  },
+  {
+   "name": "GreenGoKart",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1004,
+   "size_studs": [
+    3.72,
+    4.55,
+    1.88
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenGoKart_WheelFL",
+    "GreenGoKart_WheelFR",
+    "GreenGoKart_WheelBL",
+    "GreenGoKart_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenGoKart.fbx",
+   "preview": "previews/Vehicles/GreenGoKart.png"
+  },
+  {
+   "name": "YellowGoKart",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1004,
+   "size_studs": [
+    3.72,
+    4.55,
+    1.88
+   ],
+   "rigged": false,
+   "parts": [
+    "YellowGoKart_WheelFL",
+    "YellowGoKart_WheelFR",
+    "YellowGoKart_WheelBL",
+    "YellowGoKart_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/YellowGoKart.fbx",
+   "preview": "previews/Vehicles/YellowGoKart.png"
+  },
+  {
+   "name": "PurpleGoKart",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1004,
+   "size_studs": [
+    3.72,
+    4.55,
+    1.88
+   ],
+   "rigged": false,
+   "parts": [
+    "PurpleGoKart_WheelFL",
+    "PurpleGoKart_WheelFR",
+    "PurpleGoKart_WheelBL",
+    "PurpleGoKart_WheelBR"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/PurpleGoKart.fbx",
+   "preview": "previews/Vehicles/PurpleGoKart.png"
+  },
+  {
+   "name": "BlueScooter",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 220,
+   "size_studs": [
+    1.4,
+    3.3,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [
+    "BlueScooter_WheelF",
+    "BlueScooter_WheelB"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/BlueScooter.fbx",
+   "preview": "previews/Vehicles/BlueScooter.png"
+  },
+  {
+   "name": "GreenScooter",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 220,
+   "size_studs": [
+    1.4,
+    3.3,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [
+    "GreenScooter_WheelF",
+    "GreenScooter_WheelB"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GreenScooter.fbx",
+   "preview": "previews/Vehicles/GreenScooter.png"
+  },
+  {
+   "name": "YellowScooter",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 220,
+   "size_studs": [
+    1.4,
+    3.3,
+    2.92
+   ],
+   "rigged": false,
+   "parts": [
+    "YellowScooter_WheelF",
+    "YellowScooter_WheelB"
+   ],
+   "tags": [
+    "color-variant",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/YellowScooter.fbx",
+   "preview": "previews/Vehicles/YellowScooter.png"
+  },
+  {
+   "name": "Limousine",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1448,
+   "size_studs": [
+    5.15,
+    14.6,
+    3.22
+   ],
+   "rigged": false,
+   "parts": [
+    "Limousine_WheelFL",
+    "Limousine_WheelFR",
+    "Limousine_WheelBL",
+    "Limousine_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Limousine.fbx",
+   "preview": "previews/Vehicles/Limousine.png"
+  },
+  {
+   "name": "RaceCar",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1316,
+   "size_studs": [
+    4.72,
+    9.1,
+    2.42
+   ],
+   "rigged": false,
+   "parts": [
+    "RaceCar_WheelFL",
+    "RaceCar_WheelFR",
+    "RaceCar_WheelBL",
+    "RaceCar_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/RaceCar.fbx",
+   "preview": "previews/Vehicles/RaceCar.png"
+  },
+  {
+   "name": "Hatchback",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1404,
+   "size_studs": [
+    4.75,
+    8.2,
+    3.76
+   ],
+   "rigged": false,
+   "parts": [
+    "Hatchback_WheelFL",
+    "Hatchback_WheelFR",
+    "Hatchback_WheelBL",
+    "Hatchback_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Hatchback.fbx",
+   "preview": "previews/Vehicles/Hatchback.png"
+  },
+  {
+   "name": "Convertible",
+   "category": "Vehicles",
+   "group": "Cars",
+   "tris": 1380,
+   "size_studs": [
+    4.82,
+    9.6,
+    3.22
+   ],
+   "rigged": false,
+   "parts": [
+    "Convertible_WheelFL",
+    "Convertible_WheelFR",
+    "Convertible_WheelBL",
+    "Convertible_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Convertible.fbx",
+   "preview": "previews/Vehicles/Convertible.png"
+  },
+  {
+   "name": "GarbageTruck",
+   "category": "Vehicles",
+   "group": "Construction",
+   "tris": 1608,
+   "size_studs": [
+    5.22,
+    15.5,
+    6.4
+   ],
+   "rigged": false,
+   "parts": [
+    "GarbageTruck_WheelFL",
+    "GarbageTruck_WheelFR",
+    "GarbageTruck_WheelBL",
+    "GarbageTruck_WheelBR",
+    "GarbageTruck_WheelML",
+    "GarbageTruck_WheelMR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/GarbageTruck.fbx",
+   "preview": "previews/Vehicles/GarbageTruck.png"
+  },
+  {
+   "name": "CementMixer",
+   "category": "Vehicles",
+   "group": "Construction",
+   "tris": 1556,
+   "size_studs": [
+    5.22,
+    14.71,
+    6.61
+   ],
+   "rigged": false,
+   "parts": [
+    "CementMixer_WheelFL",
+    "CementMixer_WheelFR",
+    "CementMixer_WheelBL",
+    "CementMixer_WheelBR",
+    "CementMixer_WheelML",
+    "CementMixer_WheelMR",
+    "CementMixer_Drum"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/CementMixer.fbx",
+   "preview": "previews/Vehicles/CementMixer.png"
+  },
+  {
+   "name": "DumpTruck",
+   "category": "Vehicles",
+   "group": "Construction",
+   "tris": 1644,
+   "size_studs": [
+    5.22,
+    14.38,
+    4.54
+   ],
+   "rigged": false,
+   "parts": [
+    "DumpTruck_WheelFL",
+    "DumpTruck_WheelFR",
+    "DumpTruck_WheelBL",
+    "DumpTruck_WheelBR",
+    "DumpTruck_WheelML",
+    "DumpTruck_WheelMR",
+    "DumpTruck_Bed"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/DumpTruck.fbx",
+   "preview": "previews/Vehicles/DumpTruck.png"
+  },
+  {
+   "name": "TowTruck",
+   "category": "Vehicles",
+   "group": "Construction",
+   "tris": 1260,
+   "size_studs": [
+    5.22,
+    14.38,
+    5.4
+   ],
+   "rigged": false,
+   "parts": [
+    "TowTruck_WheelFL",
+    "TowTruck_WheelFR",
+    "TowTruck_WheelBL",
+    "TowTruck_WheelBR",
+    "TowTruck_Boom"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/TowTruck.fbx",
+   "preview": "previews/Vehicles/TowTruck.png"
+  },
+  {
+   "name": "Excavator",
+   "category": "Vehicles",
+   "group": "Construction",
+   "tris": 868,
+   "size_studs": [
+    4.36,
+    10.33,
+    6.8
+   ],
+   "rigged": false,
+   "parts": [
+    "Excavator_Cab"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Excavator.fbx",
+   "preview": "previews/Vehicles/Excavator.png"
+  },
+  {
+   "name": "Bulldozer",
+   "category": "Vehicles",
+   "group": "Construction",
+   "tris": 620,
+   "size_studs": [
+    5.2,
+    7.1,
+    5.15
+   ],
+   "rigged": false,
+   "parts": [
+    "Bulldozer_Blade"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Bulldozer.fbx",
+   "preview": "previews/Vehicles/Bulldozer.png"
+  },
+  {
+   "name": "Forklift",
+   "category": "Vehicles",
+   "group": "Construction",
+   "tris": 1228,
+   "size_studs": [
+    3.12,
+    5.8,
+    4.7
+   ],
+   "rigged": false,
+   "parts": [
+    "Forklift_Forks",
+    "Forklift_WheelFL",
+    "Forklift_WheelFR",
+    "Forklift_WheelBL",
+    "Forklift_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Forklift.fbx",
+   "preview": "previews/Vehicles/Forklift.png"
+  },
+  {
+   "name": "Snowmobile",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 388,
+   "size_studs": [
+    2.1,
+    6.2,
+    2.34
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Snowmobile.fbx",
+   "preview": "previews/Vehicles/Snowmobile.png"
+  },
+  {
+   "name": "ATV",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 932,
+   "size_studs": [
+    3.62,
+    4.4,
+    2.56
+   ],
+   "rigged": false,
+   "parts": [
+    "ATV_WheelFL",
+    "ATV_WheelFR",
+    "ATV_WheelBL",
+    "ATV_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/ATV.fbx",
+   "preview": "previews/Vehicles/ATV.png"
+  },
+  {
+   "name": "Bicycle",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 604,
+   "size_studs": [
+    1.4,
+    5.0,
+    2.85
+   ],
+   "rigged": false,
+   "parts": [
+    "Bicycle_WheelF",
+    "Bicycle_WheelB"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Bicycle.fbx",
+   "preview": "previews/Vehicles/Bicycle.png"
+  },
+  {
+   "name": "Skateboard",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 288,
+   "size_studs": [
+    0.9,
+    3.0,
+    0.63
+   ],
+   "rigged": false,
+   "parts": [
+    "Skateboard_WheelFL",
+    "Skateboard_WheelFR",
+    "Skateboard_WheelBL",
+    "Skateboard_WheelBR"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Skateboard.fbx",
+   "preview": "previews/Vehicles/Skateboard.png"
+  },
+  {
+   "name": "Hoverboard",
+   "category": "Vehicles",
+   "group": "Bikes",
+   "tris": 200,
+   "size_studs": [
+    1.2,
+    3.2,
+    0.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "sci-fi",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Hoverboard.fbx",
+   "preview": "previews/Vehicles/Hoverboard.png"
+  },
+  {
+   "name": "UFO",
+   "category": "Vehicles",
+   "group": "Aircraft",
+   "tris": 592,
+   "size_studs": [
+    8.0,
+    8.0,
+    4.0
+   ],
+   "rigged": false,
+   "parts": [
+    "UFO_Ring"
+   ],
+   "tags": [
+    "sci-fi",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/UFO.fbx",
+   "preview": "previews/Vehicles/UFO.png"
+  },
+  {
+   "name": "Spaceship",
+   "category": "Vehicles",
+   "group": "Aircraft",
+   "tris": 428,
+   "size_studs": [
+    7.8,
+    8.01,
+    3.31
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "sci-fi",
+    "space",
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Spaceship.fbx",
+   "preview": "previews/Vehicles/Spaceship.png"
+  },
+  {
+   "name": "Submarine",
+   "category": "Vehicles",
+   "group": "Boats",
+   "tris": 636,
+   "size_studs": [
+    4.0,
+    9.69,
+    5.21
+   ],
+   "rigged": false,
+   "parts": [
+    "Submarine_Propeller"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Submarine.fbx",
+   "preview": "previews/Vehicles/Submarine.png"
+  },
+  {
+   "name": "Sailboat",
+   "category": "Vehicles",
+   "group": "Boats",
+   "tris": 204,
+   "size_studs": [
+    3.0,
+    8.0,
+    10.65
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Sailboat.fbx",
+   "preview": "previews/Vehicles/Sailboat.png"
+  },
+  {
+   "name": "JetSki",
+   "category": "Vehicles",
+   "group": "Boats",
+   "tris": 204,
+   "size_studs": [
+    1.6,
+    4.0,
+    1.55
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/JetSki.fbx",
+   "preview": "previews/Vehicles/JetSki.png"
+  },
+  {
+   "name": "Blimp",
+   "category": "Vehicles",
+   "group": "Aircraft",
+   "tris": 344,
+   "size_studs": [
+    6.2,
+    11.5,
+    5.9
+   ],
+   "rigged": false,
+   "parts": [
+    "Blimp_Propeller"
+   ],
+   "tags": [
+    "vehicle"
+   ],
+   "fbx": "exports/fbx/Vehicles/Blimp.fbx",
+   "preview": "previews/Vehicles/Blimp.png"
   }
  ],
  "Buildings": [
@@ -11388,6 +19808,725 @@
    ],
    "fbx": "exports/fbx/Buildings/CommandTent.fbx",
    "preview": "previews/Buildings/CommandTent.png"
+  },
+  {
+   "name": "GreenHouse",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 1820,
+   "size_studs": [
+    13.6,
+    12.4,
+    12.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant",
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/GreenHouse.fbx",
+   "preview": "previews/Buildings/GreenHouse.png"
+  },
+  {
+   "name": "PinkHouse",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 1820,
+   "size_studs": [
+    13.6,
+    12.4,
+    12.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant",
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/PinkHouse.fbx",
+   "preview": "previews/Buildings/PinkHouse.png"
+  },
+  {
+   "name": "PurpleHouse",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 1820,
+   "size_studs": [
+    13.6,
+    12.4,
+    12.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant",
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/PurpleHouse.fbx",
+   "preview": "previews/Buildings/PurpleHouse.png"
+  },
+  {
+   "name": "BrickHouse",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 1820,
+   "size_studs": [
+    13.6,
+    12.4,
+    12.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant",
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/BrickHouse.fbx",
+   "preview": "previews/Buildings/BrickHouse.png"
+  },
+  {
+   "name": "WhiteHouse",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 1820,
+   "size_studs": [
+    13.6,
+    12.4,
+    12.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant",
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/WhiteHouse.fbx",
+   "preview": "previews/Buildings/WhiteHouse.png"
+  },
+  {
+   "name": "YellowHouse",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 1820,
+   "size_studs": [
+    13.6,
+    12.4,
+    12.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant",
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/YellowHouse.fbx",
+   "preview": "previews/Buildings/YellowHouse.png"
+  },
+  {
+   "name": "BlueTwoStoryHouse",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 2920,
+   "size_studs": [
+    15.6,
+    13.4,
+    17.55
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant",
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/BlueTwoStoryHouse.fbx",
+   "preview": "previews/Buildings/BlueTwoStoryHouse.png"
+  },
+  {
+   "name": "RedTwoStoryHouse",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 2920,
+   "size_studs": [
+    15.6,
+    13.4,
+    17.55
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "color-variant",
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/RedTwoStoryHouse.fbx",
+   "preview": "previews/Buildings/RedTwoStoryHouse.png"
+  },
+  {
+   "name": "WhiteApartment",
+   "category": "Buildings",
+   "group": "City",
+   "tris": 9824,
+   "size_studs": [
+    16.44,
+    16.42,
+    23.82
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/WhiteApartment.fbx",
+   "preview": "previews/Buildings/WhiteApartment.png"
+  },
+  {
+   "name": "TallApartment",
+   "category": "Buildings",
+   "group": "City",
+   "tris": 14840,
+   "size_studs": [
+    16.44,
+    16.42,
+    34.82
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/TallApartment.fbx",
+   "preview": "previews/Buildings/TallApartment.png"
+  },
+  {
+   "name": "Bakery",
+   "category": "Buildings",
+   "group": "Shops",
+   "tris": 1512,
+   "size_studs": [
+    14.4,
+    12.28,
+    10.57
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Bakery.fbx",
+   "preview": "previews/Buildings/Bakery.png"
+  },
+  {
+   "name": "CandyShop",
+   "category": "Buildings",
+   "group": "Shops",
+   "tris": 1440,
+   "size_studs": [
+    14.4,
+    12.28,
+    12.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/CandyShop.fbx",
+   "preview": "previews/Buildings/CandyShop.png"
+  },
+  {
+   "name": "PetShop",
+   "category": "Buildings",
+   "group": "Shops",
+   "tris": 1556,
+   "size_studs": [
+    14.4,
+    12.28,
+    11.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/PetShop.fbx",
+   "preview": "previews/Buildings/PetShop.png"
+  },
+  {
+   "name": "BurgerJoint",
+   "category": "Buildings",
+   "group": "Shops",
+   "tris": 1512,
+   "size_studs": [
+    14.4,
+    12.28,
+    11.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/BurgerJoint.fbx",
+   "preview": "previews/Buildings/BurgerJoint.png"
+  },
+  {
+   "name": "ArcadeShop",
+   "category": "Buildings",
+   "group": "Shops",
+   "tris": 1556,
+   "size_studs": [
+    14.4,
+    12.28,
+    10.95
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/ArcadeShop.fbx",
+   "preview": "previews/Buildings/ArcadeShop.png"
+  },
+  {
+   "name": "Cinema",
+   "category": "Buildings",
+   "group": "City",
+   "tris": 1364,
+   "size_studs": [
+    21.0,
+    18.38,
+    12.48
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Cinema.fbx",
+   "preview": "previews/Buildings/Cinema.png"
+  },
+  {
+   "name": "Museum",
+   "category": "Buildings",
+   "group": "City",
+   "tris": 772,
+   "size_studs": [
+    24.0,
+    19.7,
+    15.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Museum.fbx",
+   "preview": "previews/Buildings/Museum.png"
+  },
+  {
+   "name": "CastleKeep",
+   "category": "Buildings",
+   "group": "Landmarks",
+   "tris": 1868,
+   "size_studs": [
+    20.0,
+    20.0,
+    21.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/CastleKeep.fbx",
+   "preview": "previews/Buildings/CastleKeep.png"
+  },
+  {
+   "name": "Treehouse",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 1268,
+   "size_studs": [
+    8.13,
+    7.0,
+    17.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Treehouse.fbx",
+   "preview": "previews/Buildings/Treehouse.png"
+  },
+  {
+   "name": "Igloo",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 216,
+   "size_studs": [
+    8.0,
+    9.35,
+    4.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Igloo.fbx",
+   "preview": "previews/Buildings/Igloo.png"
+  },
+  {
+   "name": "LogCabin",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 1432,
+   "size_studs": [
+    13.6,
+    11.6,
+    11.36
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/LogCabin.fbx",
+   "preview": "previews/Buildings/LogCabin.png"
+  },
+  {
+   "name": "BeachHut",
+   "category": "Buildings",
+   "group": "Homes",
+   "tris": 666,
+   "size_studs": [
+    8.4,
+    9.95,
+    9.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/BeachHut.fbx",
+   "preview": "previews/Buildings/BeachHut.png"
+  },
+  {
+   "name": "Pagoda",
+   "category": "Buildings",
+   "group": "Landmarks",
+   "tris": 418,
+   "size_studs": [
+    13.39,
+    13.63,
+    18.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Pagoda.fbx",
+   "preview": "previews/Buildings/Pagoda.png"
+  },
+  {
+   "name": "Pyramid",
+   "category": "Buildings",
+   "group": "Landmarks",
+   "tris": 396,
+   "size_studs": [
+    20.0,
+    20.2,
+    12.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Pyramid.fbx",
+   "preview": "previews/Buildings/Pyramid.png"
+  },
+  {
+   "name": "GreekTemple",
+   "category": "Buildings",
+   "group": "Landmarks",
+   "tris": 520,
+   "size_studs": [
+    18.0,
+    12.0,
+    11.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/GreekTemple.fbx",
+   "preview": "previews/Buildings/GreekTemple.png"
+  },
+  {
+   "name": "MineEntrance",
+   "category": "Buildings",
+   "group": "Landmarks",
+   "tris": 1006,
+   "size_studs": [
+    14.0,
+    17.0,
+    9.02
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "mining",
+    "simulator",
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/MineEntrance.fbx",
+   "preview": "previews/Buildings/MineEntrance.png"
+  },
+  {
+   "name": "Bridge",
+   "category": "Buildings",
+   "group": "Landmarks",
+   "tris": 1300,
+   "size_studs": [
+    4.6,
+    16.25,
+    4.72
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Bridge.fbx",
+   "preview": "previews/Buildings/Bridge.png"
+  },
+  {
+   "name": "WaterTower",
+   "category": "Buildings",
+   "group": "City",
+   "tris": 330,
+   "size_studs": [
+    6.6,
+    6.6,
+    16.02
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/WaterTower.fbx",
+   "preview": "previews/Buildings/WaterTower.png"
+  },
+  {
+   "name": "PowerPole",
+   "category": "Buildings",
+   "group": "City",
+   "tris": 296,
+   "size_studs": [
+    5.0,
+    1.2,
+    14.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/PowerPole.fbx",
+   "preview": "previews/Buildings/PowerPole.png"
+  },
+  {
+   "name": "PhoneBooth",
+   "category": "Buildings",
+   "group": "Signs",
+   "tris": 1716,
+   "size_studs": [
+    2.84,
+    2.72,
+    6.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/PhoneBooth.fbx",
+   "preview": "previews/Buildings/PhoneBooth.png"
+  },
+  {
+   "name": "VendingMachine",
+   "category": "Buildings",
+   "group": "Signs",
+   "tris": 704,
+   "size_studs": [
+    2.4,
+    1.72,
+    4.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/VendingMachine.fbx",
+   "preview": "previews/Buildings/VendingMachine.png"
+  },
+  {
+   "name": "SnackMachine",
+   "category": "Buildings",
+   "group": "Signs",
+   "tris": 704,
+   "size_studs": [
+    2.4,
+    1.72,
+    4.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/SnackMachine.fbx",
+   "preview": "previews/Buildings/SnackMachine.png"
+  },
+  {
+   "name": "ATM",
+   "category": "Buildings",
+   "group": "Signs",
+   "tris": 220,
+   "size_studs": [
+    2.1,
+    2.07,
+    4.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/ATM.fbx",
+   "preview": "previews/Buildings/ATM.png"
+  },
+  {
+   "name": "Dumpster",
+   "category": "Buildings",
+   "group": "Signs",
+   "tris": 212,
+   "size_studs": [
+    5.2,
+    3.2,
+    3.12
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Dumpster.fbx",
+   "preview": "previews/Buildings/Dumpster.png"
+  },
+  {
+   "name": "PlaygroundSlide",
+   "category": "Buildings",
+   "group": "FunPark",
+   "tris": 622,
+   "size_studs": [
+    3.0,
+    7.54,
+    6.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/PlaygroundSlide.fbx",
+   "preview": "previews/Buildings/PlaygroundSlide.png"
+  },
+  {
+   "name": "SwingSet",
+   "category": "Buildings",
+   "group": "FunPark",
+   "tris": 204,
+   "size_studs": [
+    6.4,
+    3.49,
+    5.18
+   ],
+   "rigged": false,
+   "parts": [
+    "SwingSet_SwingL",
+    "SwingSet_SwingR"
+   ],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/SwingSet.fbx",
+   "preview": "previews/Buildings/SwingSet.png"
+  },
+  {
+   "name": "FerrisWheel",
+   "category": "Buildings",
+   "group": "FunPark",
+   "tris": 1144,
+   "size_studs": [
+    4.0,
+    17.6,
+    18.27
+   ],
+   "rigged": false,
+   "parts": [
+    "FerrisWheel_Wheel"
+   ],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/FerrisWheel.fbx",
+   "preview": "previews/Buildings/FerrisWheel.png"
+  },
+  {
+   "name": "Carousel",
+   "category": "Buildings",
+   "group": "FunPark",
+   "tris": 846,
+   "size_studs": [
+    13.2,
+    13.2,
+    9.9
+   ],
+   "rigged": false,
+   "parts": [
+    "Carousel_Ride"
+   ],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/Carousel.fbx",
+   "preview": "previews/Buildings/Carousel.png"
+  },
+  {
+   "name": "ConcertStage",
+   "category": "Buildings",
+   "group": "FunPark",
+   "tris": 760,
+   "size_studs": [
+    14.6,
+    8.0,
+    10.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "building"
+   ],
+   "fbx": "exports/fbx/Buildings/ConcertStage.fbx",
+   "preview": "previews/Buildings/ConcertStage.png"
   }
  ],
  "Military": [
@@ -11935,6 +21074,686 @@
    ],
    "fbx": "exports/fbx/Military/ArmyFlag.fbx",
    "preview": "previews/Military/ArmyFlag.png"
+  },
+  {
+   "name": "WinterTank",
+   "category": "Military",
+   "group": "Vehicles",
+   "tris": 736,
+   "size_studs": [
+    6.6,
+    11.4,
+    4.8
+   ],
+   "rigged": false,
+   "parts": [
+    "WinterTank_Turret"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/WinterTank.fbx",
+   "preview": "previews/Military/WinterTank.png"
+  },
+  {
+   "name": "NightTank",
+   "category": "Military",
+   "group": "Vehicles",
+   "tris": 736,
+   "size_studs": [
+    6.6,
+    11.4,
+    4.8
+   ],
+   "rigged": false,
+   "parts": [
+    "NightTank_Turret"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/NightTank.fbx",
+   "preview": "previews/Military/NightTank.png"
+  },
+  {
+   "name": "JungleTank",
+   "category": "Military",
+   "group": "Vehicles",
+   "tris": 736,
+   "size_studs": [
+    6.6,
+    11.4,
+    4.8
+   ],
+   "rigged": false,
+   "parts": [
+    "JungleTank_Turret"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/JungleTank.fbx",
+   "preview": "previews/Military/JungleTank.png"
+  },
+  {
+   "name": "HeavyTank",
+   "category": "Military",
+   "group": "Vehicles",
+   "tris": 792,
+   "size_studs": [
+    7.8,
+    13.2,
+    5.2
+   ],
+   "rigged": false,
+   "parts": [
+    "HeavyTank_Turret"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/HeavyTank.fbx",
+   "preview": "previews/Military/HeavyTank.png"
+  },
+  {
+   "name": "LightTank",
+   "category": "Military",
+   "group": "Vehicles",
+   "tris": 428,
+   "size_studs": [
+    5.16,
+    7.6,
+    2.7
+   ],
+   "rigged": false,
+   "parts": [
+    "LightTank_Turret"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/LightTank.fbx",
+   "preview": "previews/Military/LightTank.png"
+  },
+  {
+   "name": "APC",
+   "category": "Military",
+   "group": "Vehicles",
+   "tris": 692,
+   "size_studs": [
+    5.76,
+    8.93,
+    4.1
+   ],
+   "rigged": false,
+   "parts": [
+    "APC_Turret"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/APC.fbx",
+   "preview": "previews/Military/APC.png"
+  },
+  {
+   "name": "MissileTruck",
+   "category": "Military",
+   "group": "Vehicles",
+   "tris": 1596,
+   "size_studs": [
+    5.22,
+    14.38,
+    5.37
+   ],
+   "rigged": false,
+   "parts": [
+    "MissileTruck_WheelFL",
+    "MissileTruck_WheelFR",
+    "MissileTruck_WheelBL",
+    "MissileTruck_WheelBR",
+    "MissileTruck_WheelML",
+    "MissileTruck_WheelMR",
+    "MissileTruck_Launcher"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/MissileTruck.fbx",
+   "preview": "previews/Military/MissileTruck.png"
+  },
+  {
+   "name": "PatrolBoat",
+   "category": "Military",
+   "group": "Naval",
+   "tris": 204,
+   "size_studs": [
+    4.0,
+    12.0,
+    5.1
+   ],
+   "rigged": false,
+   "parts": [
+    "PatrolBoat_Turret"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/PatrolBoat.fbx",
+   "preview": "previews/Military/PatrolBoat.png"
+  },
+  {
+   "name": "Battleship",
+   "category": "Military",
+   "group": "Naval",
+   "tris": 452,
+   "size_studs": [
+    6.0,
+    24.0,
+    9.3
+   ],
+   "rigged": false,
+   "parts": [
+    "Battleship_TurretFront",
+    "Battleship_TurretBack"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Battleship.fbx",
+   "preview": "previews/Military/Battleship.png"
+  },
+  {
+   "name": "NavalCannon",
+   "category": "Military",
+   "group": "Artillery",
+   "tris": 156,
+   "size_studs": [
+    3.2,
+    7.0,
+    2.8
+   ],
+   "rigged": false,
+   "parts": [
+    "NavalCannon_Turret"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/NavalCannon.fbx",
+   "preview": "previews/Military/NavalCannon.png"
+  },
+  {
+   "name": "AntiTankGun",
+   "category": "Military",
+   "group": "Artillery",
+   "tris": 496,
+   "size_studs": [
+    3.48,
+    8.4,
+    2.3
+   ],
+   "rigged": false,
+   "parts": [
+    "AntiTankGun_Barrel",
+    "AntiTankGun_WheelL",
+    "AntiTankGun_WheelR"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/AntiTankGun.fbx",
+   "preview": "previews/Military/AntiTankGun.png"
+  },
+  {
+   "name": "GatlingGun",
+   "category": "Military",
+   "group": "Artillery",
+   "tris": 252,
+   "size_studs": [
+    2.36,
+    4.5,
+    2.45
+   ],
+   "rigged": false,
+   "parts": [
+    "GatlingGun_Gun",
+    "GatlingGun_Barrels"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/GatlingGun.fbx",
+   "preview": "previews/Military/GatlingGun.png"
+  },
+  {
+   "name": "Searchlight",
+   "category": "Military",
+   "group": "Battlefield",
+   "tris": 188,
+   "size_studs": [
+    2.1,
+    1.8,
+    2.56
+   ],
+   "rigged": false,
+   "parts": [
+    "Searchlight_Light"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Searchlight.fbx",
+   "preview": "previews/Military/Searchlight.png"
+  },
+  {
+   "name": "Bomber",
+   "category": "Military",
+   "group": "Aircraft",
+   "tris": 1180,
+   "size_studs": [
+    15.0,
+    13.11,
+    4.4
+   ],
+   "rigged": false,
+   "parts": [
+    "Bomber_PropR0",
+    "Bomber_PropR1",
+    "Bomber_PropL0",
+    "Bomber_PropL1",
+    "Bomber_WheelR",
+    "Bomber_WheelL"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Bomber.fbx",
+   "preview": "previews/Military/Bomber.png"
+  },
+  {
+   "name": "Drone",
+   "category": "Military",
+   "group": "Aircraft",
+   "tris": 516,
+   "size_studs": [
+    4.07,
+    3.91,
+    1.44
+   ],
+   "rigged": false,
+   "parts": [
+    "Drone_Rotor1",
+    "Drone_Rotor2",
+    "Drone_Rotor3",
+    "Drone_Rotor4"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Drone.fbx",
+   "preview": "previews/Military/Drone.png"
+  },
+  {
+   "name": "ArmyDrone",
+   "category": "Military",
+   "group": "Aircraft",
+   "tris": 516,
+   "size_studs": [
+    4.07,
+    3.91,
+    1.44
+   ],
+   "rigged": false,
+   "parts": [
+    "ArmyDrone_Rotor1",
+    "ArmyDrone_Rotor2",
+    "ArmyDrone_Rotor3",
+    "ArmyDrone_Rotor4"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/ArmyDrone.fbx",
+   "preview": "previews/Military/ArmyDrone.png"
+  },
+  {
+   "name": "CargoPlane",
+   "category": "Military",
+   "group": "Aircraft",
+   "tris": 1064,
+   "size_studs": [
+    16.0,
+    12.73,
+    5.15
+   ],
+   "rigged": false,
+   "parts": [
+    "CargoPlane_PropR0",
+    "CargoPlane_PropR1",
+    "CargoPlane_PropL0",
+    "CargoPlane_PropL1",
+    "CargoPlane_WheelR",
+    "CargoPlane_WheelL",
+    "CargoPlane_WheelF"
+   ],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/CargoPlane.fbx",
+   "preview": "previews/Military/CargoPlane.png"
+  },
+  {
+   "name": "Pistol",
+   "category": "Military",
+   "group": "Weapons",
+   "tris": 132,
+   "size_studs": [
+    0.3,
+    1.55,
+    1.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "gun",
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Pistol.fbx",
+   "preview": "previews/Military/Pistol.png"
+  },
+  {
+   "name": "AssaultRifle",
+   "category": "Military",
+   "group": "Weapons",
+   "tris": 276,
+   "size_studs": [
+    0.35,
+    5.62,
+    1.52
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "gun",
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/AssaultRifle.fbx",
+   "preview": "previews/Military/AssaultRifle.png"
+  },
+  {
+   "name": "SniperRifle",
+   "category": "Military",
+   "group": "Weapons",
+   "tris": 268,
+   "size_studs": [
+    0.67,
+    7.32,
+    1.67
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "gun",
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/SniperRifle.fbx",
+   "preview": "previews/Military/SniperRifle.png"
+  },
+  {
+   "name": "Shotgun",
+   "category": "Military",
+   "group": "Weapons",
+   "tris": 232,
+   "size_studs": [
+    0.35,
+    5.72,
+    1.16
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "gun",
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Shotgun.fbx",
+   "preview": "previews/Military/Shotgun.png"
+  },
+  {
+   "name": "SMG",
+   "category": "Military",
+   "group": "Weapons",
+   "tris": 188,
+   "size_studs": [
+    0.35,
+    3.35,
+    1.48
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "gun",
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/SMG.fbx",
+   "preview": "previews/Military/SMG.png"
+  },
+  {
+   "name": "Minigun",
+   "category": "Military",
+   "group": "Weapons",
+   "tris": 260,
+   "size_studs": [
+    1.25,
+    4.1,
+    1.33
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "gun",
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Minigun.fbx",
+   "preview": "previews/Military/Minigun.png"
+  },
+  {
+   "name": "Bazooka",
+   "category": "Military",
+   "group": "Weapons",
+   "tris": 158,
+   "size_studs": [
+    0.95,
+    5.1,
+    1.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "gun",
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Bazooka.fbx",
+   "preview": "previews/Military/Bazooka.png"
+  },
+  {
+   "name": "ArmyHelmet",
+   "category": "Military",
+   "group": "Gear",
+   "tris": 134,
+   "size_studs": [
+    2.31,
+    2.31,
+    1.35
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/ArmyHelmet.fbx",
+   "preview": "previews/Military/ArmyHelmet.png"
+  },
+  {
+   "name": "FieldRadio",
+   "category": "Military",
+   "group": "Gear",
+   "tris": 204,
+   "size_studs": [
+    1.95,
+    1.1,
+    4.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/FieldRadio.fbx",
+   "preview": "previews/Military/FieldRadio.png"
+  },
+  {
+   "name": "Binoculars",
+   "category": "Military",
+   "group": "Gear",
+   "tris": 212,
+   "size_studs": [
+    1.42,
+    1.25,
+    0.66
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Binoculars.fbx",
+   "preview": "previews/Military/Binoculars.png"
+  },
+  {
+   "name": "Medkit",
+   "category": "Military",
+   "group": "Gear",
+   "tris": 168,
+   "size_studs": [
+    2.0,
+    1.05,
+    1.82
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Medkit.fbx",
+   "preview": "previews/Military/Medkit.png"
+  },
+  {
+   "name": "Jetpack",
+   "category": "Military",
+   "group": "Gear",
+   "tris": 292,
+   "size_studs": [
+    1.9,
+    1.15,
+    3.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Jetpack.fbx",
+   "preview": "previews/Military/Jetpack.png"
+  },
+  {
+   "name": "SupplyCrate",
+   "category": "Military",
+   "group": "Ammo",
+   "tris": 176,
+   "size_studs": [
+    2.7,
+    2.65,
+    2.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/SupplyCrate.fbx",
+   "preview": "previews/Military/SupplyCrate.png"
+  },
+  {
+   "name": "SupplyDrop",
+   "category": "Military",
+   "group": "Ammo",
+   "tris": 270,
+   "size_studs": [
+    6.8,
+    6.8,
+    9.85
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/SupplyDrop.fbx",
+   "preview": "previews/Military/SupplyDrop.png"
+  },
+  {
+   "name": "Parachute",
+   "category": "Military",
+   "group": "Gear",
+   "tris": 138,
+   "size_studs": [
+    6.8,
+    6.8,
+    7.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Parachute.fbx",
+   "preview": "previews/Military/Parachute.png"
+  },
+  {
+   "name": "ArtilleryShells",
+   "category": "Military",
+   "group": "Ammo",
+   "tris": 230,
+   "size_studs": [
+    1.72,
+    1.0,
+    1.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/ArtilleryShells.fbx",
+   "preview": "previews/Military/ArtilleryShells.png"
+  },
+  {
+   "name": "Pillbox",
+   "category": "Military",
+   "group": "Battlefield",
+   "tris": 210,
+   "size_studs": [
+    5.89,
+    6.8,
+    2.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "military"
+   ],
+   "fbx": "exports/fbx/Military/Pillbox.fbx",
+   "preview": "previews/Military/Pillbox.png"
   }
  ]
 }

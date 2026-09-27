@@ -33,7 +33,8 @@ Measured from `AnimalBundle_1.rbxl` and reproduced here:
 
 * **Blocky low poly.** Like the bundle's lion, bear and elephant: chamfered boxes, square pixel eyes
   (black square with a white highlight), boxy muzzles and ears, square-section tails and limbs, and
-  flat shading. Curved things use few sides (8 or fewer). Assets are 100–4,000 triangles.
+  flat shading. Curved things use few sides (8 or fewer). Most assets are under 4,000 triangles; the biggest
+  (tall apartment blocks) stay under 15,000, well inside Roblox's 20,000-per-mesh limit.
 * **Studs.** Each animal in the bundle carries 6 `Texture` objects (one per face,
   `rbxassetid://9527811247`, 9 studs per tile, Transparency 0.4). `roblox/StudStyle.lua` adds
   exactly that in one click. The previews use this library's own classic round-stud texture, rendered
