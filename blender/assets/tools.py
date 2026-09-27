@@ -41,12 +41,22 @@ def pickaxe(m, T, tier):
         x = -1.35 + 2.7 * t
         pts.append((x, 0, top - 0.34 * (abs(x) / 1.35) ** 1.7))
         f = (1 - abs(2 * t - 1) ** 1.6)
-        rad.append((0.13 * f + 0.0, 0.19 * f + 0.0) if 0 < i < n else 0)
+        rad.append((0.13 * f, 0.19 * f) if 0 < i < n else 0)
     m.tube(pts, rad, seg=6, up=(0, 0, 1), deform=stoneify(tier), **paint(T, "main", "x", -1.35, 1.35), angle=35)
-    m.box((0.38, 0.34, 0.52), bevel=0.06, color=T["accent"], loc=(0, 0, top - 0.02))
-    m.box((0.42, 0.38, 0.1), bevel=0.03, color=T["dark"], loc=(0, 0, top - 0.24))
+    # brighter tips
+    for s in (-1, 1):
+        m.tube([pts[1 if s < 0 else -2], pts[0 if s < 0 else -1]], [(0.05, 0.07), 0], seg=4, up=(0, 0, 1),
+               color=solid(T, "light", "white"))
+    # reinforced collar with bands and rivets
+    m.box((0.4, 0.36, 0.56), bevel=0.06, color=T["accent"], loc=(0, 0, top - 0.02))
+    for z in (top - 0.22, top + 0.18):
+        m.box((0.46, 0.42, 0.08), bevel=0.02, color=T["dark"], loc=(0, 0, z))
+    for s in (-1, 1):
+        m.box((0.36, 0.3, 0.3), bevel=0.05, color=T["dark"], loc=(s * 0.32, 0, top - 0.03))
+        m.box((0.08, 0.08, 0.08), bevel=0.02, color=solid(T, "light", "white"), loc=(s * 0.12, -0.19, top - 0.02))
+    m.box((0.24, 0.24, 0.12), bevel=0.03, color=T["accent"], loc=(0, 0, top + 0.3))
     if tier in ("Gold", "Diamond", "Emerald", "Ruby", "Rainbow"):
-        m.gem(r=0.1, h=0.1, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.2, top - 0.02))
+        m.gem(r=0.1, h=0.1, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.21, top - 0.02))
 
 
 def axe(m, T, tier):
@@ -122,7 +132,41 @@ def scythe(m, T, tier):
             **paint(T, "main", "x", 0.0, 1.5))
 
 
-TIERED_TOOLS = [("Pickaxe", pickaxe, (0, 0, 0.6)), ("Axe", axe, (0, 0, 0.6)), ("Shovel", shovel, (0, 0, 3.0)),
+def heavy_pickaxe(m, T, tier):
+    top = 3.3
+    handle(m, T, 0.0, top + 0.1, r=0.12, grip=(0.25, 1.2))
+    m.box((0.9, 0.55, 0.7), bevel=0.1, loc=(0, 0, top), deform=stoneify(tier), **paint(T, "main", "x", -0.45, 0.45))
+    for s in (-1, 1):
+        m.tube([(s * 0.4, 0, top), (s * 1.0, 0, top - 0.05), (s * 1.55, 0, top - 0.45)],
+               [(0.24, 0.28), (0.18, 0.2), 0], seg=4, up=(0, 0, 1), **paint(T, "main", "x", -1.55, 1.55))
+        m.box((0.12, 0.6, 0.76), bevel=0.03, color=T["dark"], loc=(s * 0.45, 0, top))
+        m.box((0.09, 0.09, 0.09), bevel=0.02, color=solid(T, "light", "white"), loc=(s * 0.25, -0.29, top + 0.2))
+        m.box((0.09, 0.09, 0.09), bevel=0.02, color=solid(T, "light", "white"), loc=(s * 0.25, -0.29, top - 0.2))
+    m.box((0.5, 0.6, 0.12), bevel=0.03, color=T["accent"], loc=(0, 0, top + 0.4))
+    m.box((0.36, 0.36, 0.36), bevel=0.06, color=T["accent"], loc=(0, 0, top - 0.5))
+    if tier in ("Gold", "Diamond", "Emerald", "Ruby", "Rainbow"):
+        m.gem(r=0.16, h=0.14, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.3, top))
+
+
+def drill(m, T, tier):
+    m.box((0.36, 0.5, 1.1), bevel=0.1, color=T["grip"], loc=(0, 0.3, 0.55), rot=(-10, 0, 0))
+    m.box((0.9, 1.5, 0.8), bevel=0.16, color=T["dark"], loc=(0, -0.2, 1.35))
+    m.box((0.95, 0.9, 0.5), bevel=0.1, loc=(0, -0.3, 1.35), **paint(T, "main", "y", -0.75, 0.15))
+    for y in (0.15, 0.3, 0.45):
+        m.box((0.97, 0.06, 0.4), color="charcoal", bevel=0.02, loc=(0, y, 1.35))
+    m.cyl(r=0.34, h=0.3, seg=8, color=T["accent"], rot=(90, 0, 0), loc=(0, -1.05, 1.35), bevel=0.05)
+
+    def spiral(c, n):
+        a = math.degrees(math.atan2(c.z - 1.35, c.x)) + (-c.y) * 300
+        return T["main"] if T["main"] != "RAINBOW" and int((a + 3600) / 45) % 2 else solid(T, "light", "white")
+    m.lathe([(0.3, 0), (0.22, 0.4), (0.14, 0.8), (0.0, 1.2)], seg=8, color=spiral, rot=(90, 0, 0),
+            loc=(0, -1.2, 1.35), smooth=False)
+    m.box((0.1, 0.2, 0.1), color="plastic_red", bevel=0.02, loc=(0, 0.05, 1.05))
+    m.box((0.5, 0.08, 0.2), color="neon_green" if tier != "Wood" else "wood_pale", bevel=0.02, loc=(0, 0.55, 1.5))
+
+
+TIERED_TOOLS = [("Pickaxe", pickaxe, (0, 0, 0.6)), ("HeavyPickaxe", heavy_pickaxe, (0, 0, 0.7)),
+                ("Drill", drill, (0, 0.3, 0.5)), ("Axe", axe, (0, 0, 0.6)), ("Shovel", shovel, (0, 0, 3.0)),
                 ("Hammer", hammer, (0, 0, 0.6)), ("Hoe", hoe, (0, 0, 0.6)), ("Scythe", scythe, (0, 0, 1.4))]
 
 for _name, _fn, _grip in TIERED_TOOLS:
@@ -335,3 +379,43 @@ def compass(m):
     m.prism([(0, 0.34), (0.06, 0), (-0.06, 0)], depth=0.02, color="plastic_red", loc=(0, 0, 0.18))
     m.prism([(0, -0.34), (-0.06, 0), (0.06, 0)], depth=0.02, color="plastic_white", loc=(0, 0, 0.18))
     m.torus(R=0.1, r=0.035, seg=8, rseg=4, color="gold", rot=(90, 0, 0), loc=(0, 0.55, 0.08))
+
+
+# --- legendary elemental pickaxes ---------------------------------------------------------
+LEGEND_PICKS = {
+    "Flame": dict(main="lava", light="fire_light", accent="gold", dark="obsidian", handle="obsidian", grip="rug_red",
+                  grip2="gold", gem="fire"),
+    "Frost": dict(main="ice", light="white", accent="silver", dark="diamond_dark", handle="diamond_dark",
+                  grip="fabric_navy", grip2="silver", gem="diamond"),
+    "Crystal": dict(main="amethyst", light="crystal_pink", accent="silver", dark="amethyst_dark", handle="stone_dark",
+                    grip="fabric_purple", grip2="silver", gem="diamond_light"),
+    "Void": dict(main="obsidian", light="neon_pink", accent="amethyst", dark="black", handle="charcoal",
+                 grip="black", grip2="amethyst", gem="neon_pink"),
+}
+
+
+def legend_pickaxe(m, name, E):
+    pickaxe(m, E, "Gold")
+    top = 3.1
+    if name == "Flame":
+        for s in (-1, 1):
+            for k in range(3):
+                m.pyramid(w=0.16, h=0.35 - 0.06 * k, color="fire" if k % 2 else "fire_light",
+                          loc=(s * (0.45 + 0.3 * k), 0, top + 0.1 - 0.06 * k * k), rot=(0, s * -10, 0))
+    elif name == "Frost":
+        for s in (-1, 1):
+            m.crystal(r=0.09, h=0.5, color="diamond_light", loc=(s * 0.55, 0, top + 0.08), rot=(0, s * 20, 0))
+            m.crystal(r=0.07, h=0.35, color="diamond", loc=(s * 0.85, 0, top), rot=(0, s * 35, 0))
+    elif name == "Crystal":
+        for s in (-1, 1):
+            m.crystal(r=0.12, h=0.6, color="crystal_pink", loc=(s * 0.6, 0, top + 0.05), rot=(0, s * 15, 0))
+        m.crystal(r=0.1, h=0.5, color="diamond_light", loc=(0, 0, top + 0.35))
+    elif name == "Void":
+        for s in (-1, 1):
+            m.pyramid(w=0.18, h=0.45, color="amethyst", loc=(s * 0.7, 0, top + 0.02), rot=(0, s * -5, 0))
+        m.torus(R=0.35, r=0.05, seg=8, color="neon_pink", rot=(90, 0, 0), loc=(0, -0.05, top))
+
+
+for _e, _E in LEGEND_PICKS.items():
+    add(f"{_e}Pickaxe", CAT, (lambda m, e=_e, E=_E: legend_pickaxe(m, e, E)), sub="Legendary", origin=(0, 0, 0.6),
+        tags=["legendary", _e.lower()])

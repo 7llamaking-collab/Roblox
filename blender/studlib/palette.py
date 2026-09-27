@@ -126,6 +126,14 @@ _add("plastic", rough=0.45,
      leather_dark="5E321A", rope="CFAF74", string="EFEFEF", neon_pink="FF4FD8",
      neon_green="4FFF7A", neon_blue="4FC8FF")
 
+# --- city / vehicles / military ------------------------------------------------------
+_add("city", rough=0.6,
+     army_green="5E6E3B", army_dark="3F4B29", army_tan="BBA878", camo_brown="7A6242",
+     gunmetal="4A4F58", asphalt="3B3B40", concrete="BAB6AE", concrete_dark="8F8B84",
+     road_yellow="F2C331", window_blue="74AEDD", taxi_yellow="FFC71C", police_blue="2F50A9",
+     fire_red="D72F2F", school_yellow="FFB91C", sign_green="2F8C58", neon_red="FF3C50",
+     awning_red="E24444", awning_white="F8F6F0", awning_blue="3F7FD6", awning_green="46A85A")
+
 NAMES = list(_C.keys())
 assert len(NAMES) <= GRID * GRID, len(NAMES)
 INDEX = {n: i for i, n in enumerate(NAMES)}

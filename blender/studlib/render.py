@@ -10,7 +10,7 @@ from . import output
 PREVIEW_MAT = "StudPalette_Preview"
 
 
-def preview_material(stud_png, pitch=0.5, strength=0.6):
+def preview_material(stud_png, pitch=2.0, strength=0.8):
     """Palette material + box-projected stud overlay (mimics Roblox Texture objects)."""
     mat = bpy.data.materials.get(PREVIEW_MAT)
     if mat is not None:
@@ -103,7 +103,8 @@ class Stage:
         sc.camera = cam
         self.cam = cam
 
-    def frame(self, objs, direction=(0.95, -1.55, 0.95), pad=1.12):
+    def frame(self, objs, direction=(0.95, -1.55, 0.95), pad=1.08):
+        """Point the camera along ``direction`` and fit the objects' bounding box tightly."""
         pts = []
         for ob in objs:
             for corner in ob.bound_box:
@@ -111,12 +112,19 @@ class Stage:
         lo = Vector((min(p.x for p in pts), min(p.y for p in pts), min(p.z for p in pts)))
         hi = Vector((max(p.x for p in pts), max(p.y for p in pts), max(p.z for p in pts)))
         center = (lo + hi) / 2
-        radius = max((hi - lo).length / 2, 0.05)
         d = Vector(direction).normalized()
-        fov = self.cam.data.angle
-        dist = radius * pad / math.sin(fov / 2)
+        rot = (-d).to_track_quat("-Z", "Y")
+        right = rot @ Vector((1, 0, 0))
+        up = rot @ Vector((0, 1, 0))
+        t = math.tan(self.cam.data.angle / 2)
+        dist = 0.1
+        for p in pts:
+            v = p - center
+            along = v.dot(d)
+            need = max(abs(v.dot(right)), abs(v.dot(up))) * pad / t + along
+            dist = max(dist, need)
         self.cam.location = center + d * dist
-        self.cam.rotation_euler = (-d).to_track_quat("-Z", "Y").to_euler()
+        self.cam.rotation_euler = rot.to_euler()
         self.cam.data.clip_start = dist * 0.01
         self.cam.data.clip_end = dist * 10
         self.ground.location = (center.x, center.y, lo.z)

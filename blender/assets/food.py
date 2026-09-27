@@ -59,7 +59,7 @@ def banana(m):
 
 @asset("Orange", CAT, sub="Fruit")
 def orange(m):
-    m.sphere(r=0.6, seg=14, rings=10, color="orange", loc=(0, 0, 0.58), scale=(1, 1, 0.96))
+    m.sphere(round=True, r=0.6, seg=14, rings=10, color="orange", loc=(0, 0, 0.58), scale=(1, 1, 0.96))
     m.cyl(r=0.07, h=0.08, seg=6, color="leaf_dark", loc=(0, 0, 1.15))
     m.leaf(length=0.5, width=0.26, thick=0.05, color="leaf", loc=(0.02, 0, 1.15), rot=(70, 0, -100))
 
@@ -89,7 +89,7 @@ def strawberry(m):
 @asset("Cherries", CAT, sub="Fruit")
 def cherries(m):
     for x, z in ((-0.32, 0.3), (0.3, 0.26)):
-        m.sphere(r=0.3, seg=12, rings=8, color="cherry", loc=(x, 0, z), scale=(1, 1, 0.92))
+        m.sphere(round=True, r=0.3, seg=12, rings=8, color="cherry", loc=(x, 0, z), scale=(1, 1, 0.92))
         m.tube([(x, 0, z + 0.25), (x * 0.6, 0, z + 0.6), (0.02, 0, 1.25)], [0.035, 0.03, 0.03],
                seg=5, color="leaf_dark")
     m.leaf(length=0.55, width=0.28, thick=0.05, color="leaf", loc=(0.02, 0, 1.22), rot=(70, 0, -70))
@@ -112,7 +112,7 @@ def grapes(m):
 @asset("Watermelon", CAT, sub="Fruit")
 def watermelon(m):
     stripes = lambda c, n: "melon_dark" if int((math.degrees(math.atan2(c.y, c.x)) + 360) / 30) % 2 else "melon_rind"
-    m.sphere(r=1.0, seg=12, rings=9, color=stripes, loc=(0, 0, 0.8), scale=(1.25, 1.0, 0.82), angle=35)
+    m.sphere(round=True, r=1.0, seg=12, rings=9, color=stripes, loc=(0, 0, 0.8), scale=(1.25, 1.0, 0.82), angle=35)
     m.cyl(r=0.07, h=0.12, seg=5, color="wood_dark", loc=(0, 0, 1.62))
 
 
@@ -155,7 +155,7 @@ def pineapple(m):
 def peach(m):
     def blush(c, n):
         return "peach_dark" if c.x + c.y * 0.3 > 0.15 else "peach"
-    m.sphere(r=0.58, seg=14, rings=10, color=blush, loc=(0, 0, 0.56))
+    m.sphere(round=True, r=0.58, seg=14, rings=10, color=blush, loc=(0, 0, 0.56))
     stem_leaf(m, (0, 0, 1.08), stem_len=0.14)
 
 
@@ -184,7 +184,7 @@ def coconut_half(m):
 
 @asset("Mango", CAT, sub="Fruit")
 def mango(m):
-    m.sphere(r=0.5, seg=14, rings=10, color=lambda c, n: "mango_red" if c.z > 0.75 and c.x > -0.1 else "mango",
+    m.sphere(round=True, r=0.5, seg=14, rings=10, color=lambda c, n: "mango_red" if c.z > 0.75 and c.x > -0.1 else "mango",
              loc=(0, 0, 0.5), scale=(1.25, 0.85, 1.0), deform=taper(-0.5, 0.5, 0.85, 1.1, axes="y"))
     stem_leaf(m, (-0.35, 0, 0.92), stem_len=0.12, lean=-20)
 
@@ -200,13 +200,13 @@ def blueberries(m):
 
 @asset("Lime", CAT, sub="Fruit")
 def lime(m):
-    m.sphere(r=0.42, seg=12, rings=8, color="lime", loc=(0, 0, 0.4), scale=(1, 1, 0.95))
+    m.sphere(round=True, r=0.42, seg=12, rings=8, color="lime", loc=(0, 0, 0.4), scale=(1, 1, 0.95))
     m.cyl(r=0.05, h=0.06, seg=5, color="leaf_dark", loc=(0, 0, 0.81))
 
 
 @asset("Kiwi", CAT, sub="Fruit")
 def kiwi(m):
-    m.sphere(r=0.45, seg=12, rings=8, color="kiwi_brown", loc=(0, 0, 0.4), scale=(1.2, 1, 0.9))
+    m.sphere(round=True, r=0.45, seg=12, rings=8, color="kiwi_brown", loc=(0, 0, 0.4), scale=(1.2, 1, 0.9))
 
 
 @asset("KiwiHalf", CAT, sub="Fruit")
@@ -240,7 +240,7 @@ def avocado_half(m):
 
 @asset("DragonFruit", CAT, sub="Fruit")
 def dragonfruit(m):
-    m.sphere(r=0.5, seg=12, rings=8, color="dragonfruit", loc=(0, 0, 0.55), scale=(0.95, 0.95, 1.15))
+    m.sphere(round=True, r=0.5, seg=12, rings=8, color="dragonfruit", loc=(0, 0, 0.55), scale=(0.95, 0.95, 1.15))
     for ring, (theta, n) in enumerate(((120, 5), (80, 6), (40, 5))):
         for i in range(n):
             a = 360 * i / n + ring * 30
@@ -283,7 +283,7 @@ def corn(m):
 
 @asset("Tomato", CAT, sub="Vegetable")
 def tomato(m):
-    m.sphere(r=0.55, seg=14, rings=10, color="tomato", loc=(0, 0, 0.48), scale=(1, 1, 0.85))
+    m.sphere(round=True, r=0.55, seg=14, rings=10, color="tomato", loc=(0, 0, 0.48), scale=(1, 1, 0.85))
     m.prism(star_pts(0.32, 0.1, 5), depth=0.05, color="leaf", loc=(0, 0, 0.95), bevel=0.015, bseg=1)
     m.cyl(r=0.05, h=0.14, seg=5, color="leaf_dark", loc=(0, 0, 1.02))
 
@@ -292,7 +292,7 @@ def tomato(m):
 def pumpkin(m):
     for i in range(8):
         a = math.radians(45 * i)
-        m.sphere(r=0.55, seg=10, rings=8, color="pumpkin" if i % 2 else "pumpkin_dark",
+        m.sphere(round=True, r=0.55, seg=10, rings=8, color="pumpkin" if i % 2 else "pumpkin_dark",
                  loc=(math.cos(a) * 0.42, math.sin(a) * 0.42, 0.6), scale=(0.75, 0.75, 1.0),
                  rot=(0, 0, 45 * i))
     m.tube([(0, 0, 1.05), (0.05, 0, 1.35), (0.15, 0, 1.45)], [0.1, 0.08, 0.07], seg=6, color="wood_mid")
@@ -344,7 +344,7 @@ def onion(m):
 def pepper(m):
     for i in range(4):
         a = math.radians(90 * i + 45)
-        m.sphere(r=0.36, seg=10, rings=8, color="pepper_red", loc=(math.cos(a) * 0.16, math.sin(a) * 0.16, 0.48),
+        m.sphere(round=True, r=0.36, seg=10, rings=8, color="pepper_red", loc=(math.cos(a) * 0.16, math.sin(a) * 0.16, 0.48),
                  scale=(0.9, 0.9, 1.35))
     m.cyl(r=0.12, h=0.1, seg=6, color="leaf_dark", loc=(0, 0, 0.98))
     m.tube([(0, 0, 1.0), (0.08, 0, 1.22)], [0.05, 0.04], seg=5, color="leaf_dark")
@@ -352,10 +352,10 @@ def pepper(m):
 
 @asset("Cabbage", CAT, sub="Vegetable")
 def cabbage(m):
-    m.sphere(r=0.5, seg=12, rings=8, color="cabbage", loc=(0, 0, 0.5))
+    m.sphere(round=True, r=0.5, seg=12, rings=8, color="cabbage", loc=(0, 0, 0.5))
     for i in range(6):
         a = 60 * i
-        m.sphere(r=0.42, seg=10, rings=6, color="leaf_light" if i % 2 else "cabbage",
+        m.sphere(round=True, r=0.42, seg=10, rings=6, color="leaf_light" if i % 2 else "cabbage",
                  loc=(math.cos(math.radians(a)) * 0.2, math.sin(math.radians(a)) * 0.2, 0.42),
                  scale=(0.9, 1.25, 0.95), rot=(0, 25, a))
 

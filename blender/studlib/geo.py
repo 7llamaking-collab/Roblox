@@ -18,6 +18,18 @@ from . import palette
 
 DEFAULT_SMOOTH_ANGLE = 40.0
 
+# Global look. "blocky" (default) matches AnimalBundle: spheres become chamfered
+# cubes, tubes get square sections, curved shapes use few sides and everything is
+# flat shaded. "round" gives the softer smooth low-poly look.
+STYLE = dict(name="blocky", blocky=True, flat=True, max_seg=8, chamfer=0.2)
+
+
+def set_style(name):
+    if name == "round":
+        STYLE.update(name="round", blocky=False, flat=False, max_seg=64)
+    else:
+        STYLE.update(name="blocky", blocky=True, flat=True, max_seg=8)
+
 
 def _vec3(s):
     if isinstance(s, (int, float)):
@@ -178,6 +190,8 @@ class Builder:
             bmesh.ops.transform(tmp, matrix=pre, verts=tmp.verts)
         if cuts:
             self._cut(tmp, cuts)
+        if STYLE["flat"]:
+            smooth = False
         if recalc:
             bmesh.ops.recalc_face_normals(tmp, faces=tmp.faces)
         tmp.normal_update()
@@ -270,13 +284,16 @@ class Builder:
         s = _vec3(size)
         for v in tmp.verts:
             v.co = Vector((v.co.x * s.x, v.co.y * s.y, v.co.z * s.z))
-        self._bevel(tmp, min(bevel, min(s) * 0.49), bseg)
+        self._bevel(tmp, min(bevel, min(s) * 0.49), 1 if STYLE["blocky"] else bseg)
         kw.setdefault("angle", 50)
         return self._commit(tmp, color, **kw)
 
     def cyl(self, r=0.5, h=1.0, seg=12, color="white", r2=None, bevel=0.0, bseg=2,
             caps=True, **kw):
         """Cylinder along Z centred on ``loc``; r2 = top radius (for frustums)."""
+        seg = min(seg, STYLE["max_seg"])
+        if STYLE["blocky"]:
+            bseg = 1
         tmp = bmesh.new()
         bmesh.ops.create_cone(tmp, cap_ends=caps, cap_tris=False, segments=seg, radius1=r,
                               radius2=r if r2 is None else r2, depth=h)
@@ -284,12 +301,20 @@ class Builder:
             self._bevel(tmp, min(bevel, h * 0.45, r * 0.45), bseg, min_angle=60)
         return self._commit(tmp, color, recalc=caps, **kw)
 
-    def sphere(self, r=0.5, seg=12, rings=8, color="white", **kw):
+    def sphere(self, r=0.5, seg=12, rings=8, color="white", round=False, **kw):
         tmp = bmesh.new()
-        bmesh.ops.create_uvsphere(tmp, u_segments=seg, v_segments=rings, radius=r)
+        if STYLE["blocky"] and not round:
+            bmesh.ops.create_cube(tmp, size=2 * r)
+            self._bevel(tmp, r * STYLE["chamfer"], 1)
+        else:
+            seg = min(seg, STYLE["max_seg"] + 2)
+            rings = min(rings, STYLE["max_seg"] - 2) if STYLE["blocky"] else rings
+            bmesh.ops.create_uvsphere(tmp, u_segments=seg, v_segments=rings, radius=r)
         return self._commit(tmp, color, **kw)
 
     def ico(self, r=0.5, sub=1, color="white", **kw):
+        if STYLE["blocky"]:
+            sub = min(sub, 1)
         tmp = bmesh.new()
         bmesh.ops.create_icosphere(tmp, subdivisions=sub, radius=r)
         kw.setdefault("angle", 30)
@@ -301,6 +326,8 @@ class Builder:
 
     def lathe(self, profile, seg=12, color="white", caps=True, **kw):
         """Spin a (radius, z) profile around Z. radius 0 makes a pole."""
+        if STYLE["blocky"] and seg > 4:
+            seg = min(seg, STYLE["max_seg"])
         tmp = bmesh.new()
         rings = []
         for r, z in profile:
@@ -339,6 +366,11 @@ class Builder:
         pts = [Vector(p) for p in points]
         n = len(pts)
         rads = [(r, r) if isinstance(r, (int, float)) else tuple(r) for r in radii]
+        square = STYLE["blocky"] and seg > 4
+        if square:
+            # square cross-section with flat top: corners at 45 degrees
+            seg = 4
+            rads = [(a * 1.25, b * 1.25) for a, b in rads]
         upv = Vector(up)
         tmp = bmesh.new()
         rings = []
@@ -365,7 +397,7 @@ class Builder:
                 continue
             ring = []
             for j in range(seg):
-                a = 2 * math.pi * j / seg + math.radians(twist) * i
+                a = 2 * math.pi * j / seg + math.radians(twist) * i + (math.pi / 4 if square else 0.0)
                 ring.append(tmp.verts.new(p + side * (rx * math.cos(a)) + u * (ry * math.sin(a))))
             rings.append(ring)
         for a, b in zip(rings[:-1], rings[1:]):
@@ -412,6 +444,9 @@ class Builder:
 
     def torus(self, R=0.5, r=0.15, seg=16, rseg=8, color="white", arc=360.0, **kw):
         """Torus in the XY plane; ``arc`` < 360 makes an open ring (handles)."""
+        if STYLE["blocky"]:
+            seg = max(4, min(seg, int(STYLE["max_seg"] * max(arc, 90) / 360 + 0.5)))
+            rseg = 4
         tmp = bmesh.new()
         closed = arc >= 359.9
         nseg = seg if closed else seg + 1
@@ -449,6 +484,35 @@ class Builder:
         kw.setdefault("smooth", False)
         return self._commit(tmp, color, **kw)
 
+    def panel(self, points, thick=0.06, color="white", **kw):
+        """Thin sheet through arbitrary 3D points (wing membranes, feathers, fins)."""
+        tmp = bmesh.new()
+        pts = [Vector(p) for p in points]
+        n = Vector((0, 0, 0))
+        for i in range(len(pts)):
+            a, b = pts[i], pts[(i + 1) % len(pts)]
+            n += Vector(((a.y - b.y) * (a.z + b.z), (a.z - b.z) * (a.x + b.x), (a.x - b.x) * (a.y + b.y)))
+        n = n.normalized() if n.length > 1e-9 else Vector((0, 0, 1))
+        top = [tmp.verts.new(p + n * thick / 2) for p in pts]
+        bot = [tmp.verts.new(p - n * thick / 2) for p in pts]
+        tmp.faces.new(top)
+        tmp.faces.new(list(reversed(bot)))
+        k = len(pts)
+        for i in range(k):
+            i1 = (i + 1) % k
+            tmp.faces.new([bot[i], bot[i1], top[i1], top[i]])
+        kw.setdefault("smooth", False)
+        return self._commit(tmp, color, **kw)
+
+    def pyramid(self, w=0.3, h=0.5, color="white", **kw):
+        """Square pyramid, base centred at the origin, tip at +Z (before rot)."""
+        r = w / math.sqrt(2)
+        prev = kw.pop("deform", None)
+        spin = Matrix.Rotation(math.pi / 4, 3, "Z")
+        kw["deform"] = (lambda co: prev(spin @ co)) if prev else (lambda co: spin @ co)
+        kw.setdefault("smooth", False)
+        return self.lathe([(r, 0), (0, h)], seg=4, color=color, **kw)
+
     def gem(self, r=0.5, h=1.0, seg=6, crown=0.35, table=0.55, color="diamond", **kw):
         """Faceted crystal/gem: pointed bottom, flat table top."""
         prof = [(0, 0), (r, h * (1 - crown)), (r * table, h)]
@@ -463,7 +527,23 @@ class Builder:
 
     # -- composite helpers -------------------------------------------------------
     def eye(self, pos, r=0.12, color="eye_black", shine=True, look=(0, -1, 0), **kw):
-        """Cute glossy eye: dark sphere with a small white highlight."""
+        """Eye. Blocky: square pixel eye (black square + white highlight square)
+        centred on ``pos`` and facing ``look``; round: glossy sphere."""
+        if STYLE["blocky"]:
+            L = Vector(look)
+            L.z = 0
+            if L.length < 1e-6:
+                L = Vector((0, -1, 0))
+            L.normalize()
+            yaw = math.degrees(math.atan2(L.x, -L.y))
+            rz = Matrix.Rotation(math.radians(yaw), 3, "Z")
+            p = Vector(pos)
+            self.box((2 * r, r * 0.6, 2 * r), color=color, loc=p, rot=(0, 0, yaw), **kw)
+            if shine:
+                side = 1.0 if p.x >= 0 else -1.0
+                off = rz @ Vector((side * r * 0.42, -r * 0.33, r * 0.42))
+                self.box((r * 0.8, r * 0.1, r * 0.8), color="eye_white", loc=p + off, rot=(0, 0, yaw), **kw)
+            return
         self.sphere(r=r, seg=10, rings=6, color=color, loc=pos, **kw)
         if shine:
             L = Vector(look).normalized()

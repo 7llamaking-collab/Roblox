@@ -16,16 +16,26 @@ GEM_TIERS = ("Gold", "Diamond", "Emerald", "Ruby", "Rainbow")
 
 def sword(m, T, tier):
     handle(m, T, -0.65, 0.45, r=0.1, grip=(-0.52, 0.38))
-    m.sphere(r=0.17, seg=8, rings=6, color=T["accent"], loc=(0, 0, -0.72))
-    m.box((1.15, 0.3, 0.2), bevel=0.06, color=T["accent"], loc=(0, 0, 0.52))
+    m.sphere(r=0.17, seg=8, rings=6, color=T["accent"], loc=(0, 0, -0.74))
+    m.box((0.2, 0.2, 0.12), color=T["dark"], bevel=0.03, loc=(0, 0, -0.58))
+    # layered cross-guard
+    m.box((1.2, 0.3, 0.2), bevel=0.06, color=T["accent"], loc=(0, 0, 0.52))
+    m.box((0.46, 0.36, 0.3), bevel=0.07, color=T["dark"], loc=(0, 0, 0.55))
     for s in (-1, 1):
-        m.cone(r=0.12, h=0.2, seg=6, color=T["accent"], rot=(0, s * 90, 0), loc=(s * 0.56, 0, 0.52), smooth=False)
-    blade = [(0, 0, 0.6), (0, 0, 1.0), (0, 0, 3.25), (0, 0, 3.95)]
+        m.box((0.2, 0.34, 0.3), bevel=0.05, color=T["dark"], loc=(s * 0.62, 0, 0.58), rot=(0, s * -20, 0))
+        m.pyramid(w=0.16, h=0.22, color=T["accent"], loc=(s * 0.7, 0, 0.7), rot=(0, s * 25, 0))
+    blade = [(0, 0, 0.62), (0, 0, 1.0), (0, 0, 3.25), (0, 0, 3.95)]
     m.tube(blade, [(0.26, 0.075), (0.28, 0.08), (0.25, 0.07), 0], seg=4, up=(0, 1, 0), smooth=False,
            **paint(T, "main", "z", 0.6, 3.95))
+    # bright edges along both sides of the blade
+    edge = solid(T, "light", "white")
+    for s in (-1, 1):
+        m.tube([(s * 0.27, 0, 0.95), (s * 0.245, 0, 3.25), (s * 0.05, 0, 3.86)], [0.03, 0.03, 0.02], seg=4, color=edge)
     m.box((0.06, 0.166, 2.3), color=T["dark"], loc=(0, 0, 1.95), smooth=False)
+    m.box((0.3, 0.17, 0.3), color=T["dark"], bevel=0.04, loc=(0, 0, 0.78))
     if tier in GEM_TIERS:
-        m.gem(r=0.1, h=0.1, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.2, 0.52))
+        m.gem(r=0.1, h=0.1, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.2, 0.55))
+        m.gem(r=0.08, h=0.08, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.13, -0.74))
 
 
 def katana(m, T, tier):
@@ -140,7 +150,79 @@ def shield(m, T, tier):
         m.gem(r=0.14, h=0.14, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.34, 0))
 
 
-TIERED = [("Sword", sword, (0, 0, 0)), ("Katana", katana, (0, 0, 0)), ("Dagger", dagger, (0, 0, 0)),
+def greatsword(m, T, tier):
+    handle(m, T, -1.1, 0.55, r=0.11, grip=(-0.95, 0.45))
+    m.box((0.34, 0.34, 0.3), bevel=0.08, color=T["accent"], loc=(0, 0, -1.2))
+    m.pyramid(w=0.2, h=0.25, color=T["accent"], loc=(0, 0, -1.47), rot=(180, 0, 0))
+    m.box((0.6, 0.4, 0.34), bevel=0.08, color=T["dark"], loc=(0, 0, 0.66))
+    for s in (-1, 1):
+        m.tube([(s * 0.25, 0, 0.66), (s * 0.8, 0, 0.62), (s * 1.05, 0, 0.35)], [0.12, 0.1, 0.06], seg=4,
+               color=T["accent"])
+        m.box((0.16, 0.44, 0.16), bevel=0.04, color=T["dark"], loc=(s * 1.05, 0, 0.3))
+    m.box((0.5, 0.2, 0.5), bevel=0.05, color=T["dark"], loc=(0, 0, 1.05))
+    m.tube([(0, 0, 0.8), (0, 0, 1.4), (0, 0, 4.6), (0, 0, 5.4)], [(0.36, 0.09), (0.38, 0.1), (0.33, 0.09), 0], seg=4,
+           up=(0, 1, 0), smooth=False, **paint(T, "main", "z", 0.8, 5.4))
+    edge = solid(T, "light", "white")
+    for s in (-1, 1):
+        m.tube([(s * 0.37, 0, 1.3), (s * 0.33, 0, 4.6), (s * 0.06, 0, 5.3)], [0.035, 0.035, 0.02], seg=4, color=edge)
+    m.box((0.08, 0.205, 3.2), color=T["dark"], loc=(0, 0, 2.9), smooth=False)
+    for z in (1.6, 2.2, 2.8):
+        m.box((0.12, 0.21, 0.12), color=T["accent"], bevel=0.02, loc=(0, 0, z))
+    if tier in GEM_TIERS:
+        m.gem(r=0.14, h=0.14, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.24, 0.66))
+
+
+def scimitar(m, T, tier):
+    handle(m, T, -0.6, 0.4, r=0.09, grip=(-0.5, 0.33))
+    m.tube([(0, 0, -0.62), (0, -0.2, -0.75), (0, -0.28, -0.62)], [0.08, 0.07, 0.06], seg=4, color=T["accent"])
+    m.box((0.9, 0.24, 0.16), bevel=0.05, color=T["accent"], loc=(0, 0, 0.46))
+    for s in (-1, 1):
+        m.box((0.16, 0.26, 0.26), bevel=0.05, color=T["dark"], loc=(s * 0.45, 0, 0.5))
+    pts, rad = [], []
+    n = 7
+    for i in range(n + 1):
+        t = i / n
+        pts.append((0.35 * t * t, 0, 0.55 + 3.0 * t))
+        w = 0.15 + 0.12 * math.sin(math.pi * min(1.0, t * 1.15)) if i < n else 0
+        rad.append((w, 0.06) if i < n else 0)
+    m.tube(pts, rad, seg=4, up=(0, 1, 0), smooth=False, **paint(T, "main", "z", 0.55, 3.55))
+    m.tube([(p[0] - rad[i][0] * 0.95, 0, p[2]) for i, p in enumerate(pts[:-1])], [0.03] * n, seg=4,
+           color=solid(T, "light", "white"))
+    if tier in GEM_TIERS:
+        m.gem(r=0.08, h=0.08, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.15, 0.46))
+
+
+def mace(m, T, tier):
+    top = 2.6
+    handle(m, T, 0.0, top, r=0.1, grip=(0.2, 1.0))
+    m.box((0.7, 0.7, 0.7), bevel=0.14, loc=(0, 0, top + 0.35), **paint(T, "main", "z", top, top + 0.7))
+    for rx, ry in ((0, 0), (90, 0), (-90, 0), (0, 90), (0, -90), (180, 0)):
+        m.pyramid(w=0.26, h=0.38, color=solid(T, "light", "white"), loc=(0, 0, top + 0.35), rot=(rx, ry, 0),
+                  pre=None, deform=lambda co: co.__class__((co.x, co.y, co.z + 0.33)))
+    for a in range(4):
+        m.pyramid(w=0.2, h=0.3, color=T["dark"], loc=(0, 0, top + 0.35), rot=(0, 45, 90 * a + 45),
+                  deform=lambda co: co.__class__((co.x, co.y, co.z + 0.4)))
+    m.cyl(r=0.16, h=0.25, seg=8, color=T["accent"], loc=(0, 0, top - 0.05), bevel=0.04)
+    if tier in GEM_TIERS:
+        m.gem(r=0.1, h=0.1, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.36, top + 0.35))
+
+
+def halberd(m, T, tier):
+    top = 5.0
+    handle(m, T, 0.0, top, r=0.08, grip=(1.3, 2.3))
+    for z in (2.6, 3.6, top - 0.2):
+        m.box((0.22, 0.22, 0.16), bevel=0.04, color=T["accent"], loc=(0, 0, z))
+    blade = [(0.08, -0.2), (0.4, -0.35), (0.95, -0.6), (1.0, 0.0), (0.95, 0.45), (0.4, 0.3), (0.08, 0.25)]
+    m.prism(blade, depth=0.1, bevel=0.03, rot=(90, 0, 0), loc=(0, 0, top - 0.3), **paint(T, "main", "x", 0, 1.0))
+    m.prism([(-0.08, -0.12), (-0.55, 0.0), (-0.08, 0.12)], depth=0.1, color=T["dark"], rot=(90, 0, 0),
+            loc=(0, 0, top - 0.25))
+    m.tube([(0, 0, top), (0, 0, top + 0.4), (0, 0, top + 1.2)], [(0.12, 0.05), (0.16, 0.06), 0], seg=4, up=(0, 1, 0),
+           smooth=False, **paint(T, "main", "z", top, top + 1.2))
+    m.box((0.3, 0.26, 0.4), bevel=0.05, color=T["dark"], loc=(0, 0, top - 0.25))
+
+
+TIERED = [("Sword", sword, (0, 0, 0)), ("Greatsword", greatsword, (0, 0, 0)), ("Scimitar", scimitar, (0, 0, 0)),
+          ("Mace", mace, (0, 0, 0.5)), ("Halberd", halberd, (0, 0, 1.8)), ("Katana", katana, (0, 0, 0)), ("Dagger", dagger, (0, 0, 0)),
           ("BattleAxe", battle_axe, (0, 0, 0.7)), ("Spear", spear, (0, 0, 1.8)),
           ("WarHammer", war_hammer, (0, 0, 0.6)), ("Bow", bow, (0, 0, 0)), ("Staff", staff, (0, 0, 1.6)),
           ("Shield", shield, (0, 0, 0))]
@@ -237,3 +319,68 @@ def crossbow(m):
     m.tube(pts, [0.05] * len(pts), seg=6, color="iron_dark")
     m.tube([pts[0], (0, -0.1, 0.62), pts[-1]], [0.012] * 3, seg=3, color="string", smooth=False)
     m.cyl(r=0.03, h=1.0, seg=5, color="iron", rot=(90, 0, 0), loc=(0, -0.4, 0.64))
+
+
+# --- legendary elemental weapons -------------------------------------------------------
+ELEMENTS = {
+    "Flame": dict(main="lava", edge="fire_light", guard="obsidian", accent="gold", gem="fire", deco="fire",
+                  grip="rug_red"),
+    "Frost": dict(main="ice", edge="white", guard="diamond_dark", accent="silver", gem="diamond", deco="diamond_light",
+                  grip="fabric_navy"),
+    "Thunder": dict(main="plastic_yellow", edge="white", guard="sapphire", accent="gold", gem="neon_blue",
+                    deco="neon_blue", grip="fabric_navy"),
+    "Shadow": dict(main="obsidian", edge="amethyst", guard="black", accent="amethyst_dark", gem="neon_pink",
+                   deco="amethyst", grip="charcoal"),
+    "Nature": dict(main="leaf", edge="leaf_light", guard="bark", accent="wood_light", gem="emerald", deco="leaf_dark",
+                   grip="bark_dark"),
+    "Crystal": dict(main="crystal_pink", edge="white", guard="amethyst", accent="silver", gem="diamond_light",
+                    deco="amethyst", grip="fabric_purple"),
+}
+
+
+def legend_sword(m, name, E):
+    T = dict(handle=E["guard"], grip=E["grip"], grip2=E["accent"], accent=E["accent"])
+    handle(m, T, -0.75, 0.45, r=0.11, grip=(-0.62, 0.38))
+    m.gem(r=0.16, h=0.2, seg=6, color=E["gem"], loc=(0, 0, -0.95))
+    m.box((1.3, 0.34, 0.24), bevel=0.07, color=E["guard"], loc=(0, 0, 0.55))
+    m.box((0.5, 0.4, 0.4), bevel=0.08, color=E["accent"], loc=(0, 0, 0.58))
+    m.gem(r=0.12, h=0.12, seg=6, color=E["gem"], rot=(90, 0, 0), loc=(0, -0.22, 0.58))
+    m.tube([(0, 0, 0.7), (0, 0, 1.1), (0, 0, 3.6), (0, 0, 4.4)], [(0.3, 0.08), (0.32, 0.09), (0.28, 0.08), 0], seg=4,
+           up=(0, 1, 0), smooth=False, color=E["main"])
+    for s in (-1, 1):
+        m.tube([(s * 0.31, 0, 1.05), (s * 0.28, 0, 3.6), (s * 0.05, 0, 4.3)], [0.035, 0.035, 0.02], seg=4, color=E["edge"])
+    m.box((0.07, 0.186, 2.6), color=E["deco"], loc=(0, 0, 2.2), smooth=False)
+    if name == "Flame":
+        for s in (-1, 1):
+            for k, z in enumerate((0.75, 1.1)):
+                m.pyramid(w=0.2, h=0.5 - 0.1 * k, color="fire" if k else "fire_light", loc=(s * (0.55 - 0.1 * k), 0, z),
+                          rot=(0, s * 30, 0))
+    elif name == "Frost":
+        for s in (-1, 1):
+            m.crystal(r=0.09, h=0.6, color="diamond_light", loc=(s * 0.6, 0, 0.6), rot=(0, s * 40, 0))
+            m.crystal(r=0.07, h=0.4, color="diamond", loc=(s * 0.4, 0, 0.7), rot=(0, s * 15, 0))
+    elif name == "Thunder":
+        bolt = [(0.2, 1.0), (-0.5, -0.05), (0.0, -0.05), (-0.25, -1.0), (0.55, 0.2), (0.05, 0.2), (0.4, 1.0)]
+        for y in (-0.1, 0.1):
+            m.prism(bolt, depth=0.04, color="neon_blue", rot=(90, 0, 0), loc=(0, y, 2.3), scale=(0.3, 0.9, 1))
+        for s in (-1, 1):
+            m.prism(bolt, depth=0.08, color="plastic_yellow", rot=(90, 0, 0), loc=(s * 0.75, 0, 0.6), scale=0.35)
+    elif name == "Shadow":
+        for s in (-1, 1):
+            m.pyramid(w=0.16, h=0.6, color="amethyst", loc=(s * 0.6, 0, 0.62), rot=(0, s * 60, 0))
+            m.pyramid(w=0.12, h=0.35, color="amethyst", loc=(s * 0.25, 0, 1.4), rot=(0, s * 70, 0))
+    elif name == "Nature":
+        for i in range(6):
+            z = 1.0 + i * 0.45
+            m.torus(R=0.2, r=0.035, seg=8, color="vine", loc=(0, 0, z), rot=(0, 0, 45), scale=(1.4, 0.5, 1))
+        for s in (-1, 1):
+            m.leaf(length=0.6, width=0.3, thick=0.05, color="leaf_light", loc=(s * 0.55, 0, 0.62), rot=(90, 0, -s * 70))
+    elif name == "Crystal":
+        for i, (x, z, h) in enumerate(((0.2, 1.4, 0.6), (-0.22, 2.1, 0.5), (0.2, 2.8, 0.45))):
+            m.crystal(r=0.1, h=h, color="amethyst" if i % 2 else "diamond_light", loc=(x, 0, z),
+                      rot=(0, (1 if x > 0 else -1) * 55, 0))
+
+
+for _e, _E in ELEMENTS.items():
+    add(f"{_e}Sword", CAT, (lambda m, e=_e, E=_E: legend_sword(m, e, E)), sub="Legendary", origin=(0, 0, 0),
+        tags=["legendary", _e.lower()])

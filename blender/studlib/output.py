@@ -59,9 +59,10 @@ def palette_material():
 def finish(b, origin="bottom", collection=None, weighted=True):
     """Build the mesh object from a Builder. ``origin``: 'bottom', 'center' or (x,y,z)."""
     bm = b.bm
+    bm.normal_update()  # triangulation projects along face normals; they must be valid
     ngons = [f for f in bm.faces if len(f.verts) > 4]
     if ngons:
-        bmesh.ops.triangulate(bm, faces=ngons, quad_method="BEAUTY", ngon_method="EAR_CLIP")
+        bmesh.ops.triangulate(bm, faces=ngons, quad_method="BEAUTY", ngon_method="BEAUTY")
     # drop exact duplicate / degenerate faces that can break importers
     bad = [f for f in bm.faces if f.calc_area() < 1e-9]
     if bad:
@@ -114,6 +115,70 @@ def finish(b, origin="bottom", collection=None, weighted=True):
     ob["origin_offset"] = list(off)
     ob["tris"] = sum(len(p.vertices) - 2 for p in me.polygons)
     ob["studs"] = [round(d, 2) for d in ob.dimensions]
+    return ob
+
+
+def finish_split(b, origin="bottom", collection=None):
+    """Like finish(), but every rig group other than the first becomes its own
+    object parented to the main one, with its origin at its own centre.
+
+    Used for vehicles and machines: wheels, rotors, propellers and turrets come in
+    as separate MeshParts so they can be driven by constraints in Roblox.
+    """
+    ob = finish(b, origin=origin, collection=collection)
+    me = ob.data
+    if "grp" not in me.attributes:
+        return ob
+    npoly = len(me.polygons)
+    grp = np.zeros(npoly, np.int32)
+    me.attributes["grp"].data.foreach_get("value", grp)
+    used = sorted(set(grp.tolist()))
+    main = used[0] if 0 not in used else 0
+    parts = []
+    for gi in used:
+        if gi == main:
+            continue
+        name = f"{b.name}_{b.groups[gi]}"
+        bm = bmesh.new()
+        bm.from_mesh(me)
+        lay = bm.faces.layers.int.get("grp")
+        bmesh.ops.delete(bm, geom=[f for f in bm.faces if f[lay] != gi], context="FACES")
+        loose = [v for v in bm.verts if not v.link_faces]
+        if loose:
+            bmesh.ops.delete(bm, geom=loose, context="VERTS")
+        c = Vector((0, 0, 0))
+        for v in bm.verts:
+            c += v.co
+        c /= max(1, len(bm.verts))
+        lo = Vector((min(v.co.x for v in bm.verts), min(v.co.y for v in bm.verts), min(v.co.z for v in bm.verts)))
+        hi = Vector((max(v.co.x for v in bm.verts), max(v.co.y for v in bm.verts), max(v.co.z for v in bm.verts)))
+        c = (lo + hi) / 2
+        for v in bm.verts:
+            v.co -= c
+        pm = bpy.data.meshes.new(name)
+        bm.to_mesh(pm)
+        bm.free()
+        pm.materials.append(palette_material())
+        po = bpy.data.objects.new(name, pm)
+        (collection or bpy.context.scene.collection).objects.link(po)
+        po.location = c
+        po.parent = ob
+        parts.append(po)
+    # remove the split-off faces from the main body
+    bm = bmesh.new()
+    bm.from_mesh(me)
+    lay = bm.faces.layers.int.get("grp")
+    bmesh.ops.delete(bm, geom=[f for f in bm.faces if f[lay] != main], context="FACES")
+    loose = [v for v in bm.verts if not v.link_faces]
+    if loose:
+        bmesh.ops.delete(bm, geom=loose, context="VERTS")
+    bm.to_mesh(me)
+    bm.free()
+    total = sum(len(p.vertices) - 2 for p in me.polygons)
+    for po in parts:
+        total += sum(len(p.vertices) - 2 for p in po.data.polygons)
+    ob["tris"] = total
+    ob["parts"] = [po.name for po in parts]
     return ob
 
 

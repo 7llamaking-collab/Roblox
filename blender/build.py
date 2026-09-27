@@ -29,10 +29,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 from studlib import output, palette, registry, render, studs  # noqa: E402
-from studlib.geo import Builder  # noqa: E402
+from studlib.geo import Builder, set_style  # noqa: E402
 
-CATEGORY_MODULES = ["food", "tools", "weapons", "furniture", "nature", "props", "animals"]
-CATEGORY_ORDER = ["Food", "Tools", "Weapons", "Furniture", "Nature", "Props", "Animals"]
+CATEGORY_MODULES = ["food", "tools", "weapons", "furniture", "nature", "props", "animals", "vehicles",
+                    "buildings", "military"]
+CATEGORY_ORDER = ["Food", "Tools", "Weapons", "Furniture", "Nature", "Props", "Animals", "Vehicles", "Buildings",
+                  "Military"]
 
 
 def parse_args():
@@ -46,8 +48,10 @@ def parse_args():
     ap.add_argument("--no-export", action="store_true")
     ap.add_argument("--res", type=int, default=384)
     ap.add_argument("--samples", type=int, default=20)
-    ap.add_argument("--pitch", type=float, default=0.5, help="studs per overlay tile in previews")
-    ap.add_argument("--stud-strength", type=float, default=0.6, help="overlay opacity (Roblox: 1 - Transparency)")
+    ap.add_argument("--pitch", type=float, default=2.0, help="studs per Stud.png tile in previews")
+    ap.add_argument("--style", default="blocky", choices=["blocky", "round"],
+                    help="blocky = AnimalBundle look (default), round = smooth low poly")
+    ap.add_argument("--stud-strength", type=float, default=0.8, help="overlay opacity (Roblox: 1 - Transparency)")
     return ap.parse_args(argv)
 
 
@@ -91,12 +95,16 @@ def build_category(cat, items, args, tex_dir, stud_png):
                 coll.children.link(sub)
         bones = dict(b.bones)
         groups = list(b.groups)
-        ob = output.finish(b, origin=a["origin"], collection=sub)
+        if a.get("split"):
+            ob = output.finish_split(b, origin=a["origin"], collection=sub)
+        else:
+            ob = output.finish(b, origin=a["origin"], collection=sub)
         root = ob
         if a["rig"] and bones:
             root = rig_mod.rig(ob, bones, groups, a["rig"], sub)
         info = dict(name=a["name"], category=cat, group=a["sub"], tris=ob["tris"],
                     size_studs=[round(v, 2) for v in ob.dimensions], rigged=root is not ob,
+                    parts=list(ob.get("parts", [])),
                     tags=a["tags"])
         if not args.no_export:
             p = os.path.join(args.out, "exports", "fbx", cat, a["name"] + ".fbx")
@@ -162,6 +170,7 @@ def build_category(cat, items, args, tex_dir, stud_png):
 
 def main():
     args = parse_args()
+    set_style(args.style)
     t0 = time.time()
     reset()
     tex_dir = os.path.join(args.out, "textures")

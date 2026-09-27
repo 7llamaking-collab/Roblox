@@ -10,8 +10,8 @@
 ]]
 
 -- Same stud texture/settings as the animals in AnimalBundle_1.rbxl.
--- To use this library's own stud tile instead, upload textures/Stud.png and set
--- STUD_TEXTURE to its id and STUDS_PER_TILE to 0.5.
+-- To use this library's own round-stud texture instead, upload textures/Stud.png
+-- and set STUD_TEXTURE to its id and STUDS_PER_TILE to 2 (that is how the previews look).
 local STUD_TEXTURE = "rbxassetid://9527811247"
 local STUDS_PER_TILE = 9
 local TRANSPARENCY = 0.4
