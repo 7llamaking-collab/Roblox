@@ -684,7 +684,9 @@ def ticket(m):
 def ticket_roll(m):
     m.cyl(r=0.9, h=0.8, seg=8, color=lambda c, n: "plastic_red" if abs(n.y) > 0.5 else "gold_light", loc=(0, 0, 0.9),
           rot=(90, 0, 0))
-    m.box((0.8, 0.05, 1.6), color="gold_light", loc=(0.8, 0, 0.1), rot=(0, 20, 0))
+    m.box((1.8, 0.7, 0.05), color="gold_light", loc=(1.3, 0, 0.03))
+    for x in (0.9, 1.5, 2.1):
+        m.box((0.04, 0.72, 0.06), color="plastic_red", loc=(x, 0, 0.04))
 
 
 # --- obby & game parts ---------------------------------------------------------------------------
