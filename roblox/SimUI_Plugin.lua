@@ -978,7 +978,7 @@ if plugin then
 	corner(box, 8)
 	new("UIPadding", {PaddingLeft = UDim.new(0, 8), PaddingRight = UDim.new(0, 8), Parent = box})
 	t("Quick themes:", 3)
-	local chips = new("Frame", {Size = UDim2.new(1, 0, 0, 150), BackgroundTransparency = 1, LayoutOrder = 4, Parent = bg})
+	local chips = new("Frame", {Size = UDim2.new(1, 0, 0, 164), BackgroundTransparency = 1, LayoutOrder = 4, Parent = bg})
 	new("UIGridLayout", {CellSize = UDim2.fromOffset(84, 26), CellPadding = UDim2.fromOffset(6, 6), Parent = chips})
 	for _, name in ipairs(THEME_ORDER) do
 		local th = THEMES[name]

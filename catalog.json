@@ -27614,5 +27614,2539 @@
    "fbx": "exports/fbx/Tycoon/ShopStand.fbx",
    "preview": "previews/Tycoon/ShopStand.png"
   }
+ ],
+ "Holidays": [
+  {
+   "name": "PartyHat",
+   "category": "Holidays",
+   "group": "NewYear",
+   "tris": 202,
+   "size_studs": [
+    1.8,
+    1.8,
+    2.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "newyear"
+   ],
+   "fbx": "exports/fbx/Holidays/PartyHat.fbx",
+   "preview": "previews/Holidays/PartyHat.png"
+  },
+  {
+   "name": "SparklingCider",
+   "category": "Holidays",
+   "group": "NewYear",
+   "tris": 588,
+   "size_studs": [
+    4.6,
+    2.8,
+    4.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "newyear"
+   ],
+   "fbx": "exports/fbx/Holidays/SparklingCider.fbx",
+   "preview": "previews/Holidays/SparklingCider.png"
+  },
+  {
+   "name": "CountdownClock",
+   "category": "Holidays",
+   "group": "NewYear",
+   "tris": 444,
+   "size_studs": [
+    7.0,
+    4.0,
+    12.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "newyear"
+   ],
+   "fbx": "exports/fbx/Holidays/CountdownClock.fbx",
+   "preview": "previews/Holidays/CountdownClock.png"
+  },
+  {
+   "name": "DiscoBall",
+   "category": "Holidays",
+   "group": "NewYear",
+   "tris": 388,
+   "size_studs": [
+    2.47,
+    2.6,
+    5.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "newyear"
+   ],
+   "fbx": "exports/fbx/Holidays/DiscoBall.fbx",
+   "preview": "previews/Holidays/DiscoBall.png"
+  },
+  {
+   "name": "ConfettiCannon",
+   "category": "Holidays",
+   "group": "NewYear",
+   "tris": 348,
+   "size_studs": [
+    2.52,
+    4.63,
+    4.69
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "newyear"
+   ],
+   "fbx": "exports/fbx/Holidays/ConfettiCannon.fbx",
+   "preview": "previews/Holidays/ConfettiCannon.png"
+  },
+  {
+   "name": "BalloonArch",
+   "category": "Holidays",
+   "group": "NewYear",
+   "tris": 1198,
+   "size_studs": [
+    11.4,
+    1.4,
+    6.81
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "newyear"
+   ],
+   "fbx": "exports/fbx/Holidays/BalloonArch.fbx",
+   "preview": "previews/Holidays/BalloonArch.png"
+  },
+  {
+   "name": "NewYearBanner",
+   "category": "Holidays",
+   "group": "NewYear",
+   "tris": 1292,
+   "size_studs": [
+    16.6,
+    0.6,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "newyear"
+   ],
+   "fbx": "exports/fbx/Holidays/NewYearBanner.fbx",
+   "preview": "previews/Holidays/NewYearBanner.png"
+  },
+  {
+   "name": "FireworkLauncher",
+   "category": "Holidays",
+   "group": "NewYear",
+   "tris": 632,
+   "size_studs": [
+    3.0,
+    3.07,
+    3.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "newyear"
+   ],
+   "fbx": "exports/fbx/Holidays/FireworkLauncher.fbx",
+   "preview": "previews/Holidays/FireworkLauncher.png"
+  },
+  {
+   "name": "RedLantern",
+   "category": "Holidays",
+   "group": "LunarNewYear",
+   "tris": 224,
+   "size_studs": [
+    2.0,
+    2.0,
+    3.07
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "lunarnewyear"
+   ],
+   "fbx": "exports/fbx/Holidays/RedLantern.fbx",
+   "preview": "previews/Holidays/RedLantern.png"
+  },
+  {
+   "name": "LanternString",
+   "category": "Holidays",
+   "group": "LunarNewYear",
+   "tris": 1240,
+   "size_studs": [
+    12.26,
+    2.0,
+    8.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "lunarnewyear"
+   ],
+   "fbx": "exports/fbx/Holidays/LanternString.fbx",
+   "preview": "previews/Holidays/LanternString.png"
+  },
+  {
+   "name": "DragonDanceHead",
+   "category": "Holidays",
+   "group": "LunarNewYear",
+   "tris": 788,
+   "size_studs": [
+    5.65,
+    8.78,
+    4.26
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "lunarnewyear"
+   ],
+   "fbx": "exports/fbx/Holidays/DragonDanceHead.fbx",
+   "preview": "previews/Holidays/DragonDanceHead.png"
+  },
+  {
+   "name": "Firecrackers",
+   "category": "Holidays",
+   "group": "LunarNewYear",
+   "tris": 548,
+   "size_studs": [
+    1.18,
+    0.3,
+    6.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "lunarnewyear"
+   ],
+   "fbx": "exports/fbx/Holidays/Firecrackers.fbx",
+   "preview": "previews/Holidays/Firecrackers.png"
+  },
+  {
+   "name": "RedEnvelope",
+   "category": "Holidays",
+   "group": "LunarNewYear",
+   "tris": 80,
+   "size_studs": [
+    1.4,
+    0.26,
+    2.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "lunarnewyear"
+   ],
+   "fbx": "exports/fbx/Holidays/RedEnvelope.fbx",
+   "preview": "previews/Holidays/RedEnvelope.png"
+  },
+  {
+   "name": "LuckyCat",
+   "category": "Holidays",
+   "group": "LunarNewYear",
+   "tris": 288,
+   "size_studs": [
+    2.45,
+    1.87,
+    4.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "lunarnewyear"
+   ],
+   "fbx": "exports/fbx/Holidays/LuckyCat.fbx",
+   "preview": "previews/Holidays/LuckyCat.png"
+  },
+  {
+   "name": "MandarinBowl",
+   "category": "Holidays",
+   "group": "LunarNewYear",
+   "tris": 668,
+   "size_studs": [
+    3.6,
+    3.6,
+    2.56
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "lunarnewyear"
+   ],
+   "fbx": "exports/fbx/Holidays/MandarinBowl.fbx",
+   "preview": "previews/Holidays/MandarinBowl.png"
+  },
+  {
+   "name": "LunarGate",
+   "category": "Holidays",
+   "group": "LunarNewYear",
+   "tris": 760,
+   "size_studs": [
+    20.0,
+    2.63,
+    14.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "lunarnewyear"
+   ],
+   "fbx": "exports/fbx/Holidays/LunarGate.fbx",
+   "preview": "previews/Holidays/LunarGate.png"
+  },
+  {
+   "name": "HeartBalloon",
+   "category": "Holidays",
+   "group": "Valentines",
+   "tris": 246,
+   "size_studs": [
+    1.6,
+    0.9,
+    6.08
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "valentines"
+   ],
+   "fbx": "exports/fbx/Holidays/HeartBalloon.fbx",
+   "preview": "previews/Holidays/HeartBalloon.png"
+  },
+  {
+   "name": "PinkHeartBalloon",
+   "category": "Holidays",
+   "group": "Valentines",
+   "tris": 246,
+   "size_studs": [
+    1.6,
+    0.9,
+    6.08
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "valentines"
+   ],
+   "fbx": "exports/fbx/Holidays/PinkHeartBalloon.fbx",
+   "preview": "previews/Holidays/PinkHeartBalloon.png"
+  },
+  {
+   "name": "HeartChocolateBox",
+   "category": "Holidays",
+   "group": "Valentines",
+   "tris": 652,
+   "size_studs": [
+    2.42,
+    2.98,
+    3.17
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "valentines"
+   ],
+   "fbx": "exports/fbx/Holidays/HeartChocolateBox.fbx",
+   "preview": "previews/Holidays/HeartChocolateBox.png"
+  },
+  {
+   "name": "RoseBouquet",
+   "category": "Holidays",
+   "group": "Valentines",
+   "tris": 758,
+   "size_studs": [
+    2.8,
+    2.8,
+    4.35
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "valentines"
+   ],
+   "fbx": "exports/fbx/Holidays/RoseBouquet.fbx",
+   "preview": "previews/Holidays/RoseBouquet.png"
+  },
+  {
+   "name": "TeddyBear",
+   "category": "Holidays",
+   "group": "Valentines",
+   "tris": 620,
+   "size_studs": [
+    3.6,
+    2.22,
+    4.55
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "valentines"
+   ],
+   "fbx": "exports/fbx/Holidays/TeddyBear.fbx",
+   "preview": "previews/Holidays/TeddyBear.png"
+  },
+  {
+   "name": "LoveLetter",
+   "category": "Holidays",
+   "group": "Valentines",
+   "tris": 240,
+   "size_studs": [
+    2.4,
+    0.28,
+    1.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "valentines"
+   ],
+   "fbx": "exports/fbx/Holidays/LoveLetter.fbx",
+   "preview": "previews/Holidays/LoveLetter.png"
+  },
+  {
+   "name": "CupidBow",
+   "category": "Holidays",
+   "group": "Valentines",
+   "tris": 308,
+   "size_studs": [
+    0.6,
+    3.89,
+    4.06
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "valentines"
+   ],
+   "fbx": "exports/fbx/Holidays/CupidBow.fbx",
+   "preview": "previews/Holidays/CupidBow.png"
+  },
+  {
+   "name": "HeartArch",
+   "category": "Holidays",
+   "group": "Valentines",
+   "tris": 2572,
+   "size_studs": [
+    10.2,
+    1.2,
+    5.55
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "valentines"
+   ],
+   "fbx": "exports/fbx/Holidays/HeartArch.fbx",
+   "preview": "previews/Holidays/HeartArch.png"
+  },
+  {
+   "name": "LoveBench",
+   "category": "Holidays",
+   "group": "Valentines",
+   "tris": 320,
+   "size_studs": [
+    5.6,
+    1.85,
+    2.78
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "valentines"
+   ],
+   "fbx": "exports/fbx/Holidays/LoveBench.fbx",
+   "preview": "previews/Holidays/LoveBench.png"
+  },
+  {
+   "name": "PotOfGold",
+   "category": "Holidays",
+   "group": "StPatricks",
+   "tris": 566,
+   "size_studs": [
+    6.7,
+    3.8,
+    7.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "stpatricks"
+   ],
+   "fbx": "exports/fbx/Holidays/PotOfGold.fbx",
+   "preview": "previews/Holidays/PotOfGold.png"
+  },
+  {
+   "name": "LeprechaunHat",
+   "category": "Holidays",
+   "group": "StPatricks",
+   "tris": 716,
+   "size_studs": [
+    3.2,
+    3.2,
+    2.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "stpatricks"
+   ],
+   "fbx": "exports/fbx/Holidays/LeprechaunHat.fbx",
+   "preview": "previews/Holidays/LeprechaunHat.png"
+  },
+  {
+   "name": "LuckyHorseshoe",
+   "category": "Holidays",
+   "group": "StPatricks",
+   "tris": 104,
+   "size_studs": [
+    1.73,
+    2.06,
+    2.23
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "stpatricks"
+   ],
+   "fbx": "exports/fbx/Holidays/LuckyHorseshoe.fbx",
+   "preview": "previews/Holidays/LuckyHorseshoe.png"
+  },
+  {
+   "name": "GiantShamrock",
+   "category": "Holidays",
+   "group": "StPatricks",
+   "tris": 808,
+   "size_studs": [
+    2.63,
+    2.0,
+    4.59
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "stpatricks"
+   ],
+   "fbx": "exports/fbx/Holidays/GiantShamrock.fbx",
+   "preview": "previews/Holidays/GiantShamrock.png"
+  },
+  {
+   "name": "ShamrockGarland",
+   "category": "Holidays",
+   "group": "StPatricks",
+   "tris": 4092,
+   "size_studs": [
+    10.21,
+    0.24,
+    5.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "stpatricks"
+   ],
+   "fbx": "exports/fbx/Holidays/ShamrockGarland.fbx",
+   "preview": "previews/Holidays/ShamrockGarland.png"
+  },
+  {
+   "name": "EggBasket",
+   "category": "Holidays",
+   "group": "Easter",
+   "tris": 1814,
+   "size_studs": [
+    4.4,
+    4.4,
+    3.52
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "easter"
+   ],
+   "fbx": "exports/fbx/Holidays/EggBasket.fbx",
+   "preview": "previews/Holidays/EggBasket.png"
+  },
+  {
+   "name": "StripedEasterEgg",
+   "category": "Holidays",
+   "group": "Easter",
+   "tris": 288,
+   "size_studs": [
+    1.9,
+    1.9,
+    2.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "easter"
+   ],
+   "fbx": "exports/fbx/Holidays/StripedEasterEgg.fbx",
+   "preview": "previews/Holidays/StripedEasterEgg.png"
+  },
+  {
+   "name": "ZigzagEasterEgg",
+   "category": "Holidays",
+   "group": "Easter",
+   "tris": 288,
+   "size_studs": [
+    1.9,
+    1.9,
+    2.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "easter"
+   ],
+   "fbx": "exports/fbx/Holidays/ZigzagEasterEgg.fbx",
+   "preview": "previews/Holidays/ZigzagEasterEgg.png"
+  },
+  {
+   "name": "DottedEasterEgg",
+   "category": "Holidays",
+   "group": "Easter",
+   "tris": 728,
+   "size_studs": [
+    2.09,
+    2.09,
+    2.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "easter"
+   ],
+   "fbx": "exports/fbx/Holidays/DottedEasterEgg.fbx",
+   "preview": "previews/Holidays/DottedEasterEgg.png"
+  },
+  {
+   "name": "GoldenEasterEgg",
+   "category": "Holidays",
+   "group": "Easter",
+   "tris": 288,
+   "size_studs": [
+    1.9,
+    1.9,
+    2.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "easter"
+   ],
+   "fbx": "exports/fbx/Holidays/GoldenEasterEgg.fbx",
+   "preview": "previews/Holidays/GoldenEasterEgg.png"
+  },
+  {
+   "name": "EasterBunny",
+   "category": "Holidays",
+   "group": "Easter",
+   "tris": 368,
+   "size_studs": [
+    2.4,
+    4.58,
+    5.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "easter"
+   ],
+   "fbx": "exports/fbx/Holidays/EasterBunny.fbx",
+   "preview": "previews/Holidays/EasterBunny.png"
+  },
+  {
+   "name": "ChocolateBunny",
+   "category": "Holidays",
+   "group": "Easter",
+   "tris": 412,
+   "size_studs": [
+    2.4,
+    4.58,
+    5.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "easter"
+   ],
+   "fbx": "exports/fbx/Holidays/ChocolateBunny.fbx",
+   "preview": "previews/Holidays/ChocolateBunny.png"
+  },
+  {
+   "name": "EggHuntSign",
+   "category": "Holidays",
+   "group": "Easter",
+   "tris": 1256,
+   "size_studs": [
+    5.0,
+    1.68,
+    5.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "easter"
+   ],
+   "fbx": "exports/fbx/Holidays/EggHuntSign.fbx",
+   "preview": "previews/Holidays/EggHuntSign.png"
+  },
+  {
+   "name": "FlowerCart",
+   "category": "Holidays",
+   "group": "Easter",
+   "tris": 860,
+   "size_studs": [
+    6.79,
+    3.78,
+    5.79
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "easter"
+   ],
+   "fbx": "exports/fbx/Holidays/FlowerCart.fbx",
+   "preview": "previews/Holidays/FlowerCart.png"
+  },
+  {
+   "name": "StarPinata",
+   "category": "Holidays",
+   "group": "Party",
+   "tris": 164,
+   "size_studs": [
+    5.1,
+    5.1,
+    7.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "party"
+   ],
+   "fbx": "exports/fbx/Holidays/StarPinata.fbx",
+   "preview": "previews/Holidays/StarPinata.png"
+  },
+  {
+   "name": "DonkeyPinata",
+   "category": "Holidays",
+   "group": "Party",
+   "tris": 464,
+   "size_studs": [
+    2.0,
+    5.77,
+    6.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "party"
+   ],
+   "fbx": "exports/fbx/Holidays/DonkeyPinata.fbx",
+   "preview": "previews/Holidays/DonkeyPinata.png"
+  },
+  {
+   "name": "Maracas",
+   "category": "Holidays",
+   "group": "Party",
+   "tris": 152,
+   "size_studs": [
+    3.33,
+    1.53,
+    2.55
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "party"
+   ],
+   "fbx": "exports/fbx/Holidays/Maracas.fbx",
+   "preview": "previews/Holidays/Maracas.png"
+  },
+  {
+   "name": "BalloonBunch",
+   "category": "Holidays",
+   "group": "Party",
+   "tris": 484,
+   "size_studs": [
+    2.6,
+    2.78,
+    7.47
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "party"
+   ],
+   "fbx": "exports/fbx/Holidays/BalloonBunch.fbx",
+   "preview": "previews/Holidays/BalloonBunch.png"
+  },
+  {
+   "name": "BirthdayBanner",
+   "category": "Holidays",
+   "group": "Party",
+   "tris": 1320,
+   "size_studs": [
+    16.1,
+    0.6,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "party"
+   ],
+   "fbx": "exports/fbx/Holidays/BirthdayBanner.fbx",
+   "preview": "previews/Holidays/BirthdayBanner.png"
+  },
+  {
+   "name": "PartyBunting",
+   "category": "Holidays",
+   "group": "Party",
+   "tris": 156,
+   "size_studs": [
+    12.21,
+    0.24,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "party"
+   ],
+   "fbx": "exports/fbx/Holidays/PartyBunting.fbx",
+   "preview": "previews/Holidays/PartyBunting.png"
+  },
+  {
+   "name": "FlagBunting",
+   "category": "Holidays",
+   "group": "July4th",
+   "tris": 156,
+   "size_studs": [
+    12.21,
+    0.24,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "july4th"
+   ],
+   "fbx": "exports/fbx/Holidays/FlagBunting.fbx",
+   "preview": "previews/Holidays/FlagBunting.png"
+  },
+  {
+   "name": "StarTopHat",
+   "category": "Holidays",
+   "group": "July4th",
+   "tris": 324,
+   "size_studs": [
+    3.2,
+    3.2,
+    2.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "july4th"
+   ],
+   "fbx": "exports/fbx/Holidays/StarTopHat.fbx",
+   "preview": "previews/Holidays/StarTopHat.png"
+  },
+  {
+   "name": "Sparkler",
+   "category": "Holidays",
+   "group": "July4th",
+   "tris": 188,
+   "size_studs": [
+    1.6,
+    0.3,
+    3.87
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "july4th"
+   ],
+   "fbx": "exports/fbx/Holidays/Sparkler.fbx",
+   "preview": "previews/Holidays/Sparkler.png"
+  },
+  {
+   "name": "BigFireworkRocket",
+   "category": "Holidays",
+   "group": "July4th",
+   "tris": 218,
+   "size_studs": [
+    3.7,
+    3.7,
+    7.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "july4th"
+   ],
+   "fbx": "exports/fbx/Holidays/BigFireworkRocket.fbx",
+   "preview": "previews/Holidays/BigFireworkRocket.png"
+  },
+  {
+   "name": "BBQGrill",
+   "category": "Holidays",
+   "group": "July4th",
+   "tris": 200,
+   "size_studs": [
+    4.8,
+    3.55,
+    5.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "july4th"
+   ],
+   "fbx": "exports/fbx/Holidays/BBQGrill.fbx",
+   "preview": "previews/Holidays/BBQGrill.png"
+  },
+  {
+   "name": "PicnicSet",
+   "category": "Holidays",
+   "group": "July4th",
+   "tris": 372,
+   "size_studs": [
+    6.0,
+    6.0,
+    2.08
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "july4th"
+   ],
+   "fbx": "exports/fbx/Holidays/PicnicSet.fbx",
+   "preview": "previews/Holidays/PicnicSet.png"
+  },
+  {
+   "name": "StarBalloons",
+   "category": "Holidays",
+   "group": "July4th",
+   "tris": 484,
+   "size_studs": [
+    2.6,
+    2.78,
+    7.47
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "july4th"
+   ],
+   "fbx": "exports/fbx/Holidays/StarBalloons.fbx",
+   "preview": "previews/Holidays/StarBalloons.png"
+  },
+  {
+   "name": "BeachUmbrella",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 96,
+   "size_studs": [
+    7.2,
+    7.2,
+    6.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/BeachUmbrella.fbx",
+   "preview": "previews/Holidays/BeachUmbrella.png"
+  },
+  {
+   "name": "BlueBeachUmbrella",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 96,
+   "size_studs": [
+    7.2,
+    7.2,
+    6.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/BlueBeachUmbrella.fbx",
+   "preview": "previews/Holidays/BlueBeachUmbrella.png"
+  },
+  {
+   "name": "BeachBall",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 80,
+   "size_studs": [
+    2.4,
+    2.4,
+    2.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/BeachBall.fbx",
+   "preview": "previews/Holidays/BeachBall.png"
+  },
+  {
+   "name": "SandBucket",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 172,
+   "size_studs": [
+    3.07,
+    2.0,
+    2.69
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/SandBucket.fbx",
+   "preview": "previews/Holidays/SandBucket.png"
+  },
+  {
+   "name": "Surfboard",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 56,
+   "size_studs": [
+    1.6,
+    1.5,
+    6.33
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/Surfboard.fbx",
+   "preview": "previews/Holidays/Surfboard.png"
+  },
+  {
+   "name": "BlueSurfboard",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 56,
+   "size_studs": [
+    1.6,
+    1.5,
+    6.33
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/BlueSurfboard.fbx",
+   "preview": "previews/Holidays/BlueSurfboard.png"
+  },
+  {
+   "name": "DonutFloat",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 160,
+   "size_studs": [
+    4.6,
+    4.6,
+    1.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/DonutFloat.fbx",
+   "preview": "previews/Holidays/DonutFloat.png"
+  },
+  {
+   "name": "FlamingoFloat",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 160,
+   "size_studs": [
+    4.6,
+    5.3,
+    4.22
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/FlamingoFloat.fbx",
+   "preview": "previews/Holidays/FlamingoFloat.png"
+  },
+  {
+   "name": "LifeguardChair",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 888,
+   "size_studs": [
+    3.6,
+    3.6,
+    9.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/LifeguardChair.fbx",
+   "preview": "previews/Holidays/LifeguardChair.png"
+  },
+  {
+   "name": "BeachCooler",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 124,
+   "size_studs": [
+    2.7,
+    1.9,
+    2.76
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/BeachCooler.fbx",
+   "preview": "previews/Holidays/BeachCooler.png"
+  },
+  {
+   "name": "BeachTowel",
+   "category": "Holidays",
+   "group": "Summer",
+   "tris": 112,
+   "size_studs": [
+    3.0,
+    6.0,
+    0.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "summer"
+   ],
+   "fbx": "exports/fbx/Holidays/BeachTowel.fbx",
+   "preview": "previews/Holidays/BeachTowel.png"
+  },
+  {
+   "name": "HappyPumpkin",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 212,
+   "size_studs": [
+    2.4,
+    2.26,
+    2.41
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/HappyPumpkin.fbx",
+   "preview": "previews/Holidays/HappyPumpkin.png"
+  },
+  {
+   "name": "ScaryPumpkin",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 232,
+   "size_studs": [
+    2.4,
+    2.26,
+    2.41
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/ScaryPumpkin.fbx",
+   "preview": "previews/Holidays/ScaryPumpkin.png"
+  },
+  {
+   "name": "CatPumpkin",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 240,
+   "size_studs": [
+    2.4,
+    2.26,
+    2.41
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/CatPumpkin.fbx",
+   "preview": "previews/Holidays/CatPumpkin.png"
+  },
+  {
+   "name": "PlainPumpkin",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 184,
+   "size_studs": [
+    2.4,
+    2.2,
+    2.41
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/PlainPumpkin.fbx",
+   "preview": "previews/Holidays/PlainPumpkin.png"
+  },
+  {
+   "name": "PumpkinStack",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 684,
+   "size_studs": [
+    2.88,
+    2.71,
+    5.44
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/PumpkinStack.fbx",
+   "preview": "previews/Holidays/PumpkinStack.png"
+  },
+  {
+   "name": "GhostDecor",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 234,
+   "size_studs": [
+    3.11,
+    3.1,
+    4.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/GhostDecor.fbx",
+   "preview": "previews/Holidays/GhostDecor.png"
+  },
+  {
+   "name": "PumpkinPail",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 332,
+   "size_studs": [
+    2.32,
+    2.03,
+    3.06
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/PumpkinPail.fbx",
+   "preview": "previews/Holidays/PumpkinPail.png"
+  },
+  {
+   "name": "Skeleton",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 304,
+   "size_studs": [
+    2.28,
+    1.16,
+    5.95
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/Skeleton.fbx",
+   "preview": "previews/Holidays/Skeleton.png"
+  },
+  {
+   "name": "CandyCorn",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 104,
+   "size_studs": [
+    1.8,
+    0.9,
+    2.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/CandyCorn.fbx",
+   "preview": "previews/Holidays/CandyCorn.png"
+  },
+  {
+   "name": "CandyPile",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 960,
+   "size_studs": [
+    2.98,
+    2.97,
+    0.71
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/CandyPile.fbx",
+   "preview": "previews/Holidays/CandyPile.png"
+  },
+  {
+   "name": "CrossTombstone",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 176,
+   "size_studs": [
+    2.4,
+    1.6,
+    3.8
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/CrossTombstone.fbx",
+   "preview": "previews/Holidays/CrossTombstone.png"
+  },
+  {
+   "name": "RIPTombstone",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 364,
+   "size_studs": [
+    2.6,
+    1.8,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/RIPTombstone.fbx",
+   "preview": "previews/Holidays/RIPTombstone.png"
+  },
+  {
+   "name": "GraveyardFence",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 322,
+   "size_studs": [
+    11.8,
+    1.0,
+    4.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/GraveyardFence.fbx",
+   "preview": "previews/Holidays/GraveyardFence.png"
+  },
+  {
+   "name": "ZombieHand",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 190,
+   "size_studs": [
+    2.4,
+    2.4,
+    3.31
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/ZombieHand.fbx",
+   "preview": "previews/Holidays/ZombieHand.png"
+  },
+  {
+   "name": "Mummy",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 688,
+   "size_studs": [
+    2.7,
+    2.2,
+    5.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/Mummy.fbx",
+   "preview": "previews/Holidays/Mummy.png"
+  },
+  {
+   "name": "MonsterDecor",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 500,
+   "size_studs": [
+    3.15,
+    2.84,
+    7.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/MonsterDecor.fbx",
+   "preview": "previews/Holidays/MonsterDecor.png"
+  },
+  {
+   "name": "WitchBroom",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 142,
+   "size_studs": [
+    5.49,
+    1.4,
+    2.03
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/WitchBroom.fbx",
+   "preview": "previews/Holidays/WitchBroom.png"
+  },
+  {
+   "name": "BubblingCauldron",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 318,
+   "size_studs": [
+    3.78,
+    3.6,
+    3.73
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/BubblingCauldron.fbx",
+   "preview": "previews/Holidays/BubblingCauldron.png"
+  },
+  {
+   "name": "PotionShelf",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 1016,
+   "size_studs": [
+    5.0,
+    1.5,
+    6.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/PotionShelf.fbx",
+   "preview": "previews/Holidays/PotionShelf.png"
+  },
+  {
+   "name": "HangingSpider",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 284,
+   "size_studs": [
+    4.13,
+    2.83,
+    4.93
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/HangingSpider.fbx",
+   "preview": "previews/Holidays/HangingSpider.png"
+  },
+  {
+   "name": "BatDecor",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 136,
+   "size_studs": [
+    4.0,
+    0.76,
+    1.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/BatDecor.fbx",
+   "preview": "previews/Holidays/BatDecor.png"
+  },
+  {
+   "name": "HauntedHouse",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 1158,
+   "size_studs": [
+    18.1,
+    16.63,
+    20.3
+   ],
+   "rigged": false,
+   "parts": [
+    "HauntedHouse_Roof",
+    "HauntedHouse_Door"
+   ],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/HauntedHouse.fbx",
+   "preview": "previews/Holidays/HauntedHouse.png"
+  },
+  {
+   "name": "TrickOrTreatBanner",
+   "category": "Holidays",
+   "group": "Halloween",
+   "tris": 1152,
+   "size_studs": [
+    15.85,
+    0.6,
+    8.62
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "halloween"
+   ],
+   "fbx": "exports/fbx/Holidays/TrickOrTreatBanner.fbx",
+   "preview": "previews/Holidays/TrickOrTreatBanner.png"
+  },
+  {
+   "name": "RoastTurkey",
+   "category": "Holidays",
+   "group": "Harvest",
+   "tris": 480,
+   "size_studs": [
+    4.8,
+    4.8,
+    2.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "harvest"
+   ],
+   "fbx": "exports/fbx/Holidays/RoastTurkey.fbx",
+   "preview": "previews/Holidays/RoastTurkey.png"
+  },
+  {
+   "name": "Cornucopia",
+   "category": "Holidays",
+   "group": "Harvest",
+   "tris": 458,
+   "size_studs": [
+    6.22,
+    2.7,
+    2.65
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "harvest"
+   ],
+   "fbx": "exports/fbx/Holidays/Cornucopia.fbx",
+   "preview": "previews/Holidays/Cornucopia.png"
+  },
+  {
+   "name": "HarvestTable",
+   "category": "Holidays",
+   "group": "Harvest",
+   "tris": 920,
+   "size_studs": [
+    8.0,
+    4.8,
+    5.15
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "harvest"
+   ],
+   "fbx": "exports/fbx/Holidays/HarvestTable.fbx",
+   "preview": "previews/Holidays/HarvestTable.png"
+  },
+  {
+   "name": "LeafPile",
+   "category": "Holidays",
+   "group": "Harvest",
+   "tris": 1174,
+   "size_studs": [
+    4.01,
+    4.04,
+    1.52
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "harvest"
+   ],
+   "fbx": "exports/fbx/Holidays/LeafPile.fbx",
+   "preview": "previews/Holidays/LeafPile.png"
+  },
+  {
+   "name": "CornStalks",
+   "category": "Holidays",
+   "group": "Harvest",
+   "tris": 444,
+   "size_studs": [
+    2.5,
+    2.48,
+    6.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "harvest"
+   ],
+   "fbx": "exports/fbx/Holidays/CornStalks.fbx",
+   "preview": "previews/Holidays/CornStalks.png"
+  },
+  {
+   "name": "GourdPile",
+   "category": "Holidays",
+   "group": "Harvest",
+   "tris": 932,
+   "size_studs": [
+    4.06,
+    3.46,
+    2.66
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "harvest"
+   ],
+   "fbx": "exports/fbx/Holidays/GourdPile.fbx",
+   "preview": "previews/Holidays/GourdPile.png"
+  },
+  {
+   "name": "HarvestWreath",
+   "category": "Holidays",
+   "group": "Harvest",
+   "tris": 636,
+   "size_studs": [
+    3.33,
+    1.81,
+    3.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "harvest"
+   ],
+   "fbx": "exports/fbx/Holidays/HarvestWreath.fbx",
+   "preview": "previews/Holidays/HarvestWreath.png"
+  },
+  {
+   "name": "ChristmasTreeDecorated",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 1216,
+   "size_studs": [
+    8.0,
+    8.0,
+    12.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/ChristmasTreeDecorated.fbx",
+   "preview": "previews/Holidays/ChristmasTreeDecorated.png"
+  },
+  {
+   "name": "SnowyChristmasTree",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 1216,
+   "size_studs": [
+    8.0,
+    8.0,
+    12.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/SnowyChristmasTree.fbx",
+   "preview": "previews/Holidays/SnowyChristmasTree.png"
+  },
+  {
+   "name": "PinkChristmasTree",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 1216,
+   "size_studs": [
+    8.0,
+    8.0,
+    12.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/PinkChristmasTree.fbx",
+   "preview": "previews/Holidays/PinkChristmasTree.png"
+  },
+  {
+   "name": "GoldChristmasTree",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 1216,
+   "size_studs": [
+    8.0,
+    8.0,
+    12.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/GoldChristmasTree.fbx",
+   "preview": "previews/Holidays/GoldChristmasTree.png"
+  },
+  {
+   "name": "RedOrnament",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 208,
+   "size_studs": [
+    1.9,
+    2.0,
+    2.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/RedOrnament.fbx",
+   "preview": "previews/Holidays/RedOrnament.png"
+  },
+  {
+   "name": "GoldOrnament",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 208,
+   "size_studs": [
+    1.9,
+    2.0,
+    2.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/GoldOrnament.fbx",
+   "preview": "previews/Holidays/GoldOrnament.png"
+  },
+  {
+   "name": "BlueOrnament",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 208,
+   "size_studs": [
+    1.9,
+    2.0,
+    2.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/BlueOrnament.fbx",
+   "preview": "previews/Holidays/BlueOrnament.png"
+  },
+  {
+   "name": "StarTopper",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 136,
+   "size_studs": [
+    2.66,
+    0.6,
+    3.6
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/StarTopper.fbx",
+   "preview": "previews/Holidays/StarTopper.png"
+  },
+  {
+   "name": "SantaSleigh",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 456,
+   "size_studs": [
+    4.6,
+    8.77,
+    7.13
+   ],
+   "rigged": false,
+   "parts": [
+    "SantaSleigh_Runners",
+    "SantaSleigh_Sack"
+   ],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/SantaSleigh.fbx",
+   "preview": "previews/Holidays/SantaSleigh.png"
+  },
+  {
+   "name": "SantaSack",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 234,
+   "size_studs": [
+    2.6,
+    2.4,
+    4.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/SantaSack.fbx",
+   "preview": "previews/Holidays/SantaSack.png"
+  },
+  {
+   "name": "SantaHat",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 150,
+   "size_studs": [
+    2.6,
+    2.6,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/SantaHat.fbx",
+   "preview": "previews/Holidays/SantaHat.png"
+  },
+  {
+   "name": "ElfHat",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 150,
+   "size_studs": [
+    2.6,
+    2.6,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/ElfHat.fbx",
+   "preview": "previews/Holidays/ElfHat.png"
+  },
+  {
+   "name": "ToySoldier",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 504,
+   "size_studs": [
+    2.72,
+    1.36,
+    7.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/ToySoldier.fbx",
+   "preview": "previews/Holidays/ToySoldier.png"
+  },
+  {
+   "name": "Sled",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 216,
+   "size_studs": [
+    2.2,
+    5.55,
+    1.45
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/Sled.fbx",
+   "preview": "previews/Holidays/Sled.png"
+  },
+  {
+   "name": "IceSkates",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 320,
+   "size_studs": [
+    2.6,
+    2.4,
+    2.7
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/IceSkates.fbx",
+   "preview": "previews/Holidays/IceSkates.png"
+  },
+  {
+   "name": "CandyCaneLamp",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 284,
+   "size_studs": [
+    3.4,
+    1.6,
+    10.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/CandyCaneLamp.fbx",
+   "preview": "previews/Holidays/CandyCaneLamp.png"
+  },
+  {
+   "name": "ChristmasLights",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 460,
+   "size_studs": [
+    12.21,
+    0.24,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/ChristmasLights.fbx",
+   "preview": "previews/Holidays/ChristmasLights.png"
+  },
+  {
+   "name": "Mistletoe",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 496,
+   "size_studs": [
+    0.8,
+    0.66,
+    2.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/Mistletoe.fbx",
+   "preview": "previews/Holidays/Mistletoe.png"
+  },
+  {
+   "name": "AdventCalendar",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 3768,
+   "size_studs": [
+    5.4,
+    0.61,
+    6.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/AdventCalendar.fbx",
+   "preview": "previews/Holidays/AdventCalendar.png"
+  },
+  {
+   "name": "HotCocoa",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 256,
+   "size_studs": [
+    1.77,
+    1.6,
+    1.84
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/HotCocoa.fbx",
+   "preview": "previews/Holidays/HotCocoa.png"
+  },
+  {
+   "name": "CookiesAndMilk",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 184,
+   "size_studs": [
+    3.65,
+    2.8,
+    1.4
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/CookiesAndMilk.fbx",
+   "preview": "previews/Holidays/CookiesAndMilk.png"
+  },
+  {
+   "name": "NorthPoleSign",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 1172,
+   "size_studs": [
+    5.6,
+    3.0,
+    9.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/NorthPoleSign.fbx",
+   "preview": "previews/Holidays/NorthPoleSign.png"
+  },
+  {
+   "name": "SantaChimney",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 496,
+   "size_studs": [
+    3.4,
+    3.4,
+    7.05
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/SantaChimney.fbx",
+   "preview": "previews/Holidays/SantaChimney.png"
+  },
+  {
+   "name": "ChristmasArch",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 1100,
+   "size_studs": [
+    11.2,
+    1.35,
+    6.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/ChristmasArch.fbx",
+   "preview": "previews/Holidays/ChristmasArch.png"
+  },
+  {
+   "name": "GingerbreadHouse",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 952,
+   "size_studs": [
+    9.0,
+    9.0,
+    9.0
+   ],
+   "rigged": false,
+   "parts": [
+    "GingerbreadHouse_Roof",
+    "GingerbreadHouse_Door"
+   ],
+   "tags": [
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/GingerbreadHouse.fbx",
+   "preview": "previews/Holidays/GingerbreadHouse.png"
+  },
+  {
+   "name": "SantasWorkshop",
+   "category": "Holidays",
+   "group": "Christmas",
+   "tris": 7464,
+   "size_studs": [
+    44.0,
+    38.35,
+    17.0
+   ],
+   "rigged": false,
+   "parts": [
+    "SantasWorkshop_Glass",
+    "SantasWorkshop_DoorL",
+    "SantasWorkshop_DoorR",
+    "SantasWorkshop_BackDoor",
+    "SantasWorkshop_Roof",
+    "SantasWorkshop_Sign",
+    "SantasWorkshop_Workbenches",
+    "SantasWorkshop_ToyBelt",
+    "SantasWorkshop_Gifts",
+    "SantasWorkshop_Desk",
+    "SantasWorkshop_Tree"
+   ],
+   "tags": [
+    "interior",
+    "building",
+    "holiday",
+    "christmas"
+   ],
+   "fbx": "exports/fbx/Holidays/SantasWorkshop.fbx",
+   "preview": "previews/Holidays/SantasWorkshop.png",
+   "preview_inside": "previews/Holidays/SantasWorkshop_Inside.png"
+  },
+  {
+   "name": "Menorah",
+   "category": "Holidays",
+   "group": "Hanukkah",
+   "tris": 560,
+   "size_studs": [
+    4.6,
+    1.6,
+    5.63
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "hanukkah"
+   ],
+   "fbx": "exports/fbx/Holidays/Menorah.fbx",
+   "preview": "previews/Holidays/Menorah.png"
+  },
+  {
+   "name": "Dreidel",
+   "category": "Holidays",
+   "group": "Hanukkah",
+   "tris": 118,
+   "size_studs": [
+    1.74,
+    1.74,
+    3.55
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "hanukkah"
+   ],
+   "fbx": "exports/fbx/Holidays/Dreidel.fbx",
+   "preview": "previews/Holidays/Dreidel.png"
+  },
+  {
+   "name": "GeltCoins",
+   "category": "Holidays",
+   "group": "Hanukkah",
+   "tris": 424,
+   "size_studs": [
+    2.8,
+    2.2,
+    0.78
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "hanukkah"
+   ],
+   "fbx": "exports/fbx/Holidays/GeltCoins.fbx",
+   "preview": "previews/Holidays/GeltCoins.png"
+  },
+  {
+   "name": "DiyaLamp",
+   "category": "Holidays",
+   "group": "Diwali",
+   "tris": 78,
+   "size_studs": [
+    1.93,
+    1.6,
+    1.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "diwali"
+   ],
+   "fbx": "exports/fbx/Holidays/DiyaLamp.fbx",
+   "preview": "previews/Holidays/DiyaLamp.png"
+  },
+  {
+   "name": "DiyaRow",
+   "category": "Holidays",
+   "group": "Diwali",
+   "tris": 474,
+   "size_studs": [
+    8.13,
+    1.6,
+    1.1
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "diwali"
+   ],
+   "fbx": "exports/fbx/Holidays/DiyaRow.fbx",
+   "preview": "previews/Holidays/DiyaRow.png"
+  },
+  {
+   "name": "Rangoli",
+   "category": "Holidays",
+   "group": "Diwali",
+   "tris": 236,
+   "size_studs": [
+    6.2,
+    6.2,
+    0.2
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "diwali"
+   ],
+   "fbx": "exports/fbx/Holidays/Rangoli.fbx",
+   "preview": "previews/Holidays/Rangoli.png"
+  },
+  {
+   "name": "SkyLantern",
+   "category": "Holidays",
+   "group": "Diwali",
+   "tris": 152,
+   "size_studs": [
+    2.34,
+    2.34,
+    4.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "diwali"
+   ],
+   "fbx": "exports/fbx/Holidays/SkyLantern.fbx",
+   "preview": "previews/Holidays/SkyLantern.png"
+  },
+  {
+   "name": "Kinara",
+   "category": "Holidays",
+   "group": "Kwanzaa",
+   "tris": 648,
+   "size_studs": [
+    6.0,
+    2.4,
+    3.65
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "kwanzaa"
+   ],
+   "fbx": "exports/fbx/Holidays/Kinara.fbx",
+   "preview": "previews/Holidays/Kinara.png"
+  },
+  {
+   "name": "SugarSkull",
+   "category": "Holidays",
+   "group": "DayOfTheDead",
+   "tris": 508,
+   "size_studs": [
+    2.25,
+    1.99,
+    2.5
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "dayofthedead"
+   ],
+   "fbx": "exports/fbx/Holidays/SugarSkull.fbx",
+   "preview": "previews/Holidays/SugarSkull.png"
+  },
+  {
+   "name": "MarigoldGarland",
+   "category": "Holidays",
+   "group": "DayOfTheDead",
+   "tris": 676,
+   "size_studs": [
+    10.21,
+    0.5,
+    5.3
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "dayofthedead"
+   ],
+   "fbx": "exports/fbx/Holidays/MarigoldGarland.fbx",
+   "preview": "previews/Holidays/MarigoldGarland.png"
+  },
+  {
+   "name": "SnowFort",
+   "category": "Holidays",
+   "group": "Winter",
+   "tris": 1068,
+   "size_studs": [
+    9.4,
+    7.56,
+    3.0
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "winter"
+   ],
+   "fbx": "exports/fbx/Holidays/SnowFort.fbx",
+   "preview": "previews/Holidays/SnowFort.png"
+  },
+  {
+   "name": "SnowballPile",
+   "category": "Holidays",
+   "group": "Winter",
+   "tris": 1120,
+   "size_studs": [
+    3.1,
+    3.1,
+    2.9
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "winter"
+   ],
+   "fbx": "exports/fbx/Holidays/SnowballPile.fbx",
+   "preview": "previews/Holidays/SnowballPile.png"
+  },
+  {
+   "name": "SnowmanDecor",
+   "category": "Holidays",
+   "group": "Winter",
+   "tris": 574,
+   "size_studs": [
+    5.07,
+    3.25,
+    8.15
+   ],
+   "rigged": false,
+   "parts": [],
+   "tags": [
+    "holiday",
+    "winter"
+   ],
+   "fbx": "exports/fbx/Holidays/SnowmanDecor.fbx",
+   "preview": "previews/Holidays/SnowmanDecor.png"
+  }
  ]
 }

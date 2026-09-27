@@ -62,7 +62,8 @@ def pieces_for(theme):
     P["Tab_Inactive"] = lambda: art.studded_box(160, 56, (160, 166, 178), r=10, stroke=4, lip=5, fill="checker",
                                                 outline=(70, 74, 84), studs=False, gloss=0.15)
     for name, c in list(tp.items()) + [("Green", STD["Green"]), ("Blue", STD["Blue"]), ("Red", STD["Red"]),
-                                        ("Purple", STD["Purple"]), ("Yellow", STD["Yellow"])]:
+                                        ("Purple", STD["Purple"]), ("Yellow", STD["Yellow"]), ("Orange", STD["Orange"]),
+                                        ("Gray", STD["Gray"])]:
         P[f"Square_{name}"] = lambda c=c: art.studded_box(112, 112, c, r=14, stroke=5, lip=7, stud_px=18, studs=studs,
                                                           stud_strength=0.8)
     for name, c in (("Primary", theme["primary"]), ("Secondary", theme["secondary"]), ("Red", "#F0443A")):
