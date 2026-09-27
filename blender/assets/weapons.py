@@ -805,7 +805,7 @@ def katar(m):
 def lollipop_mace(m):
     handle(m, dict(handle="white", grip="plastic_pink", grip2="white", accent="plastic_pink"), 0.0, 3.0, r=0.1,
            grip=(0.1, 1.2))
-    m.cyl(r=1.1, h=0.5, seg=8, rot=(90, 0, 0), loc=(0, 0, 3.9), bevel=0.1,
+    m.cyl(r=1.1, h=0.5, seg=8, rot=(90, 0, 0), loc=(0, 0, 3.9), bevel=0.1, cuts={"x": 0.3, "z": 0.3},
           color=lambda c, n: ["candy_pink", "white", "candy_blue", "lemon"][int((math.degrees(math.atan2(c.z - 3.9, c.x))
                                                                               + 360 + math.hypot(c.x, c.z - 3.9) * 90) / 45) % 4])
 

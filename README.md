@@ -1,28 +1,29 @@
 # Stud Low Poly Asset Library (Blender → Roblox)
 
-**1,286 stud low-poly assets** for simulator games, modelled in **Blender** to match
+**1,567 stud low-poly assets** for simulator games, modelled in **Blender** to match
 `AnimalBundle_1.rbxl` and its screenshots: blocky chamfered shapes, square pixel eyes, flat
 shading, a shared colour palette and the same square-tile **stud overlay** your animals use.
 Every model is a real Blender mesh, ready for the Roblox 3D Importer.
 
 **Just want the files?** Grab the ZIPs in [`downloads/`](downloads): one per category, a
-Quick Start ZIP with the 10 all-in-one category FBX files, and the Blender source. Every ZIP
+Quick Start ZIP with one all-in-one FBX file per category, and the Blender source. Every ZIP
 includes a `HOW_TO_IMPORT.txt`.
 
 | Category | Count | What's inside |
 |---|---:|---|
 | [Food](previews/Food.png) | 99 | 32 fruits, 18 vegetables, 32 snacks & meals, drinks, treats (cakes, candy, holiday eggs) |
 | [Tools](previews/Tools.png) | 122 | Pickaxe, Heavy Pickaxe, Drill, Axe, Shovel, Hammer, Hoe, Scythe, Fishing Rod, Bug Net, Coin Magnet, Chainsaw × 8 tiers, 4 Legendary pickaxes (Flame, Frost, Crystal, Void), 22 everyday / farm / simulator tools |
-| [Weapons](previews/Weapons.png) | 159 | Sword, Greatsword, Scimitar, Katana, Dagger, Rapier, Mace, Flail, Halberd, BattleAxe, Spear, Trident, WarHammer, Bow, Crossbow, Staff, Wand, Shield × 8 tiers, 6 Legendary swords (Flame, Frost, Thunder, Shadow, Nature, Crystal), 9 specials |
+| [Weapons](previews/Weapons.png) | 257 | Sword, Greatsword, Scimitar, Cutlass, Katana, Dagger, Rapier, Mace, Flail, Halberd, Glaive, BattleAxe, Tomahawk, Spear, Lance, Trident, WarHammer, Bow, Crossbow, Staff, Wand, Shield, Gauntlet, Chakram, Laser Blaster × 8 tiers; 30 Legendary weapons (Flame, Frost, Thunder, Shadow, Nature and Crystal swords, axes, scythes, hammers, bows); 27 specials (Excalibur, sword in the stone, dragon sword, energy swords, bats, frying pan, banhammer, kunai, sai, nunchucks, katar, candy weapons, fish sword...) |
 | [Furniture](previews/Furniture.png) | 132 | seating (sofas, armchairs, beanbags, dining chairs in 8–10 colours), tables, bedroom, kitchen & appliances, bathroom, living room, electronics, music, lighting, decor, pets, storage |
 | [Nature](previews/Nature.png) | 119 | 32 trees (fruit, gem, candy, rainbow, willow, jungle, bonsai…), bushes, flowers, plants, 7 crop plots, rocks, 9 ores, 8 crystal clusters, terrain (floating island, cliff, volcano, waterfall, pond…), sky (clouds, rainbow, sun, moon, tornado) |
 | [Props](previews/Props.png) | 172 | 22 pet eggs, 8 tiered chests / loot crates / keys / backpacks, currency & gold bars, pickups, potions, pads & portal, obby parts (checkpoint, finish line, spikes, lava, trampoline, speed & jump pads), awards, town & farm props, spooky & holiday props, magic items |
 | [Animals](previews/Animals.png) | 121 | **rigged & animated**: 81 pets, farm and wild animals, birds, sea creatures and bugs, plus 40 **mythical** creatures (10 dragons, 3 golems, Treant, Yeti, Werewolf, Cyclops, Hellhound, Robot Dog, Mimic, Sea Serpent, Basilisk, Frost Wolf, Jackalope, Salamander, Fairy, Phoenix Chick, Alien, Snowman, Gingerbread, 5 slimes, Ghost, Cloud & Star pets…) |
-| [Vehicles](previews/Vehicles.png) | 85 | cars in 10 colours, sports cars, jeeps, pickups, vans, limo, race car, convertible, service vehicles, buses, construction (excavator, bulldozer, dump truck, cement mixer, forklift, tow & garbage trucks), motorcycles, go-karts, scooters, bicycle, skateboard, hoverboard, ATV, snowmobile, boats, jet ski, submarine, helicopter, airplane, blimp, hot-air balloon, rocket, spaceship, UFO, train |
+| [Vehicles](previews/Vehicles.png) | 136 | cars, sports cars, supercars, muscle cars, SUVs, minivans, compacts and classic cars in up to 10 colours; police car / SUV / interceptor, taxi, rally, drift and race cars, lowrider, hot rod, dune buggy, off-road truck, limo; service & construction vehicles, armored cash truck, food truck, camper RV, mail truck; motorcycles, go-karts, scooters, tuk-tuk, bicycle, skateboard, hoverboard, ATV, snowmobile; boats, jet ski, submarine; helicopter, airplane, blimp, hot-air balloon; rocket, spaceship, UFO, hover car; train |
 | [Buildings](previews/Buildings.png) | 84 | houses in 8 colours, two-storey houses, apartments, skyscraper, 9 shops (bakery, candy, pet, burger, arcade…), cinema, museum, civic buildings, stalls & stands, street furniture (vending machines, ATM, phone booth, dumpster…), landmarks (castle keep, pagoda, pyramid, greek temple, lighthouse…), fun park (ferris wheel, carousel, slide, swings, stage), farm and military buildings |
 | [Military](previews/Military.png) | 61 | artillery (cannons, howitzer, mortar, anti-tank, gatling, naval cannon), turrets & launchers, siege weapons, 8 tanks, APC, armored car, jeeps & trucks, missile truck, patrol boat, battleship, attack helicopter, fighter jet, bomber, cargo plane, drones, 7 guns, ammo & supply drops, field gear, battlefield props |
 | [Commercial](previews/Commercial.png) | 90 | **21 walk-in buildings with full interiors**: Diner, Burger Restaurant (with drive-thru), Pizzeria, Sushi Bar, Coffee Shop, Ice Cream Parlor, Donut Shop, Grand Bank (vault, tellers, gold), Supermarket, Convenience Store, Clothing, Electronics, Jewelry and Pet stores, Pharmacy, Hair Salon, Laundromat, Gym (boxing ring), Arcade, Office, Movie Theater; plus 69 interior fixtures (booths, stoves, fryers, grills, counters, registers, shelves, checkouts, racks, teller counters, vault door, treadmills, claw machines, cinema seats...) |
 | [Tycoon](previews/Tycoon.png) | 42 | tycoon plots (dropper tycoon and restaurant tycoon starter layouts), 8 tiered droppers, conveyors, upgraders, furnace, cash collector, buy buttons, owner door; steal-style bases with numbered pedestal slots, laser door, lock button and red-carpet conveyor; simulator builds (sell shop, egg hatchery, upgrade shop, rebirth shrine, leaderboard, zone gates, daily reward, quest board, shop stand) |
+| [Holidays](previews/Holidays.png) | 132 | New Year, Lunar New Year, Valentine's, St Patrick's, Easter, birthdays & fiestas, 4th of July, summer beach, **Halloween** (jack-o'-lanterns, ghosts, skeleton, tombstones, mummy, cauldron, haunted house...), harvest & Thanksgiving, **Christmas** (decorated trees, ornaments, Santa's sleigh, toy soldier, gingerbread house, walk-in Santa's workshop...), Hanukkah, Diwali, Kwanzaa, Day of the Dead and winter |
 
 The animals complement the ones already in AnimalBundle (Cat, Cow, Horse, Lion, Tiger, Wolf,
 Shark, Whale, T-Rex, Unicorn, Pegasus, Griffin, Hydra, Kraken and many more), with no duplicates.
@@ -125,7 +126,7 @@ Everything was produced by Blender itself, driven by the scripts in `blender/`. 
 assets, you need Blender, or `pip install bpy pillow numpy` (Python 3.11):
 
 ```bash
-python3 blender/build.py                        # rebuild everything (~70 min on 4 cores)
+python3 blender/build.py                        # rebuild everything (~90 min on 4 cores)
 python3 blender/build.py --style round          # softer, rounded low-poly variant of everything
 python3 blender/package.py                      # re-make the download ZIPs
 python3 blender/build.py --only Food,Props      # just some categories
