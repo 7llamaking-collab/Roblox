@@ -338,9 +338,17 @@ def close_button(size=72, color=(232, 60, 60)):
 
 
 def plus_button(size=56, color=(80, 210, 70)):
-    img, sl = studded_box(size, size, color, r=8, stroke=4, lip=4, stud_px=14)
-    x = text_image("+", int(size * 0.75), fill=(255, 255, 255), stroke=(20, 70, 10), font="FredokaBold")
-    img.alpha_composite(x, ((size - x.width) // 2, (size - 4 - x.height) // 2))
+    img, sl = studded_box(size, size, color, r=8, stroke=4, lip=4, stud_px=14, stud_strength=0.5)
+    S = SS
+    cross = Image.new("RGBA", (size * S, size * S), (0, 0, 0, 0))
+    d = ImageDraw.Draw(cross)
+    c, arm, th = size * S / 2, size * S * 0.30, size * S * 0.11
+    dark = darker(color, 0.35) + (255,)
+    for o, col in ((th + 3 * S, dark), (th, (255, 255, 255, 255))):
+        d.rounded_rectangle((c - o, c - arm - o + th, c + o, c + arm + o - th), radius=o * 0.6, fill=col)
+        d.rounded_rectangle((c - arm - o + th, c - o, c + arm + o - th, c + o), radius=o * 0.6, fill=col)
+    cross = cross.resize((size, size), Image.LANCZOS)
+    img.alpha_composite(cross, (0, -2))
     return img, sl
 
 

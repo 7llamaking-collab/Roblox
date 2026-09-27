@@ -116,12 +116,20 @@ def titles_for(theme, title=None):
 # ----------------------------------------------------------------------------
 # icons (shared)
 # ----------------------------------------------------------------------------
+TILT = {"Sword", "FishingRod"}
+
+
 def build_icons(src=os.path.join(HERE, "icons_src"), dst=os.path.join(HERE, "icons")):
     os.makedirs(dst, exist_ok=True)
     names = sorted(f[:-4] for f in os.listdir(src) if f.endswith(".png"))
     cells = []
     for n in names:
-        ic = art.process_icon(Image.open(os.path.join(src, n + ".png")), 256, outline=(16, 18, 30))
+        raw = Image.open(os.path.join(src, n + ".png")).convert("RGBA")
+        bb = raw.getchannel("A").point(lambda v: 255 if v > 12 else 0).getbbox()
+        if bb and n in TILT:
+            # long thin items read as "!" when small: tilt them like inventory icons
+            raw = raw.crop(bb).rotate(-45, resample=Image.BICUBIC, expand=True)
+        ic = art.process_icon(raw, 256, outline=(16, 18, 30))
         ic.save(os.path.join(dst, n + ".png"), optimize=True)
         cells.append((n, ic.resize((112, 112), Image.LANCZOS)))
     per = 9
