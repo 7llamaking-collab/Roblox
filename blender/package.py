@@ -96,8 +96,8 @@ A) FASTEST: the SimUI plugin (no uploads needed)
       Index, Daily Rewards, Quests). Press Play: the buttons open the windows.
 
 B) FULL STUDS LOOK: use a kit's images
-   1. Pick the kit folder for your theme in Kits/ (look at each Preview.jpg and Sheet.jpg) - or make
-      your own with the generator (see C).
+   1. Pick the kit folder for your theme in Kits/ (look at each Preview.jpg; the labelled sprite
+      sheets are in StudLowPoly_GameUI_SpriteSheets.zip) - or make your own with the generator (see C).
    2. Upload the kit's Atlas_UI.png, Atlas_UI2.png, Atlas_Titles.png (+ Atlas_Titles2.png if there),
       Stud_Tile.png and Icons/Atlas_Icons.png: Asset Manager > Bulk Import (or Create > Decals).
       Copy each image id (right click > Copy Asset ID).
@@ -189,13 +189,23 @@ def main():
             arc = "StudLowPoly_GameUI"
             z.writestr(os.path.join(arc, "HOW_TO_USE_THE_UI.txt"), UI_HOW_TO)
             z.write(os.path.join(ROOT, "roblox", "SimUI_Plugin.lua"), os.path.join(arc, "SimUI_Plugin.lua"))
-            add_dir(z, os.path.join(ui, "kits"), os.path.join(arc, "Kits"))
+            for base, _, files in os.walk(os.path.join(ui, "kits")):
+                for f in sorted(files):
+                    if f != "Sheet.jpg":  # reference only: shipped in the SpriteSheets zip
+                        p = os.path.join(base, f)
+                        z.write(p, os.path.join(arc, "Kits", os.path.relpath(p, os.path.join(ui, "kits"))))
             for f in sorted(os.listdir(os.path.join(ui, "icons"))):
                 if f.endswith((".png", ".lua")):
                     z.write(os.path.join(ui, "icons", f), os.path.join(arc, "Icons", f))
             for f in ("generate.py", "art.py", "themes.py"):
                 z.write(os.path.join(ui, f), os.path.join(arc, "Generator", f))
             add_dir(z, os.path.join(ui, "fonts"), os.path.join(arc, "Generator", "fonts"))
+
+        with zipf("StudLowPoly_GameUI_SpriteSheets.zip") as z:
+            for t in sorted(os.listdir(os.path.join(ui, "kits"))):
+                sh = os.path.join(ui, "kits", t, "Sheet.jpg")
+                if os.path.exists(sh):
+                    z.write(sh, os.path.join("StudLowPoly_GameUI_SpriteSheets", f"{t}_Sheet.jpg"))
 
     with zipf("StudLowPoly_BlenderSource.zip") as z:
         arc = "StudLowPoly_BlenderSource"

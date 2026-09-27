@@ -7,7 +7,8 @@ Every model is a real Blender mesh, ready for the Roblox 3D Importer.
 
 **Just want the files?** Grab the ZIPs in [`downloads/`](downloads): one per category, a
 Quick Start ZIP with one all-in-one FBX file per category, and the Blender source. Every ZIP
-includes a `HOW_TO_IMPORT.txt`.
+includes a `HOW_TO_IMPORT.txt`. The game UI is in `StudLowPoly_GameUI.zip` (plugin, generator,
+icons, 17 theme kits); its labelled sprite sheets are in `StudLowPoly_GameUI_SpriteSheets.zip`.
 
 | Category | Count | What's inside |
 |---|---:|---|
