@@ -117,7 +117,7 @@ def titles_for(theme, title=None):
 # ----------------------------------------------------------------------------
 # icons (shared)
 # ----------------------------------------------------------------------------
-TILT = {"Sword", "FishingRod"}
+TILT = {"Sword", "FishingRod", "Bat", "Hammer"}
 
 
 def build_icons(src=os.path.join(HERE, "icons_src"), dst=os.path.join(HERE, "icons")):

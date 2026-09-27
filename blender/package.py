@@ -82,41 +82,68 @@ ANIMALS (rigged)
 """
 
 
-UI_HOW_TO = """STUDS-STYLE GAME UI - HOW TO USE
-==================================
+UI_HOW_TO = """SIMUI GENERATOR 2 - GAME UI FOR ROBLOX - HOW TO USE
+=====================================================
 
-A) FASTEST: the SimUI plugin (no uploads needed)
-   1. Roblox Studio > Plugins tab > "Plugins Folder" > copy SimUI_Plugin.lua into it > restart Studio.
-      (Or open SimUI_Plugin.lua, copy everything, paste it into View > Command Bar, press Enter.)
-   2. Plugins tab > SimUI. Type what your game is, e.g.
-         "Pet Legends" candy simulator
-         lava fighting        galaxy tycoon        spooky horror        ocean fishing simulator
-      and click "Build UI". You get StarterGui > SimUI with a full HUD (side buttons, tabs,
-      currencies, hotbar, boosts, quests) and working windows (Shop, Pets, Rebirth, Settings, Codes,
-      Index, Daily Rewards, Quests). Press Play: the buttons open the windows.
+1. INSTALL THE PLUGIN
+   Roblox Studio > Plugins tab > "Plugins Folder" > copy SimUI_Plugin.lua into it > restart Studio.
+   A "SimUI" button appears in the Plugins tab. Click it to open the panel.
+   (No plugin? Open SimUI_Plugin.lua, copy everything into View > Command Bar, press Enter: it builds
+   the default simulator UI once.)
 
-B) FULL STUDS LOOK: use a kit's images
-   1. Pick the kit folder for your theme in Kits/ (look at each Preview.jpg; the labelled sprite
-      sheets are in StudLowPoly_GameUI_SpriteSheets.zip) - or make your own with the generator (see C).
-   2. Upload the kit's Atlas_UI.png, Atlas_UI2.png, Atlas_Titles.png (+ Atlas_Titles2.png if there),
-      Stud_Tile.png and Icons/Atlas_Icons.png: Asset Manager > Bulk Import (or Create > Decals).
-      Copy each image id (right click > Copy Asset ID).
-   3. Open the kit's SimUIKit.lua, paste the ids into Kit.Images, and put it in ReplicatedStorage as a
-      ModuleScript named SimUIKit.
-   4. Run the SimUI plugin again with the same theme word -> every button, panel, card, slot, icon
-      and title now uses the images (9-slice, so they stay crisp at any size).
-   Sprites can also be used by hand: ImageLabel.Image = atlas id, ImageRectOffset / ImageRectSize =
-   the numbers in SimUIKit.lua, ScaleType = Slice with the listed slice margins.
+2. BUILD
+   Type what your game is and press "Build UI":
+       simulator              "Bank Heist" simulator        tycoon         cartoon obby
+       anime fighting         scary horror                  scifi racing   medieval rpg
+       clean minimal shooter  cartoon tower defense         glass roleplay
+   You get StarterGui > SimUI: the HUD, every window, and a LocalScript that opens/closes the windows,
+   animates the buttons, blurs the world behind windows, scales for phones and shows leaderstats.
+   Press Play to try it.
 
-C) MAKE A NEW KIT FROM A PROMPT (needs Python 3 + Pillow: pip install pillow)
-      python3 Generator/generate.py "candy pink simulator"
-      python3 Generator/generate.py '"My Game" neon obby' --pieces     (also saves every sprite as a PNG)
-   Themes: classic candy ocean lava forest galaxy neon winter spooky holiday royal desert toxic pastel
-   military midnight sunset. Colour words (red, blue, pink...) recolour the main buttons; "smooth"
-   turns the studs off; "cartoon" uses the Luckiest Guy font.
+3. CUSTOMISE (the panel)
+   Game      where things go: simulator, tycoon, obby, fighting, horror, racing, rpg, shooter, tower, roleplay
+   Style     how things look: Sim (the big simulator-game look), Studs, Bubbly, Cartoon, Horror, Anime,
+             SciFi, Fantasy, Minimal, Pixel, Glass
+   Colours   26 palettes      Font   19 Roblox fonts
+   Shape, Corners, Outline, Shadow, Surface, Studs, Menu buttons, Windows, Motion, Icons, Text, Size
+   Everything starts on "auto" (= the style's choice). Right-click a value to set it back to auto.
+   Shuffle = a new variation of the same look. Your settings are remembered.
 
-Fonts: Fredoka (same family as Roblox FredokaOne), Luckiest Guy, Lilita One - open licences in
-Generator/fonts.
+4. 3D ICONS (recommended, one upload)
+   Upload Icons/Atlas_Icons.png (Asset Manager > Import, or Create > Decals), copy its asset ID
+   (right click > Copy Asset ID), paste it into "Icon sheet ID" in the panel, Build again.
+   All menu buttons, currencies, cards, boosts and hotbar slots then use the 3D icons.
+   Without it the UI uses emoji and still works.
+
+5. USE IT FROM YOUR SCRIPTS (LocalScript)
+   local gui = game.Players.LocalPlayer.PlayerGui:WaitForChild("SimUI")
+   gui.OpenWindow:Fire("Shop")          -- open any window by name (e.g. "Machine" from a ProximityPrompt)
+   gui.CloseWindow:Fire()               -- close the open one
+   gui.ShowTip:Fire("Grab the cash!")   -- tutorial bubble;  gui.ShowTip:Fire() hides it
+   Currency labels follow leaderstats values with the same name (Cash, Gems, Coins, Gold).
+   Buttons carry attributes you can hook up: Action ("Buy", "Gift", "Redeem", "Rebirth", "Make"...),
+   Opens, Tab, Toggle, Slot, Day.
+
+Previews/ shows what the plugin makes for every game type and every style.
+"""
+
+
+KITS_README = """STUDDED UI IMAGE KITS
+====================
+
+Ready-made sprite sheets in 17 colour themes (Kits/<Theme>/): studded buttons, square menu buttons,
+headers, panels, cards, rarity slots, bars, toggles, mutation buttons, shine effects and 45 title words.
+Use them by hand in Roblox (ImageLabel.Image = the uploaded sheet, ImageRectOffset / ImageRectSize from
+SimUIKit.lua, ScaleType = Slice with the listed margins) or cut them up in Photopea / Photoshop.
+Each kit's Preview.jpg shows the look; the labelled sprite sheets are in StudLowPoly_GameUI_SpriteSheets.zip.
+
+Make a new kit from a prompt (Python 3 + Pillow):
+    python3 Generator/generate.py "candy pink simulator"
+    python3 Generator/generate.py '"My Game" neon obby' --pieces      (also every sprite as its own PNG)
+
+The SimUI plugin (StudLowPoly_GameUI.zip) does not need these: it draws its UI with native Roblox
+objects. It uses a kit's Stud_Tile.png for the Studs style if you install the kit's SimUIKit.lua as a
+ModuleScript named SimUIKit in ReplicatedStorage with the tile's ID filled in.
 """
 
 
@@ -189,14 +216,20 @@ def main():
             arc = "StudLowPoly_GameUI"
             z.writestr(os.path.join(arc, "HOW_TO_USE_THE_UI.txt"), UI_HOW_TO)
             z.write(os.path.join(ROOT, "roblox", "SimUI_Plugin.lua"), os.path.join(arc, "SimUI_Plugin.lua"))
-            for base, _, files in os.walk(os.path.join(ui, "kits")):
-                for f in sorted(files):
-                    if f != "Sheet.jpg":  # reference only: shipped in the SpriteSheets zip
-                        p = os.path.join(base, f)
-                        z.write(p, os.path.join(arc, "Kits", os.path.relpath(p, os.path.join(ui, "kits"))))
             for f in sorted(os.listdir(os.path.join(ui, "icons"))):
                 if f.endswith((".png", ".lua")):
                     z.write(os.path.join(ui, "icons", f), os.path.join(arc, "Icons", f))
+            add_dir(z, os.path.join(ui, "previews"), os.path.join(arc, "Previews"))
+
+        with zipf("StudLowPoly_GameUI_ImageKits.zip") as z:
+            arc = "StudLowPoly_GameUI_ImageKits"
+            z.writestr(os.path.join(arc, "README.txt"), KITS_README)
+            for base, _, files in os.walk(os.path.join(ui, "kits")):
+                for f in sorted(files):
+                    p = os.path.join(base, f)
+                    if f == "Sheet.jpg":
+                        continue
+                    z.write(p, os.path.join(arc, "Kits", os.path.relpath(p, os.path.join(ui, "kits"))))
             for f in ("generate.py", "art.py", "themes.py"):
                 z.write(os.path.join(ui, f), os.path.join(arc, "Generator", f))
             add_dir(z, os.path.join(ui, "fonts"), os.path.join(arc, "Generator", "fonts"))

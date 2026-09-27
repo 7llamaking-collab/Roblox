@@ -35,9 +35,12 @@ LIBRARY = {
     "RainbowEgg": "RainbowEgg", "Chest": "GoldChest", "Backpack": "DiamondBackpack", "Settings": "Gear",
     "Codes": "Ticket", "Quests": "Scroll", "Timer": "Hourglass", "Index": "Spellbook", "Shop": "ShoppingCart",
     "Pickaxe": "DiamondPickaxe", "Sword": "DiamondSword", "Shield": "DiamondShield", "FishingRod": "GoldFishingRod",
-    "Luck": "Clover", "Teleport": "Portal", "World": "Globe", "Map": "TreasureMap", "Boost": "Firework",
+    "Teleport": "Portal", "World": "Globe", "Map": "TreasureMap", "Boost": "Firework",
     "Dice": "Dice", "Battery": "Battery", "Magnet": "GoldCoinMagnet", "Skull": "Skull", "Pet": "Corgi",
     "Bomb": "CartoonBomb", "Fire": "Campfire",
+    "Hammer": "IronHammer", "Bat": "BaseballBat", "Helicopter": "Helicopter", "UFO": "UFO",
+    "Mushroom": "Mushroom", "Crate": "GoldLootCrate", "Clock": "WallClock", "Taco": "Taco",
+    "Basket": "EggBasket",
 }
 
 
@@ -158,8 +161,18 @@ def _calendar(m):
                   loc=(-0.65 + i * 0.65, -0.27, 1.4 - j * 0.6))
 
 
+def _clover(m):
+    """Four heart-shaped leaves with their tips to the middle, and a stem."""
+    for a in (45, 135, 225, 315):
+        r = math.radians(a)
+        m.prism(heart_pts(1.55), depth=0.5, color="leaf", bevel=0.12, rot=(90, 90 - a, 0),
+                loc=(0.62 * math.cos(r), 0, 2.0 + 0.62 * math.sin(r)))
+    m.box((0.28, 0.3, 1.3), color="leaf_dark", bevel=0.08, rot=(0, -30, 0), loc=(0.35, 0.1, 0.95))
+    m.box((0.5, 0.56, 0.5), color="leaf_light", bevel=0.14, loc=(0, -0.05, 2.0))
+
+
 CUSTOM = {
-    "Paw": _paw, "Rebirth": _rebirth, "Trade": _trade, "Lock": _lock, "Unlock": lambda m: _lock(m, True),
+    "Luck": _clover, "Paw": _paw, "Rebirth": _rebirth, "Trade": _trade, "Lock": _lock, "Unlock": lambda m: _lock(m, True),
     "Check": _check, "Close": _cross, "Plus": _plus, "Minus": lambda m: _plus(m, True),
     "ArrowUp": lambda m: _arrow(m, 0), "ArrowRight": lambda m: _arrow(m, 90),
     "ArrowLeft": lambda m: _arrow(m, -90), "ArrowDown": lambda m: _arrow(m, 180),

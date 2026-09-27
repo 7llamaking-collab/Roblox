@@ -7,8 +7,8 @@ Every model is a real Blender mesh, ready for the Roblox 3D Importer.
 
 **Just want the files?** Grab the ZIPs in [`downloads/`](downloads): one per category, a
 Quick Start ZIP with one all-in-one FBX file per category, and the Blender source. Every ZIP
-includes a `HOW_TO_IMPORT.txt`. The game UI is in `StudLowPoly_GameUI.zip` (plugin, generator,
-icons, 17 theme kits); its labelled sprite sheets are in `StudLowPoly_GameUI_SpriteSheets.zip`.
+includes a `HOW_TO_IMPORT.txt`. The game UI plugin is in `StudLowPoly_GameUI.zip` (plugin, 3D icon
+sheet, previews); the older image kits are in `StudLowPoly_GameUI_ImageKits.zip`.
 
 | Category | Count | What's inside |
 |---|---:|---|
@@ -31,48 +31,55 @@ Shark, Whale, T-Rex, Unicorn, Pegasus, Griffin, Hydra, Kraken and many more), wi
 
 ![Animals](previews/Animals.png)
 
-## Game UI kit (studs style) + prompt generator
+## Game UI: SimUI Generator plugin
 
-Everything for the game UI, in the same studs style as the models (see `ui/kits/*/Preview.jpg`):
+![Simulator UI](ui/previews/Sim_Shop.jpg)
 
-* **`roblox/SimUI_Plugin.lua`, a Studio plugin.** Type a prompt such as `"Pet Legends" candy simulator`,
-  `lava fighting` or `spooky horror` and click **Build UI**. It creates `StarterGui > SimUI`:
-  * **HUD:** top tabs, side buttons with icons and labels, currencies with a + button, a hotbar,
-    boost tiles, a level bar, Daily Quests and x2 Luck.
-  * **Windows:** Shop (item cards with Buy buttons and tabs), Pets (rarity slots), Rebirth, Settings
-    (toggles), Codes, Index (mutations, collection grid, reward bar), Daily Rewards and Quests.
-  * **A LocalScript** that opens and closes the windows with a pop animation, makes buttons grow on
-    hover, sweeps a shine across buttons, scales the UI for every screen and shows leaderstats values.
-  * **Layouts** for simulator, tycoon, obby, fighting, horror, racing and rpg games.
-  * **17 themes:** classic, candy, ocean, lava, forest, galaxy, neon, winter, spooky, holiday, royal,
-    desert, toxic, pastel, military, midnight, sunset. Colour words (red, blue, pink...) and a
-    "quoted title" also work. It is keyword matching, no AI.
+`roblox/SimUI_Plugin.lua` is a Roblox Studio plugin that builds a complete, working game UI into
+`StarterGui > SimUI`: HUD, windows and a LocalScript that runs them. It is keyword matching plus
+hand-made presets (no AI), and everything it makes is ordinary Roblox UI you can edit afterwards.
 
-  Install: Studio > Plugins tab > **Plugins Folder**, drop the file in and restart Studio. Or paste it
-  into the Command Bar once. It works straight away with native Roblox UI (UICorner, UIStroke,
-  UIGradient, shine, emoji icons).
-* **`ui/generate.py`, the art generator** (Python and Pillow only). Run
-  `python3 ui/generate.py "galaxy space simulator"` and it draws the whole kit:
-  * studded glossy buttons in 13 colours, square menu buttons, window headers, panels
-  * gradient item cards, rarity slots (Common to Secret), progress bars, currency pills, tabs, toggles,
-    close and plus buttons, badges
-  * textured mutation buttons (Molten, Icy, Shocked, Radioactive, Rainbow, Galaxy, Golden, Diamond)
-  * shine effects (sunburst, glow, sparkle) and 45 stroked title words
-  * an optional logo
+* **The default look** is the style of today's big simulator / "steal a" games:
+  * **Windows:** white windows with a thick dark outline, the title sitting on the top border next to a
+    3D icon, a red X square, and a blurred world behind them.
+  * **Buttons and cards:** gradient buttons with halftone dots, and gamepass cards with hexagon badges,
+    Robux price buttons and gift buttons.
+  * **HUD:** dark round menu buttons with big 3D icons, currencies on fading bars, a timer bar, event
+    timers, hexagon boost badges, a slate hotbar and a tutorial speech bubble. See `ui/previews/Sim_*.jpg`.
+* **Game** decides where things go, and each type has its own HUD and windows: simulator, tycoon,
+  obby, fighting, horror, racing, rpg, shooter, tower defense and roleplay (`ui/previews/Games.jpg`).
+* **Style** decides how everything looks and feels. There are 11 styles: Sim, Studs, Bubbly, Cartoon,
+  Horror, Anime, SciFi, Fantasy, Minimal, Pixel and Glass (`ui/previews/Styles.jpg`). Each draws buttons,
+  panels, bars, headers, menus and icons differently, with its own fonts and animations (bouncy,
+  squish, press, smooth, slide, flicker, glitch, retro).
+* **Controls** in the plugin panel override any detail. Every control starts on **auto**, which follows
+  the style:
+  * look: colours (26 palettes), font, shape, corners, outline, shadow, surface, studs
+  * layout and feel: menu buttons, windows (popup / side / fullscreen), motion, icons, text case, size
+  * **Shuffle** makes seeded variations.
+* **3D icons:** upload `ui/icons/Atlas_Icons.png` once (79 icons rendered in Blender from this library)
+  and paste its ID into the panel. Every icon then uses it. Without it the UI still works with emoji.
 
-  The sprites are packed into 1024 px sprite sheets, so you upload a few images instead of hundreds.
-  It also writes `SimUIKit.lua`, which records where every sprite is. Ready-made kits for all 17
-  themes are in `ui/kits/`.
-* **`ui/icons/`: 70 shiny outlined icons** rendered in Blender from this library (coin, gem, cash,
-  eggs, potions, chest, gift, crown, trophy, sword, pickaxe, settings gear, shop cart, paw, rebirth
-  arrows, lock, check / X, arrows, and more), plus one icon sprite sheet.
+**Install:** Studio > Plugins tab > **Plugins Folder**, drop the file in and restart Studio, then click
+**SimUI**. Type a prompt (`"Bank Heist" simulator`, `anime fighting`, `scary horror`, `medieval rpg`,
+`neon scifi shooter`...), change any control and press **Build UI**.
 
-**Using a kit's images.** Upload the kit's `Atlas_*.png`, `ui/icons/Atlas_Icons.png` and `Stud_Tile.png`
-(Asset Manager > Bulk Import) and paste their ids into `SimUIKit.lua`. Put `SimUIKit.lua` in
-ReplicatedStorage as a ModuleScript named `SimUIKit`, then click Build UI again: buttons, panels,
-cards, icons and titles now use the images, as 9-slice sprites that stay crisp at any size. Fonts:
-Fredoka (the same family as Roblox's FredokaOne), Luckiest Guy and Lilita One, all open-licensed
-(`ui/fonts/`).
+**From your own scripts:**
+* `gui.OpenWindow:Fire("Shop")` opens a window. Windows such as the "Gold Machine" have no HUD button
+  on purpose, so you can open them from a ProximityPrompt.
+* `gui.CloseWindow:Fire()` closes the open window.
+* `gui.ShowTip:Fire("text")` shows the tutorial bubble, and `ShowTip:Fire()` hides it.
+* Currency labels follow leaderstats values with the same name (Cash, Gems, Coins...).
+
+**How it was checked:** `ui/sim/` runs the plugin in the real Luau runtime on top of a stand-in for the
+Roblox API. The stand-in errors on unknown properties and enums the way Studio does. It then clicks Build,
+runs the in-game LocalScript and renders the result (`python3 ui/sim/previews.py`). This is not Roblox
+itself, so treat Studio as the final check.
+
+**Image kits (older, optional):** `ui/generate.py` draws studded sprite sheets from a prompt, and
+`ui/kits/` has 17 ready-made themes. You can use these art assets by hand or in Photopea. The plugin uses
+a kit's `Stud_Tile.png` if you install it as the `SimUIKit` ModuleScript. Fonts: Fredoka, Luckiest Guy
+and Lilita One, all open-licensed (`ui/fonts/`).
 
 ## The style: "stud low poly"
 
@@ -107,8 +114,11 @@ blend/<Category>.blend                      editable Blender files, every asset 
 textures/                                   StudPalette (+ Metalness/Roughness), Stud.png overlay
 previews/                                   contact sheets + a render of every asset
 catalog.json                                every asset: size in studs, triangle count, files
-roblox/SimUI_Plugin.lua                     Studio plugin: builds a whole game UI from a prompt
-ui/                                         UI art generator, themes, fonts, icons and ready-made kits
+roblox/SimUI_Plugin.lua                     Studio plugin: builds a whole game UI from a prompt + controls
+ui/icons/                                   79 3D icons + the icon sheet the plugin uses
+ui/previews/                                renders of the plugin's output (every game and style)
+ui/sim/                                     runs the plugin outside Studio (Luau + Roblox stand-in) and renders it
+ui/                                         older image-kit generator, themes, fonts and ready-made kits
 roblox/StudStyle.lua                        optional one-click stud overlay for Studio
 roblox/BuildingSetup.lua                    optional one-click glass / collision setup for buildings
 blender/                                    the Blender build scripts that made everything
