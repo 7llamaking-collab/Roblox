@@ -452,7 +452,7 @@ def tier_rapier(m, T, tier):
     m.torus(R=0.32, r=0.05, seg=8, arc=180, color=T["accent"], rot=(90, 0, 0), loc=(0, 0, 0.1), scale=(1, 1, 1.3))
     m.box((0.8, 0.14, 0.12), color=T["dark"], bevel=0.03, loc=(0, 0, 0.45))
     m.lathe([(0.3, 0.38), (0.22, 0.6), (0, 0.62)], seg=6, color=T["dark"])
-    m.tube([(0, 0, 0.6), (0, 0, 3.4), (0, 0, 4.1)], [(0.08, 0.04), (0.07, 0.035), 0], seg=4, up=(0, 1, 0),
+    m.tube([(0, 0, 0.6), (0, 0, 3.4), (0, 0, 4.1)], [(0.13, 0.05), (0.11, 0.045), 0], seg=4, up=(0, 1, 0),
            smooth=False, **paint(T, "main", "z", 0.6, 4.1))
     if tier in GEM_TIERS:
         m.gem(r=0.08, h=0.08, seg=6, color=solid(T, "gem"), rot=(90, 0, 0), loc=(0, -0.1, 0.45))
